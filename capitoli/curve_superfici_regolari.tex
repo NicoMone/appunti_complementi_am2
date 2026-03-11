@@ -73,7 +73,8 @@ Osserviamo due cose molto importanti:
 	\item viene richiesta un'ipotesi di \textbf{regolarità} sulla funzione $f$ (questo risulta intuitivo, da un lato, siccome stiamo cercando di approssimare, in un intorno \emph{piccolo} una funzione che vive, per esempio, in $\mathbb{R}^2$ con un $x$-grafico quindi deve essere regolare, d'altra parte dobbiamo applicare il teorema della funzione inversa per esplicitare una variabile in funzione dell'altra localmente);
 	\item è necessario conoscere almeno un valore della funzione $f$: nel caso del teorema è il punto $x_0 \in \Omega$, il quale svolge la funzione di una sorta di "ancora" per definire il comportamento locale della funzione
 \end{enumerate}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Presa la funzione $f(x,y)$ possiamo considerare la funzione $\tilde{f}:\Omega \to \mathbb{R}^2$ tale che
 $$
 \tilde{f}(x, y)=(x, f(x, y))
@@ -106,7 +107,7 @@ Per dimostrare la formula della derivata basta derivare quest'ultima relazione r
 &\partial_x f(x, \varphi(x)) = \partial_x f(x_0, y_0) \implies \partial_x f(x, \varphi(x)) + \partial_y f(x, \varphi(x)) \partial_x \varphi(x) = 0 \implies \\
 &\implies \partial_x \varphi(x) = - \frac{\partial_x f(x, g(x))}{\partial_y f(x, g(x))}
 \end{align*}
-\end{proof}
+\hfill $\square$
 \begin{remark}
 Possiamo riformulare il teorema della funzione implicita nei punti in cui $\partial_y f(x_0) = 0$ ma $\partial_x f(x_0) \neq 0$: infatti, la versione più generale del teorema richiede che $\nabla f \neq 0$. Ciò è possibile rifacendo la dimostrazione ma ridefinendo ad hoc la funzione $\tilde{f}$ in maniera tale che il determinante della sua matrice jacobiana sia pari a $\partial_x f(x_0)$. Enunciamo qua sotto tutte le "versioni" alternative del teorema nel caso di $n=2$ e $n=3$
 \end{remark}
@@ -124,10 +125,13 @@ $$
 \varphi'(t) = -\frac{\partial_y f(\varphi(t), t)}{\partial_x f(\varphi(t), t)} \, \, \forall t \in (x_{0_2} - \delta, x_{0_2} + \delta)
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Si riprende la dimostrazione fatta prima usando $\tilde{f}(x, y) = (f(x, y), y)$. 
-\end{proof}
+\hfill $\square$
+
 Con qualche piccolo accorgimento, la dimostrazione fatta qua sopra è valida anche per $\Omega \subseteq \mathbb{R}^{n}$ 
+
 \begin{definition}[curva regolare]
 Diremo che $C \subseteq \mathbb{R}^2$ è una curva regolare se $\exists \Omega \subseteq \mathbb{R}^2$ aperto tale che $C = f^{-1}(f(x_0)) \subseteq \Omega$ dove $f \in C^k (\Omega)$ e $\nabla f(x) \neq (0, 0) \, \forall x \in C$. \\
 Evidenziando la regolarità di $C$, diremo che $C$ è una curva di classe $C^k$
@@ -147,9 +151,11 @@ $$
 \partial_{x_j} \varphi(x_2, x_3) = -\frac{\partial_{x_j}f(\varphi(x_2, x_3), x_2, x_3)}{\partial_{x_1} f(\varphi(x_2, x_3), x_2, x_3)} \, \, \forall j \in \{2, 3 \} \, \, \forall (x_2, x_3) \in B(x_0, \sigma)
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Si modifica la dimostrazione fatta prima scomponendo la funzione $f(x_{1}, x_2, x_3) = f(x, y)$ con $x \in \mathbb{R}, y \in \mathbb{R}^2$, considerando la funzione $\tilde{f} = (f(x, y), x, y)$ imponendo che $D_y f \neq 0$.
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[della funzione implicita rispetto a $x$ e $y$]
 Sia $\Omega \subseteq \mathbb{R}^3$ aperto, $x_0 = (x_{0_1}, x_{0_2}, x_{0_3}) \in \Omega$ e sia $f \in C^1 (\Omega)$ tale che $\partial_{x_3} f(x_0) \neq 0$. Allora
 \begin{align*}
@@ -193,13 +199,15 @@ $$
 \dim{\ker{df(x_0)}} = n-1
 $$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Sappiamo che $df(x_0): \mathbb{R}^n \to \mathbb{R}$, dunque per il teorema del rango, avremo che
 $$
 \dim{\ker{df(x_0)}} = \dim{\mathbb{R}^n} - \dim{\text{Im}(df(x_0))} = n - 1
 $$
 siccome la dimensione del differenziale valutato in $x_0$ è sicuramente $1$ per ipotesi essendo un'applicazione lineare fra $\mathbb{R}^n$ e $\mathbb{R}$.
-\end{proof}
+\hfill $\square$
+
 Osserviamo che se $\gamma \in C^1 (I_{0, \varepsilon}, \Sigma)$ allora $f(\gamma(t)) = f(x_0)$ siccome definiamo le curve come $\Sigma = f^{-1}(f(x_0))$, assumendo inoltre che $\gamma(0) = x_0 \implies 0 = \frac{d}{dt} (f \circ \gamma)(t)|_{t=0} = \innerprod{\nabla f(\gamma(0))}{\dot{\gamma}(0)} = df(\gamma(0))(\dot{\gamma}(0)) \implies \dot{\gamma}(0) \in T_{x_0} \Sigma$ come ci si aspetta dall'intuizione geometrica (e anche fisica, infatti, dal corso di Fisica 1, sappiamo che la velocità di un punto materiale è sempre tangente alla traiettoria). 
 
 
@@ -216,7 +224,8 @@ T_{x_0} \Sigma = V_{x_0} \Sigma
 $$
 \label{thm:caratt_tang}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Mostriamo che $V_{x_0} \Sigma \subseteq T_{x_0} \Sigma$: come avevamo già visto in precedenza, se $\gamma \in C^{1}((-\varepsilon, \varepsilon), \Sigma)$ tale che $\gamma(0)=x_0$ e $g^{-1}(g(x_0)) = \Sigma \implies g(\gamma(t)) = \gamma(0) \implies \frac{d}{dt} g(\gamma(t)) = \frac{d}{dt} \gamma(0) = \innerprod{\nabla g(\gamma(0))}{\dot{\gamma}(0)} = dg(\gamma(0))(\dot{\gamma}(0)) \implies \, (\forall \dot{\gamma}(0), \dot{\gamma}(0) \in V_{x_0} \Sigma \implies \dot{\gamma}(0) \in T_{x_0} \Sigma) \iff V_{x_0} \Sigma \subseteq T_{x_0} \Sigma$. \\
 Mostriamo adesso che $T_{x_0} \Sigma \subseteq V_{x_0} \Sigma$: facciamo la dimostrazione per $n=2$ e per $n=3$. Nel caso $n=2$ sappiamo, in virtù della funzione implicita, che $\exists \varphi: I \to J$ tale che 
 \begin{align*}
@@ -260,10 +269,12 @@ $$
 	\text{Span}(\partial_x \Phi(x_{0_1}, x_{0_2}), \partial_y \Phi(x_{0_1}, x_{0_2}) = V_{x_0} \Sigma = T_{x_0} \Sigma
 $$
 ovvero la tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 Con il solito procedimento è possibile dimostrare il caso $n$-dimensionale.
 \end{remark}
+
 \begin{remark}
 Dal teorema precedente è possibile vedere che la definizione di spazio tangente è ben posta sebbene non dipende dalla funzione definente che abbiamo scelto. Considerando il caso banale della circonferenza centrata nell'origine di raggio $2$ io potrei scegliere come funzione definente sia la funzione
 $$
@@ -292,23 +303,29 @@ x_0 \in \Sigma \text{ è un punto critico di } f \text{ su } \Sigma  \iff \nabla
 \end{align*}
 \label{thm:punti_crit_su_curve}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Per il teorema~\ref{thm:caratt_tang}, abbiamo che se $x_0$ è punto critico allora, per definizione di punto critico, $\forall (\gamma \in C^1((-\varepsilon, \varepsilon), \Sigma), \gamma(0)=x_0), \innerprod{\nabla f(x_0)}{\dot{\gamma}(0)} = 0 \iff \nabla f(x_0) \perp T_{x_0} \Sigma$.
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[di Fermat su $\Sigma$]
 Sia $\Sigma$ una curva o una superficie regolare con $x_0 \in \Sigma$ e sia $f \in C^{1}(\Omega)$ e sia $x_0 \in \Omega$ tale che $f|_{\Omega \cap S}$ ha un minimo o un massimo su $\Omega \cap S$ in $x_0$. Allora $x_0$ è un punto critico di $f$ su $\Sigma$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Sia $\gamma: (-\varepsilon, \varepsilon) \to \Sigma$ derivabile tale che $\gamma(0) = x_0$. Poiché $f|_{\Omega \cap \Sigma}$ ha un minimo (o un massimo) in $x_0 \implies \forall \gamma \in C^{1}((-\varepsilon, \varepsilon), \Sigma), (f \circ \gamma)(t)$ ha un massimo o un minimo in $t = 0$. Quindi $\frac{d}{dt}(f \circ \gamma)(t)|_{t=0} = 0$ da cui la tesi
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 Tutto questo che abbiamo fatto in cosa si traduce? In pratica, se abbiamo una funzione $f$ che andiamo a vincolare su una curva/superficie regolare $\Sigma$ allora ogni punto critico \emph{libero} $x_0 \in \Omega$ tale che $x_0 \in S$ è un punto critico di $f$ su $\Sigma$, mentre il viceversa non è così. Per esempio potremo prendere la funzione $f(x, y) = x^2 + y$ e la retta $\Sigma = \{(x, y) \in \mathbb{R}^2 : y=0 \} = \mathbb{R} \times \{ 0 \}$ da cui scopriremo che il minimo della funzione $f$ su $\Sigma$ è il punto $(0, 0)$ in cui, tuttavia $\nabla f((0, 0)) = (0, 1)$. 
 \end{remark}
+
 \begin{theorem}[dei moltiplicatori di Lagrange]
 Sia $f \in C^{1} (\Omega), x_0 \in \Omega \cap S, \Omega \subseteq \mathbb{R}^n$ aperto, $n= \{ 2, 3 \}$, $S \subseteq \mathbb{R}^n, g \in C^1 (\Omega)$ tale che $\Omega \cap S = g^{-1}(g(x_0)) = \Sigma \subseteq \mathbb{R}^n, \nabla g(x) \neq 0 \forall x \in \Sigma$ ($\Sigma$ è una curva/superficie regolare). \\
 Allora $x_0 \in \Sigma$ è un punto critico di $f$ su $\Sigma$ se e solo se $\exists \lambda \in \mathbb{R}$ tale che $\nabla f(x_0) = \lambda \nabla g(x_0)$
 \end{theorem}
-\begin{proof} \hspace{1cm} \\
+
+\noindent \textbf{Dimostrazione. }
 $\boxed{\Rightarrow}$: sia $x_0 \in \Sigma$ un punto critico di $f$ su $\Sigma$, allora per il teorema~\ref{thm:punti_crit_su_curve}  avremo che $\nabla f(x_0) \perp T_{x_0} \Sigma \implies \nabla f(x_0) \in (T_{x_0} \Sigma)^{\perp}$, tuttavia, siccome $\Sigma = g^{-1}(g(x_0))$, abbiamo che $(\nabla g(x_0))^{\perp} = T_{x_0} \Sigma$ da cui concludiamo che $\nabla f(x_0), \nabla g(x_0) \in (T_{x_0} \Sigma)^{\perp}$ e, siccome $\dim{(T_{x_0} \Sigma)^{\perp}} = 1$ visto che $g: \mathbb{R}^n \to \mathbb{R}$($\implies df(x_0): \mathbb{R}^n \to \mathbb{R}$), concludiamo che 
 $$
 \nabla f(x_0) = \lambda \nabla g(x_0)
@@ -318,10 +335,12 @@ $$
 \nabla f(x_0) = \alpha \nabla g(x_0)
 $$
 allora, procedendo in maniera simile a quanto detto prima, sappiamo che $\nabla g(x_0) \in (T_{x_0} \Sigma)^{\perp}$, ma allora, per proprietà degli spazi vettoriali, abbiamo che $\alpha \nabla g(x_0) = \nabla f(x_0) \in (T_{x_0} \Sigma)^{\perp} \implies \nabla f(x_0) \perp T_{x_0} \Sigma \implies x_0$ è un punto critico di $f$ su $\Sigma$ sempre per il teorema~\ref{thm:punti_crit_su_curve}.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 Supponiamo di avere una funzione $f: D \to \mathbb{R}$ con $D \subseteq \mathbb{R}^n$ con $D$ compatto. Allora sappiamo, per il teorema di Weierstrass (teorema~\ref{thm:weierstrass}), che $\exists \max\limits_{D} f, \min\limits_{D} f$, tuttavia se non vi sono dei punti critici \emph{liberi} della funzione in $\text{Int}(D)$ avremo che $\max\limits_{D} f, \min\limits_{D} f$ si trovano sulla frontiera di $D$. Nel caso in cui questi siano superfici/curve regolari allora bisogna procedere con i moltiplicatori di Lagrange per trovare i punti su di essa e il sistema che otteniamo con i moltiplicatori \textbf{deve} avere una soluzione altrimenti si otterrebbe un assurdo con il teorema di Weierstrass.
 \end{remark}
+
 \begin{remark}
 Una trattazione a $N$ vincoli dei problemi dell'ottimizzazione fa uso della funzione $\Lambda: \mathbb{R}^n \to \mathbb{R}$ lagrangiana definita come 
 $$
@@ -329,6 +348,7 @@ $$
 $$
 dove $x \in \mathbb{R}^n$ e le funzioni $g_i(x):\mathbb{R}^n \to \mathbb{R}$ sono le equazioni esplicitate dei nostri vincoli. La teoria per dimostrare che questa formulazione (come l'intuito geometrico ci fa intuire) è pressoché equivalente, tuttavia non verrà dimostrato.
 \end{remark}
+
 \begin{remark}
 Il moltiplicatore di Lagrange è naturalmente unico e dipende, com'è lecito aspettarsi, da $\nabla f(x_0)$ e $\nabla g(x_0)$: questa unicità è immediata conseguenza del fatto che $\nabla g(p) \neq 0$, dunque è una base dello spazio $(T_{x_0} \Sigma)^{\perp}$ e sappiamo, per unicità delle coordinate rispetto a vettori linearmente indipendenti, che le coordinate rispetto ad una base sono uniche.
 \end{remark}

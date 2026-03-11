@@ -38,7 +38,8 @@ Possiamo mostrare che tale funzione gode di una serie di ulteriori proprietà:
 	$$
 	\label{prop:monotonia}
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Consideriamo $E = A$ e il seguente insieme
 	\begin{align*}
 	E_j = \begin{cases} B & j=1 \\ \emptyset & j \geq 2	\end{cases}
@@ -51,7 +52,8 @@ Possiamo mostrare che tale funzione gode di una serie di ulteriori proprietà:
 	$$
 	\mu^*(A) \leq \mu^*(B)
 	$$
-\end{proof}
+\hfill $\square$
+
 \begin{prop}[subadditività finita]
 	Le misure esterne sono finitamente subadditive, ovvero preso $E_1, \ldots, E_k$ avremo che 
 	$$
@@ -59,7 +61,8 @@ Possiamo mostrare che tale funzione gode di una serie di ulteriori proprietà:
 	$$
 	\label{prop:sub_finita}
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Siano $E_1, \ldots, E_k \subseteq \mathbb{R}^n$. Imponendo che $\forall j > k, E_j = \emptyset$, allora
 	$$
 	\forall E \subseteq \bigcup_{i=1}^{+\infty} E_i, \mu^*(E) \leq \sum_{i=1}^{+\infty} \mu^*(E_i) = \sum\limits_{i=1}^{k} \mu^*(E_i) + \sum\limits_{i=k+1}^{+\infty} \mu^*(\emptyset) = \sum\limits_{i=1}^k \mu^*(E_i) \implies \mu^*(E) \leq \sum_{i=1}^k \mu^*(E_i)
@@ -68,7 +71,8 @@ Possiamo mostrare che tale funzione gode di una serie di ulteriori proprietà:
 	$$
 	\mu^* \left( \bigcup_{i=1}^k E_i \right) \leq \sum_{i=1}^k \mu^*(E_i).
 	$$
-\end{proof}
+\hfill $\square$
+
 Mettiamo momenteneamente da parte la misura esterna e definiamo la misura di un intervallo e di un $n-$intervallo:
 \begin{definition}[misura di un intervallo e di un $n-$intervallo]
 	Per ogni intervallo $I \subseteq \mathbb{R}$ limitato definiamo
@@ -93,7 +97,8 @@ Vogliamo adesso mostrare che la funzione d'insieme $m_n$ da noi definita è effe
 	$m_n: \mathcal{P}(X) \to [0; +\infty]$ è una misura esterna
 	\label{prop:lebesgue_mis_esterna}
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	La dimostrazione consiste nel mostrare che $m_n: \mathcal{P}(X) \mapsto [0; +\infty]$ gode delle proprietà della misura esterna. \\
 	La \circled{1} segue banalmente, siccome l'$n-$intervallo nullo è un ricoprimento dell'insieme nullo, dunque $m_n(\emptyset) = 0$.
 	Per la \circled{2}, supponiamo naturalmente che $\sum\limits_{i=1}^{+\infty} m_n(E_i) < +\infty$ (altrimenti è banale) e prendiamo un insieme $E \subseteq \bigcup\limits_{i=1}^{+\infty} E_i$, osservando che $\forall i \in \mathbb{N}, E_i \subseteq \bigcup\limits_{k=1}^{+\infty} I_{k}^{(i)}$, pertanto
@@ -109,7 +114,8 @@ Vogliamo adesso mostrare che la funzione d'insieme $m_n$ da noi definita è effe
 	m_n \left( \bigcup_{i=1}^{+\infty} E_i \right) \leq \sum_{i=1}^{+\infty} \sum_{k=1}^{+\infty} l(I_{i}^{(k)}) < \sum_{i=1}^{+\infty} (m_n(E_i) + \frac{\varepsilon}{2^{i+1}}) = \varepsilon + \sum_{i=1}^{+\infty} m_n(E_i)
 	$$
 	e, siccome $\varepsilon$ era arbitrario, otteniamo la tesi facendo il limite.
-\end{proof}
+\hfill $\square$
+
 Enunciamo adesso, come definizione, il criterio secondo cui un insieme è misurabile secondo Lebesgue: in realtà questo criterio sarebbe parte della tesi del \emph{teorema di Caratheodory}, che tuttavia non dimostreremo.
 \begin{definition}[insieme misurabile secondo Lebesgue]
 	Diremo che $A \subseteq X$ è misurabile secondo Lebesgue se
@@ -145,9 +151,11 @@ Diremo allora che $m_n: \mathfrak{M}(X) \to [0; +\infty]$ è la misura di Lebesg
 \begin{prop}
 	La misura $m_n: \mathfrak{M}(X) \to [0; +\infty]$ è finitamente additiva
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 La dimostrazione è equivalente a quella della proposizione~\ref{prop:sub_finita} sostituendo opportunamente alle minorazione le eguaglianze.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 Ammettendo l'assioma della scelta è possibile mostrare che esistono degli insiemi che non sono misurabili (come ampiamente detto in precedenza). L'esempio più famoso è
 l'insieme di Vitali, che si può costruire dentro un qualunque insieme di misura positiva $E \in \mathfrak{M}(\mathbb{R}^n)$. Dalla definizione di misurabilità allora $\exists S_0 \subseteq \mathbb{R}^n$
@@ -164,7 +172,7 @@ dunque si perderebbe la $\sigma-$additività su insiemi disgiunti.
 \begin{exercise}
 	Mostrare che un punto $x \in \mathbb{R}^n$ ha misura nulla
 \end{exercise}
-\begin{proof}[Svolgimento]
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Sia $x \in \mathbb{R}^n$ e consideriamo un $n-$intervallo $\varprod\limits_{i=1}^n I_i$ dove $I_i = (x_i - \frac{\varepsilon}{2}, x_i + \frac{\varepsilon}{2})$ ($x_i$ rappresenta la $i-$esima componente del punto $x$), dunque rappresenta un cubo di \emph{volume} pari a $\varepsilon^n$ per $i \in \{1, \ldots, n \}$ con $\varepsilon > 0$. Allora possiamo osservare che
 	$$
 	\{ x \} \subseteq \bigcup_{i=1}^{+\infty} J_i
@@ -181,7 +189,8 @@ dunque si perderebbe la $\sigma-$additività su insiemi disgiunti.
 	m_n(\{ x \}) \subseteq \bigcup_{i=1}^{+\infty} v_n(J_i) = \varepsilon^n
 	$$
 	ma allora, siccome $\varepsilon > 0$ è un valore arbitrario, possiamo farne il limite per $\varepsilon \to 0$, dunque $m_n(\{ x \}) = 0$.
-\end{proof}
+\hfill $\square$
+
 \begin{prop}
 	Se $Z \subseteq \mathbb{R}^n$ è numerabile, allora
 	$$
@@ -191,7 +200,8 @@ dunque si perderebbe la $\sigma-$additività su insiemi disgiunti.
 \begin{remark}
 	Non tutti gli insiemi a misura nulla sono numerabili: un esempio è l'insieme di Cantor.
 \end{remark}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Se $Z$ è numerabile allora
 	$$
 		Z = \bigcup_{i=1}^{+\infty} \{ x_i \}
@@ -200,18 +210,22 @@ dunque si perderebbe la $\sigma-$additività su insiemi disgiunti.
 	$$
 	m_n(Z) \leq \sum_{i=1}^{+\infty} m_n(\{ x_i \}) = 0 \implies m_n(Z) = 0
 	$$
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 	$\mathbb{Q}^n$ è un insieme trascurabile
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 $|\mathbb{Q}^n| = |\mathbb{N}|$ (dove con $|\cdot|$ intendiamo la cardinalità) dunque $m_n(\mathbb{Q}^n) = 0$
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 	Gli insiemi a misura nulla sono misurabili per Lebesgue.
 	\label{cor:mis_nulla_misur}
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 In virtù della definizione~\ref{def:mis_lebesgue} dobbiamo verificare che, preso $Z$ insieme trascurabile, allora
 $$
 \forall S \subseteq \mathbb{R}^n, m_n(S) = m_n(S \setminus Z) + m_n(S \cap Z)
@@ -230,15 +244,18 @@ $$
 m_n(S) \geq m_n(S \setminus Z) = m_n(S \setminus Z) + m_n(S \cap Z) \implies m_n(S) \geq m_n(S \setminus Z) + m_n(S \cap Z)
 $$
 dunque $m_n(S) = m_n(S \setminus Z) + m_n(S \cap Z)$, ovvero la tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[gli aperti sono misurabili]
 	Tutti gli aperti di $\mathbb{R}^n$ sono misurabili secondo Lebesgue
 \end{theorem}
+
 Per dimostrare questo teorema abbiamo bisogno del seguente lemma:
 \begin{lemma}
 Ogni aperto di $\mathbb{R}^n$ è unione numerabile di $n-$intervalli a due a due disgiunti
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Sia $A \subseteq \mathbb{R}^n$ aperto non vuoto. Allora possiamo considerare la famiglia degli $n-$intervalli $I \subseteq A$ ad estremi razionali, ovvero:
 	$$\mathcal{V} = \{I = \prod_{i=1}^n (a_i, b_i] : I \subseteq A, a_i, b_i \in \mathbb{Q} \, \, \forall i \in \{1, \ldots, n\} \}$$
 	Siccome ogni $n-$intervallo all'interno di $\mathcal{V}$ può essere messo in corrispondenza biunivoca con la $2n-$upla $(a_1, \ldots, a_n, b_1, \ldots, b_n) \in \mathbb{Q}^{2n}$ che è un insieme numerabile, allora anche $\mathcal{V}$ è un insieme numerabile. E' banale l'inclusione $\bigcup\limits_{I \in A} I \subseteq A$ (per definizione di $\mathcal{V}$), vogliamo
@@ -254,46 +271,58 @@ Ogni aperto di $\mathbb{R}^n$ è unione numerabile di $n-$intervalli a due a due
 	$$
 	\bigcup_{i=1}^{+\infty} I_i = \bigcup_{i=1}^{+\infty} J_i = A
 	$$
-\end{proof}
+\hfill $\square$
+
 Siamo pronti adesso a dimostrare il teorema:
-\begin{proof}[Dimostrazione (del teorema)]
+
+\noindent \textbf{Dimostrazione. }[Dimostrazione (del teorema)]
 	Sia $A$ un insieme aperto. Per il lemma precedente sappiamo che $A = P = \bigcup\limits_{k=1}^{+\infty} I_i$ dove $I_i$ è un $n-$intervallo, dunque $m_n(P \setminus A) = m_n(\emptyset) = 0$.
 	Pertanto $P \setminus A \in \mathfrak{M}(\mathbb{R}^n)$ e $P \in \mathfrak{M}(\mathbb{R}^n)$ siccome unione di $n-$intervalli. 
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 	Tutti gli insiemi chiusi di $\mathbb{R}^n$ sono misurabili secondo Lebesgue
 \end{cor}
-\begin{proof}[Dimostrazione (del corollario)]
+\noindent \textbf{Dimostrazione. }[Dimostrazione (del corollario)]
 	Siccome $m_n: \mathfrak{M}(\mathbb{R}^n) \to [0; +\infty]$ allora $\mathfrak{M}(\mathbb{R}^n)$ è una $\sigma-$algebra, dunque se $A \in \mathfrak{M}(\mathbb{R}^n) \implies A^c \in \mathfrak{M}(\mathbb{R}^n)$.
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 	Tutte le unioni e le intersezioni numerabili di insiemi chiusi o aperti sono ancora misurabili secondo Lebesgue
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Se $\{ B_i : i \geq 1 \} \subseteq \mathfrak{M}(\mathbb{R}^n) \implies \bigcup\limits_{i=1}^{+\infty} B_i \in \mathfrak{M}(\mathbb{R}^n)$ perché $\mathfrak{M}(\mathbb{R}^n)$ è una $\sigma-$algebra, mentre per le intersezioni numerabili abbiamo che se $B_i \in \mathfrak{M}(\mathbb{R}^n) \implies B_i^c \in \mathfrak{M}(\mathbb{R}^n)$ (sempre per le proprietà delle $\sigma-$algebre)
 	e, per le leggi di De Morgan, avremo che $\left(\bigcup\limits_{i=1}^{+\infty} B_i^c \right)^c = \bigcap\limits_{i=1}^{+\infty} B_i \in \mathfrak{M}(\mathbb{R}^n)$
-\end{proof}
+\hfill $\square$
+
 \section{Funzioni misurabili secondo Lebesgue}
 Andiamo adesso ad affrontare il concetto di funzione misurabile, il quale ci condurrà, naturalmente, verso il concetto di integrale di Lebesgue
+
 \begin{definition}[funzioni misurabili secondo Lebesgue]
 Sia $E \in \mathfrak{M}(\mathbb{R}^n)$ misurabile e $f: E \to \bar{\mathbb{R}}$. Diremo che $f$ è misurabile secondo Lebesgue se $\forall t \in \mathbb{R}$ l'insieme $f^{-1}([-\infty, t)) \in \mathfrak{M}(\mathbb{R}^n)$, ovvero esso è misurabile.
 \end{definition}
+
 \begin{remark}(\textbf{Topologia di $[-\infty, \infty]$})
 	Ogni aperto di $[-\infty, +\infty]$ è un'unione arbitraria di intervalli che possono essere sia aperti oppure del tipo $[-\infty, t)$ o $(t, +\infty]$.
 \end{remark}
+
 \begin{prop}[caratterizzazione delle funzioni misurabili]
 	$E \in \mathfrak{M}(\mathbb{R}^n), f: E \to \bar{\mathbb{R}}$ è misurabile se e solo se $\forall O \subseteq \bar{\mathbb{R}}$ aperto di $[-\infty, +\infty]$ abbiamo che $f^{-1}(O) \in \mathfrak{M}(\mathbb{R}^n)$
 \end{prop}
+
 \begin{prop}[le funzioni continue sono misurabili]
 	Se $E \in \mathfrak{M}(\mathbb{R}^n), f: E \to \mathbb{R}$ è continua, allora è misurabile
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Se $O \subseteq [-\infty, +\infty]$ è un aperto contenuto in $\mathbb{R}$ $\implies f^{-1}(O)$ è aperto in $E$ in virtù del teorema~\ref{thm:teo_cf1}, dunque avremo che $\exists \Omega \subseteq \mathbb{R}^n$ tale che
 	$$
 	f^{-1}(0) = E \cap \Omega \in \mathfrak{M}(\mathbb{R}^n) \implies f \text{ è misurabile }
 	$$
 	ovvero la tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{prop}
 	Se $f_n: E \to \bar{\mathbb{R}}$ è una successioni di funzioni misurabili e $f:E \to \bar{\mathbb{R}}$. Se $f_n \stackrel{n \to +\infty}{\to} f \, \, \forall x \in E$ allora $f$ è misurabile
 \end{prop}
@@ -316,15 +345,16 @@ Mostrare la misurabilità di $\chi$ tramite la definizione di funzione misurabil
 			f^{-1}(B_1 \cup B_2) = f^{-1}(B_1) \cup f^{-1}(B_2)
 		$$
 	\end{lemma}
-	\begin{proof}
+	\noindent \textbf{Dimostrazione. }
 		Mostriamo che $f^{-1}(B_1 \cup B_2) \subseteq f^{-1}(B_1) \cup f^{-1}(B_2)$: per definizione sappiamo che $f^{-1}(B_1 \cup B_2) = \{x \in A: f(x) \in B_1 \cup B_2 \} \implies f(x) \in B_1 \vee f(x) \in B_2 \implies x \in f^{-1}(B_1) \vee x \in f^{-1}(B_2)$.
 		Mostriamo che $f^{-1}(B_1 \cup B_2) \supseteq f^{-1}(B_1) \cup f^{-1}(B_2)$: supponiamo, per assurdo, che $\exists x \in f^{-1}(B_1) \cup f^{-1}(B_2) : x \not\in f^{-1}(B_1 \cup B_2) \implies f(x) \in B_1 \vee f(x) \in B_2$ e $f(x) \not\in B_1 \cup B_2$, il che è un assurdo.
-	\end{proof}
+	\hfill $\square$
+	
 	Dunque, in virtù di questo lemma appena mostrato, avremo che
 	$$
 		\chi^{-1}(\{0, 1\}) = \chi^{-1}(\{0 \}) \cup \chi^{-1}(\{1 \})
 	$$
-\end{proof}
+	\hfill $\square$
 e abbiamo che $\chi^{-1}({0}) = \mathbb{Q} \cap [0, 1]$ che è un'unione numerabile di punti, ovvero i numeri razionali all'interno di questo intervallo che, in virtù del corollario~\ref{cor:mis_nulla_misur}, è misurabile. \\
 L'intervallo restante, invece, sarebbe pari a $[0, 1] \setminus (\mathbb{Q} \cap [0,1])$ che, tuttavia, è misurabile siccome $[0,1]$ è misurabile, $\mathbb{Q} \cap [0,1]$ è misurabile e le differenze sono misurabili secondo Lebesgue per le proprietà delle $\sigma-$algebre.
 \begin{prop}
@@ -406,9 +436,11 @@ Se $\varphi: E \to [0; +\infty]$ è semplice allora $\int\limits_E \varphi dm_n 
 \begin{prop}
 Sia $f: E \to \bar{\mathbb{R}}$ misurabile, allora anche $|f|$ è misurabile
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 $|f| = f^+ + f^-$ dove $f^{+} = \max\{f, 0 \}$ e $f^{-}=\max\{0, -f \}$. Sappiamo, dalla proposizione~\ref{prop:f_g_mis}, che $\max\{f,0 \}$ e $\max\{-f, 0\}$ sono misurabili (dove abbiamo preso $g(x) = 0$) e la somma di due funzioni misurabili è misurabile.
-\end{proof}
+\hfill $\square$
+
 \begin{definition}[integrabilità secondo Lebesgue]
 	Diremo che $f$ è integrabile secondo Lebesgue se
 	$$
@@ -508,7 +540,8 @@ $|f| = f^+ + f^-$ dove $f^{+} = \max\{f, 0 \}$ e $f^{-}=\max\{0, -f \}$. Sappiam
 	$$
 	ovvero il limite si scambia con l'integrale
 \end{remark}
-\subsection{Introduzione agli spazi $\mathcal{L}^p$}
+
+\subsection{Introduzione agli spazi $\mathcal{L}^p$ }
 \begin{definition}[spazio vettoriale $\mathcal{L}^p$]
 	Sia $1 \leq p < +\infty$, definiamo
 	$$
@@ -600,85 +633,99 @@ Andiamo a formulare un teorema simile a quello di Tonelli ma valido per le funzi
 	$$
 	se $f$ è integrabile, $A \in \mathfrak{M}(\mathbb{R}^k)$, $B \in \mathfrak{M}(\mathbb{R}^h)$ e $g: A \to \bar{R}$ e $W: b \to \bar{R}$ misurabili.
 \end{remark}
+
 \begin{example}
 	Consideriamo una funzione $f(x, y)$ integrabile sul dominio rettangolare $D=(0,1)^2$ ($\iff \int_{(0,1)^2} |f(x, y)|dxdy < +\infty$) con la proprietà che $f(x,y)=-f(y,x)$. Mostrare che
 	$\int_{(0,1)^2} f(x,y)dxdy = 0$.
 \end{example}
-\begin{proof}[Svolgimento]
-\begin{align*}
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
+\[\begin{aligned}
 &\int_{(0,1)^2} fdm_2 \stackrel{(0,1)^2 = (0,1) \times (0,1)}{=} \int_0^1 \left( \int_0^1 f(x, y) dy \right)dx = -\int_0^1 \left( \int_0^1 f(y,x) dy \right) dx = \\
 &= - \int_{(0,1)^2} fdm_2 \implies \int_{(0,1)^2} fdm_2 = 0 
-\end{align*}
-\end{proof}
+\end{aligned}\]
+\hfill $\square$
+
+
 \begin{example}
 	Consideriamo la funzione $f(x, y)=\frac{x^2 - y^2}{(x^2 + y^2)^2}$ che soddisfa $f(x, y) = -f(y,x)$. Mostrare che non è integrabile.
 \end{example}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Non sappiamo ancora se $f$ sia integrabile in $E = (0,1)^2$, ovvero se $\int\limits_E |f|dm_2$ è finito o $+\infty$. Supponiamo per assurdo che lo sia, allora dovrebbe valere lo scambio dell'ordine di integrazione:
-	\begin{align*}
+	\[\begin{aligned}
 	&\int_E f(x, y) = \int_0^1 \left( \int_0^1 \frac{x^2 - y^2}{(x^2 + y^2)^2} dx \right) dy = \int_0^1 \left( \int_0^1 \frac{1}{x^2+y^2} - 2\frac{y^2}{(x^2 + y^2)^2} \right) dy
-	\end{align*}
+	\end{aligned}\]
 	a questo punto facciamo il cambio di variabile $x = ty \implies dx = ydt$, pertanto
-	\begin{align*}
+	\[\begin{aligned}
 	&\int_0^1 \left( \int_0^1 \frac{1}{x^2+y^2} - 2\frac{y^2}{(x^2 + y^2)^2} \right) dy = \int_0^1 \left( \int_0^{\frac{1}{y}} \frac{1}{y^2(1+t^2)} - 2\frac{y^2}{y^4(1+t^2)} ydt \right)dy = \\
 	&=\int_0^1 \frac{1}{y} \left[ \arctan{\frac{1}{y}} - 2 \int_0^1 \frac{1}{(1+t^2)}dt \right]dy
-	\end{align*}
+	\end{aligned}\]
 	Studiamo il secondo termine:
-	$$
-	\int_0^{\frac{1}{y}} \frac{1}{(1+t^2)^2} dt = \int_0^{\frac{1}{y}} \frac{1}{(1+t^2)}dt - \int_0^{\frac{1}{y}} \frac{t^2}{(1+t^2)^2} dt = \arctan{\frac{1}{y}} - \int_0^{\frac{1}{y}} \frac{t^2}{(1+t^2)^2}dt
-	$$
+	
+	\[ \int_0^{\frac{1}{y}} \frac{1}{(1+t^2)^2} dt = \int_0^{\frac{1}{y}} \frac{1}{(1+t^2)}dt - \int_0^{\frac{1}{y}} \frac{t^2}{(1+t^2)^2} dt = \arctan{\frac{1}{y}} - \int_0^{\frac{1}{y}} \frac{t^2}{(1+t^2)^2}dt \]
+
 	dunque
-	$$
-	\int_0^{\frac{1}{y}} \frac{t^2}{(1+t^2)^2} = \int_0^{\frac{1}{y}} \frac{t}{2}(\frac{(1+t^2)^{-1}}{(-1)})dt = \frac{t}{2(1+t^2)}|_b^0 + \int_0^{\frac{1}{y}} \frac{1}{2} \frac{1}{1+t^2}dt = -\frac{\frac{1}{y}}{(1+\frac{1}{y^2})} + \frac{1}{2}\arctan{\frac{1}{y}}
-	$$
+	
+	\[\int_0^{\frac{1}{y}} \frac{t^2}{(1+t^2)^2} = \int_0^{\frac{1}{y}} \frac{t}{2}(\frac{(1+t^2)^{-1}}{(-1)})dt = \frac{t}{2(1+t^2)}|_b^0 + \int_0^{\frac{1}{y}} \frac{1}{2} \frac{1}{1+t^2}dt = -\frac{\frac{1}{y}}{(1+\frac{1}{y^2})} + \frac{1}{2}\arctan{\frac{1}{y}}\]
+	
 	dunque
-	$$
-	\int_E fdm_2 = - \int_0^1 \frac{1}{1+y^2}dy = - \int_0^1 \frac{1}{1+y^2}dy = - \frac{\pi}{4}.
-	$$
+	
+	\[\int_E fdm_2 = - \int_0^1 \frac{1}{1+y^2}dy = - \int_0^1 \frac{1}{1+y^2}dy = - \frac{\pi}{4}\ \ . \]
+	
 	Ora osserviamo che, sezionando rispetto a $y$ costante prima, abbiamo che
-	\begin{align*}
-	&\int_0^1 \left( \int_0^1 \frac{x^2-y^2}{(x^2 + y^2)^2}dy \right)dx \stackrel{\text{raccolgo un } -}{=} - \int_0^1 \left( \int_0^1 \frac{y^2 - x^2}{(x^2 + y^2)^2} dy \right)dx \stackrel{\text{usiamo l'ip. } f(x,y)=-f(y,x)}{=} \\
+	\[\begin{aligned}
+	&\int_0^1 \left( \int_0^1 \frac{x^2-y^2}{(x^2 + y^2)^2}dy \right)dx \stackrel{\text{raccolgo un } -}{=} - \int_0^1 \left( \int_0^1 \frac{y^2 - x^2}{(x^2 + y^2)^2} dy \right)dx \stackrel{\text{usiamo l\'ip. } f(x,y)=-f(y,x)}{=} \\
 	&= -\int_0^1 \left(\int_0^1 \frac{x^2-y^2}{(x^2 + y^2)^2} dx \right)dy = - \int_E fdm_2 = \frac{\pi}{4} 
-	\end{align*}
+	\end{aligned}\]
 	Avevamo supposto che $f$ fosse integrabile, ma questo porta ad un assurdo con il teorema di Fubini; pertanto concludiamo che la nostra funzione non fosse integrabile secondo Lebesgue.
-\end{proof}
+\hfill $\square$
+
 \begin{exercise}
 	Calcolare la misura di $E=\{(x, y) \in \mathbb{R}^2: 0 < x \leq 1, 0 < |y| < \frac{1}{\sqrt{x}} \}$
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	L'insieme $E$ è misurabile in quanto è l'unione di un insieme aperto con l'insieme $S=\{(x, y) \in \mathbb{R}^2 : x=1, |y| < 1 \} = \{1\} \times (-1, 1)$ che ha misura nulla. \\
 	$$
 	m_2(E) = \int_{\mathbb{R}} m_1(E_x)dx = \int_0^1 m_1\left( \left(-\frac{1}{\sqrt{x}}, \frac{1}{\sqrt{x}} \right) \right)dx = 2 \int_0^1 \frac{1}{\sqrt{x}}dx = 4\sqrt{x}\Bigg|^{x=1}_{x=0} = 4
 	$$
 	dove abbiamo applicato il teorema di Tonelli alla funzione caratteristica $\mathbb{1}_E$, non negativa e misurabile. \\
-	Possiamo, pertanto, anche scambiare l'ordine di integrazione osservando che $|y| < \frac{1}{\sqrt{x}} \implies x < \frac{1}{y^2}$: tuttavia devono essere vere contemporaneamente le due disuguaglianze $0 < x \leq 1$ e $0 < x < \frac{1}{y^2} \implies 0 < x < \min\{1, \frac{1}{y^2}\}$. Dunque
-	\begin{align*}
-	&m_2(E) = \int_{\mathbb{R}^2} \mathbb{1}_E dm_2 = \int_\mathbb{R} \left( \int_\mathbb{R} \mathbb{1}_E(x,y)dx \right)dy = \int_\mathbb{R} m_1(E_y)dy = \\
-	&=\int_{\mathbb{R}} m_1 \left( \left\{x \in (0, 1) : |y| < \frac{1}{\sqrt{x}} \right\} \right)dy =2 \int_0^{+\infty} m_1 \left( \left\{x \in (0,1) : 0 < x < \frac{1}{y^2} \right\} \right)dy = \\
-	&=2 \int_0^{+\infty} \left( \int_0^{\min\{1, \frac{1}{y^2}\}} \mathbb{1}_E dx \right)dy = 2 \int_0^1 \left( \int_0^1 \mathbb{1}_E dx \right)dy + \\
-	&+2\int_1^{+\infty} \left( \int_0^{\frac{1}{y^2}} \mathbb{1}_E dx \right)dy = 2 + 2\int_1^{+\infty} \frac{1}{y^2}dy = 2 + 2 = 4
-	\end{align*}
-	Dunque da questo esercizio capiamo bene che spesso sono conveniente alcuni sezionamenti rispetto ad altri
-\end{proof}
+	Possiamo, pertanto, anche scambiare l'ordine di integrazione osservando che $|y| < \frac{1}{\sqrt{x}} \implies x < \frac{1}{y^2}$: tuttavia devono essere vere contemporaneamente le due disuguaglianze $0 < x \leq 1$ e $0 < x < \frac{1}{y^2} \implies 0 < x < \min\{1, \frac{1}{y^2}\}$. 
+	Dunque:
+	\[\begin{aligned}
+	m_2(E) 
+	&= \int_{\mathbb{R}^2} \mathbb{1}_E dm_2 = \int_{\mathbb{R}} \left( \int_{\mathbb{R}} \mathbb{1}_E(x,y)dx \right)\, dy\ =\ \int_{\mathbb{R}}\, m_1(E_y)\, dy\ = \\
+	&=\int_{\mathbb{R}} m_1 \left( \left[x \in (0, 1) : |y| < \frac{1}{\sqrt{x}} \right] \right)dy =2 \int_0^{+\infty} m_1 \left( \left[ \in (0,1) : 0 < x < \frac{1}{y^2} \right] \right)dy = \\
+	&=2 \int_0^{+\infty} \left( \int_0^{\min\{1, \frac{1}{y^2}\}} \mathbb{1}_E dx \right)dy = 2 \int_0^1 \left( \int_0^1 \mathbb{1}_E dx \right)dy + \dots\\
+	&\dots + 2\int_1^{+\infty} \left( \int_0^{\frac{1}{y^2}} \mathbb{1}_E dx \right)dy = 2 + 2\int_1^{+\infty} \frac{1}{y^2}dy = 2 + 2 = 4
+	\end{aligned}\]
+	Dunque da questo esercizio capiamo bene che spesso sono conveniente alcuni sezionamenti rispetto ad altri.
+\hfill $\square$
+
 \begin{exercise}
-	Consideriamo $f: \Omega \to \mathbb{R}$ dove $\Omega = \{(x, y) \in \mathbb{R}^2 : 1 < x < y < e^2, y > e \}$ e $f(x,y) = \frac{1}{x\log{y}}$. Stabilire se $f$ è integrabile ed, in tal caso, calcolare $\int_\Omega f dm_2$
+	Consideriamo $f: \Omega \to \mathbb{R}$ dove $\Omega = \{(x, y) \in \mathbb{R}^2\, :\, 1 < x < y < e^2,\, y\, >\, e \}$ e $f(x,y)\ =\ \frac{1}{x\log y}$. 
+	Stabilire se $f$ è integrabile ed, in tal caso, calcolare $\int_\Omega f dm_2$
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Osserviamo innanzitutto che la funzione $f > 0 \, \, \forall (x, y) \in \Omega$, $f$ è continua e quindi anche misurabile in $\Omega$ ed è pertanto ben definito $\int_\Omega \frac{1}{x\log{y}}dxdy$. Possiamo, pertanto, applicare il teorema di Tonelli rispetto ad uno dei possibili sezionamenti:
-	$$
-	\int_\Omega \frac{1}{x} \frac{1}{\log{y}}dxdy = \int_\mathbb{R} \left( \int_{\Omega_y} \frac{1}{x}\frac{1}{\log{y}} dx \right)dy = \int_e^{e^2} \frac{1}{\log{y}} \left( \int_1^y \frac{1}{y} dx \right) dy = \int_e^{e^2} 1dy = e(e-1)
-	$$
+	
+	\[ \int_\Omega \frac{1}{x} \frac{1}{\log{y}}\, dxdy\ = \int_{\mathbb{R}} \left( \int_{\Omega_y} \frac{1}{x}\frac{1}{\log{y}} dx \right)\, dy\ =\ \int_e^{e^2}\, \frac{1}{\log{y}}\, \left( \int_1^y \frac{1}{y} dx \right)\, dy\ =\ \int\,_e^{e^2}\, 1\, dy\ =\ e(e-1) \]
+	
 	Scambiamo l'ordine di integrazione
-	\begin{flalign*}
+	\[\begin{aligned}
 	&\int_\Omega \frac{1}{x} \frac{1}{\log{y}}dxdy = \int_1^{e^2} \frac{1}{x} \left( \int_{\Omega_x} \frac{1}{\log{y}dy} \right)dx =\int_1^e \frac{1}{x} \left( \int_e^{e^2} \frac{1}{\log{y}}dy \right) dx + \\
 	&+\int_e^{e^2} \frac{1}{x} \left( \int_x^{e^2} \frac{1}{\log{y}}dy \right)dx = \int_e^{e^2} \frac{1}{\log{y}}dy + \int_e^{e^2} \left( \int_x^{e^2} \frac{1}{\log{y}}dx \right) dy
-	\end{flalign*}
+	\end{aligned}\]
 	tuttavia $\int_e^x \frac{1}{\log{t}}dt$ non ha primitiva esprimibile sotto forma delle note funzioni che conosciamo. 
-\end{proof}
+\hfill $\square$
+
 \begin{exercise}
 	Sia $f: E \to \mathbb{R}$ e $f(x, y, z) = \sqrt{x^2 - z^2}\log{y}$ dove $E = \{(x, y, z) \in \mathbb{R}^3 : 0 \leq z \leq x \leq 1, 0 < y \leq x \}$
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Osserviamo che la funzione $f(x) \leq 0 \forall (x, y, z) \in E$. Questo si può facilmente vedere siccome $0 < y \leq x \leq 1 \implies 0 < y \leq 1$ e possiamo inoltre vedere che $f$ è continua, dunque misurabile. \\
 	Per le proposizioni viste in precedenza sappiamo che $f^{-}(x, y, z)$ è ben definita e misurabile $\implies \int\limits_E f^{-}(x, y, z)dx$ è ben definito, dunque possiamo applicarvi il teorema di Tonnelli (ricordiamo infatti che tale teorema è applicabile esclusivamente il nostro dominio è
 	scrivibile sotto forma di prodotti cartesiani):
@@ -705,7 +752,8 @@ Andiamo a formulare un teorema simile a quello di Tonelli ma valido per le funzi
 	&\frac{\pi}{4} \left( \frac{x^4}{4} \log{x}\Bigg|_{x \to 0^+}^{x=1} - \int_0^1 \frac{x^3}{4}dx - \frac{1}{4} \right) = \frac{\pi}{4} \left(-\frac{1}{4} - \frac{1}{16} \right) = \\
 	&= -\frac{5\pi}{64}
 	\end{align*}
-\end{proof}
+\hfill $\square$
+
 \section{Teorema del cambiamento di variabili}
 Come nel caso degli integrali a singola variabile, vogliamo adesso effettuare dei cambi di variabile all'interno degli integrali. Infatti il passaggio a coordinate permette, spesso, di fruire più facilmente di alcune simmetrie
 di cui godono certi insiemi oppure certe funzioni (si pensi a voler calcolare il volume occupato da una sfera: in coordinate cartesiane può essere un incubo parametrizzare le variabili, tuttavia potremmo pensare di scrivere le coordinate dei punti $(x, y, z) \mapsto (\rho, \theta, \varphi)$). Per fare ciò abbiamo bisogno di una serie di risultati:
@@ -862,7 +910,8 @@ Per le coordinate polari, dunque, se $E \subseteq \mathbb{R}^2$ misurabile allor
 \begin{exercise}
 	Calcolare $\int\limits_{-\infty}^{+\infty} e^{-t^2} dt$
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	La funzione $e^{-x^2}$ è naturalmente integrabile, siccome $\frac{e^{-x^2}}{\frac{1}{x^2}} \stackrel{x \to +\infty}{\to} 0$ per gli ordini di infinito, dunque $e^{-x^2} \ll \frac{1}{x^2} \implies \int_1^{+\infty} e^{-x^2} dx \ll \int_1^{+\infty} \frac{1}{x^2}$ mentre sull'intervallo $[0; 1]$ la funzione è limitata e continua. La parita della funzione garantisce lo stesso per l'intervallo $(-\infty; 0]$. Osserviamo
 	adesso che, tramite l'integrabilità, siamo sicuri di poter applicare Fubini, siccome l'intervallo $(-\infty; +\infty)$ è sicuramente misurabile in quanto aperto. Osserviamo che, applicando Fubini, su un insieme del tipo $\mathbb{R} \times \mathbb{R}$ allora
 	$$
@@ -874,16 +923,19 @@ Per le coordinate polari, dunque, se $E \subseteq \mathbb{R}^2$ misurabile allor
 	&=-\pi \int_0^{+\infty} -2 \rho e^{-\rho^2} d\rho = - \pi e^{-\rho^2}\Bigg|^{+\infty}_{0} =0 + \pi = \pi
 	\end{align*}
 	dunque $\int\limits_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi}$ 
-\end{proof}
+\hfill $\square$
+
 \begin{exercise}
 	Mostrare che $\int\limits_{(0,1)^2} \frac{|x^2 - y^2|}{(x^2 + y^2)^2}dxdy = +\infty$
 \end{exercise}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	\begin{align*}
 	&\int_{(0,1)^2} \frac{|x^2 - y^2|}{(x^2 + y^2)^2}dxdy \geq \int_{B(0,1) \cap (0,1)^2} \frac{|x^2 - y^2|}{(x^2 + y^2)^2} dxdy = \int_{0}^1 \int_0^{2\pi} \frac{|\cos^2{\varphi} - \sin^2{\varphi}|}{\rho} d\rho d\varphi = \\
 	&=\int_0^{1} \frac{1}{\rho} d\rho \int_0^{2\pi} |\cos{\frac{\varphi}{2}}| d\varphi = +\infty
 	\end{align*}
-\end{proof}
+\hfill $\square$
+
 \subsection{Volumi dei solidi di rotazione}
 Definiamo un solido di rotazione attorno all'asse z come l'insieme misurabile $E \subseteq \mathbb{R}^3$ descritto dal profilo $\rho: [h_1, h_2] \to [0; +\infty)$ continuo tale che abbiamo
 $$
@@ -894,12 +946,14 @@ Per misurare tale insieme possiamo usare il teorema di Tonelli banalmente
 &m_3(E) = \int_E \mathbb{1}_E dm_3 = \int_{h_1}^{h_2} \left( \int_{E_z} dxdy \right) = \int_{h_1}^{h_2} \left( \int_{E_z} \rho d\rho d\varphi \right) = \\
 &\int_{h_1}^{h_2} \left( \int_0^{\rho(z)} \rho d\rho \int_0^{2\pi} d\varphi \right)dz = \int_{h_1}^{h_2} \pi \rho^2(z) dz = \pi \int_{h_1}^{h_2} \rho^2(z) dz
 \end{align*}
+
 \begin{example}
 Consideriamo un cono retto di altezza $H > 0$ e raggio $R > 0$. Definiamo $\rho(z)$ lineare e tale che $\rho(H) = 0, \rho(0) = R \implies \rho(z) = R - \frac{R}{H}z, \rho: [0, H] \to [0; +\infty)$, pertanto
 $$
 m_3(C) = \pi \int_0^H \left( R - \frac{R}{H}z \right)^2 dz = \pi R^2 \int_0^H \left(1-\frac{z}{H} \right)dz = \pi R^2 \left[ \left(\frac{z}{H} - 1 \right)^3 - \frac{H}{3} \right]^{z=H}_{z=0} = \frac{\pi}{3} R^2 H
 $$
 \end{example}
+
 Abbiamo quindi mostrato il seguente teorema:
 \begin{theorem}
 	Sia $E = \{(x, y, z) \in \mathbb{R}^3 : x^2 + y^2 \leq \rho(z), h_1 \leq z \leq h_2 \}$ (a meno di scambiare una coordinata). Allora
@@ -907,11 +961,13 @@ Abbiamo quindi mostrato il seguente teorema:
 	m_3(E) = \pi \int_{h_1}^{h_2} \rho^2(z)dz
 	$$
 \end{theorem}
+
 Adesso cerchiamo di estendere la definizione di coordinate polari a $3$ dimensioni. Vogliamo che, nel caso di $z$ costante, individuare un punto alla "vecchia" maniera 2-dimensionale: in pratica si vuole individuare una trasformazione per cui il punto è caratterizzato dalla sua "altezza" (ovvero la sua coordinata $z$) e, proiettando il punto sul piano $(x, y)$, dalla lunghezza e dall'angolo formato con l'asse $x$ del segmento che congiunge l'origine con il punto proiettato. Una possibile trasformazione "candidata" può essere la seguente
 $$
 	T(\rho, \varphi, h) = (\rho \cos{\varphi}, \rho \sin{\varphi}, h) = (x, y, z) \implies \begin{cases} x = \rho \cos{\varphi} \\ y = \rho \sin{\varphi} \\ z = h \end{cases}
 $$
 e riporto una figura più chiarire meglio il concetto espresso sopra:
+
 \begin{figure}[H]
 	\centering
 	\tdplotsetmaincoords{60}{110}
@@ -938,6 +994,7 @@ e riporto una figura più chiarire meglio il concetto espresso sopra:
 
 	\end{tikzpicture}
 \end{figure}
+
 pertanto $T: \mathbb{R}^+ \times (0, 2\pi) \times \mathbb{R} \mapsto (\mathbb{R}^2 \setminus [0; +\infty) \times \{ 0 \}) \times \mathbb{R}$. Dunque
 $$
 JT(\rho, \varphi, h) = \det \begin{bmatrix}
@@ -955,21 +1012,26 @@ $$
 E = \{(\rho, \varphi, h) : (\rho, \varphi) \in A, \varphi \in [0, 2\pi] \}
 $$
 e calcoliamo la misura di tale insieme
+
 \begin{align*}
 &m_3(E) = \int_E dxdydz = \int_{T^{-1}(E)} \rho d\rho d\varphi dh = \int_0^{2\pi} \left( \int_{\Omega_\varphi} \rho d\rho dh \right) d\varphi = 2\pi \int_A \rho d\rho dh
 \end{align*}
+
 Introducendo il concetto di baricentro, potremmo pensare di definire una grandezza che misura la distanza \emph{media} dall'asse $z$ che ci consente di calcolare il volume come una sorta di base $\times$ altezza:
 $$
 m_3(E) = 2 \pi R_b m_2(A) = 2 \pi \int_A \rho d\rho dh \implies R_b = \frac{\int_A \rho d\rho dh}{m_2(A)}
 $$
 Abbiamo mostrato il seguente teorema
+
 \begin{theorem}[secondo teorema di Guldino]
 	$$m_3(A) = 2 \pi R_b m_2(A) $$ dove $R_b$ è la distanza del baricentro rispetto all'asse intorno a cui ruota 
 \end{theorem}
+
 \begin{exercise}[Volume del toro]
 Individuare il volume di un toro, ottenuto dalla rotazione di una circonferenza con centro a distanza $R > 0$ dall' origine e con raggio $r > 0$ con $R > r$
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 Cercare di parametrizzare l'integrale non è difficile ma non necessario: abbiamo il secondo teorema di Guldino dalla nostra parte. Il baricentro, in questo caso, sarà sempre $R$ e l'area dell'insieme ruotato sarà invece $\pi r^2$
 \begin{figure}
 	\centering
@@ -996,7 +1058,8 @@ dunque
 $$
 m_3(T) = 2\pi^2 Rr^2
 $$
-\end{proof}
+\hfill $\square$
+
 \subsection{Invarianza per traslazioni e omogeneità della misura di Lebesgue}
 Sia $E \in \mathfrak{M}(\mathbb{R}^n), \lambda \in \mathbb{R} \setminus \{0\}, x \in \mathbb{R}^n \implies$
 \begin{enumerate}[label=\protect\circled{\arabic*}]
@@ -1017,10 +1080,12 @@ $$
 H(y) = \lambda y \text{ con } JH = |\lambda|^n \implies \int_{\lambda E} 1dz = \int_{T(E)} 1dz = |\lambda|^n \int_E 1dz \iff \circled{2}
 $$
 Proponiamo un esercizio piuttosto complicato, che è un buon esercizio per gli integrali
+
 \begin{exercise}
 Provare che $\int_{B(0, 1)} \frac{1}{|x|^\alpha}$ converge $\iff 0 < \alpha < n$. Supporre per ipotesi che $\alpha > 0$
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Vogliamo determinare per quali valori di $\alpha > 0$ il seguente integrale converge:
 	$$
 	\int_{B(0, 1)} \frac{1}{|x|^\alpha} dx
@@ -1039,11 +1104,13 @@ Provare che $\int_{B(0, 1)} \frac{1}{|x|^\alpha}$ converge $\iff 0 < \alpha < n$
 	&\stackrel{\text{per omogeneità}}{=} m_n(B(0,1)) + m_n(B(0,1)) \int_1^{+\infty} \frac{1}{t^{\frac{n}{\alpha}}} = m_n(B(0,1))(1 + \frac{t^{-\frac{n}{\alpha} + 1}}{1 - \frac{n}{\alpha}}\Bigg|^{+\infty}_{1})
 	\end{align*}
 	dove quest'ultima espressione converge solamente per $0 < \alpha < n$.
-\end{proof}
+\hfill $\square$
+
 \begin{exercise}
 Provare che $\int\limits_{\mathbb{R}^n \setminus B(0,1)} \frac{1}{|x|^\alpha}dx < +\infty \iff \alpha > n$.
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	L'idea è simile a come svolto precedente: definiamo la funzione caratteristica definita come segue
 	$$
 	\mathbb{1}_{[0; \frac{1}{|x|^\alpha})} = \begin{cases} 1 & \text{ se } 0 \leq t \leq \frac{1}{|x|^\alpha} \\
@@ -1061,20 +1128,25 @@ Provare che $\int\limits_{\mathbb{R}^n \setminus B(0,1)} \frac{1}{|x|^\alpha}dx 
 	&\stackrel{\text{per omogeneità}}{=} m_n(B(0,1))\int_0^1 t^{-\frac{n}{\alpha}} - 1 dt
 	\end{align*}
 	il quale converge se e solo se $-\frac{n}{\alpha} > - 1 \implies \frac{n}{\alpha} < 1 \implies \alpha > n$.
-\end{proof}
+\hfill $\square$
+
 Potremmo mostrare, in maniera più formale, la seguente proposizione
+
 \begin{prop}
 	Se $f: E \to [0; +\infty]$ misurabile, allora
 $$
 \int_E f(x)dx = m_{n+1}(\{(x,t) \in \mathbb{R}^{n+1}: x \in E, 0 \leq t \leq f(x) \})
 $$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 $$
 \int_E f(x)dx = \int_E \int_0^{f(x)} 1 dtdx = \int_0^{f(x)} \left( \int_E f(x) dx \right) dt = \int_0^{f(x)} m_n({(x \in E: f(x) \geq t)})dt
 $$
-\end{proof}
+\hfill $\square$
+
 Questo, applicato ai precedenti esercizi, rende molto facile il conto.
+
 \subsection{Coordinate sferiche}
 Possiamo definire un altro tipo di coordinate molto utili in tre dimensioni, ovvero le coordinate sferiche. In questo caso
 identifichiamo il singolo punto sempre tramite la sua distanza dall'origine $\rho$ e tramite gli angoli che esso crea con l'asse $x$ (che indicheremo sempre con $\varphi$) e l'angolo che crea con l'asse $z$ (che indicheremo con $\theta$). Graficamente
@@ -1113,7 +1185,8 @@ identifichiamo il singolo punto sempre tramite la sua distanza dall'origine $\rh
 \begin{exercise}
 	Studiare l'integrabilità di $f(x, y) = (x^6 y^5 + x^3 y^2 + 2x + 2y + 2)e^{-x^2 - y^2}$ su $\mathbb{R}^2$ e, in tal caso, calcolarne l'integrale
 \end{exercise}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Osserviamo che
 	$$
 		\int_{\mathbb{R}^2} |x^n y^m| e^{-x^2 - y^2} \ll \int_{\mathbb{R}^2} (x^2 + y^2)^{\frac{n+m}{2}} = \int_{\mathbb{R}^2} \rho^{n+m+1} e^{-\rho^2} d\rho d\theta < +\infty
@@ -1126,11 +1199,13 @@ identifichiamo il singolo punto sempre tramite la sua distanza dall'origine $\rh
 	$$
 	\int_{-\infty}^{+\infty} 2e^{-x^2 - y^2} = 2\pi
 	$$
-\end{proof}
+\hfill $\square$
+
 \section{Misura di Hausdroff $2-$dimensionale}
 
 Possiamo anche dare la nozione di area per le superfici immerse in $\mathbb{R}^3$: per esempio se fossimo interessati a studiare la superficie di una sfera o di un cilindro, la misura di Lebesgue $m_3$ darebbe che il valore di essa è $0$, siccome essa misura
 il volume $3-$dimensionale delle superfici, che in questo caso risulta essere pari a $0$ siccome lo "spessore" della superficie occupata da un cilindro ha ovviamente volume nullo. \\
+
 \begin{definition}[misura di Hausdroff $2-$dimensionale]
 	Sia $A \subseteq \mathbb{R}^3$, allora l'area di tale insieme è
 	$$
@@ -1138,14 +1213,17 @@ il volume $3-$dimensionale delle superfici, che in questo caso risulta essere pa
 	$$
 	per tutti i possibili ricoprimenti $\{ E_i \}_i$ per cui $\sup\limits_{i \geq 0} \diam E_i < \delta$, dove $\diam E = \sup\limits_{x, y \in E} |x-y|$
 \end{definition}
+
 Poniamo $\sigma=\mathcal{H}^2=$ misura $2-$dimensionale di $E$. \\
 Si può mostrare che la teoria dell'integrazione rispetto a $\sigma$ si costruisce esattamente come con la misura di Lebesgue. 
+
 \begin{theorem}[A1] \hspace{1cm} \\ \vspace{-0.5cm}
 	\begin{enumerate}[label=\protect\circled{\arabic*}]
 		\item gli insiemi chiusi, la loro unione e intersezione (finita o numerabile) e i loro complementari (quindi anche gli insiemi aperti) sono $\sigma-$misurabili;
 		\item le funzioni continue sono $\sigma-$misurabili
 	\end{enumerate}
 \end{theorem}
+
 \begin{definition}[jacobiano di una funzione non iniettiva]
 Sia $L:\mathbb{R}^2 \to \mathbb{R}^3$ lineare con matrice $A \in \mathbb{R}^{3 \times 2}, A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \end{bmatrix}$ e posto $M_{ij}(A) = \det \begin{bmatrix} a_{i1} & a_{i2} \\ a_{j1} & a_{j2} \end{bmatrix}$ definiamo
 il jacobiano di $L$ come
@@ -1153,6 +1231,7 @@ $$
 JL = \sqrt{M_{12}(A)^2 + M_{13}(A)^2 + M_{23}(A)^2}
 $$
 \end{definition}
+
 usando il prodotto vettoriale è possibile mostrare che $JL = |Le_1 \times Le_2|$. Questo si può, naturalmente, applicare ad ogni funzione $\phi \in C^1(\Omega, \mathbb{R}^3), \Omega$ aperto $\subseteq \mathbb{R}^2$ con $\phi$ dipende dalla variabile $u = (u_1, u_2) \in \Omega$. Fissando un punto $w \in \Omega$ possiamo definire
 $$
 J\phi(w) = J(d\phi(w)) = |\partial_{e_1} \phi(w) \times \partial_{e_2} \phi(w)|
@@ -1171,7 +1250,9 @@ $$
 	\end{enumerate}
 	che prende il nome di integrale di area.
 \end{theorem}
+
 naturalmente si ottiene questo banale corollario se $f$ è continua (in quanto misurabile)
+
 \begin{cor}
 	Siano $\Omega \subseteq \mathbb{R}^2$ aperto e $\Phi \in C^1(\Omega, \mathbb{R}^3)$ con $\Phi$ iniettiva, $E \in \mathfrak{M}(\mathbb{R}^2), E \subseteq \Omega$ e $f: \Phi(E) \to \mathbb{R}$ è continua con
 	$\int\limits_{\Phi(E)} |f|d\sigma < +\infty$ allora
@@ -1179,10 +1260,12 @@ naturalmente si ottiene questo banale corollario se $f$ è continua (in quanto m
 	\int_{\Phi(E)} f d\sigma = \int_E f(\Phi(u)) J\Phi(u)du
 	$$
 \end{cor}
+
 \begin{example}[calcolo della superficie della sfera]
 	Calcolare l'area della superficie di una sfera
 \end{example}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Sia data una superficie sferica di raggio $R > 0$ e centro $x \in \mathbb{R}^3$, allora
 	$$
 	\Phi(\varphi, \theta) = x + R(\sin{\theta} \cos{\varphi}, \sin{\theta}\sin{\varphi}, \cos{\theta})
@@ -1205,11 +1288,13 @@ naturalmente si ottiene questo banale corollario se $f$ è continua (in quanto m
 	$$
 	\sigma(x+R\mathbb{S}^2) = \int_{(0, 2\pi) \times (0, \pi)} J\Phi (\varphi, \theta) d\varphi d\theta = R^2 \int_0^{2\pi} \int_0^\pi \sin{\theta} d\theta d\varphi = 4 \pi R^2
 	$$
-\end{proof}
+\hfill $\square$
+
 \begin{example}[area del toro di raggi $0 < r < R$]
 	Calcolare l'area del toro di raggi $0 < r < R$
 \end{example}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Possiamo parametrizzare la superficie di un toro nella seguente maniera:
 	$$
 	\Phi(\varphi, \theta) = \begin{pmatrix}	(R + r\cos{\theta})\cos{\varphi} & (R+r \cos{\theta})\sin{\varphi} & r \sin{\theta}		\end{pmatrix}
@@ -1224,7 +1309,8 @@ naturalmente si ottiene questo banale corollario se $f$ è continua (in quanto m
 	&J\Phi(\varphi, \theta) = r(R + r\cos{\theta}) \implies \sigma(T) = \int_{(0, 2\pi) \times (0, \pi)} J\Phi d\varphi d\theta = r \int_0^{2\pi} \int_0^{2\pi} (R + r\cos{\theta}) d\varphi d\theta = \\
 	&= 2\pi r \int_0^{2\pi} R + r\cos{\theta} d\theta = 2 \pi r 2 \pi R = 4 \pi^2 rR
 	\end{flalign*}
-\end{proof}
+\hfill $\square$
+
 \begin{exercise}
 	Calcolare l'integrale di superficie
 	$$
@@ -1233,7 +1319,8 @@ naturalmente si ottiene questo banale corollario se $f$ è continua (in quanto m
 	dove $T=\varphi((0, 2\pi)^2)$ toro di raggi $0 < r < R$
 	
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 Dal precedente esercizio, sappiamo è possibile parametrizzare come
 	$$
 	\Phi(\varphi, \theta) = \begin{bmatrix}	(R + r\cos{\theta})\cos{\varphi} & (R + r\cos{\theta})\sin{\theta} & r \sin{\theta}	\end{bmatrix}
@@ -1244,7 +1331,8 @@ Dal precedente esercizio, sappiamo è possibile parametrizzare come
 	&= r^2 \int_0^{2\pi} |\cos{\varphi}|d\varphi \int_0^{2 \pi} \frac{|\sin{\theta}|}{R + r\cos{\theta}} d\theta = 4r \int_0^\pi \frac{\sin{\theta}}{R + r\cos{\theta}}d\theta - 4r \int_\pi^{2\pi} \frac{\sin{\theta}}{R + r\cos{\theta}}d\theta & \\
 	&= 8r\log{\frac{R+r}{R-r}}
 	\end{flalign*}
-\end{proof}
+\hfill $\square$
+
 Adesso abbiamo tutti gli strumenti per determinare l'area ottenuta facendo ruotare una curva di $2\pi$ attorno ad un asse: supponiamo di avere una curva $\gamma: [a, b] \to \mathbb{R}^2$ $C^1_\text{tratti}$ tale che $\gamma_1(t) > 0 \, \, \forall t \in [a, b]$ e di voler
 determinare l'area della superficie $\Sigma$ ottenuta ruotando $\gamma$ attorno all'asse $z$. \\
 Parametrizziamo la nostra superficie come
@@ -1276,6 +1364,7 @@ $$
 $$
 dove poniamo $d_\gamma = \frac{\int_a^b \gamma_1(t) |\dot{\gamma}(t)|dt}{\int_a^b |\dot{\gamma}(t)|dt}$.
 \end{theorem}
+
 \subsection{Area dei grafici}
 Consideriamo $u \in C^1(\Omega, \mathbb{R}), \Omega \subseteq \mathbb{R}^2$ aperto e la funzione grafico associata $\varphi(x, y)=(x, y, u(x,y)) \implies \varphi \in C^1(\Omega, \mathbb{R}^3)$ (in virtù del teorema del differenziale totale) ed è iniettiva.
 In virtù del teorema del Dini, possiamo definire una funzione $\Sigma=f(\Omega), \sigma(\text{gr} \, u) = \sigma(\Sigma) = \int_\Omega J\varphi dxdy$. In virtù di quanto detto in precedenza, possiamo dunque definire il jacobiano di $\varphi$ come
@@ -1310,7 +1399,8 @@ dunque possiamo concludere che
 		$$
 	\end{enumerate}
 \end{example}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. }[Svolgimento]
 	Possiamo rappresentare la nostra superficie come
 	$$
 	x = 1 + 2y - z
@@ -1333,4 +1423,4 @@ dunque possiamo concludere che
 	\end{flalign*}
 	in virtù dell'esercizio in cui avevamo mostrato che $\int_{\mathbb{B}(0, r)} \frac{1}{|x|^\alpha} < +\infty \iff 0 < \alpha < n$.
 	L'integrale è un banale conto
-\end{proof}
+\hfill $\square$

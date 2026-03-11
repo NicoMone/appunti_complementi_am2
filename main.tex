@@ -1,4 +1,10 @@
 \documentclass[12pt, twoside, italian]{book}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+% questi due pacchetti potrebbero causare qualche errorino
+\usepackage{amsthm}
+
 \input{h_preamble/new_preamble}
 \input{h_preamble/letterfonts}
 \input{h_preamble/macros}
@@ -7,6 +13,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \pagestyle{fancy}
+
+
 
 % Definizione dell'intestazione per pagine dispari (Odd)
 \fancyhead[LO]{\textbf{\thepage}}  % Numero di pagina in grassetto a sinistra
@@ -65,13 +73,14 @@
 	\cleardoublepage
 	\pagestyle{fancy}
 	\tableofcontents
-	\chapter*{Introduzione}
+	
+	\chapter{Introduzione}
 	\pagestyle{empty}
 	\thispagestyle{empty}
 	\addcontentsline{toc}{chapter}{Introduzione}
 	\markboth{Introduzione}{Introduzione}
 	\pagestyle{fancy}
-	Queste note nascono come riferimento per lo studio del corso di \emph{Complementi di Analisi Matematica}, tenuto dal professor Valentino Magnani. Il contenuto segue prevalentemente il programma svolto nel primo semestre dell'anno accademico 2023/2024, per cui non garantisco che rimanga completamente valido anche per gli anni successivi.\
+	Queste note nascono come riferimento per lo studio del corso di \emph{Complementi di Analisi Matematica}, tenuto dal professor Valentino Magnani. Il contenuto segue prevalentemente il programma svolto nel primo semestre dell'anno accademico 2023/2024, per cui non garantisco che rimanga completamente valido anche per gli anni successivi.
 
 	Le presenti note sono state scritte con due obiettivi principali: fornire un materiale teorico il più possibile completo per affrontare l'esame, includendo le dimostrazioni dei teoremi e dei lemmi presentati a lezione, e al contempo offrire spunti per chi desideri approfondire ulteriormente alcuni argomenti. Questi due intenti, per mia inclinazione personale, si sono rivelati difficili da conciliare: tendo spesso a divagare o ad andare oltre gli scopi immediati del corso. Per questo ho deciso di raccogliere in appendice alcuni approfondimenti, sviluppati con l'intento di mantenerne la coerenza logica, ma senza pormi limiti in termini di lunghezza o complessità. Tali appendici sono riconoscibili per una grafica distintiva posta accanto alla lettera $\Gamma$ che ne segna l'inizio.\
 
@@ -182,4 +191,5 @@
 \addcontentsline{toc}{chapter}{Bibliografia}
 \bibliographystyle{unsrt}
 \bibliography{bibliography.bib}
+\end{proof}
 \end{document}

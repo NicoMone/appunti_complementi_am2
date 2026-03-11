@@ -58,30 +58,36 @@ di alcuni risultati di cui abbiamo bisogno. Iniziamo dando la definizione di spa
 \begin{exercise}
     Mostrare la disuguaglianza (\ref{eq:matrix_norm_inequality}).
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. } [Svolgimento]
     Sia $x \in \mathbb{R}^n$. Allora sappiamo che
     $$
     |Ax| = \big|A( \, |x| \, \frac{x}{|x|} )\big| = |x| \, \big|A\frac{x}{|x|}\big| \leq |x| \, || A ||
     $$
     siccome $\frac{x}{|x|}$ è un vettore di norma unitaria.
-\end{proof}
+\hfill $\square$
+
 Per pura completezza, riporto la dimostrazione che due norme, nel caso finito-dimensionale, sono \emph{equivalenti}
+
 \begin{definition}[equivalenza fra norme]
     Sia $V$ un $\mathbb{K}-$spazio vettoriale e siano $||\cdot||_1, ||\cdot||_2$ due norme definite sullo spazio vettoriale. Allora diremo che esse sono equivalenti se esistono due costanti $c$ e $C$ strettamente positive per cui
     \begin{equation}
         \forall x \in V, c||x||_1 \leq ||x||_2 \leq C||x||_1.
     \end{equation}
 \end{definition}
+
 \begin{remark}
     Due norme equivalenti inducono la stessa topologia (impropriamente la stessa metrica), quindi strutture topologiche quali gli insiemi aperti, le funzioni continue e successioni convergenti rimarrano tali "cambiando" norma: questo potrà sembrare di poco conto e un'astrazione non necessaria, tuttavia, ripensando a come abbiamo costruito tutta la teoria dei limiti e delle successioni in $\mathbb{R}^n$, ci accorgiamo che la norma è l'oggetto su cui abbiamo basato la nostra nozione di convergenza. Dire che
     due norme inducono la stessa topologia vuol dire che presi due oggetti $x, y \in \mathbb{R}^n$ tali che $|x - y| \to 0$ (dove con $|\cdot|: \mathbb{R}^n \to \mathbb{R}$ intendo la norma euclidea) allora presa una qualunque altra norma $||\cdot||_{\star}: \mathbb{R}^n \to \mathbb{R}$ avremo che $||x - y||_{\star} \to 0$. 
     Questo è un risultato non banale e che, in generale, non è vero per spazi vettoriali infinito-dimensionali.
 \end{remark}
+
 \begin{prop}[tutte le norme sono equivalenti a quella euclidea su $\mathbb{R}^n / \, \mathbb{C}^n$]
     Sia $n \in \mathbb{N}$. Tutte le norme su $\mathbb{R}^n$ (o $\mathbb{C}^n$) sono equivalenti alla norma euclidea.
     \label{thm:equiv_norme_euclidea}
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
     Senza perdita di generalità effettueremo la dimostrazione nel caso di $\mathbb{R}^n$. Sia $|| \cdot ||_{\star}$ una norma su $\mathbb{R}^n$ e denotiamo con $||x||_2$ la norma euclidea. Siano $\{e_1, \ldots, e_n \}$ una base canonica su $\mathbb{R}^n$, allora $\forall x \in \mathbb{R}^n, \exists x_1, x_2, \ldots, x_n \in \mathbb{R}^n : x = x_1 e_1 + \ldots + x_n e_n;$ possiamo allora
     applicare ripetutamente la disuguaglianza triangolare sulla norma di $x$ per minorarla
     $$
@@ -114,11 +120,13 @@ Per pura completezza, riporto la dimostrazione che due norme, nel caso finito-di
         \frac{1}{A} ||x||_{\star} \leq ||x||_2 \leq \frac{1}{B} ||x||_{\star}
     $$
     dunque $||\cdot||_{\star}$ e $||\cdot||_2$ sono equivalenti.
-\end{proof}
+\hfill $\square$
+
 \begin{cor}[tutte le norme sono equivalenti in $\mathbb{R}^n / \, \mathbb{C}^n$]
     Sia $n \in \mathbb{N}$. Tutte le norme sono equivalenti in $\mathbb{R}^n / \, \mathbb{C}^n$.
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
     Come visto nella dimostrazione del teorema \ref{thm:equiv_norme_euclidea}, sappiamo che prese due norme $||\cdot||_{\star}$ e $||\cdot||_{\ast}$ avremo che $\exists A_{\star}, B_{\star}, A_{\ast}, B_{\ast} \in \mathbb{R}$ tali che
     \begin{align*}
         &B_{\star} \, ||x||_2 \leq ||x||_{\star} \leq A_{\star} \, ||x||_2 & &B_{\ast} \, ||x||_2 \leq ||x||_{\ast} \leq A_{\ast} \, ||x||_2 \\
@@ -141,12 +149,14 @@ Per pura completezza, riporto la dimostrazione che due norme, nel caso finito-di
     \frac{B_{\star}}{A_{\ast}} \, ||x||_{\ast} \leq ||x||_{\star} \leq \frac{A_{\star}}{B_{\ast}} \, ||x||_{\ast}.
     $$
     Dunque le norme $||\cdot||_{\star}$ e $||\cdot||_{\ast}$ sono equivalenti.
-\end{proof}
+\hfill $\square$
+
 \begin{cor}[tutte le norme sono equivalenti su spazi di dimensione finita]
     Sia $V$ un $\mathbb{R}-$spazio (o un $\mathbb{C}-$spazio) di dimensione finita $n$. Allora tutte le norme sono equivalenti. 
     \label{cor:equivalence_norms}
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
     Senza perdita di generalità faremo la dimostrazione nel caso di $\mathbb{R}-$spazio vettoriale. Sia $(V, ||\cdot||_V)$ uno spazio vettoriale normato reale di dimensione finita $n$ e fissiamo una base $\mathcal{B} = \{ v_1, \ldots, v_n \}$ di tale spazio.
     Sappiamo allora che $\forall v \in V \exists \lambda \in \mathbb{R}^n : v = \sum_{i=1}^n b_i v_i$ con $\lambda = (\lambda_1, \ldots, \lambda_n)$: possiamo dunque considerare l'isomorfismo lineare
     \begin{align*}
@@ -181,14 +191,17 @@ Per pura completezza, riporto la dimostrazione che due norme, nel caso finito-di
     \end{cases} \, \, \forall v \in V,
     $$
     ovvero le norme $||\cdot||_{\flat}$ e $||\cdot||_{\sharp}$ sono equivalenti.
-\end{proof}
+\hfill $\square$
+
 \section{Alcuni risulti preliminari per la dimostrazione}
 
 Andiamo ad enunciare alcuni risultati di cui abbiamo bisogno per dimostrare quanto ci siamo prefissi all'inizio di questa appendice. Alcuni di essi dovrebbero essere già noti dal corso di Analisi Matematica:
+
 \begin{theorem}[di Banach-Caccioppoli]
 	Sia $X$ uno spazio metrico completo e sia $\varphi: X \to X$ una contrazione (ovvero una funzione $L-$lipschtziana con $L < 1$). Allora $\exists ! x \in X : \varphi(x) = x$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Sia $(X, d)$ uno spazio metrico completo e sia $x_0 \in X$. Definiamo una successione $\{ x_n \}$ in maniera ricorsiva, imponendo che
 	\begin{align*}
 		&x_{n+1} = \varphi(x_n) & &(n = 0, 1, \ldots).
@@ -218,7 +231,8 @@ Andiamo ad enunciare alcuni risultati di cui abbiamo bisogno per dimostrare quan
 	d(x, y) = d(\varphi(x), \varphi(y)) \leq c d(x, y) \implies d(x, y) \leq c d(x, y) \implies c > 1
 	$$
 	il che è un assurdo siccome $\varphi$ è una contrazione.
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[criterio di Lipschtiz]
 	Sia $\Omega \subseteq \mathbb{R}^n$ convesso, $f: \Omega \to \mathbb{R}^m$ una funzione di classe $C^1(\Omega, \mathbb{R}^m)$ e supponiamo che si abbia $L = \sup\limits_{x \in \Omega} ||Df(x)|| < +\infty$. Allora la funzione
 	$f$ è $L-$lipschtziana, ossia
@@ -226,7 +240,8 @@ Andiamo ad enunciare alcuni risultati di cui abbiamo bisogno per dimostrare quan
 	\forall x, y \in \Omega, |f(x) - f(y)| \leq L|x-y|
 	$$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Fissiamo $x, x' \in \Omega$, allora consideriamo la funzione $g(t) = f(tx + (1-t)y)$ con $t \in [0, 1]$, pertanto $g: [0, 1] \to \mathbb{R}^m$ ed è anch'essa di classe $C^1$ e si ha che
 	$$
 	g'(t) = Df(tx + (1-t)y)(x - y)
@@ -240,11 +255,13 @@ Andiamo ad enunciare alcuni risultati di cui abbiamo bisogno per dimostrare quan
 	|f(x) - f(y)| = |\int_0^1 Df(tx + (1-t)y)(x-y)dt| &\leq \int_0^1 || Df(tx + (1-t)y) || |x-y|dt \leq \\
 	&\leq \int_0^1 Ldt |x-y| = L|x-y|
 	\end{align*}
-\end{proof}
+\hfill $\square$
+
 \begin{lemma}
     $\forall n > 0, \forall r > 0, \forall x \in \mathbb{R}^n, B_r(x) \subset \mathbb{R}^n$ sono convesse.
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
     Fissiamo $n > 0$, $r > 0$ e $x \in \mathbb{R}^n$. Siano adesso $y, z \in B_r(x)$ e consideriamo il luogo dei punti descritti da
     $$
     \alpha = ty + (1-t)z, \text{ con } t \in [0, 1].
@@ -254,7 +271,8 @@ Andiamo ad enunciare alcuni risultati di cui abbiamo bisogno per dimostrare quan
     | \alpha - x | &= |ty + (1-t)z - x| \leq |ty + (1-t)z - tx - (1 - t)x| \leq |ty - tx| + |(1-t)z - (1-t)x| = \\
     &=t \, |y - x| + (1-t) \, |z - x| < tr + (1-t)r = r 
     \end{align*}
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
     Questa dimostrazione è valida, in realtà, per ogni spazio vettoriale munito di norma. Il fatto che le palle siano convesse non è valido per ogni spazio metrico: un esempio può essere dato da $\mathbb{R}^2$ munito della distanza
     $$
@@ -285,7 +303,9 @@ Andiamo ad enunciare alcuni risultati di cui abbiamo bisogno per dimostrare quan
         \end{tikzpicture}}
     \end{figure}
 \end{remark}
+
 Nel prossimo teorema facciamo uso del seguente risultato che propongo come esercizio
+
 \begin{exercise}
     Sia $A \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)$ e sia $B \in \mathcal{L}(\mathbb{R}^m, \mathbb{R}^k)$, allora
     $$
@@ -293,7 +313,8 @@ Nel prossimo teorema facciamo uso del seguente risultato che propongo come eserc
     $$
     Mostrare questo risultato sia per la norma matriciale indotta che per la norma di Hilbert-Schmidt
 \end{exercise}
-\begin{proof}[Svolgimento]
+
+\noindent \textbf{Dimostrazione. } [Svolgimento]
     Nel caso della norma matriciale indotta abbiamo che
     $$
     || BAx || \leq || B(Ax) || \leq || B || |Ax| \leq || B || \, || A || \, |x| \implies || BA || \leq || B || \, || A ||
@@ -308,7 +329,8 @@ Nel prossimo teorema facciamo uso del seguente risultato che propongo come eserc
     $$
     || BA || \leq || B || \, || A ||.
     $$
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[continuità dell'operazione di inversione di una matrice]
     Sia $\mathit{\Omega}$ l'insieme di tutte le applicazioni lineari invertibili a valori in $\mathbb{R}^n$. Allora
     \begin{enumerate}[label=\protect\circled{\arabic*}]
@@ -321,7 +343,8 @@ Nel prossimo teorema facciamo uso del seguente risultato che propongo come eserc
     \end{enumerate}
     \label{thm:continuity_of_the_inverse_matrix}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Mostriamo la \circled{1}. Osserviamo che prese $A \in \mathit{\Omega}, B \in \mathcal{L}(\mathbb{R}^n)$ che soddisfano la ($\ast$) e, per comodità, poniamo $\frac{1}{\alpha} = || A^{-1} ||$ e $|| B - A || = \beta$. Dunque la ($\ast$) diventa
 $$
 \frac{\beta}{\alpha} < 1 \implies \alpha > \beta.
@@ -352,18 +375,21 @@ $$
 || B^{-1} - A^{-1} || \leq || B^{-1} || \, || A - B || \, || A^{-1} || \leq \frac{1}{\alpha - \beta} \frac{\beta}{\alpha} = \frac{\beta}{\alpha (\alpha - \beta)}
 $$
 e per $\beta \to 0$ osserviamo che $|| B - A || \to 0$, dunque la mappa che associa ad una matrice la sua inversa è continua.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
     Il passaggio in cui abbiamo affermato che $|| B || \leq \frac{1}{\alpha - \beta}$ sarebbe fallito con la norma di Hilbert-Schmidt. Sarebbe invece stato corretto nel caso in cui io avessi affermato che $|| B || \leq \frac{\sqrt{N}}{\alpha - \beta}$: il motivo
     di questo deriva dal fatto che in base ortonormale la norma di Hilbert-Schmidt altro non è che $|| B || = \sqrt{\sum\limits_{i=1}^n |Be_i|^2}$ dove $\{e_1, \ldots, e_n \}$ è una qualunque base ortonormale dello spazio vettoriale su cui mi trovo e $|\cdot|:V \to \mathbb{K}$ è la norma su essa definita. Nel caso sopra se risultava che
     $|Bx| \leq \frac{1}{\alpha - \beta} |x| \, \, \forall x \in \mathbb{R}^n \implies |Be_i| < \frac{1}{\alpha - \beta} \implies || B || = \sqrt{\sum\limits_{i=1}^n |Be_i|^2} \leq \sqrt{\sum\limits_{i=1}^n \frac{1}{(\alpha - \beta)^2}} = \frac{\sqrt{N}}{\alpha - \beta}$. Siccome queste dimostrazioni risultano più naturali con la norma matriciale indotta, ho preferito
     passare a questa norma piuttosto che rimanere con quella di Hilbert-Schmidt, sebbene, in linea di principio, queste dimostrazioni si potrebbero "riadattare" siccome le due norme sono equivalenti.
 \end{remark}
+
 \begin{lemma}
     $\forall \Omega \subseteq \mathbb{R}^n, \text{Fr} \, \Omega$ è un insieme chiuso.
     \label{lemma:frontiera_chiusa}
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
     La dimostrazione è immediata: sappiamo dall'esercizio \ref{exercise:frontiera_intersec} che la frontiera di $\Omega$ è definita come $\text{Fr} \, \Omega = \overline{\Omega} \cap \overline{\Omega^c}$. Conseguentemente,
     abbiamo che $\overline{\Omega}$ è un insieme chiuso, $\overline{\Omega^c}$ è chiuso e abbiamo che
     $$
@@ -371,12 +397,14 @@ e per $\beta \to 0$ osserviamo che $|| B - A || \to 0$, dunque la mappa che asso
     $$
     ma, per quanto mostrato nella proposizione \ref{prop:set_closed_iff_compl_open}, abbiamo che $\mathbb{R}^n \setminus \overline{\Omega}$ e $\mathbb{R}^n \setminus \overline{\Omega^c}$ sono insiemi aperti e, per quanto visto nell'esercizio \ref{exercise:union_open_set_is_open}, abbiamo che
     l'unione di insiemi aperti è un insieme aperto. Ma allora il complementare di $\text{Fr} \, \Omega$ è aperto, dunque, sempre per la proposizione \ref{prop:set_closed_iff_compl_open}, avremo che è un insieme chiuso.
-\end{proof}
+\hfill $\square$
+
 \begin{lemma}
     Siano dati $A \subseteq \mathbb{R}^n$ aperto e $B \subseteq \mathbb{R}^n$ chiuso. Allora $A \setminus B$ è aperto e $B \setminus A$ è chiuso.
     \label{lemma:diff_open_closed_set}
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
     Siccome $B$ è chiuso, allora $B^c = \mathbb{R}^n \setminus B$ è aperto in virtù della proposizione \ref{prop:set_closed_iff_compl_open}, dunque 
     $$
     A \setminus B = A \cap B^c = A \cap (\mathbb{R}^n \setminus B)
@@ -389,10 +417,12 @@ e per $\beta \to 0$ osserviamo che $|| B - A || \to 0$, dunque la mappa che asso
     $$
     B \setminus A = B \cap (\mathbb{R}^n \setminus A) \implies B \setminus A \text{ è aperto.}
     $$
-\end{proof}
+\hfill $\square$
+
 \section{Dimostrazione del teorema}
 Procediamo nella dimostrazione del teorema della funzione inversa
-\begin{proof}[Dimostrazione (del teorema \ref{thm:inverse_function})]
+
+\noindent \textbf{Dimostrazione. } [Dimostrazione (del teorema \ref{thm:inverse_function})]
 	Denotiamo con $\mathbb{R}^{n \times n} \ni A = (Df(x_0))^{-1}$. L'idea è quello di utilizzare il teorema di Banach-Caccioppoli per mostrare che, preso un insieme $U \subset f(B(x_0, r))$ aperto sufficientemente piccolo, la funzione $T: \mathbb{R}^n \to \mathbb{R}^n$ tale che $T(x) = x + A(y - f(x))$ abbia un unico punto fisso, il che necessariamente implica che $y = f(x)$ (infatti $T(x) = x \iff x + A(y-f(x)) = x \iff A(y-f(x)) = \underline{0} \iff y - f(x) = \underline{0}$ in quanto $A$ è invertibile, dunque l'unica soluzione all'equazione $Ax = \underline{0}$ è $x = \underline{0}$). \\
 	Siccome $\Omega$ è aperto e $f \in C^1(\Omega, \mathbb{R}^n) \implies Df: \Omega \to \mathbb{R}^n$ è continuo, allora possiamo scegliere $\rho > 0$ in maniera tale che
 	\begin{align*}
@@ -450,4 +480,4 @@ Procediamo nella dimostrazione del teorema della funzione inversa
     Questo ci permette di concludere che la funzione $g$ è differenziale in $y$ (e dall'arbitrarietà di tale punto segue che è differenziale per ogni punto in $B_r(y_0)$, dunque anche in $V \subset B_r(y_0)$). A
     questo punto, resta da mostrare che il differenziale $Dg(y)$ è una funzione continua, ma dato che $Dg(y) = Df(g(y))^{-1}$ si osserva che essendo $g$ continua (in quanto differenziabile), essendo $Df$ continua (per ipotesi)
     ed essendo continua anche la mappa che associa ad una matrice la sua inversa (in virtù del teorema \ref{thm:continuity_of_the_inverse_matrix}), la funzione $Dg$ dev'essere continua.
-\end{proof}
+\hfill $\square$

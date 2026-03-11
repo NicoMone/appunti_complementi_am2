@@ -6,16 +6,17 @@
 \usepackage[tmargin=2cm,rmargin=1.5in,lmargin=1.5in,margin=0.85in,bmargin=2cm,footskip=.2in, a4paper]{geometry}
 \usepackage{bookmark}
 \usepackage{libertinus}
-\usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
-\usepackage[varbb]{newpxmath}
+\usepackage{amsmath,amsthm}
+%\usepackage[varbb]{newpxmath}
+\setmathfont{Latin Modern Math}
 %\usepackage[libertine]{newtxmath}
 \usepackage{chemfig}
 \usepackage{xfrac}
-\usepackage{mhchem}
+\usepackage[version=4]{mhchem}
 \usepackage[italian]{babel}
 \usepackage[Sonny]{fncychap}
 \usepackage[makeroom]{cancel}
-\usepackage{mathtools}
+
 \usepackage{listing}
 \usepackage{enumitem}
 \usepackage{hyperref,theoremref}
@@ -38,7 +39,6 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{tikz-3dplot}
-\usepackage{tikz}
 \usetikzlibrary{3d,decorations.pathmorphing}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{import}
@@ -58,12 +58,11 @@
 \usepackage[toc, page]{appendix}
 \renewcommand\qedsymbol{$\square$}
 \newcommand\quotient[2]{{#1}/{#2}}
-\usepackage{hyperref}
 \usepackage{mwe}
 \usepackage{fancyhdr}
 \usepackage{pgfplots}
 \usepackage{bm}
-\usepackage{mathrsfs}
+%\usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 %\usepackage{import}
 %\usepackage{xifthen}
@@ -96,3 +95,7 @@
 \renewcommand\appendixpagename{Appendici}
 \renewcommand\appendixtocname{Appendici}
 \setcounter{localmathalphabets}{0}
+
+% cose nuove che stavano facendo esplodere il progetto
+\newcommand{\varprod}{\mathop{\prod}\displaylimits} %cosa voleva essere sto varprod?
+

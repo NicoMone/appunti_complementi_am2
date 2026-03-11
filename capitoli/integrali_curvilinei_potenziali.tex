@@ -37,7 +37,8 @@ $$
 \mathit{l}(\gamma) = \int_a^b |\dot{\gamma(t)}|
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Possiamo innanzitutto osservare che, fissando una parametrizzazione $a=t_0 < t_1 < \ldots < t_k = b$ per cui la curva $\gamma \in C^1_\text{tratti}([a, b])$, allora:
 $$
 	\sum_{j=1}^k |\gamma(t_j) - \gamma(t_{j-1})| = \sum_{i=1}^k |\int_{t_{j-1}}^{t_j} \dot{\gamma}(t)dt| \leq \sum_{i=1}^k \int_{t_{j-1}}^{t_j} |\dot{\gamma}(t)dt| = \int_a^b |\dot{\gamma}(t)dt|
@@ -80,13 +81,16 @@ $$
 \int_a^b |\dot{\gamma}(s)|ds \leq l(\gamma)
 $$
 ma allora segue necessariamente che $l(\gamma) = \int\limits_a^b |\dot{\gamma}(t)|dt$.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 Il risultato ottenuto è vero anche per curve lipschtziane, tuttavia va modificata leggermente la dimostrazione.
 \end{remark}
+
 \begin{remark}
 $l(\gamma)$ misura quello che noi consideriamo come \emph{lunghezza} della curva solo se $\gamma$ è iniettiva, altrimenti misura la lunghezza dell'immagine della curva "con molteplicità".
 \end{remark}
+
 \begin{definition}
 	Sia $\gamma \in C^1_{\text{tratti}}([a,b], \mathbb{R}^n)$ e $f: \gamma([a,b]) \to \mathbb{R}$ continua, definiamo l'integrale di lunghezza o l'integrale curvilineo di prima specie di $f$ lungo $\gamma$ come
 	$$
@@ -130,7 +134,8 @@ $l(\gamma)$ misura quello che noi consideriamo come \emph{lunghezza} della curva
 		\int_{\gamma} f = \int_{\gamma \circ \varphi} f
 	$$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Siccome $\varphi: [c,d] \to [a,b]$ è bigettiva, allora dev'essere monotona. Facciamo la dimostrazione, senza perdita di generalità, nel caso in cui $\varphi$ è strettamente crescente
 e possiamo definire $\tau_i = \varphi^{-1}(t_j)$ (che sarà strettamente crescente a sua volta grazie alla continuità della funzione $\varphi$), dunque
 $$
@@ -154,23 +159,27 @@ $$
 \int_\gamma f = \sum_{i=1}^k \int_{t_i}^{t_{i+1}} f(\gamma(t))|\dot{\gamma}(t)|dt = \sum_{i=1}^l \int_{\tau_i}^{\tau_{i+1}} f((\gamma \circ \varphi)(\tau)) |\gamma \circ \varphi|'(\tau) d\tau = \int_{\gamma \circ \varphi} f 
 $$
 ovvero la tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{cor}[lunghezza di un arco]
 	Sia $f(x): I \to \mathbb{R}$ con $f \in C^1(I)$ allora la lunghezza dell'arco descritto da $f(x)$ è dato da
 	$$
 		\int_I \sqrt{1 + f'(x)}dx
 	$$
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Dal teorema precedente, possiamo considerare la curva $\gamma: I \to \mathbb{R}^2$ tale che $\gamma = (t, f(t)) \, \forall t \in I$ e calcolare la lunghezza della curva con il teorema precedente:
 $$
 	\mathit{l}(\gamma) = \int_{I} |\dot{\gamma}(t)|dt = \int_I \sqrt{1 + (f'(t))^2} dt
 $$
 ovvero la tesi.
-\end{proof}
+\hfill $\square$
+
 \section{Integrali curvilinei su forme differenziali e campi vettoriali}
 
 Abbiamo generalizzato l'integrale di Riemann all'integrale curvilineo come l'integrale di una funzione a valori reali lungo una direzione impartita dalla curva $\gamma$, vogliamo adesso generalizzarlo a funzioni a valori vettoriali. I candidati ideali per fare questo sono le forme differenziali e i campi vettoriali di cui richiediamo una certa regolarità
+
 \begin{definition}[$1$-forma differenziale di classe $C^k$]
 Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, allora $$\omega(x) = \sum_{j=1}^n a_j(x)dx_j$$ è una $1$-forma differenziale di classe
 $C^k(\Omega)$, ovvero
@@ -178,6 +187,7 @@ $$
 \omega \in C^k(\Omega, (\mathbb{R}^n)^*) \iff a_j \in C^k(\Omega) \, \forall j \in \{1, \ldots n \}
 $$
 \end{definition}
+
 Diamo adesso la nozione di \emph{esattezza} di una forma differenziale
 \begin{definition}[esattezza di una $1$-forma differenziale]
 	Diremo che $\omega$ è esatta se esiste una primitiva $V \in C^1(\Omega)$ tale che
@@ -194,13 +204,17 @@ Equivalentemente diamo la nozione di \emph{chiusura} di una forma differenziale
 		\frac{\partial a_j}{\partial x_i} - \frac{\partial a_i}{\partial x_j} = 0 \, \forall i, j: 1 \leq i < j \leq n
 	$$
 \end{definition}
+
 Equivalentemente, possiamo dare delle definizioni che sono "duali" nel caso, però, di campi vettoriali:
+
 \begin{definition}[campo vettoriale di classe $C^k$]
 	Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, allora $$F(x)=\sum_{j=1}^n f_j(x)e_j$$ è un campo vettoriale di classe $C^k$, ovvero 
 	$$F \in C^k(\Omega, \mathbb{R}^n) \iff f_j \in C^k(\Omega) \, \forall j \in \{1, \ldots, n\} $$
 \end{definition}
+
 Nel caso di campi vettoriali la nozione di \emph{esattezza} e di \emph{chiusura} è sostituita dal concetto di \emph{campo conservativo} (che è un concetto che ogni fisico ha incontrato nel corso di Fisica 1
 nel caso del moto in campo centrale per esempio) e dal concetto di \emph{campo irrotazionale}
+
 \begin{definition}[campo conservativo]
 	Diremo che $F$ è un campo conservativo se esiste un potenziale $V \in C^1(\Omega)$ tale che
 	$$
@@ -208,6 +222,7 @@ nel caso del moto in campo centrale per esempio) e dal concetto di \emph{campo i
 	$$
 	ovvero se $F=(f_1, \ldots, f_n)$ e abbiamo che $f_j = \frac{\partial V}{\partial x_j}$ su $\Omega \, \forall j \in \{1, \ldots, n \}$
 \end{definition}
+
 \begin{definition}[campo irrotazionale]
 	Sia  $\Omega \subseteq \mathbb{R}^n$ aperto e sia $F = \sum_{i=1}^n f_i e_i \in C^k(\Omega, \mathbb{R}^n)$ un campo vettoriale, diremo che $F$ è un campo irrotazionale se
 	$$
@@ -223,6 +238,7 @@ Possiamo andare a definire il concetto di integrale curvilineo di seconda specie
 		\int_\gamma \omega = \sum_{i=1}^k \int_{t_{j-1}}^{t_j} \omega(\gamma(t))(\dot{\gamma}(t))dt
 	$$
 \end{definition}
+
 \begin{definition}[integrale curvilineo di seconda specie di $F$ lungo una curva $\gamma$]
 	Sia $\Omega \subseteq \mathbb{R}^n$, $F \in C^0(\Omega, \mathbb{R}^n)$ un campo vettoriale e sia $\gamma \in C^1_{\text{tratti}}([a, b], \Omega)$ una curva. Definiamo l'integrale curvilineo di seconda specie di 
 	$F$ lungo una curva $\gamma$ come 
@@ -230,6 +246,7 @@ Possiamo andare a definire il concetto di integrale curvilineo di seconda specie
 		\int_\gamma F = \sum_{i=1}^k \int_{t_{j-1}}^{t_j} \innerprod{F(\gamma(t))}{\dot{\gamma}(t)}dt
 	$$
 \end{definition}
+
 \begin{remark}
 Dalla definizione di una forma differenziale sappiamo che
 $$
@@ -264,7 +281,8 @@ con l'integrale valutato su una composizione di curve, così come avevamo fatto 
 	$$
 	\label{thm:teo_di_invarianza}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 La dimostrazione è abbastanza simile a quella fatta nel caso di funzioni a valori reali, infatti osserviamo che
 $$
 \int_{\gamma} \omega = \sum_{j=1}^k \int_{t_{j-1}}^{t_j} \omega(\gamma(t))(\dot{\gamma}(t))dt \stackrel{t=\varphi(\tau) \atop \tau_j = \varphi^{-1}(t_j)}{=} \sum_{j=1}^k \int_{\tau_{i-1}}^{\tau_{i}} \omega((\gamma \circ \varphi)(\tau))(\dot{\gamma}(\varphi(\tau))(\dot{\varphi}(\tau)))d\tau
@@ -275,7 +293,8 @@ Supponiamo che $\varphi$ sia strettamente decrescente, dunque anche $\varphi^{-1
 &= \sigma \sum_{j=1}^k \int_{\tau_{i}}^{\tau_{i-1}} \omega((\gamma \circ \varphi)(\tau))(\dot{\gamma}(\varphi(\tau))(\dot{\varphi}(\tau)))d\tau = \sigma \int_{\gamma \circ \varphi} \omega
 \end{align*}
 ovvero la tesi. Nel caso in cui $\varphi$ fosse strettamente crescente e, dunque, $\sigma=1$ la sommatoria già dà l'integrale curvilineo della composizione
-\end{proof}
+\hfill $\square$
+
 \subsection{Forme differenziali esatte}
 \begin{prop}
 	Siano $\Omega \subseteq \mathbb{R}^n$ un insieme aperto e $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$ tale che $\omega$ sia esatta con primitiva $P \in C^1(\Omega)$.
@@ -288,7 +307,8 @@ ovvero la tesi. Nel caso in cui $\varphi$ fosse strettamente crescente e, dunque
 		\int_{\gamma} F = \int_{\gamma} \nabla V = V(\gamma(b)) - V(\gamma(a))
 	$$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 E' quasi un conto siccome
 \begin{align*}
 	&\int_\gamma \omega = \int_\gamma dP = \sum_{j=1}^k \int_{\gamma_{|_{[t_{j-1}, t_j]}}} dP = \sum_{j=1}^k \int_{t_{j-1}}^{t_j} dP(\gamma(t))(\dot{\gamma}(t))dt = \sum_{j=1}^k \int_{t_{j-1}}^{t_j} \sum_{i=1}^n \frac{\partial P}{\partial x_j}(\gamma(t))(\dot{\gamma_j}(t))dt = \\
@@ -299,7 +319,8 @@ $$
 \int_{\gamma} F = \int_{\gamma} \nabla V = \sum_{j=1}^k \int_{t_{j-1}}^{t_j} \sum_{i=1}^n \frac{\partial V}{\partial x_i}(\gamma(t))(\dot{\gamma_i}(t))
 $$
 e con ragionamenti simili a quanto fatto prima possiamo arrivare alla tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 	Siano $\Omega \subseteq \mathbb{R}^n$ un insieme aperto e $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$ tale che $\omega$ sia esatta. Allora $\forall \gamma \in C^1_{\text{tratti}}([a,b], \Omega)$ chiusa abbiamo che
 	$$
@@ -311,23 +332,27 @@ e con ragionamenti simili a quanto fatto prima possiamo arrivare alla tesi.
 	$$
 	\label{cor:cammini_chiusi}
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Applicando la proposizione precedente, se $P$ è una primitiva di $\omega$, sappiamo che
 $$
 \oint_\gamma \omega = P(\gamma(b)) - P(\gamma(a)) = P(\gamma(a)) - P(\gamma(a)) = 0 
 $$
 Procediamo allo stesso modo per i campi vettoriali.
-\end{proof}
+\hfill $\square$
+
 \begin{exercise}[integrali in coordinate polari]
 Spesso, a seconda della simmetria di determinate funzioni, è molto comodo \emph{passare} in coordinate polari. Consideriamo una curva $\gamma(t)$ della forma
 $$
 \gamma(t) = (\rho (t) \cos{\varphi(t)}, \rho \sin{\varphi(t)})
 $$ 
 dove, naturalmente, richiediamo un certo tipo di regolarità alla nostra curva per non avere problemi nell'integrazione, pertanto richiediamo che
+
 \begin{align*}
 	\rho \in C^1([a, b], (0, +\infty)) \\
 	\varphi \in C^1([a, b], [0, 2\pi))
 \end{align*}
+
 Dimostrare la seguente formula per il calcolo della lunghezza della curva $\gamma$:
 $$
 l(\gamma) = \int_a^b ((\dot{\rho})^2 + (\rho \dot{\varphi})^2)^{\frac{1}{2}} dt
@@ -337,7 +362,8 @@ $$
 \int_\gamma f = \int_\gamma f(\rho(t) \cos{\varphi(t)}, \rho(t) \sin{\varphi(t)}) \sqrt{\dot{\rho}^2 + \rho \dot{\varphi}^2} dt
 $$
 \end{exercise}
-\begin{proof}[Svolgimento] \hspace{1cm} \\
+
+\noindent \textbf{Dimostrazione. } [Svolgimento]
 Tramite i teoremi visti nella precedente sezione sappiamo che
 \begin{align*}
 &l(\gamma) = \int_\gamma dl = \int_a^b ( (\dot{\rho} \cos{\varphi} - \rho \dot{\varphi} \sin{\varphi})^ 2 + (\dot{\rho} \sin{\gamma} + \rho \dot{\varphi} \cos{\gamma})^2)^{\frac{1}{2}} dt = \\
@@ -347,17 +373,20 @@ Se $f \in C^0(\gamma([a, b]), \mathbb{R})$ allora
 $$
 \int_\gamma f = \int_a^b f(\gamma(t))|\dot{\gamma}(t)|dt = \int_\gamma f(\rho(t) \cos{\varphi(t)}, \rho(t) \sin{\varphi(t)}) \sqrt{\dot{\rho}^2 + \rho \dot{\varphi}^2} dt
 $$
-\end{proof}
+\hfill $\square$
+
 Andiamo a mostrare l'additività dell'integrazione curvilinea di seconda specie rispetto alla "somma" di curve.
 Per la prossima serie di proposizioni faremo implicitamente uso del seguente lemma che, geometricamente, garantisce il fatto di poter individuare, presi due punti $a$ e $b$ di un sottoinsieme aperto e connesso per archi $\Omega \subseteq \mathbb{R}^n$, una poligonale $C^1_\text{tratti}$ che li unisce.
 \begin{lemma}
 	Sia $\Omega \subseteq \mathbb{R}^n$ aperto e connesso per archi. Per ogni coppia $x, y \in \Omega$ esiste $\gamma:[a, b] \to \Omega$ tale che $\gamma(a) = x$, $\gamma(b)=y$ e $\gamma \in C^1_\text{tratti}$.
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Dalla connessione per archi di $\Omega$ sappiamo che esiste $\gamma: [a, b] \to \Omega$ continua tale che $\gamma(a) = x$ e $\gamma(b) = y$. \\
 	Potremo a questo punto pensare di "ricoprire" con un numero finito di palle aperte\footnote{il fatto di poter ricoprire con un numero finito di palle deriva dal fatto che la funzione $\gamma$ è continua, dunque l'intervallo $\gamma([a, b])$ è un insieme compatto, pertanto è, per definizione di compattezza in senso topologico, possibile per ogni ricoprimento di insiemi aperti trovare un sottoricoprimento finito di aperti.} la linea $\gamma([a, b])$ osservando che $\forall x \in \Omega, \exists r > 0: B_r(x) \subseteq \Omega$. Preso $a = x_0$ allora prendiamo $r_0 > 0: B_{r_0} \subseteq \Omega$ (garantito dall'ipotesi che $\Omega$ sia aperto) e consideriamo l'insieme
 	$B_r(x_0) \cap \gamma([a, b]) \neq \emptyset$ (se fosse vuoto allora avremmo un assurdo riguardo all'ipotesi che $\Omega$ sia connesso per archi). Preso $x_1 \in B_r(x_0) \cap \gamma([a, b])$ con $x_1 \neq x_0$, possiamo, a questo punto, iterare il procedimento descritto e ottenere il partizionamento di una curva $C^1_\text{tratti}$ fra $a$ e $b$.
-\end{proof}
+\hfill $\square$
+
 \begin{prop}
 Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, $\gamma \in C^1_{\text{tratti}}([a, b], \Omega), \Gamma \in C^1_{\text{tratti}}([c, d], \Omega)$ tali che $\gamma(b) = \Gamma(c)$. Allora, definendo 
 $$
@@ -373,7 +402,8 @@ $$
 $$
 \label{prop:somma_curve}
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Il fatto che $\alpha$ sia $C^0_\text{tratti}$ deriva dal fatto che, per $0 \leq t \leq b$ $\alpha(t) = \gamma(t)$ e per $b \leq t \leq b + d - c$ $\alpha(t) = \Gamma(c + t - b)$ e per $t=b, \alpha(b)=\gamma(b)=\Gamma(c)$ (dove l'ultima eguaglianza segue per ipotesi), da cui avremo anche che $\alpha \in C^1_\text{tratti}([a, b + d - c], \Omega)$. Consideriamo un partizionamento della curva $\gamma$ dato da $a = a_0 < a_1 < \ldots < a_k$ e il partizionamento $\Gamma$ dato da $c = b_0 < b_1 < \ldots < b_n$
 $$
 t_j = \begin{cases}
@@ -395,10 +425,12 @@ Possiamo a questo punto fare un cambio di variabile all'interno dell'integrale, 
 	\sum_{j=0}^k \int_{a_j}^{a_{j+1}} \omega(\gamma(t))(\dot{\gamma}(t))dt + \sum_{j=0} \int_{b_j}^{b_{j+1}} \omega(\Gamma(t'))(\dot{\Gamma}(t'))dt' = \int_\gamma \omega + \int_\Gamma \omega
 \end{align*}
 e questo conclude la dimostrazione.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 	Motivati da questa proprietà appena mostrata, si fa spesso uso della seguente notazione $\alpha = \gamma + \Gamma$, tuttavia bisogna naturalmente tenere di conto che non si tratta di una somma effettiva di curve.
 \end{remark}
+
 \begin{theorem}[CF1]
 Sia $\Omega \subseteq \mathbb{R}^n$ aperto e connesso per archi. Sia $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$. Allora $\omega$ è esatta $\iff \, \forall \gamma \in C^1_\text{tratti} ([a, b], \Omega)$ chiusa abbiamo che
 $$
@@ -410,7 +442,8 @@ $$
 $$
 \label{thm:teo_cf1}
 \end{theorem}
-\begin{proof} \hspace{1cm} \\
+
+\noindent \textbf{Dimostrazione. }
 $\boxed{\Rightarrow}$: se $\omega$ è esatta allora, per il corollario~\ref{cor:cammini_chiusi}, abbiamo che
 $$
 \oint_\gamma \omega = 0
@@ -444,14 +477,16 @@ $$
 \int_{\alpha_x} \omega = \int_{\gamma_x + \tilde{\Gamma}_x} \omega = \int_{\gamma_x} \omega + \int_{\tilde{\Gamma}_x} \omega = \int_{\gamma_x} \omega - \int_{\Gamma_x} \omega \stackrel{\text{per ip.}}{=} 0 \implies \int_{\gamma_x} \omega= \int_{\Gamma_x} \omega
 $$
 dove si osserva che $\int_{\tilde{\Gamma}_x} \omega = - \int_{\Gamma_x} \omega$ per il teorema di invarianza (teorema~\ref{thm:teo_di_invarianza}) siccome $\tilde{\Gamma}_x = \Gamma_x \circ \varphi$ dove $\varphi(t) = c + d - t$. Abbiamo pertanto dimostrato che dunque la funzione $V(x)$ non dipende dalla curva $C^1$ a tratti scelta
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[CF2]
 	Sia $\Omega \subseteq \mathbb{R}^n$ aperto e connesso per archi. Sia $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$, allora $\omega \, \text{ è esatta} \iff \forall \gamma \in C^1_\text{tratti}([a,b], \Omega) \text{ e } \forall \Gamma \in C^1_\text{tratti}([c,d], \Omega) \text{ tali che } \gamma(a) = \Gamma(c) \text{ e } \gamma(b) = \Gamma(d), $
 	$$ 
 	\int_\gamma \omega = \int_\Gamma \omega
 	$$
 \end{theorem}
-\begin{proof} \hspace{1cm} \\
+
+\noindent \textbf{Dimostrazione. }
 	$\boxed{\Rightarrow}$: è banale siccome se $\omega$ è chiusa allora possiamo prendere una curva $\gamma \in C^1_\text{tratti}([a, b], \Omega)$ e $\Gamma \in C^1_\text{tratti}([c, d], \Omega)$ e definiamo una curva $\alpha(t)$ come fatto nella proposizione
 	~\ref{prop:somma_curve}, dunque avremo che
 	\begin{align*}
@@ -465,13 +500,15 @@ dove si osserva che $\int_{\tilde{\Gamma}_x} \omega = - \int_{\Gamma_x} \omega$ 
 	\int_c \omega = \int_{c_1} \omega + \int_{c_2} \omega \stackrel{\text{per ipotesi}}{=} 0 = \int_{c_1} \omega - \int_{\tilde{c}_2} = 0 \implies \int_{c_1} \omega = \int_{\tilde{c}_2} \omega.
 	$$
 	e la tesi segue dal teorema~\ref{thm:teo_cf1}, siccome esso garantisce adesso che $\omega$ sia esatta.
-\end{proof}
+\hfill $\square$
+
 \begin{prop}[le $1$-forme differenziali esatte sono chiuse]
 	Sia $\omega \in C^1(\Omega, (\mathbb{R}^n)^*)$ tale che $\omega$ sia esatta. Allora $\omega$ è chiusa. \\
 	Equivalentemente, se $F \in C^1(\Omega, \mathbb{R}^n)$ tale che $F$ sia un campo conservativo. Allora $F$ è irrotazionale.
 	\label{prop:esattezza_imp_chiusura}
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Sia $P \in C^1(\Omega)$ una primitiva di $\omega$ con $\omega = \sum\limits_{j=1}^n a_j dx_j, a_j = \frac{\partial P}{\partial x_j}$ su $\Omega \, \, \forall j \in \{1, \ldots, n \}$. Poiché
 $\omega$ è $C^1$ avremo che $a_j \in C^1(\Omega) \, \, \forall j \in \{1, \ldots, n \} \implies P \in C^2(\Omega, \mathbb{R}^n)$. Per il teorema di Schwarz allora avremo che
 $$
@@ -483,7 +520,8 @@ ma allora
 &\implies \omega \text{ è chiusa }
 \end{align*}
 ovvero la tesi. Analogamente si può fare la dimostrazione nel caso di campi vettoriali.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 	L'ipotesi che $\omega \in C^1(\Omega, (\mathbb{R}^n)^*)$ è fondamentale: esistono infatti delle forme differenziali esatte che non sono chiuse. Come esempio, consideriamo la funzione definita su $\mathbb{R}^2$
 	$$
@@ -548,14 +586,16 @@ Faremo uso adesso del seguente lemma
 	Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, connesso per archi e sia $f \in C^1(\Omega)$ tale che $\nabla f(x) = 0 \, \, \forall x \in \Omega$. Allora
 	$f(x)=c \, \, \forall x \in \mathbb{R}^n$
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Fissato $x_0 \in \Omega$ allora indichiamo con $c \in \mathbb{R}$ il valore assunto dalla funzione $f$ in $x_0$. Sia $x \in \Omega$ arbitrario e sappiamo sempre che $\exists \gamma \in C^1_\text{tratti}([a, b], \Omega)$ tale che $\gamma(a) = x_0$ e $\gamma(b)=x$.
 	Conseguentemente avremo che 
 	$$
 	f(x)-f(x_0) = \sum_{j=1}^k f(\gamma(t_j)) - f(\gamma(t_{j-1}))
 	$$
 	dove l'eguaglianza è ottenuta costruendo una semplice serie telescopica. Osserviamo adesso che $f(\gamma(t_j)) - f(\gamma(t_{j-1})) = \int_{t_{j-1}}^{t_j} \innerprod{\nabla f(\gamma(t))}{\dot{\gamma(t)}}dt = 0$ in virtù dell'annullamento del gradiente.
-\end{proof}
+\hfill $\square$
+
 \begin{prop}
 	Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto e connesso per archi e sia $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$. Allora se $\omega$ è esatta con primite $P_1, P_2 \in C^1(\Omega)$
 	$$
@@ -566,13 +606,16 @@ Faremo uso adesso del seguente lemma
 	\exists c' \in \mathbb{R}^n : \, \, \forall x \in \Omega, V_2 - V_1 = c'.
 	$$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Osserviamo che se $\omega = dP_1 = dP_2 \implies d(P_1 - P_2) = 0 \iff \nabla (P_1 - P_2) = 0 \implies P_1 - P_2 = c \in \mathbb{R} \, \, \forall x \in \Omega$ per il lemma precedente. Analogamente si può mostrare lo stesso per i campi vettoriali.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 In virtù della precedente proposizione, se $\Omega \subseteq \mathbb{R}^n$ è un insieme aperto e connesso per archi, allora abbiamo che le primitive di una $1$-forma differenziali o i potenziali di un campo vettoriale sono univocamente determinati
 a meno di una costante additiva.
 \end{remark}
+
 \begin{remark}
 Abbiamo visto che se $\Omega$ è un insieme aperto, allora
 $$
@@ -648,13 +691,15 @@ Il concetto di omotopia generalizza il concetto di \emph{deformare} con continui
 \begin{prop}[gli insiemi convessi sono semplicemente connessi]
 	Sia $E \subseteq \mathbb{R}^n$, allora $E$ è semplicemente connesso
 \end{prop}
-\begin{proof}
-	Se $E$ è convesso e $\gamma: [a, b] \to E$ è chiusa e continua scelgo $x_0 \in E$ e osservo che, preso
+
+\noindent \textbf{Dimostrazione. }
+Se $E$ è convesso e $\gamma: [a, b] \to E$ è chiusa e continua scelgo $x_0 \in E$ e osservo che, preso
 	\begin{align*}
 	&H(s,t) = sx_0 + \gamma(t) (1 - s) & &0 \leq s \leq 1,
 	\end{align*}
 	per la convessità di $E$ avremo che $H(s, t) \in E$. Avremo per $s = 0$ che $H(0, t)=\gamma(t)$ e per $s=1$ che $H(1, t)=x_0$. Siccome $H$ è continua, avremo che $H$ è un'omotopia in $E$ tra $\gamma$ e $x_0$.
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[lemma di Poincare per gli aperti semplicemente connesi]
 	Sia $\Omega \subseteq \mathbb{R}^n$ aperto e semplicemente connesso e sia $\omega \in C^1(\Omega, (\mathbb{R}^n)^*)$. Allora
 	\begin{align*}
@@ -667,7 +712,8 @@ Il concetto di omotopia generalizza il concetto di \emph{deformare} con continui
 \end{theorem}
 La dimostrazione proposta per l'implicazione verso destra ($\Rightarrow$) riporta qua sotto vale nel caso di insiemi stellati rispetto a $x_0$, ovvero insiemi in cui esiste almeno un punto $x_0$ per cui ogni segmento fra $x_0$ e $x$ appartenente all'insieme è contenuto in esso. Tuttavia sebbene $\text{insieme stellato} \implies \text{insieme semplicemente connesso}$, non vale il viceversa.
 Nelle appendici riporterò la dimostrazione per insiemi semplicemente connessi, dove necessito di usare alcuni strumenti della geometria differenziale.
-\begin{proof} 
+
+\noindent \textbf{Dimostrazione. }
 	$\boxed{\Leftarrow}:$ già dimostrato nella proposizione~\ref{prop:esattezza_imp_chiusura} \\
 	$\boxed{\Rightarrow}:$ %questa dimostrazione si rifà a delle proprietà del \emph{prodotto wedge}, che trovate nelle appendici.
 	%Sappiamo che $\omega = a_1(x)dx_1 + \ldots + a_n(x)dx_n$ e, siccome la forma $\omega$ è chiusa, abbiamo che $d\omega = 0$, dunque
@@ -702,19 +748,24 @@ Nelle appendici riporterò la dimostrazione per insiemi semplicemente connessi, 
 	&=a_j(x) 
 	\end{align*}
 	dunque $dF=\omega$, il che conclude la dimostrazione.
-\end{proof}
+\hfill $\square$
+
 \subsection{Campi vettoriali radiali}
+
 \begin{definition}[campo vettoriale radiale]
 	Consideriamo $h: (0, +\infty) \mapsto \mathbb{R}$ continua e $F: \mathbb{R}^n \setminus \{\underline{0} \} \to \mathbb{R}^n$ con $F(x) = h(|x|)x$.
 	Diremo allora che $F$ è un campo vettoriale radiale.
 \end{definition}
+
 \begin{remark}
 Siccome $\nabla |x| = \frac{x}{|x|} \, \forall x \neq \underline{0}$ allora $F(x) = |x|h(|x|)\frac{x}{|x|} \implies F(x) = |x| \, h(|x|)\nabla |x|$
 \end{remark}
+
 \begin{prop}[i campi radiali sono conservativi]
 	Sia $F$ un campo vettoriale radiale, allora $F$ è conservativo
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Possiamo pensare di definire
 	$$
 	U(s) = \int_1^s t h(t)dt \text{ con } s > 0 
@@ -728,12 +779,15 @@ Siccome $\nabla |x| = \frac{x}{|x|} \, \forall x \neq \underline{0}$ allora $F(x
 		\sum_{j=1}^n U'(|x|) \frac{x_j}{|x|}e_j = \frac{U'(|x|)}{|x|} \sum_{j=1}^n x_j e_j = \frac{U'(|x|)}{|x|} |x| = U'(|x|) = |x| \, h(|x|)
 	$$
 	dove si è usato il teorema fondamentale del calcolo per calcolare la derivata di $U(|x|)$ rispetto a $|x|$ siccome $\frac{\partial}{\partial |x|} = \frac{\partial}{\partial |x|} \int_1^{|x|} t h(t) dt = th(t)|_{t=|x|} = |x|h(|x|)$
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 	Osserviamo che per $n=2$ il nostro campo vettoriale è definito su $\mathbb{R}^2 \setminus \{ (0, 0) \}$, che ricordiamo essere un insieme non semplicemente connesso. Detto questo, non è detto che non vi siano delle forme differenziali esatte: un esempio
 	è il campo gravitazionale che è un campo conservativo.
 \end{remark}
+
 Similmente, possiamo definire le $1-$forme differenziali radiali nella seguente maniera
+
 \begin{definition}[$1-$forma differenziale radiale]
 	Sia $h(x) \in C^0((0, +\infty), \mathbb{R})$ e sia $\omega \in C^{\infty}(\mathbb{R}^n \setminus \{ \underline{0} \}, (\mathbb{R}^n)^*)$ è una $1-$ forma differenziale radiali se
 	$$

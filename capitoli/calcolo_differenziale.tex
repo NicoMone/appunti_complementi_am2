@@ -64,7 +64,8 @@ Naturalmente diremo che $f$ è differenziabile in $\Omega$ se è differenziabile
 \begin{prop}
 $f: \Omega \to \mathbb{R}^m$ con $\Omega \subseteq \mathbb{R}^n$ aperto. Diremo che $f$ è differenziabile in $x_0 \in \Omega \iff \exists L:\mathbb{R}^n \to \mathbb{R}^m$ lineare tale che $f(x_0 + h) = f(x_0) + L(h) + o(h)$ per $h \to 0 \iff $(cambio di variabile) $\exists L: \mathbb{R}^n \to \mathbb{R}^m$ lineare tale che $f(x) = f(x_0) + L(x-x_0) + o(x-x_0)$ per $x \to x_0$.
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Se $f$ è differenziabile in $x_0 \in \Omega$, sappiamo che $\exists L : \mathbb{R}^n \to \mathbb{R}^m$ tale che
 $$
 \frac{f(x_0 + h) - f(x_0) - L(h)}{|h|} \to 0 \implies f(x_0 + h) - f(x_0) - L(h) = o(|h|) \text{ per } h \to 0
@@ -78,7 +79,8 @@ Il viceversa è analogo, siccome se
 &f(x_0 + h) - f(x_0) - L(h) = o(|h|) \implies \frac{f(x_0 + h) - f(x_0) - L(h)}{|h|} \to 0 \implies \\
 &\text{f è differenziabile in } x_0
 \end{align*}
-\end{proof}
+\hfill $\square$
+
 \noindent Ma in sostanza che cosa vuol dire essere differenziabili? Come forse alcuni avranno potuto capire dalla definizione, essere differenziabili vuol dire che è possibile approssimare la funzione, in quel punto $x_0 \in \Omega$ in cui è differenziabile, ad una applicazione affine del tipo $$a(x) = f(x_0) + df(x_0)(x-x_0)$$ che sarebbe, in maniera impropria, ciò che, in gergo da fisici, diciamo essere un'approssimazione del primo ordine. \\
 Dopo questa definizione siamo persino pronti a definire il concetto di derivata direzionale, nozione strettamente connessa a quella di differenziabilità.
 \begin{definition}[derivata direzionale]
@@ -103,19 +105,22 @@ df(x_0)(v) = \partial_v f(x_0)
 $$
 \label{thm:teorema_df1}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Siccome $f$ è differenziabile in $x_0 \in \Omega$ allora $\exists L: \mathbb{R}^n \to \mathbb{R}$ tale che $f(x_0 + tv) = f(x_0) + L(tv) + o(|tv|)$ dove $|tv| \to 0$ per $v \in \mathbb{R}^n \setminus \{ \underline{0} \}$. Ma questo allora implica che
 \begin{align*}
 &\frac{f(x_0 + tv) - f(x_0) - L(|tv|)}{t} \to 0 \implies \frac{f(x_0 + tv) - f(x_0) - tL(v)}{t} \to 0 \implies \\ &\implies \lim_{t \to 0} (\frac{f(x_0 + tv) - f(x_0)}{t} - L(v)) \to 0 \implies \implies \exists \partial_v f(x_0) = L(v) = df(x_0)(v)
 \end{align*}
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[rappresentazione e unicità del differenziale]
 Se $f: \Omega \to \mathbb{R}$ è differenziabile in $x_0 \in \Omega$  allora il differenziabile di $f$ nel punto $x_0 \in \Omega$ è unico e
 $$
 df(x_0)(\xi_1, \ldots \xi_n) = \sum_{j=1}^n \xi_j \frac{\partial f}{\partial x_j}(x_0)
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Preso $v \in \mathbb{R}^n \setminus \{ \underline{0} \}$, allora 
 $$
 v = \sum \xi_i e_i \simeq (\xi_1, \ldots, \xi_n) \implies df(x_0)(v) = \sum_{j = 1}^n \xi_j df(x_0)(e_j) = \sum_{j=1}^n \xi_j \partial_{e_j} f(x_0)
@@ -125,7 +130,8 @@ $$
 L(v) = \sum_j^n \xi_j L(e_j) = \sum_j^n \xi_j df(x_0)(e_j) = df(x_0)(v)
 $$
 dove tutte queste uguaglianze sono ottenute sfruttando la linearità di $L$ e $df(x_0)$. L'unica possibilità (siccome questa è una relazione valida per ogni vettore) è che $L(e_j) = df(x_0)(e_j) \, \forall j$ ma allora queste due applicazioni lineari coincidono, giungendo ad un assurdo. Quindi il differenziale $df(x_0)$ è unico.
-\end{proof}
+\hfill $\square$
+
 \noindent Possiamo dunque definire il concetto di gradiente:
 \begin{definition}[gradiente di una funzione]
 Sia $f: \Omega \to \mathbb{R}$ con $\Omega \subseteq \mathbb{R}^n$, $x_0 \in \Omega$ e $f$ differenziabile in $x_0$. Allora definiamo il gradiente $$\nabla{f(x_0)} = \left( \frac{\partial f}{\partial x_1}(x_0), \ldots, \frac{\partial f}{\partial x_n}(x_0) \right) = \sum_{i=1}^n \frac{\partial f}{\partial x_i}f(x_0)e_i \in \mathbb{R}^n$$
@@ -176,14 +182,16 @@ $$
 df(x_0) = \sum_{i=1}^n \partial_{x_i} f(x_0)dx_i = \partial_{x_1} f(x_0)dx_1 + \ldots + \partial_{x_n} f(x_0)dx_n \in (\mathbb{R}^n)^{*}
 $$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Dato $v=(\xi_1, \ldots \xi_n) = \sum_{i=1}^n \xi_i e_i$ allora
 $$
 df(x_0)(v) \stackrel{\text{per linearità}}{=} \sum_{i=1}^n \xi_i df(x_0)(e_i) = \sum_{i=1}^n \pi_i(v) df(x_0)(e_i)$$
 dove l'ultima uguaglianza si è ottenuta osservando che $\xi_i = \pi_i(v) = dx_j(v)$. A questo punto, ricordando che $df(x_0)(e_i) = \partial_{x_i} f(x_0)$ in virtù del teorema~\ref{thm:teorema_df1}, otteniamo la tesi, siccome
 $$\sum_{i=1}^n \partial_{x_i} f(x_0) dx_i(v) \implies df(x_0) = \sum_{i=1}^n \partial_{x_i} f(x_0) dx_i
 $$
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 Data $f: \Omega \to \mathbb{R}$, possiamo allora vedere il differenziale come una funzione che ad ogni punto $p \in \Omega$ associa $df(p) \in (\mathbb{R}^n)^{*}$, ovvero $df: \Omega \mapsto (\mathbb{R}^n)^{*}$
 $$
@@ -225,7 +233,8 @@ D(f(x_0)) = \begin{pmatrix}
 \end{pmatrix} \in \mathbb{R}^{m \times n}
 $$
 \end{theorem}
-\begin{proof} \hspace{1em} \\
+
+\noindent \textbf{Dimostrazione. }
 $\boxed{\Rightarrow}$: se $f$ è differenziabile allora possiamo definire la funzione $\pi_i \circ df(p_0): \mathbb{R}^n \to \mathbb{R}$ e sappiamo che
 \begin{equation}
 f(x) = f(p_0) + df(p_0)(x-p_0) + o(x-p_0) 
@@ -268,7 +277,8 @@ $$
 L(h) = \sum_{i=1}^m \innerprod{\nabla{f(p_0)}}{h}e_i = Df(x_0)h
 $$
 Abbiamo dunque ottenuto la tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 Il teorema precedente mostra anche come il differenziale sia unico anche nel caso di funzioni vettoriali.
 \end{cor}
@@ -277,7 +287,8 @@ Sia $f: \Omega \to \mathbb{R}, \Omega \subseteq \mathbb{R}^n$ aperto e $p_0 \in 
 $$
 \partial_{x_j} f \text{ sono tutte continue in } p_0 \, \forall j \in \{1, \ldots, n \}$$ allora $f$ è differenziale in $p_0$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Consideriamo $h=\sum\limits_{j=1}^n h_j e_j = (h_1, \ldots h_n)$. Osserviamo che posto
 $$
 L(h) = \sum_{j=1}^n \partial_j f(p_0)h_j
@@ -305,7 +316,8 @@ $$
 f(p_0 + h) - f(p_0) - L(h) = o(h)
 $$
 ovvero la tesi.
-\end{proof}
+\hfill $\square$
+
 Vogliamo adesso dimostrare che una funzione differenziabile in un punto $x_0$ è anche continua in tale punto: per fare questo è necessario introdurre la norma di Hilbert-Schmidt
 \begin{definition}[norma di Hilbert-Schmidt]
 Sia $A \in \mathbb{R}^{m \times n}$, definiamo
@@ -320,7 +332,8 @@ $$
 |Lx| \leq | A | |x|  \, \forall x \in \mathbb{R}^n
 $$
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Dalla regola del prodotto matriciale abbiamo che
 $$
 |Lx|^2 = \Bigg| \sum_{i=1}^m \left( \sum_{j=1}^n a_{ij} x_j \right)e_i \Bigg|^2 = \sum_{i=1}^m \left( \sum_{j=1}^n a_{ij} x_j \right)^2 \leq \sum_{i=1}^m \left( \sum_{j=1}^n a_{ij}^2 \right)  \left( \sum_{j=1}^n x_j^2 \right) = || A ||^2 |x|^2
@@ -333,18 +346,21 @@ pertanto se $p_k \to x_0$ allora
 $$
 |Lp_k - Lx_0| \leq || A || |p_k-x_0| \stackrel{k \to +\infty}{\to} 0
 $$
-\end{proof}
+\hfill $\square$
+
 Possiamo anche mostrare che la composizione di funzioni differenziabili è ancora una funzione differenziabile
 \begin{prop}
 Se $f: \Omega \to \mathbb{R}^m, p_0 \in \Omega$ differenziabile in $p_0$, allora $f$ è continua in $p_0$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Osserviamo che se $f$ è differenziale in $p_0$ allora $\exists df(p_0): \Omega \to \mathbb{R}^m$ tale che
 $$
 f(p_0 + h) = f(p_0) + df(p_0)h + o(h) \stackrel{h \to 0}{\to} f(p_0)
 $$
 in quanto $df(p_0)$ è lineare e quindi continua in $\mathbb{R}^n$ e $o(h) \stackrel{h \to 0}{\to} 0$
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[differenziale della composizione]
 Sia $f: \Omega \to \mathbb{R}^m, g: U \to \mathbb{R}^k$ con $\Omega \subseteq \mathbb{R}^n$ aperto, $U \subseteq \mathbb{R}^m$ aperto, $f(\Omega) \subseteq U$ e sia $p_0 \in \Omega$. Allora se $f$ differenziabile in $p_0$ e $g$ differenziabile in $f(p_0)$ allora
 $$
@@ -356,7 +372,8 @@ Inoltre, in tal caso, avremo che
 	\item $D(g \circ f)(p_0) = (Dg(f(p_0)))(Df(p_0))$
 \end{enumerate}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Osserviamo che, per l'ipotesi di differenziabilità di $f$, abbiamo che
 $$
 f(x) = f(p_0) + df(p_0)(p-p_0) + o(|p-p_0|) \text{ per } p \to p_0 \in \Omega
@@ -400,7 +417,8 @@ Osserviamo infine che
 &d(g \circ f)(x_0)(v) = D(g \circ f)(x_0)(v) = dg(f(x_0))(df(x_0)(v)) = Dg(f(x_0))Df(x_0)v \implies \\
 &\implies D(g \circ f)(x_0) = Dg(f(x_0))Df(x_0)
 \end{align*}
-\end{proof}
+\hfill $\square$
+
 \subsection{Interpretazione geometrica delle derivate prime}
 Nel caso delle funzioni a singola variabile, la derivata di $f: \Omega \to \mathbb{R}$ (dove $\Omega \subseteq \mathbb{R}$ aperto) nel punto $x_0 \in \Omega$ rappresenta il coefficiente angolare della retta tangente al grafico della funzione $f$ nel punto $(x_0, f(x_0))$. In più variabili la differenziabilità che significato ha? \\
 Mostriamo innanzitutto che una funzione a singola variabile a valori in $R$ derivabile è equivalente a dire che essa è differenziabile:
@@ -410,7 +428,8 @@ $$
 f \text{ è differenziabile in } x_0 \iff f \text{ è derivabile in }x_0
 $$
 \end{prop}
-\begin{proof} \hspace{1em} \\
+
+\noindent \textbf{Dimostrazione. }
 $\boxed{\Rightarrow}$: osserviamo che se $f$ è derivabile in $x_0$ allora
 $$
 \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = f'(x_0) \implies \lim_{x \to x_0} \frac{f(x) - f(x_0) - f'(x_0)(x-x_0)}{x-x_0} = 0
@@ -429,7 +448,8 @@ $$
 \frac{f(x)-f(x_0)}{x-x_0} - a(x_0) = 0 \text{ per } x \to x_0
 $$
 dunque $\lim\limits_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = a(x_0) = f'(x_0)$ (per unicità del limite).
-\end{proof}
+\hfill $\square$
+
 Dunque la differenziabilità è l'unica nozione che generalizza il concetto di derivabilità a dimensioni superiori a $1$. Però ha ancora una valenza geometrica? \\
 Per rispondere a questa domanda dobbiamo ricordare al lettore qualche concetto proveniente dal corso di Geometria: sappiamo che l'equazione di un piano in $\mathbb{R}^3$ è data dalla formula
 \begin{equation}
@@ -494,7 +514,8 @@ $$
 \partial_{x_i x_j} f(x_0) = \partial_{x_j x_i} f(x_0)
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Consideriamo la funzione 
 $$
 \varphi(\tau) = f(x_0 + \tau e_i + t e_j) - f(x_0 + \tau e_i)
@@ -521,7 +542,8 @@ Ripetendo questo ragionamento invertendo gli indici nella relazione (che, ricord
 $$
 \lim_{t \to 0} \frac{\varphi(t) - \varphi(0)}{t^2} = \partial_{x_i} \partial_{x_j} f(x_0) = \partial_{x_j} \partial_{x_i} f(x_0)
 $$
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 Con degli argomenti più sofisticati è possibile indebolire ulteriormente le ipotesi richiedendo che le derivate parziali siano differenziabili in $p_0$.
 \end{remark}
@@ -532,9 +554,11 @@ $$
 $$
 dove $\sigma \in \sum_{k}$.
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 La dimostrazione è omessa siccome è un banale corollario del precedente teorema di Schwarz.
-\end{proof}
+\hfill $\square$
+
 E' adesso comodo introdurre i cosiddetti spazi funzionali $C^k(\Omega)$, con $k \in \mathbb{N} \setminus \{ 0 \}$:
 \begin{definition}[spazio $C^k$]
 Sia $\Omega \subseteq \mathbb{R}^n$ aperto e $k \in \mathbb{N} \setminus \{ 0 \}$. Definiamo
@@ -565,9 +589,11 @@ $$
 \partial_{x_{i_l}} \partial_{x_{i_{l-1}}} \ldots \partial_{x_{i_1}} f = \partial_{x_{i_{\sigma(l)}}} \partial_{x_{i_{\sigma(l-1)}}} \ldots \partial_{x_{i_{\sigma_{1}}}} f
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Segue banalmente dal teorema precedente.
-\end{proof}
+\hfill $\square$
+
 Questo teorema è molto importante siccome stabilisce che, per funzioni di classe $C^k$, l'ordine con cui deriviamo per ottenere una derivata parziale iterata non modifica la derivata. \\
 Adesso abbiamo tutti gli strumenti per introdurre i differenziali di ordine superiore
 \begin{definition}[differenziali di ordine superiore]
@@ -666,7 +692,8 @@ $$
 \partial_{x_{i_1}} \ldots \partial_{x_{i_l}} f(x_0) = \partial_{x_{i_1}} \ldots \partial_{x_{i_l}} P_k(f, x_0)(x_0)
 $$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Consideriamo
 $$
 \partial_{x_{i_1}} \ldots \partial_{x_{i_l}} P_k(f, x_0) = \partial_{x_{i_1}} \ldots \partial_{x_{i_l}} \sum_{p=0}^{k} \frac{1}{p!} \sum_{j_1, \ldots j_p = 1}^n \partial_{x_{j_1}} \ldots \partial_{x_{j_p}} f(x_0)(x_{j_1} - x_{0_{j_1}}) \ldots (x_{j_p} - x_{0_{j_p}}).
@@ -690,7 +717,8 @@ da cui segue la tesi, in quanto
 $$
 \partial_{x_{i_1}} \ldots \partial_{x_{i_l}} P_k(f, x_0) = \frac{1}{\cancel{l!}} \partial_{x_{i_1}} \ldots \partial_{x_{i_l}} f(x_0) \cancel{l!} + o(1) \text{ per } x \to x_0
 $$
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[formula di Taylor]
 Se $f \in C^k ( \Omega ), x_0 \in \Omega, \Omega \subseteq \mathbb{R}^n$ aperto, allora abbiamo che
 $$
@@ -698,7 +726,8 @@ f(x) = P_k(f, x_0) + o(|x-x_0|^k) = \sum_{j=0}^k \frac{1}{j!} d^j f(x_0)(x-x_0) 
 $$
 \label{thm:form_taylor}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Faremo questa dimostrazione per induzione su $k$. Per ora studiamo la funzione $g(x)=f(x)-P_k(f, x_0)(x)$ senza fissare un particolare valore di $k$ (vogliamo innanzitutto studiare quali sono i passaggi comuni a tutti i valori di $k$). Osserviamo, grazie alla proposizione precedente, che $g(x_0) = 0$ e $\forall 1 \leq i_1, \ldots, i_l \leq n$ e $\forall 1 \leq l \leq k$. \\
 Facciamo il cambio di variabile $x = x_0 + h$ e consideriamo il caso in cui $k=1$: proviamo a questo punto che $g(x_0+h) = g(x_0 + h) - g(x_0)$ siccome $g(x_0) = 0$. Ma allora
 \begin{align*}
@@ -742,32 +771,39 @@ da cui segue che
 &\implies |g(x_0+h)| \leq |h| \int_0^1 |(o_1(|h|^{k-1}, \ldots o_n(|h|^{k-1})))|dt = o(|h|^k) \, \text{ per } h \to 0 & &
 \end{align*}
 ovvero la tesi.
-\end{proof}
+\hfill $\square$
+
 Siamo adesso pronti a mostrare l'unicità del teorema di Taylor, tuttavia abbiamo bisogno di qualche lemma preliminare:
 \begin{lemma}
 Se $Q$ è un polinomio di grado $k \geq 1$ omogeneo, allora $\exists x_0 \in \mathbb{R}^n$ tale che $Q(x_0) \neq 0$ 
 \end{lemma}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Procediamo con la contro-nominale\footnote{ricordiamo che la dimostrazione per la contro-nominale consiste nel dimostrare che $\neg B \implies \neg A$, infatti $A \implies B = \neg A \wedge B = \neg{(A)} \wedge \neg(\neg B) = \neg B \implies \neg A$} per $k \geq 1$: se $\forall x \in \mathbb{R}^n, Q(x) = 0 \implies Q(x) \equiv 0 \implies Q$ non è un polinomio omogeneo di ordine $k$ siccome il grado del polinomio coincide col il grado di omogeneità del polinomio. \\
 Per $k=0$ allora il polinomio è, effettivamente, omogeneo.
 %$Q(x) = \sum c_{\alpha} x^{\alpha}$ dove si è usato la notazione multi-indici dove $x^{\alpha} = x_1^\alpha_1 \ldots x_n^{\alpha_n}$ dove $\alpha \in \mathbb{N}^n$ e $|\alpha| = \alpha_1 + \ldots + \alpha_n$. Supponiamo che 
 %$$
 %\sum_{\alpha_1 + \ldots + \alpha_n = k} c_{\alpha_1 \ldots %\alpha_n} x^{\alpha_1}_1 \ldots x^{\alpha_n}_n%
 %$$
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 Sia $Q: \mathbb{R}^n \to \mathbb{R}$ è un polinomio omogeneo di ordine $k$ e sia $x_0 \in \mathbb{R}^n : Q(x_0) = 0$. Allora
 $$
 Q \left( \frac{x_0}{|x_0|} \right) = 0
 $$
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Per ipotesi di omogeneità $Q(\frac{x_0}{|x_0|}) = \frac{1}{|x_0|^k}Q(x_0) = 0$.
-\end{proof}
+\hfill $\square$
+
 \begin{lemma}
 Sia $P:\mathbb{R}^n \to \mathbb{R}$ un polinomio in $n$-variabili di ordine $k \geq 1$. Se $P(x) = o(|x|^k) \text{ per } x \to 0 \implies P = 0$
 \end{lemma}
-\begin{proof} Procediamo per assurdo: supponiamo che $\exists P(x) = o(k) \neq 0$ e definiamo $j_0$ come il grado non nullo più piccolo del polinomio. Consideriamo:
+
+\noindent \textbf{Dimostrazione. }
+Procediamo per assurdo: supponiamo che $\exists P(x) = o(k) \neq 0$ e definiamo $j_0$ come il grado non nullo più piccolo del polinomio. Consideriamo:
 $$
 P(x) = \sum_{|\alpha| \leq k} c_{\alpha}x^{\alpha} \neq 0, c_{\alpha} \in \mathbb{R} \implies P(x) = \sum_{|\alpha| = j_0} c_{\alpha} x^{\alpha} + o(|x|^{j_0}) = q(x) + o(|x|^{j_0})
 $$
@@ -784,7 +820,8 @@ $$
 \frac{P(t\xi)}{|t|^k} = \frac{1}{|t|^{k-j_0}} \left( q \left(\frac{t\xi}{|t\xi|}\right) + o(1) \right) = \frac{1}{|t|^{k-j_0}} \left( \left( \frac{t}{|t|} \right)^{j_0} q(\xi) + o(1) \right) \not\to 0
 $$
 che contraddice l'ipotesi che $P(x) = o(x^k)$. Abbiamo dunque la tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{theorem}[unicità del polinomio di Taylor]
 Sia $f: \Omega \to \mathbb{R}, f \in C^k(\Omega), x_0 \in \Omega, \Omega \subseteq \mathbb{R}^n$ aperto. Se
 $$
@@ -795,7 +832,8 @@ $$
 Q(x - x_0) = P_k(f, x_0)
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Per il teorema~~\ref{thm:form_taylor} abbiamo che
 $$
 f(x) = P_k(f, x_0) + o(|x-x_0|^k)
@@ -813,7 +851,8 @@ $$
 Q(h) - R(h) = o(|h|^k) \text{ per } h \to 0 \implies Q - R = 0 \implies Q=R
 $$
 per il lemma precedente.
-\end{proof}
+\hfill $\square$
+
 Per ricostruire il comportamento nei punti critici (che verranno definiti più avanti) di una funzione siamo interessati alla positività delle forme quadratiche: infatti, più avanti, dimostreremo un criterio per stabilire se un punto critico è un punto di massimo o di minimo facendo uso del comportamento al secondo ordine della funzione, tramite lo studio del differenziale di ordine $2$ della funzione, che, come abbiamo visto, è una forma quadratica. \\
 Consideriamo $q: \mathbb{R}^n \to \mathbb{R}$ forma quadratica, allora sappiamo che $q(x) = \innerprod{Ax}{x}$ con $A \in \mathbb{R}^{n \times n}$ simmetrica. Diamo adesso la definizione di positività o negatività della forma quadratica:
 \begin{definition}[forma quadratica definita positiva o negativa]
@@ -855,28 +894,34 @@ $$
 \det{[B]_k} = \det{([-A]_k)} \stackrel{\text{togliendo il } - \text{ a tutte le colonne}}{=} (-1)^k \det{[A]_k} > 0 \, \forall k \in \{1, \ldots, n \}
 $$
 \end{remark}
-\begin{proof} \hspace{1cm} \\
+
+\noindent \textbf{Dimostrazione. }
 $\boxed{\Rightarrow}$: osservando che $\innerprod{Ax}{x} = (Ax)^T \text{Id} x = x^T A^T x = x^T A x$, allora possiamo considerare il prodotto scalare che in base canonica è rappresentato dalla matrice $A$, dunque la positività del prodotto scalare $\varphi > 0$ implica che $\varphi_{|_{V_k}} > 0 \, \forall k \implies A_i$ congruente a $Id_k \, \forall k \implies \det{[A]_k}$ ha lo stesso segno di $\det{Id_k} = 1$ (infatti, presa una matrice $A$ e la matrice del cambio di base $A \to B$ allora $\det{B} = \det{B^T A B} \stackrel{\text{Binet}}{=} \det{B^T}\det{B}\det{A} = (\det{B})^2 \det{A}$ siccome il determinante di una matrice coincide con quello della sua trasposta). \\
 $\boxed{\Leftarrow}$: possiamo procedere per induzione sulle dimensioni della matrice $A$. Il caso $n=1$ è banale e mostriamo adesso che $n-1 \implies n$: se consideriamo una matrice di ordine $n$ tale che $\det{[A]_{k}} > 0 \, \forall k \in \{1, \ldots n+1 \}$ allora sappiamo che la restrizione a $V_{n-1} = \text{Span}(\{e_1, \ldots, e_{n-1} \})$ della matrice $A$ ha determinante positivo e, per ipotesi induttiva, è definita positiva. L'aggiunta del vettore $e_n$ può provocare che $3$ casi possibili per la segnatura del prodotto scalare
 \begin{align*}
 &(k, 1, 0) & &(k, 0, 1) & &(k+1, 0, 0)
 \end{align*}
 da cui notiamo che il primo caso con $\iota_-$ uguale a $1$ è impossibile, siccome sarebbe congruente ad una matrice che ha $-1$ sulla diagonale, il che implicherebbe che il determinante sia negativo, contraddizione con l'ipotesi $\det{[A]_k} > 0 \, \forall k \in \{1, \ldots, n+1\}$. Il caso con $\iota_0$ è impossibile siccome implicherebbe che è congruente ad una matrice con un determinate nullo, il che è una contraddizione con l'ipotesi $\det{[A]_k} > 0 \, \forall k \in \{1, \ldots, n+1 \}$.
-\end{proof}
+\hfill $\square$
+
 \begin{cor}
 Una matrice simmetrica $A=A^T$ è definita positiva se e solo se tutti i suoi autovalori sono positivi. Equivalentemente, una matrice simmetrica è definita negativa se e solo se tutti i suoi autovalori sono negativi
 \end{cor}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Senza perdità di generalità supponiamo che $A$ sia definita positiva e, in virtù del teorema spettrale, sappiamo che è diagonalizzabile: il determinante è invariante per cambio di base e coincide con il prodotto degli autovalori, quindi è chiaro che il determinante di ogni sotto-matrice di ordine $k$ è positivo se e solo se tutti gli autovalori sono tutti positivi.
-\end{proof}
+\hfill $\square$
+
 Propongo anche un'altra dimostrazione di questa fatto, presente sulle note degli appunti del professore
-\begin{proof}[Dimostrazione alternativa]
+
+\noindent \textbf{Dimostrazione. } [Dimostrazione alternativa]
 Per il teorema spettrale sappiamo che esiste una base di autovettori ortonormali rispetto al prodotto scalare canonico. In questa base la matrice della forma quadratica è diagonale e la indichiamo con $\Lambda$ e la matrice del cambio di base dalla canonica a questa di autovettori è $C \in O(n)$ Per $x \neq 0$ abbiamo che
 $$
 q(x) = \innerprod{Ax}{x} = \innerprod{C^T \Lambda C x}{x} = \innerprod{\Lambda Cx}{Cx} = \innerprod{\Lambda y}{y}
 $$
 dunque se $\lambda_i > 0 \, \forall i \implies \innerprod{\Lambda y}{y} > 0$.
-\end{proof}
+\hfill $\square$
+
 \section{Massimi e minimi in più variabili}
 Lo studio dei massimi e dei minimi è naturalmente cruciale in ogni scienza, ma non solo: molto spesso molti aspetti del quotidiano sono facilmente modellizzabili da funzioni di cui spesso è necessario trovare i valori di massimo o minimo. Così come nel caso a singola variabile, vogliamo individuare un procedimento analitico per la ricerca di essi e, pertanto, ci dilungheremo nella presentazione di qualche risultato teorico molto importante che ci aiuterà a fare questo:
 \begin{theorem}[di Fermat]
@@ -885,7 +930,8 @@ Siano $\Omega \subseteq \mathbb{R}^n$ aperto e $f: \Omega \to \mathbb{R}$. Suppo
 &\nabla{f(x_0)} = 0 & &\text{o equivalentemente} &df(x_0) = 0 
 \end{align*}
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 Possiamo supporre senza perdita di generalità che $x_0$ sia un punto di minimo locale e considerare la funzione $g(t)$ tale che
 $$
 t \stackrel{g}{\mapsto} f(x_0 + te_j) \text{ per } |t| < \sigma
@@ -895,7 +941,8 @@ $$
 \frac{d}{dt} \left( f(x_0 + te_j) \right){\big|_{t=0}} = \partial_{x_j} f(x_0) = 0
 $$
 dove l'ultima eguaglianza segue dal teorema di Fermat per funzioni di variabile singola. Possiamo ripetere lo stesso procedimento $\forall j \in \{1, \ldots n \}$ e dunque si ottiene la tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 In realtà l'ipotesi che la funzione sia differenziabile non è indispensabile, siccome è più che sufficiente richiedere l'esistenza delle derivate parziali.
 \end{remark}
@@ -942,7 +989,9 @@ Enunciamo il seguente criterio
 \begin{theorem}[condizione sufficiente per il massimo/minimo locale]
 Sia $f:\Omega \to \mathbb{R}, f \in C^2 (\Omega)$ con $\Omega \subseteq \mathbb{R}^n$ aperto e sia $x_0 \in \Omega$ un punto critico di f ($\nabla f(x_0) = 0$). Se $Hf(x_0)$ è definita positiva, allora $x_0 \in \Omega$ è un punto di minimo locale per $f$; altrimenti se $Hf(x_0)$ è definita negativa, allora $x_0$ è un punto di massimo locale per $f$.
 \end{theorem}
-\begin{proof} Senza perdita di generalità, facciamo la dimostrazione supponendo che $Hf(x_0)$ sia definita positiva (il caso della matrice hessiana definita negativa è simile). 
+
+\noindent \textbf{Dimostrazione. }
+Senza perdita di generalità, facciamo la dimostrazione supponendo che $Hf(x_0)$ sia definita positiva (il caso della matrice hessiana definita negativa è simile). 
 Per il teorema della formula di Taylor~~\ref{thm:form_taylor} abbiamo che
 $$
 f(x) = f(x_0) + \frac{1}{2} \innerprod{Hf(x_0)(x-x_0)}{x-x_0} + o(|x-x_0|^2) \text{ per } x \to x_0
@@ -958,7 +1007,8 @@ dunque $\forall x \in B(x_0, \delta) \setminus \{ x_0 \}$
 &\geq f(x_0) + \frac{\lambda}{2}|x-x_0|^2 - \frac{\lambda}{2}|x-x_0|^2 = f(x_0) \implies f(x) \geq f(x_0)
 \end{align*}
 questo conclude la dimostrazione.
-\end{proof}
+\hfill $\square$
+
 Adesso vogliamo trovare un criterio con cui stabilire quando i punti critici sono di sella. Anche in questo caso tramite il comportamento al \emph{secondo ordine} della funzione (ovvero dalla matrice hessiana) possiamo stabilirlo tramite il seguente teorema
 \begin{theorem}[dei punti di sella]
 Sia $f \in C^2(\Omega), x_0 \in \Omega, \nabla f(x_0) = 0$, $\det{Hf(x_0)} \neq 0$ e $Hf(x_0)$ non è definita positiva e non è definita negativa
@@ -966,7 +1016,8 @@ $$
 \implies x_0 \text{ non è né di massimo locale né di minimo locale}
 $$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 $$
 Hf(x_0)=A=A^T=C^T \Lambda C
 $$
@@ -989,7 +1040,8 @@ $$
 f(x_0 + tv_j) = f(x_0) + \frac{1}{2} \innerprod{Hf(x_0)tv_j}{tv_j} + o(|tv_j|^2) = f(x_0) + t^2 \left( \frac{\lambda_j}{2} + o(1) \right)
 $$
 poiché $Hf(x_0)$ non è né definita positiva né definita negativa avremo che $\lambda_j > 0$ e $\lambda_j < 0$ dunque la precedente uguaglianza, unita al ragionamento compiuto nella dimostrazione del teorema precedente portano alla tesi.
-\end{proof}
+\hfill $\square$
+
 \begin{remark}
 In questa dimostrazione comprendiamo come mai si chiamino \emph{punti di sella}: nel caso $n=2$ (ovvero in due dimensioni) con la seguente matrice hessiana
 $$

@@ -23,7 +23,7 @@ Per quanto riguarda i nostri scopi, è utile definire la \emph{norma multi-indic
 \begin{definition}[coefficiente multinomiale]
 	Sia $\alpha \in \mathbb{N}^n$ tale che $|\alpha| = k$, allora definiamo il coefficiente multinomiale come
 	$$
-	\binom{k}{\bm{\alpha}} = \frac{k!}{\alpha!} = \frac{k!}{\alpha_1 ! \alpha_2 ! \ldots \alpha_n !}
+	\binom{k}{\alpha} = \frac{k!}{\alpha!} = \frac{k!}{\alpha_1 ! \alpha_2 ! \ldots \alpha_n !}
 	$$
 \end{definition}
 \textbf{Notazione}: per distinguerlo dal normale coefficiente binomiale, nel caso del coefficiente multinomiale, metterò in grassetto il multi-indice.
@@ -67,16 +67,16 @@ $$
 e $\alpha_i = 0$ se $i \neq j_1, \ldots, j_m$. \\
 Adesso ricordiamo che il teorema di Schwarz ci assicura che la derivata di una funzione di ordine $C^k$ rispetto agli indici $\alpha_{j_1}, \ldots, \alpha_{j_m}$ (rispetto, naturalmente, in ordine a $x_{j_1}, \ldots, x_{j_m}$) è pari a quella ottenuta con una permutazione $\sigma$ degli indici $\alpha_{j_1}, \ldots, \alpha_{j_m}$, dunque dobbiamo moltiplicare i termini della serie di Taylor per un termine che ci "tronca" i termini uguali (si ricordi la dimostrazione della proposizione \ref{prop:caratterizzazione_taylor}, dove compariva il termine $l!$). La possibilità di avere $\alpha_{j_1}$ derivate rispetto a $x_{j_1}$ sulle $k$ possibili è pari a $\binom{k}{\alpha_{j_1}}$ (non siamo interessati all'ordine, dunque usiamo per questo il coefficiente binomiale) e la stessa cosa vale per tutti gli altri termini, infatti
 le possibilità di avere $\alpha_{j_2}$ derivate rispetto a $x_{j_2}$ sulle $k-\alpha_{j_1}$ rimanenti è pari a $\binom{k - \alpha_{j_1}}{\alpha_{j_2}}$ e così via. In generale, il numero di modi in cui possiamo distribuire le derivate è pari a
-\begin{flalign*}
+\begin{equation}\begin{aligned}
 &\binom{k}{\alpha_{j_1}} \binom{k - \alpha_{j_1}}{\alpha_{j_2}} \ldots \binom{k - \alpha_{j_1} - \ldots - \alpha_{j_{m-1}}}{\alpha_{j_m}} = \\
 & = \frac{k!}{\alpha_{j_1}! \cancel{(k - \alpha_{j_1})!}} \frac{\cancel{(k-\alpha_{j_1})!}}{\alpha_{j_2}!\cancel{(k - \alpha_{j_1} - \alpha_{j_2})!}} \frac{\cancel{(k - \alpha_{j_1} - \alpha_{j_2})!}}{\alpha_{j_3}! \cancel{(k - \alpha_{j_1} - \alpha_{j_2} - \alpha_{j_3})!}} \ldots \frac{\cancel{\alpha_{j_m}}}{\alpha_{j_m}! 0!} = \\
-&= \frac{k!}{\alpha_{j_1}! \alpha_{j_2}! \ldots \alpha_{j_m}!} = \binom{k}{\bm{\alpha}}
-\end{flalign*}
+&= \frac{k!}{\alpha_{j_1}! \alpha_{j_2}! \ldots \alpha_{j_m}!} = \binom{k}{\alpha}
+\end{aligned}\end{equation}
 Con gli argomenti precedenti in combinazione con il teorema di Schwarz di ordine superiore, possiamo dunque dimostrare il seguente lemma
 \begin{lemma}
 	Sia $f \in C^k(\Omega)$ e $\xi \in \Omega$, allora abbiamo
 	$$
-	d^l f(\xi)(x - \xi) = \sum_{|\alpha|=l} \binom{l}{\bm{\alpha}} \partial^{\alpha} f(\xi) (x - \xi)^{\alpha}.
+	d^l f(\xi)(x - \xi) = \sum_{|\alpha|=l} \binom{l}{\alpha} \partial^{\alpha} f(\xi) (x - \xi)^{\alpha}.
 	$$
 \end{lemma}
 \begin{prop}
@@ -85,23 +85,25 @@ Con gli argomenti precedenti in combinazione con il teorema di Schwarz di ordine
 	P_k(f, \xi)(x) = \sum_{|\alpha| \leq k} \frac{1}{\alpha!} \partial^{\alpha} f(\xi) (x - \xi)^{\alpha}
 	$$
 \end{prop}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	Sappiamo che per $0 \leq j \leq k$ abbiamo che
-	$$
-	d^j f(\xi)(h) = \sum_{|\alpha| = j} \binom{j}{\bm{\alpha}} \partial^{\alpha} f(\xi) h^{\alpha}
-	$$
+	
+	\[d^j f(\xi)(h) = \sum_{|\alpha| = j} \binom{j}{\alpha} \partial^{\alpha} f(\xi) h^{\alpha}\]
 	e ciò implica, per quanto visto nel capitolo 3, che
-	\begin{align*}
-	&P_k(f, \xi) = \sum_{j=0}^k \frac{1}{j!} d^j f(\xi)(x - \xi) = \sum_{j=0}^k \frac{1}{j!} \sum_{|\alpha| = j} \binom{j}{\bm{\alpha}} \partial^{\alpha}_x f(\xi) (x - \xi)^{\alpha} \stackrel{\binom{j}{\bm{\alpha}} = \frac{j!}{\bm{\alpha}!}}{=} \\
-	&\stackrel{\binom{j}{\bm{\alpha}} = \frac{j!}{\bm{\alpha}!}}{=} \sum_{j=0}^k \sum_{|\alpha| = j} \frac{1}{\alpha!} \partial^{\alpha}_x f(\xi) (x - \xi)^{\alpha} = \sum_{0 \leq |\alpha| \leq k} \frac{1}{\alpha!} \partial^{\alpha}_x f(\xi) (x - \xi)^{\alpha}
-	\end{align*}
-\end{proof}
+	\begin{equation}\begin{aligned}
+	&P_k(f, \xi) = \sum_{j=0}^k \frac{1}{j!} d^j f(\xi)(x - \xi) = \sum_{j=0}^k \frac{1}{j!} \sum_{|\alpha| = j} \binom{j}{\alpha} \partial^{\alpha}_x f(\xi) (x - \xi)^{\alpha} \stackrel{\binom{j}{\alpha} = \frac{j!}{\alpha!}}{=} \\
+	&\stackrel{\binom{j}{\alpha} = \frac{j!}{\alpha!}}{=} \sum_{j=0}^k \sum_{|\alpha| = j} \frac{1}{\alpha!} \partial^{\alpha}_x f(\xi) (x - \xi)^{\alpha} = \sum_{0 \leq |\alpha| \leq k} \frac{1}{\alpha!} \partial^{\alpha}_x f(\xi) (x - \xi)^{\alpha}
+	\end{aligned}\end{equation}
+\hfill $\square$
+
 \begin{theorem}[formula di Taylor coi multi-indici]
 	Se $f \in C^k(\Omega), \xi \in \Omega, \Omega \subseteq \mathbb{R}^n$ aperto, allora abbiamo che
 	$$
 	f(x) = \sum_{0 \leq |\alpha| \leq k} \frac{1}{\alpha!} \partial_x^{\alpha} f(\xi) (x - \xi)^{\alpha} + o(|x-\xi|^{\alpha})
 	$$
 \end{theorem}
-\begin{proof}
+
+\noindent \textbf{Dimostrazione. }
 	La dimostrazione segue dalla precedente proposizione e dalla formula di Taylor che abbiamo visto nel capitolo 3.
-\end{proof}
+\hfill $\square$
