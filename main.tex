@@ -42,6 +42,11 @@
 					% parte che va modificato qua sotto. Se si stampa non a colori consiglio blackwhite come colormap
 	}
 \renewcommand{\appendixpage}{}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 \begin{document}
 	\begin{titlepage}
 	\centering
@@ -109,7 +114,7 @@
 	\thispagestyle{empty}
 	\pagestyle{fancy}
 
-	Riporto all'inizio del libro le notazioni adottate all'interno di questo documento:
+	Riporto qui alcune notazioni adottate all'interno di questo documento per amor di chiarezza:
 	\begin{itemize}[label=\hspace{-0.5em}]
 		\item $\lim$ limite		
 		\item $\frac{\partial f}{\partial x_i}, \partial_{e_i} f, \partial_{x_i} f, f_{x_i}$ derivata parziale rispetto a $x_i$
@@ -143,16 +148,79 @@
 		\item $\sum\limits_i$ sommatoria
 		\item $\sim$ relazione d'equivalenza
 		\item $\sfrac{X}{\sim}$ insieme quoziente di $X$ rispetto alla relazione d'equivalenza
- 
 	\end{itemize}
+ 	
+ 	\chapter*{Ripasso da Analisi 1}
+ 	\markboth{Ripasso}{Ripasso}
+ 	\pagestyle{empty}
+ 	\thispagestyle{empty}
+ 	\pagestyle{fancy}
+ 	
+ 	\section*{Limiti Fondamentali}
+ 	\[
+ 	\begin{aligned}
+ 		\lim_{x \to +\infty}\ \left(1 + \frac{a}{x}\right)^x\ &=\ e^a \\
+ 		\lim_{x \to 0}\ \frac{\sin x}{x}\ &=\ 1 \\
+ 		\lim_{x \to 0}\ \frac{1 - \cos x}{x}\ &=\ 0 \\
+ 		\lim_{x \to 0}\ \frac{1 - \cos x}{x^2}\ &=\ \frac{1}{2}
+ 	\end{aligned}
+ 	\]
+ 	
+ 	\section*{Derivate di Funzioni Elementari}
+ 	\[
+ 	\begin{aligned}
+ 		D[\cos t]\ &=\ -\sin t \\ 
+ 		D[\beta x^\alpha]\ &=\ \alpha \beta x^{\alpha-1} \\
+ 		D[a^x]\ =\ e^x\, \ln a \qquad &\Rightarrow \qquad D[e^x]\ =\ e^x \\
+ 		D[\log_a x]\ =\ \frac{1}{x \ln a} \qquad &\Rightarrow \qquad D[\ln x]\ =\ \frac{1}{x} \\
+ 		D[\sin x]\ =\ \cos x \qquad &\qquad D[\cos x]\ =\ -\,\sin x \\
+ 		D[\arcsin x]\ =\ \frac{1}{\sqrt{1 - x^2}} \qquad &\qquad D[\arccos x]\ =\ \frac{-1}{\sqrt{1 - x^2}} \\
+ 		D[\arctan x]\ =\ \frac{1}{1 + x^2} \qquad &\qquad D[\text{arccot } x]\ =\ \frac{-1}{1 + x^2} \\
+ 		D[\sinh x]\ =\ \cosh x \qquad &\qquad D[\cosh x]\ =\ \sinh x
+ 	\end{aligned}
+ 	\]
+ 	
+ 	\section*{Sviluppi di Taylor di Funzioni Elementari}
+ 	\[
+ 	\begin{aligned}
+ 		e^x\ &=\ 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} + o(x^n) \\
+ 		\sin x\ &=\ x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots + (-1)^n \frac{x^{2n+1}}{(2n+1)!} + o(x^{2n+1}) \\
+ 		\cos x\ &=\ 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots + (-1)^n \frac{x^{2n}}{(2n)!} + o(x^{2n}) \\
+ 		(1+x)^\alpha\ &=\ \sum_{k=0}^\alpha \binom{\alpha}{k} x^k = 1 + \alpha x + \binom{\alpha}{2} x^2 + \cdots + \binom{\alpha}{n} x^n + o(x^n) \\
+ 		\ln(1+x)\ &=\ x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^n \frac{x^n}{n} + o(x^n) \\
+ 		\arctan x\ &=\ x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots + (-1)^n \frac{x^{2n+1}}{2n+1} + o(x^{2n+1}) \\
+ 		\arcsin x\ &=\ x + \frac{x^3}{6} + \frac{3}{40} x^5 + \cdots + \frac{(2n-1)!!}{(2n)!!} \frac{x^{2n+1}}{2n+1} + o(x^{2n+1}) \\
+ 		\arccos x\ &=\ \frac{\pi}{2} - x - \frac{x^3}{6} - \frac{3}{40} x^5 - \cdots \\
+ 		\tan x\ &=\ x + \frac{x^3}{3} + \frac{2}{15} x^5 + o(x^5) \\
+ 		\frac{1}{1+t}\ &=\ 1 - t + t^2 - t^3 + t^4 - \cdots
+ 	\end{aligned}
+ 	\]
+ 	
+ 	\section*{Integrali Fondamentali}
+ 	\[
+ 	\begin{aligned}
+ 		\int\, x^p \, dx\ &=\ \frac{x^{p+1}}{p+1} + c \qquad \text{se }\ p\, \neq\, -1 \\
+ 		\int\, e^x \, dx\ &=\ e^x\, +\, c \\
+ 		\int\ \frac{1}{x} \, dx\ &=\ \ln |x|\, +\, c \\
+ 		\int\ \sin x \, dx \ &=\ -\cos x\, +\, c \\
+ 		\int\ \cos x \, dx\ &=\ \sin x\, +\, c \\
+ 		\int\ \frac{1}{1 + x^2} \, dx\ &=\ \arctan x\, +\, c \\
+ 		\int\ \frac{1}{\sqrt{1 - x^2}} \, dx\ &=\ \arcsin x\, +\, c \\
+ 		\int\ \frac{1}{\sqrt{1 + x^2}} \, dx\ &=\ \text{settsinh } x\, +\, c \\
+ 		\int\ \frac{1}{\sqrt{x^2 - 1}} \, dx\ &=\ \text{settcosh } x\, +\, c
+ 	\end{aligned}
+ 	\]
+ 	
+ 	
 	\input{capitoli/spazi_euclidei}
 	\input{capitoli/successioni_funzioni_continue}
 	\input{capitoli/calcolo_differenziale}
 	\input{capitoli/curve_superfici_regolari}
-	\input{capitoli/integrali_curvilinei_potenziali}
-	\input{capitoli/cenni_misura_lebesgue}
-	\input{capitoli/gauss_green_flux_curl}
-	\input{capitoli/esercizi}
+	%\input{capitoli/integrali_curvilinei_potenziali}
+	%\input{capitoli/cenni_misura_lebesgue}
+	%\input{capitoli/gauss_green_flux_curl}
+	%\input{capitoli/esercizi}
+	
 	\newpage
 	\clearpage
 	\cleardoublepage
@@ -161,7 +229,7 @@
 	\vspace*{\fill}
 	\begin{figure}[H]
 		\centering
-		\hspace*{-1cm}
+		%\hspace*{-1cm}
 		\includegraphics[scale=0.25]{immagini/gamma_illustrata.png}
 	\end{figure}
 	\vspace*{\fill}
@@ -183,13 +251,15 @@
 		\renewcommand{\headrulewidth}{0.4pt}
 		\renewcommand{\footrulewidth}{0pt}
 		\input{capitoli/notazione_multi_indice}
-		\input{capitoli/dimostrazione_funz_inversa}
-		\input{capitoli/forme_chiuse_su_semplicemente_connessi}
-		\input{capitoli/prodotto_esterno_applicazioni}
+		%\input{capitoli/dimostrazione_funz_inversa}
+		%\input{capitoli/forme_chiuse_su_semplicemente_connessi}
+		%\input{capitoli/prodotto_esterno_applicazioni}
 	\end{appendices}
 	\cleardoublepage
 \addcontentsline{toc}{chapter}{Bibliografia}
 \bibliographystyle{unsrt}
 \bibliography{bibliography.bib}
-\end{proof}
+
+%\end{proof}
+
 \end{document}
