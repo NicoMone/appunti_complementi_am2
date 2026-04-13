@@ -1,29 +1,23 @@
 \documentclass[12pt, twoside, italian]{book}
-
 \usepackage{mathtools}
 \usepackage{amssymb}
 % questi due pacchetti potrebbero causare qualche errorino
 \usepackage{amsthm}
-
 \input{h_preamble/new_preamble}
 \input{h_preamble/letterfonts}
 \input{h_preamble/macros}
 \usepackage{fancyhdr}
 \usepackage{titlesec}  % Opzionale, per controllo avanzato sui titoli
+%\usepackage{lmodern}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \pagestyle{fancy}
-
-
-
 % Definizione dell'intestazione per pagine dispari (Odd)
 \fancyhead[LO]{\textbf{\thepage}}  % Numero di pagina in grassetto a sinistra
 \fancyhead[RO]{\nouppercase\rightmark}         % Capitolo e sezione a destra
-
 % Definizione dell'intestazione per pagine pari (Even)
 \fancyhead[LE]{\nouppercase\leftmark}          % Capitolo e sezione a sinistra
 \fancyhead[RE]{\textbf{\thepage}}  % Numero di pagina in grassetto a destra
-
 % Cancella il footer
 \fancyfoot{}
 \setlength{\headheight}{14.49998pt}
@@ -38,16 +32,17 @@
 \date{\today}
 \pgfplotsset{
 	compat = newest,
-	colormap/violet % se si vuole cambiare il colormap utilizzato per generare i grafici, tuttavia la copertina ha un colormap a
-					% parte che va modificato qua sotto. Se si stampa non a colori consiglio blackwhite come colormap
+	colormap/violet 
 	}
 \renewcommand{\appendixpage}{}
+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{document}
+%\sloppy 
 	\begin{titlepage}
 	\centering
 	\vspace*{3cm}
@@ -78,7 +73,7 @@
 	\cleardoublepage
 	\pagestyle{fancy}
 	\tableofcontents
-	
+	%
 	\chapter{Introduzione}
 	\pagestyle{empty}
 	\thispagestyle{empty}
@@ -99,10 +94,12 @@
 	francesco291104 (\textbf{dot}) gmail.com
 	\end{center}
 
-	oppure fermandomi direttamente in dipartimento. In ogni caso, vi auguro di appassionarvi allo studio di questa materia.\
+	oppure fermandomi direttamente in dipartimento. In ogni caso, vi auguro di appassionarvi allo studio di questa materia.
 
-	Buono studio a tutti! \\ \\ \\ \\
-	\emph{Pisa, \today} \hfill Francesco Sermi\
+	Buono studio a tutti! 
+	\vspace{1cm}
+	\emph{Pisa, \today} \hfill Francesco Sermi
+	
 	\section*{Ringraziamenti}
 	Desidero ringraziare chi ha contribuito alla revisione di questo documento. In particolare, Francesco Angelo Fabiano Antonacci per il supporto nella verifica di alcune dimostrazioni; ringrazio Stefano Nordio e Davide Geria che sono stati i primi due lettori di queste lunghe note quando erano ancora in fase di stesura.\
 	Non potrei non ringraziare tutti gli studenti che, studiandoci sopra, mi hanno aiutato a correggere delle sviste: ringrazio vivamente Gabriele Tiresia per le correzioni suggerite.
@@ -149,13 +146,13 @@
 		\item $\sim$ relazione d'equivalenza
 		\item $\sfrac{X}{\sim}$ insieme quoziente di $X$ rispetto alla relazione d'equivalenza
 	\end{itemize}
- 	
+ 	\newpage
  	\chapter*{Ripasso da Analisi 1}
  	\markboth{Ripasso}{Ripasso}
  	\pagestyle{empty}
  	\thispagestyle{empty}
  	\pagestyle{fancy}
- 	
+ 	\vspace{0.5cm}
  	\section*{Limiti Fondamentali}
  	\[
  	\begin{aligned}
@@ -165,7 +162,7 @@
  		\lim_{x \to 0}\ \frac{1 - \cos x}{x^2}\ &=\ \frac{1}{2}
  	\end{aligned}
  	\]
- 	
+ 	\vspace{0.5cm}
  	\section*{Derivate di Funzioni Elementari}
  	\[
  	\begin{aligned}
@@ -195,7 +192,7 @@
  		\frac{1}{1+t}\ &=\ 1 - t + t^2 - t^3 + t^4 - \cdots
  	\end{aligned}
  	\]
- 	
+ 	\vspace{0.5cm}
  	\section*{Integrali Fondamentali}
  	\[
  	\begin{aligned}
@@ -210,17 +207,17 @@
  		\int\ \frac{1}{\sqrt{x^2 - 1}} \, dx\ &=\ \text{settcosh } x\, +\, c
  	\end{aligned}
  	\]
- 	
- 	
+ 	%
+ 	\newpage
 	\input{capitoli/spazi_euclidei}
 	\input{capitoli/successioni_funzioni_continue}
 	\input{capitoli/calcolo_differenziale}
 	\input{capitoli/curve_superfici_regolari}
-	%\input{capitoli/integrali_curvilinei_potenziali}
-	%\input{capitoli/cenni_misura_lebesgue}
-	%\input{capitoli/gauss_green_flux_curl}
-	%\input{capitoli/esercizi}
-	
+	\input{capitoli/integrali_curvilinei_potenziali}
+	\input{capitoli/cenni_misura_lebesgue}
+	\input{capitoli/gauss_green_flux_curl}
+	\input{capitoli/esercizi}
+	%
 	\newpage
 	\clearpage
 	\cleardoublepage
@@ -238,11 +235,9 @@
 		\pagestyle{fancy}
 		\fancyhead[LO]{\textbf{\thepage}}  % Numero di pagina in grassetto a sinistra
 		\fancyhead[RO]{\nouppercase\rightmark}         % Capitolo e sezione a destra
-
 		% Definizione dell'intestazione per pagine pari (Even)
 		\fancyhead[LE]{\nouppercase\leftmark}          % Capitolo e sezione a sinistra
 		\fancyhead[RE]{\textbf{\thepage}}  % Numero di pagina in grassetto a destra
-
 		% Cancella il footer
 		\fancyfoot{}
 		\setlength{\headheight}{14.49998pt}
@@ -251,15 +246,14 @@
 		\renewcommand{\headrulewidth}{0.4pt}
 		\renewcommand{\footrulewidth}{0pt}
 		\input{capitoli/notazione_multi_indice}
-		%\input{capitoli/dimostrazione_funz_inversa}
-		%\input{capitoli/forme_chiuse_su_semplicemente_connessi}
-		%\input{capitoli/prodotto_esterno_applicazioni}
+		\input{capitoli/dimostrazione_funz_inversa}
+		\input{capitoli/forme_chiuse_su_semplicemente_connessi}
+		\input{capitoli/prodotto_esterno_applicazioni}
 	\end{appendices}
 	\cleardoublepage
 \addcontentsline{toc}{chapter}{Bibliografia}
 \bibliographystyle{unsrt}
 \bibliography{bibliography.bib}
-
-%\end{proof}
-
+%
+%
 \end{document}

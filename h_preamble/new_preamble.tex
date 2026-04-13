@@ -1,8 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PACKAGE IMPORTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \usepackage[tmargin=2cm,rmargin=1.5in,lmargin=1.5in,margin=0.85in,bmargin=2cm,footskip=.2in, a4paper]{geometry}
 \usepackage{bookmark}
 \usepackage{libertinus}
@@ -16,7 +14,6 @@
 \usepackage[italian]{babel}
 \usepackage[Sonny]{fncychap}
 \usepackage[makeroom]{cancel}
-
 \usepackage{listing}
 \usepackage{enumitem}
 \usepackage{hyperref,theoremref}
@@ -27,7 +24,7 @@
 	bookmarksopen=true,
 	pdftitle={\@title},
 	pdfauthor={\@author}
-}
+	}
 \usepackage[most,many,breakable]{tcolorbox}
 \usepackage{xcolor}
 \usepackage{varwidth}
@@ -45,14 +42,12 @@
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
-
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \SetCommentSty{mycommfont}
 \newcommand{\incfig}[1]{%
     \def\svgwidth{\columnwidth}
     \import{./figures/}{#1.pdf_tex}
 }
-
 \usepackage{tikzsymbols}
 \usepackage{float}
 \usepackage[toc, page]{appendix}
@@ -71,7 +66,6 @@
 \definecolor{doc}{RGB}{0,0,0}
 \theoremstyle{definition}
 \newtheorem{definition}{Definizione}[chapter]
-
 \theoremstyle{definition}
 \newtheorem{theorem}{Teorema}[chapter]
 \theoremstyle{definition}
@@ -82,13 +76,10 @@
 \newtheorem{exercise}{Esercizio}[chapter]
 \theoremstyle{definition}
 \newtheorem{prop}{Proposizione}[chapter]
-
 \theoremstyle{definition}
 \newtheorem{example}{Esempio}[chapter]
-
 \theoremstyle{remark}
 \newtheorem*{remark}{Oss:}
-
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 \newcommand{\innerprod}[2]{\langle #1, #2 \rangle}
