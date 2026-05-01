@@ -1,0 +1,78 @@
+\section*{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.3 (29/9/2025)}
+\addcontentsline{toc}{section}{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.3 (29/9/2025)}
+
+\textbf{Esercizi sulla differenziabilità di funzioni}
+
+\begin{enumerate}
+	\item (Esercizi sui simboli di Landau) Consideriamo $f, g: \Omega \to \mathbb{R}$, $\Omega \subset \mathbb{R}^n$ aperto e $x_0 \in \Omega$. Mostrare o verificare le seguenti implicazioni.
+	\begin{enumerate}
+		\item Se $f = o(x - x_0)$ per $x \to x_0$, allora $f = O(x - x_0)$ per $x \to x_0$.
+		\item $o(x - x_0) + O(x - x_0) = O(x - x_0)$
+		\item Se $\beta > \alpha > 0$, allora $o\left(|x - x_0|^\beta\right) + o\left(|x - x_0|^\alpha\right) = o\left(|x - x_0|^\alpha\right)$
+		\item Se $\beta > \alpha > 0$, allora $O\left(|x - x_0|^\beta\right) + o\left(|x - x_0|^\alpha\right) = o\left(|x - x_0|^\alpha\right)$
+		\item $o(x - x_0) = o\left(|x - x_0|\right)$ e $O(x - x_0) = O\left(|x - x_0|\right)$ per $x \to x_0$.
+		\item Se $f = o(x - x_0)$ e $g = O(x - x_0)$ per $x \to x_0$, allora $f g = o\left(|x - x_0|^2\right)$ per $x \to x_0$.
+		\item Se $\alpha > 0$ e $f = O\left(|x - x_0|^\alpha\right)$ per $x \to x_0$, allora $f = o\left(|x - x_0|^\beta\right)$ per $x \to x_0$ e ogni $0 < \beta < \alpha$.
+		\item Se $\alpha > 0$, allora $o(1)$ per $x \to x_0$, allora $o(1) |x - x_0|^\alpha = o\left(|x - x_0|^\alpha\right)$
+		\item Se $\alpha > 0$, allora $O(1)$ per $x \to x_0$, allora $O(1) |x - x_0|^\alpha = O\left(|x - x_0|^\alpha\right)$
+		\item $f(x,y,z) = x^2 + x y z = O\left(|(x,y,z)|\right)$ per $(x,y,z) \to (0,0,0)$.
+		\item $\frac{x \sqrt[10]{|y|}}{|(x,y)|} = o(1)$ per $(x,y) \to (0,0)$.
+		\item $x \sqrt{|y z|} = O\left(|(x,y,z)|^2\right)$ per $(x,y,z) \to (0,0)$.
+	\end{enumerate}
+	
+	\item Dimostrare che se $f, g: \Omega \to \mathbb{R}$ hanno tutte le derivate rispetto $x_j$ per ogni $j = 1, \ldots, n$, ove $\Omega \subset \mathbb{R}^n$ è aperto, allora
+	\begin{enumerate}
+		\item $\partial_{x_j}(\lambda f + \mu g) = \lambda \partial_{x_j} f + \mu \partial_{x_j} g$ per ogni $\lambda, \mu \in \mathbb{R}$,
+		\item $\partial_{x_j}(f g) = \left(\partial_{x_j} f\right) g + f \left(\partial_{x_j} g\right)$
+		\item se $g \neq 0$ in $\Omega$, allora $\partial_{x_j}\left(\frac{f}{g}\right) = \frac{\left(\partial_{x_j} f\right) g - f \left(\partial_{x_j} g\right)}{g^2}$
+		\item Se $I \subset \mathbb{R}$ è un intervallo, $h: I \to \mathbb{R}$ è derivabile e $\mathrm{im} f \subset I$, allora $\partial_{x_j}(h \circ f)(x) = h'(f(x)) \partial_{x_j} f(x)$.
+	\end{enumerate}
+	
+	\item Sia $f: I \to \mathbb{R}$, con $t_0 \in I$ e $I \subset \mathbb{R}$ intervallo aperto. Mostrare che $f$ è derivabile in $t_0$ se e solo se è differenziabile in $t_0$. Scrivere in tal caso la formula per il differenziale $d f(t_0): \mathbb{R} \to \mathbb{R}$.
+	
+	\item Calcolare tutte le derivate parziali delle funzioni seguenti, definite nel loro più grande dominio di definizione:
+	\begin{enumerate}
+		\item $f(x,y) = \frac{e^x - e^{\sin y}}{x^2 - x y + y^2}$,
+		\item $f(x,y,z) = x^2 z \sqrt{y} + 2 \log(x y) - \log(y z)$,
+		\item $f(x) = |x|, x \in \mathbb{R}^n \setminus \{0\}$,
+		\item $f(x,y) = \frac{x}{x^2 + y^2}$,
+		\item $f(x,y) = \frac{y}{x^2 + y^2}$,
+		\item $f(x,y) = \frac{x}{|(x,y)|^\alpha}, \alpha \in \mathbb{R} \setminus \{0\}$,
+		\item $f(x,y) = \frac{y}{|(x,y)|^\alpha}, \alpha \in \mathbb{R} \setminus \{0\}$,
+		\item $f(x) = \sqrt{1 - |x|^2}, x \in B(0,1) \subset \mathbb{R}^n$,
+		\item $f(x) = e^{-|x|^2}, x \in \mathbb{R}^n$,
+		\item $f(x) = |x|^\alpha, x \in \mathbb{R}^n \setminus \{0\}, \alpha \in \mathbb{R} \setminus \{0\}$,
+		\item $f(x,y,z) = \sin\left(x + y^2 - z^3\right)$,
+		\item $f(x) = \left(\sum_{j=1}^n x_j\right)^n, x \in \mathbb{R}^n, n \in \mathbb{N}^+ = \mathbb{N} \setminus \{0\}$,
+		\item $f(x,y,z) = |x + z|$,
+		\item $f(x,y) = \frac{x y}{x^2 + y^2}$,
+		\item $f(x,y,z) = \frac{x - z^2}{x^2 + y^2 + z^4}$.
+	\end{enumerate}
+	
+	\item Provare che le funzioni del precedente esercizio hanno tutte le derivate parziali continue nel più grande dominio di definizione comune. Si verifichi nei singoli casi se il dominio delle derivate parziali è lo stesso del dominio della funzione, oppure si riduce.
+	
+	\item Per il teorema del differenziale totale e l'esercizio precedente, tutte le funzioni dell'Esercizio~4 sono differenziabili nel più grande dominio di definizione comune a tutte le derivate parziali. Si calcoli il differenziale di tali funzioni in un qualunque punto del loro dominio. Si esprimano tali differenziali come 1-forme differenziali.
+	
+	\item Calcolare la matrice jacobiana delle seguenti funzioni, sottintendendola nel più grande dominio dove è definita
+	\begin{enumerate}
+		\item $f(x,y) = \left(\sin(x y), e^{x y^2}\right)$,
+		\item $f(x,y) = \left(\frac{x}{(x^2 + y^2)^\alpha}, \frac{y}{(x^2 + y^2)^\alpha}\right), (x,y) \neq (0,0), \alpha \in \mathbb{R}$,
+		\item $f(t) = (t, t^2, \sqrt{t})$,
+		\item $f(x,y,z) = \left(z e^x \cos(y), z e^x, \sin(y)\right)$,
+		\item $f(x,y,z) = \left(x y z, x^2 z, z^2 y, x + y + z^2\right)$,
+		\item $f(x,y) = \left(\log(x^2 + y^2), \arctan(y/x^2), x y\right)$,
+		\item $T(\rho,\varphi) = (\rho \cos(\varphi), \rho \sin(\varphi))$ \quad (coordinate polari),
+		\item $T(\rho,\varphi,\theta) = (\rho \sin(\theta) \cos(\varphi), \rho \sin(\theta) \sin(\varphi), \rho \cos(\theta))$ \quad (coordinate sferiche),
+		\item $f(x) = \left(|x|, x_1 x_2 + x_4^2, x_1^2 x_3\right), x \in \mathbb{R}^4 \setminus \{0\}$.
+	\end{enumerate}
+	
+	\item Dimostrare o verificare che se $f, g: \Omega \to \mathbb{R}$ sono differenziabili in ogni punto di $\Omega$, ove $\Omega \subset \mathbb{R}^n$ è aperto, allora
+	\begin{enumerate}
+		\item $d(\lambda f + \mu g) = \lambda d f + \mu d g$ per ogni $\lambda, \mu \in \mathbb{R}$,
+		\item $f g$ è differenziabile in $\Omega$ e $d(f g) = g d f + f d g$,
+		\item se $g \neq 0$ in $\Omega$, allora $f/g$ è differenziabile e $d(f/g) = \frac{g d f - f d g}{g^2}$,
+		\item Se $I \subset \mathbb{R}$ è un intervallo, $h: I \to \mathbb{R}$ è derivabile e $\mathrm{im} f \subset I$, allora $d(h \circ f)(x) = h'(f(x)) d f(x)$.
+	\end{enumerate}
+	
+	\item Siano $\Omega \subset \mathbb{R}^2$ aperto, $f: \Omega \to \mathbb{R}^3$ differenziabile in $\Omega$, $g: \mathbb{R}^3 \to \mathbb{R}$ differenziabile in $\mathbb{R}^3$. Determinare la formula per le derivata parziale $\partial_x(g(f(x,y)))$.
+\end{enumerate}

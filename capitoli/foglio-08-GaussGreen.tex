@@ -1,0 +1,241 @@
+\section{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.8 (9/12/2025)}
+\addcontentsline{toc}{section}{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.8 (9/12/2025)}
+
+\textbf{Alcuni esercizi su integrali di superficie e formula di Gauss-Green nel piano con alcune risoluzioni}
+
+\begin{enumerate}
+	\item (Da esame del 6/2/2025) Si consideri $\Sigma = S \cap \Omega$, dove
+	\[
+	S = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 = 9, y > 0\right\}
+	\]
+	e $\Omega = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + z^2 < 5\right\}$.
+	\begin{enumerate}
+		\item Si stabilisca se l'insieme $\Sigma$ è una superficie regolare di $\mathbb{R}^3$, argomentando la risposta.
+		\item Si calcoli l'area di $\Sigma$.
+		\item Si calcoli l'integrale di superficie $\int_{\Sigma} |x| y \, d\sigma$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Consideriamo $g: A \to \mathbb{R}$, dove abbiamo l'aperto
+		\[
+		A = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + z^2 < 5, y > 0\right\}
+		\]
+		e $g(x,y,z) = x^2 + y^2 + z^2$. Osserviamo che
+		\[
+		\Sigma = g^{-1}(9)
+		\]
+		e $\nabla g(x,y,z) = 2(x,y,z) \neq 0$ per ogni $(x,y,z) \in A$, in quanto per tali punti vale il vincolo $x^2 + y^2 + z^2 = 9$. Pertanto dalla definizione di superficie regolare, abbiamo provato che $\Sigma$ lo è.
+		
+		Determiniamo una parametrizzazione di $\Sigma$, considerando $0 < y = \varphi(x,z) = \sqrt{9 - x^2 - z^2}$ e $(x,z) \in D = \{(x,z) \in \mathbb{R}^2 : x^2 + z^2 < 5\}$, quindi $\Sigma$ è il grafico di $\varphi: D \to \mathbb{R}$. Utilizzando la formula per l'area dei grafici e le coordinate polari $x = \rho \cos \theta$, $z = \rho \sin \theta$, abbiamo:
+		\[
+		\begin{aligned}
+			\sigma(\Sigma) &= \int_D \sqrt{1 + |\nabla \varphi(x,z)|^2} \, dx \, dz \\
+			&= \int_D \sqrt{1 + \frac{|(x,z)|^2}{9 - x^2 - z^2}} \, dx \, dz \\
+			&= \int_D \frac{3}{\sqrt{9 - x^2 - z^2}} \, dx \, dz \\
+			&= 3 \int_0^{2\pi} \int_0^{\sqrt{5}} \frac{\rho}{\sqrt{9 - \rho^2}} \, d\rho \, d\theta \\
+			&= 6\pi \left[-\sqrt{9 - \rho^2}\right]_0^{\sqrt{5}} = 6\pi.
+		\end{aligned}
+		\]
+		
+		Per l'integrale di superficie:
+		\[
+		\begin{aligned}
+			\int_{\Sigma} |x| y \, d\sigma &= 3 \int_D \frac{|x| \varphi(x,z)}{\sqrt{9 - x^2 - z^2}} \, dx \, dz \\
+			&= 3 \int_D |x| \, dx \, dz \\
+			&= 3 \int_0^{2\pi} \int_0^{\sqrt{5}} \rho^2 |\cos \theta| \, d\rho \, d\theta \\
+			&= 3 \left(\int_0^{2\pi} |\cos \theta| \, d\theta\right) \left(\int_0^{\sqrt{5}} \rho^2 \, d\rho\right) \\
+			&= 3 \cdot 4 \cdot \left[\frac{\rho^3}{3}\right]_0^{\sqrt{5}} = 20\sqrt{5}.
+		\end{aligned}
+		\]
+		Infatti, con il cambio di variabile $\theta = \pi/2 + \beta$, si ottiene:
+		\[
+		\int_0^{2\pi} |\cos \theta| \, d\theta = 4.
+		\]
+	
+	
+	\item (Da esame del 12/5/2025) Si consideri l'insieme
+	\[
+	C = \left\{(x,y,z) \in \mathbb{R}^3 : y^2 + (z - 1)^2 = x^2, 0 \leq x \leq 1\right\}.
+	\]
+	\begin{enumerate}
+		\item Si calcoli l'area di $C$.
+		\item Si calcoli l'integrale di superficie $\int_C x \, d\sigma$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		\begin{enumerate}
+			\item Consideriamo $u: \mathbb{B} \to \mathbb{R}$, $u(y,z) = \sqrt{y^2 + (z - 1)^2}$, dove
+			\[
+			\mathbb{B} = \{(y,z) \in \mathbb{R}^2 : y^2 + (z - 1)^2 \leq 1\}.
+			\]
+			Il grafico di $u$ corrisponde esattamente all'insieme $C$. Possiamo escludere il punto $(0,1)$ del dominio di $u$ (che ha misura nulla). L'area di $C$ è:
+			\[
+			\sigma(C) = \int_{\mathbb{B} \setminus \{(0,1)\}} \sqrt{1 + |\nabla u|^2} \, dy \, dz = \sqrt{2} \, \mathcal{L}^2(\mathbb{B}) = \pi \sqrt{2}.
+			\]
+			Infatti, $\nabla u(y,z) = \frac{(y, z - 1)}{\sqrt{y^2 + (z - 1)^2}}$ ha modulo 1 per $(y,z) \neq (0,1)$.
+			
+			\item L'integrale di superficie è:
+			\[
+			\begin{aligned}
+				\int_C x \, d\sigma &= \sqrt{2} \int_{\mathbb{B}} \sqrt{y^2 + (z - 1)^2} \, dy \, dz \\
+				&= \sqrt{2} \int_D \sqrt{y^2 + t^2} \, dy \, dt \quad (\text{con } t = z - 1) \\
+				&= \sqrt{2} \int_0^1 \rho^2 \, d\rho \int_0^{2\pi} d\varphi = \frac{2\sqrt{2}\pi}{3}.
+			\end{aligned}
+			\]
+		\end{enumerate}
+
+	
+	\item Sia $\Sigma = \{(x,y,z) \in \mathbb{R}^3 : z^2 - x^2 - y^2 = 0, 0 \leq z \leq 2\}$. Tracciare un grafico qualitativo di $\Sigma$ e calcolarne l'area.
+	
+	\textbf{Soluzione.}
+		La superficie $\Sigma$ è il grafico di $\varphi(x,y) = \sqrt{x^2 + y^2}$ su $B(0,2)$, a meno di una parte di misura nulla. L'area è:
+		\[
+		\sigma(\Sigma) = \int_{B(0,2)} \sqrt{1 + |\nabla \varphi|^2} \, dx \, dy = \int_{B(0,2)} \sqrt{2} \, dx \, dy = 4\sqrt{2}\pi.
+		\]
+
+	
+	\item Consideriamo l'astroide $\gamma(\varphi) = r(\cos^3 \varphi, \sin^3 \varphi)$ con $r > 0$ e $\varphi \in [0, 2\pi]$.
+	\begin{enumerate}
+		\item Tracciare il grafico della curva nel piano.
+		\item Calcolare l'area dell'insieme limitato $A$ delimitato da tale curva.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		\begin{enumerate}
+			\item L'astroide soddisfa l'equazione $|x|^{2/3} + |y|^{2/3} = r^{2/3}$. È una curva semplice, chiusa e simmetrica rispetto ad entrambi gli assi.
+			
+			\item Per calcolare l'area di $A$, utilizziamo la 1-forma differenziale d'area $\omega = \frac{1}{2}(x dy - y dx)$. L'area è:
+			\[
+			\begin{aligned}
+				\mathbf{m}_2(A) &= \frac{r^2}{2} \int_0^{2\pi} \left(\cos^3 \varphi \, d(\sin^3 \varphi) - \sin^3 \varphi \, d(\cos^3 \varphi)\right) \\
+				&= \frac{r^2}{2} \int_0^{2\pi} 3 \cos^2 \varphi \sin^2 \varphi \, d\varphi \\
+				&= \frac{3r^2}{8} \int_0^{2\pi} \sin^2(2\varphi) \, d\varphi \\
+				&= \frac{3r^2}{16} \int_0^{2\pi} (1 - \cos(4\varphi)) \, d\varphi = \frac{3\pi r^2}{8}.
+			\end{aligned}
+			\]
+		\end{enumerate}
+	
+	
+	\item Calcolare l'area dell'insieme
+	\[
+	E = \left\{(t \cos \varphi, t \sin \varphi) \in \mathbb{R}^2 : 0 < \varphi < \pi, 0 < t < 1 + \sin(2\varphi)\right\}.
+	\]
+	
+	\textbf{Soluzione.}
+		Utilizzando la 1-forma differenziale d'area $\frac{1}{2} \rho^2 d\varphi$, l'area è:
+		\[
+		\mathbf{m}_2(E) = \int_0^\pi \frac{(1 + \sin(2\varphi))^2}{2} \, d\varphi.
+		\]
+
+	
+	\item Sia $\Omega = \{(x,y,z) \in \mathbb{R}^3 : -2 + 2x^2 + 2y^2 < z < 2 - 2x^2 - 2y^2\}$. Tracciare il grafico di $\Omega$ e calcolare l'area di $\partial \Omega$.
+	
+	\textbf{Soluzione.}
+		Per simmetria, $\partial \Omega$ è formato da due paraboloidi. Ponendo $\Sigma = (\mathbb{R}^2 \times \mathbb{R}^+) \cap \partial \Omega$, abbiamo:
+		\[
+		\sigma(\partial \Omega) = 2\sigma(\Sigma) = 2\sigma(\text{gr } \varphi),
+		\]
+		dove $\varphi: B(0,1) \to \mathbb{R}$, $\varphi(x,y) = 2(1 - x^2 - y^2)$. L'area è:
+		\[
+		\begin{aligned}
+			\sigma(\partial \Omega) &= 2 \int_{B(0,1)} \sqrt{1 + |\nabla \varphi|^2} \, dx \, dy \\
+			&= 2 \int_{B(0,1)} \sqrt{1 + 16(x^2 + y^2)} \, dx \, dy \\
+			&= 4\pi \int_0^1 \rho \sqrt{1 + 16\rho^2} \, d\rho \\
+			&= \frac{\pi}{12} \left(17^{3/2} - 1\right).
+		\end{aligned}
+		\]
+	
+	
+	\item Scrivere il valore dell'area del grafico di $u: B \to \mathbb{R}$, dove $u(x,y) = x + y^2 - x^2 - y$ e
+	\[
+	B = \left\{(x,y) \in \mathbb{R}^2 : \left(x - \frac{1}{2}\right)^2 + \left(y - \frac{1}{2}\right)^2 < \frac{1}{4}\right\}.
+	\]
+	
+	\textbf{Soluzione.}
+		L'insieme $B$ è la palla aperta di centro $\left(\frac{1}{2}, \frac{1}{2}\right)$ e raggio $\frac{1}{2}$. L'area del grafico è:
+		\[
+		\int_B \sqrt{1 + |\nabla u|^2} \, dx \, dy = \int_B \sqrt{1 + (1 - 2x)^2 + (2y - 1)^2} \, dx \, dy.
+		\]
+		Usando coordinate polari traslate e dilatate, otteniamo:
+		\[
+		\frac{1}{4} \int_0^{2\pi} \int_0^1 \rho \sqrt{1 + \rho^2} \, d\rho \, d\theta = \frac{\pi}{6} (2\sqrt{2} - 1).
+		\]
+	
+	
+	\item Sia $\Sigma \subset \mathbb{R}^3$ la superficie di rotazione ottenuta ruotando $\gamma: [0,1] \to \mathbb{R}^3$, $\gamma(t) = (0, t^2, t^4 + 1)$ attorno all'asse $z$. Calcolare l'area di $\Sigma$.
+	
+	\textbf{Soluzione.}
+		La curva $\gamma$ è contenuta nel piano $yz$. La superficie di rotazione ha area:
+		\[
+		2\pi \int_0^1 y(t) \sqrt{y'(t)^2 + z'(t)^2} \, dt = 2\pi \int_0^1 t^2 \sqrt{4t^2 + 16t^6} \, dt = \frac{\pi}{6} (5\sqrt{5} - 1).
+		\]
+	
+	
+	\item Consideriamo $F(x,y) = (e^x - y^2 x, e^{-\sin y} + yx^2)$ e l'aperto
+	\[
+	\Omega = \{(x,y) \in \mathbb{R}^2 : y^2 - x^2 < 1, 0 < x < \sqrt{3}, y > 0\}.
+	\]
+	Sia $\Gamma$ la curva $C^1$ a tratti iniettiva che percorre tutto $\partial \Omega$ in senso orario. Calcolare $\int_{\Gamma} F$.
+	
+	\textbf{Soluzione.}
+		Il bordo è negativamente orientato. Dalla formula di Gauss-Green:
+		\[
+		\int_{\Gamma} F = -\int_{\Omega} \left(\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right) dx \, dy = -\int_{\Omega} 4xy \, dx \, dy.
+		\]
+		Integriamo per fette:
+		\[
+		\int_{\Omega} 4xy \, dx \, dy = \int_0^{\sqrt{3}} 4x \left(\int_0^{\sqrt{1 + x^2}} y \, dy\right) dx = \frac{15}{2}.
+		\]
+		Quindi $\int_{\Gamma} F = -\frac{15}{2}$.
+	
+	
+	\item Consideriamo $F(x,y) = (x^2 - y^2, x^2 + y^2)$ e l'aperto
+	\[
+	\Omega = \{(x,y) \in \mathbb{R}^2 : x + y < 1, y - x < 1, y > 0\}.
+	\]
+	Sia $\Gamma$ la curva $C^1$ a tratti e semplice che percorre $\partial \Omega$ in senso antiorario. Calcolare $\int_{\Gamma} F$.
+	
+	\textbf{Soluzione.}
+		Dalla formula di Gauss-Green:
+		\[
+		\int_{\Gamma} F = \int_{\Omega} (2x + 2y) \, dx \, dy.
+		\]
+		Integriamo per fette:
+		\[
+		\begin{aligned}
+			\int_{\Omega} (2x + 2y) \, dx \, dy &= 2 \int_0^1 \left(\int_{-(1-y)}^{1-y} x \, dx\right) dy + 2 \int_0^1 \left(\int_{-(1-y)}^{1-y} y \, dx\right) dy \\
+			&= 4 \int_0^1 (y - y^2) \, dy = \frac{2}{3}.
+		\end{aligned}
+		\]
+	
+	
+	---
+	
+	\item Calcolare l'area dell'insieme $E \subset \mathbb{R}^2$ delimitato dalle curve $\gamma(t) = (t^2 e^t, t^2)$ su $[0,1]$ e $c(t) = (te, t)$ su $[0,1]$.
+	
+	\textbf{Soluzione.}
+		Utilizzando la forma d'area $x dy$ e il teorema di Gauss-Green, si ha:
+		\[
+		-\mathbf{m}_2(E) = -\int_{\partial^+ E} x \, dy = \int_{\gamma} x \, dy + \int_{c^{-1}} x \, dy,
+		\]
+		dove $c^{-1}(t) = (e - et, 1 - t)$. Calcoliamo:
+		\[
+		\int_{\gamma} x \, dy = 2 \int_0^1 t^3 e^t \, dt = 12 - 4e,
+		\]
+		e
+		\[
+		\int_{c^{-1}} x \, dy = -\int_0^1 (e - te) \, dt = -\frac{e}{2}.
+		\]
+		Quindi $\mathbf{m}_2(E) = \frac{9e - 24}{2}$.
+	
+\end{enumerate}
+
+\textit{Referenza. Ulteriore materiale sulla formula di Gauss-Green si può trovare nella Sezione 6C di [1, Capitolo 6].}
+
+\begin{thebibliography}{1}
+	\bibitem{marcellini}
+	Paolo Marcellini e Carlo Sbordone.
+	\textit{Esercizi di Matematica}, Volume II, Tomo 4.
+	Liguori Editore, 2009.
+\end{thebibliography}
+```

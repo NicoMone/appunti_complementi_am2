@@ -1,0 +1,122 @@
+\section*{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.5 (27/10/2025)}
+\addcontentsline{toc}{section}{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.5 (27/10/2025)}
+
+\textbf{Esercizi su massimi e minimi vincolati con alcune risoluzioni}
+
+\begin{enumerate}
+	\item (Da esame del 16/12/2024) Si consideri
+	\[
+	S = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 = 1, z \geq 0\right\}
+	\]
+	assieme ai suoi sottoinsiemi $\Sigma = S \cap \left(\mathbb{R}^2 \times (0,+\infty)\right)$ e $C = S \cap \left(\mathbb{R}^2 \times \{0\}\right)$ e la funzione
+	\[
+	f(x,y,z) = x^2 e^{y^2}.
+	\]
+	\begin{enumerate}
+		\item Si determinino tutti i punti critici di $f$ su $\Sigma$, nel caso esistano.
+		\item Determinare il massimo ed il minimo assoluti di $f$ su $C$, nel caso esistano.
+		\item Determinare il massimo ed il minimo assoluti di $f$ su $S$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Consideriamo il sistema con il moltiplicatore di Lagrange
+		\[
+		\begin{cases}
+			2x e^{y^2} = \lambda x \\
+			2y x^2 e^{y^2} = \lambda y \\
+			0 = \lambda z \\
+			x^2 + y^2 + z^2 = 1 \\
+			z > 0
+		\end{cases}
+		\]
+		
+		Se $\lambda = 0$, allora $x = 0$ e le prime tre equazioni del sistema sono soddisfatte. Quindi il sistema ha infinite soluzioni della forma $(0,y,z)$ con $y^2 + z^2 = 1$ e $z > 0$. Tutti i punti critici sono l'insieme dei punti
+		\[
+		A = \left\{(0,y,z) \in \mathbb{R}^3 : y^2 + z^2 = 1, z > 0\right\}.
+		\]
+		Notiamo che $f(0,y,z) = 0$ è il minimo assoluto di $f$, poiché $f \geq 0$, pertanto tali punti critici sono anche punti di minimo assoluto. Se $\lambda \neq 0$ otteniamo $z = 0$, pertanto qualunque sia la soluzione $(x,y,0)$ del sistema non potrà appartenere a $\Sigma$. Concludiamo che tutti i punti critici di $f$ su $\Sigma$ sono tutti e soli i punti dell'insieme $A$.
+		
+		Studiamo ora la funzione $f$ sulla circonferenza $C = \left\{(x,y,0) \in \mathbb{R}^3 : x^2 + y^2 = 1\right\}$. Il massimo ed il minimo assoluti di $f$ su $C$ esistono in quanto è continua e $C$ è compatto. Si possono determinare studiando quindi $F(x,y) = x^2 e^{y^2}$ su $E = \left\{(x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1\right\}$. Abbiamo un nuovo sistema
+		\[
+		\begin{cases}
+			2x e^{y^2} = \lambda x \\
+			2y x^2 e^{y^2} = \lambda y \\
+			x^2 + y^2 = 1
+		\end{cases}
+		\]
+		
+		Se $\lambda = 0$ allora $x = 0$ e $y = \pm 1$, quindi abbiamo i due punti critici $(0,1)$ e $(0,-1)$. Per tali valori otteniamo $F(0,\pm 1) = 0 = \min_E F$. Se $\lambda \neq 0$ allora deve essere $x \neq 0$. Infatti se così non fosse allora $x = 0$ implicherebbe nella seconda equazione che $y = 0$, violando il vincolo della terza equazione. Se $y = 0$, allora $\lambda = 2$ dalla prima equazione, la seconda equazione è soddisfatta e otteniamo i punti critici $(\pm 1,0)$ a cui corrispondono i valori $F(\pm 1,0) = 1$. Rimane infine il caso in cui $y \neq 0$, che dalla prima e seconda equazione danno $2 e^{y^2} = \lambda = 2x^2 e^{y^2}$, pertanto $|x| = 1$ e dal vincolo si ottiene la contraddizione $y = 0$. Concludiamo che il massimo assoluto di $F$ su $E$ è $F(\pm 1,0) = 1 = \max_E F$, pertanto
+		\[
+		\max_C f = f(\pm 1,0,0) = 1 = \max_E F \quad \text{e} \quad \min_C f = f(0,\pm 1,0) = 0 = \min_E F.
+		\]
+		
+		Riguardo alla terza domanda, il massimo assoluto di $f$ su $S$ esiste per la compattezza di $S$, ma non può essere nei punti di $\Sigma \setminus A$, in quanto tale insieme non ha punti critici. Quindi il punto di massimo deve essere in $C$ e ne segue che
+		\[
+		\max_S f = \max_C f = 1 \quad \text{e} \quad \min_S f = 0.
+		\]
+	
+	\item (Da esame del 6/2/2025) Si consideri $A = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + z^2 \leq 1, -1 \leq y \leq 1\right\}$ e la funzione $f: \mathbb{R}^3 \to \mathbb{R}$ definita come $f(x,y,z) = x^2 + y z$.
+	\begin{enumerate}
+		\item Si determinino, nel caso esistano, tutti i punti critici di $f$ sull'insieme
+		\[
+		\Sigma = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + z^2 = 1, -1 < y < 1\right\}.
+		\]
+		\item Determinare il massimo ed il minimo assoluto di $f$ su
+		\[
+		D_+ = \left\{(x,1,z) \in \mathbb{R}^3 : x^2 + z^2 \leq 1\right\}.
+		\]
+		\item Determinare il massimo ed il minimo assoluto di $f$ su
+		\[
+		D_- = \left\{(x,-1,z) \in \mathbb{R}^3 : x^2 + z^2 \leq 1\right\}.
+		\]
+		\item Determinare il massimo ed il minimo assoluto di $f$ su $A$, assieme ai corrispondenti punti di massimo e di minimo assoluti su $A$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Consideriamo il sistema con il moltiplicatore di Lagrange
+		\[
+		\begin{cases}
+			2x = \lambda x \\
+			z = 0 \\
+			y = \lambda z \\
+			x^2 + z^2 = 1 \\
+			-1 < y < 1
+		\end{cases}
+		\]
+		
+		Dalla seconda equazione deve essere $z = 0$, che implica $x = \sigma \in \{1,-1\}$, pertanto la prima equazione implica che $\lambda = 2$. La terza equazione dà $y = 0$, quindi abbiamo i due punti critici
+		\[
+		P_{\pm} = (\pm 1,0,0)
+		\]
+		a cui si associa un unico valore critico $f(\pm 1,0,0) = 1$. Definiamo la restrizione $g(x,z) = f(x,1,z) = x^2 + z$ di $f$ sul disco $D_+ = A \cap \left\{(x,y,z) \in \mathbb{R}^3 : y = 1\right\}$. Determinare il massimo ed il minimo di $f$ su $D_+$ corrisponde a determinare il massimo ed il minimo di $g$ su $D = \left\{(x,z) : x^2 + z^2 \leq 1\right\}$. Non ci sono punti critici di $g$ nella parte interna del disco in quanto $\nabla g = (2x,1) \neq (0,0)$. Pertanto cerchiamo i punti di massimo e minimo di $g(x,z) = x^2 + z$ sulla circonferenza $\operatorname{Fr}(D) = \left\{(x,z) \in \mathbb{R}^2 : x^2 + z^2 = 1\right\}$. Possiamo sia utilizzare di nuovo le equazioni con il moltiplicatore di Lagrange che sostituire il vincolo nella funzione
+		\[
+		f\left(\pm \sqrt{1-z^2}, 1, z\right) = g\left(\pm \sqrt{1-z^2}, z\right) = 1 - z^2 + z
+		\]
+		dove $-1 \leq z \leq 1$. Abbiamo $(1-z^2+z)' = 1-2z$, che si annulla in $z = \frac{1}{2}$, pertanto abbiamo i due punti di massimo $Q_{\pm} = (\pm \frac{\sqrt{3}}{2}, 1, \frac{1}{2})$ su $D_+$ e
+		\[
+		g\left(\pm \frac{\sqrt{3}}{2}, \frac{1}{2}\right) = \frac{5}{4} = \max_D g = \max_{D_+} f = f\left(\pm \frac{\sqrt{3}}{2}, 1, \frac{1}{2}\right).
+		\]
+		I punti di minimo si trovano necessariamente agli estremi $z = \pm 1$, quindi
+		\[
+		g(0,-1) = -1 = \min_D g = \min_{D_+} f = f(0,1,-1).
+		\]
+		
+		Il massimo ed il minimo di $f$ su $D_- = A \cap \left\{(x,y,z) \in \mathbb{R}^3 : y = -1\right\}$, corrisponde al massimo ed il minimo di $h(x,z) = f(x,-1,z) = x^2 - z$ su $D = \left\{(x,z) : x^2 + z^2 \leq 1\right\}$. Non ci sono punti critici di $h$ nella parte interna del disco in quanto $\nabla h = (2x, -1) \neq (0,0)$, per cui cerchiamo i punti di massimo e minimo di $h(x,z) = x^2 - z$ sulla circonferenza $\operatorname{Fr}(D) = \left\{(x,z) \in \mathbb{R}^2 : x^2 + z^2 = 1\right\}$. Come prima usiamo il vincolo e lo sostituiamo nella funzione
+		\[
+		h\left(\pm \sqrt{1-z^2}, z\right) = 1 - z^2 - z
+		\]
+		dove $-1 \leq z \leq 1$. Abbiamo $(1-z^2-z)' = -1-2z$, che si annulla in $z = -\frac{1}{2}$, pertanto abbiamo i due punti di massimo $Q_{\pm} = (\pm \frac{\sqrt{3}}{2}, -1, -\frac{1}{2})$ su $D$ e
+		\[
+		h\left(\pm \frac{\sqrt{3}}{2}, -\frac{1}{2}\right) = \frac{5}{4} = \max_D h = \max_{D_-} f = f\left(\pm \frac{\sqrt{3}}{2}, -1, -\frac{1}{2}\right).
+		\]
+		I punti di minimo si trovano di nuovo agli estremi $z = \pm 1$, quindi
+		\[
+		h(0,1) = -1 = \min_D h = \min_{D_-} f = f(0,-1,1).
+		\]
+		
+		Notiamo infine che $\nabla f(x,y,z) = (2x, z, y)$, che si annulla solo nell'origine, per cui nella parte interna di $A$ abbiamo l'origine come solo punto critico, ove $f(0,0,0) = 0$. Quindi raccogliendo i dati precedenti, otteniamo che
+		\[
+		\max_A f = \frac{5}{4} \quad \text{e} \quad \min_A f = -1.
+		\]
+	
+\end{enumerate}

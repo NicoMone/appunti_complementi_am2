@@ -1,0 +1,142 @@
+\section*{Complementi di Analisi Matematica. Foglio n.1 (15/9/2025)}
+\addcontentsline{toc}{section}{Complementi di Analisi Matematica. Foglio n.1 (15/9/2025)}
+
+\textbf{Esercizi su prodotto scalare, prodotto vettoriale e topologia di $\mathbb{R}^n$}
+
+\begin{enumerate}
+	\item Dati due punti $\mathbf{A} = 2$ e $\mathbf{B} = -e$ in $\mathbb{R}$, calcolare la loro distanza euclidea.
+	
+	\item Dati due punti $\mathbf{A} = (0,1)$ e $\mathbf{B} = (\sqrt{2},e)$ di $\mathbb{R}^2$, calcolare la loro distanza euclidea $|\mathbf{A} - \mathbf{B}|$.
+	
+	\item Qual è la distanza euclidea tra $\mathbf{v} = (1,9,-1)$ e $\mathbf{w} = (-1,4,2)$?
+	
+	\item Dimostrare che per ogni vettore non nullo $\mathbf{v} \in \mathbb{R}^n \setminus \{0\}$ il nuovo vettore $\frac{\mathbf{v}}{|\mathbf{v}|}$ ha lunghezza unitaria.
+	
+	\item Dati i vettori $x = (1, -1, 2)$ e $y = (\sqrt{2}, \sin 2, 0)$, calcolare il coseno dell'angolo convesso tra i due vettori.
+	
+	\item Dati i vettori $x = (4,0,3)$ e $y = (1,2,2)$, calcolare il seno dell'angolo convesso tra i due vettori.
+	
+	\item Se $\mathbf{A}, \mathbf{B} \in \mathbb{R}^n$, provare la formula
+	\[
+	| \mathbf{B} - \mathbf{A} | = \sqrt{|\mathbf{B}|^2 + |\mathbf{A}|^2 - 2 |\mathbf{B}| |\mathbf{A}| \cos \theta},
+	\]
+	dove $\theta$ è l'angolo convesso tra i vettori $\mathbf{A}$ e $\mathbf{B}$.
+	
+	\item Dati $x, y \in \mathbb{R}^4$ tali che $|x| = 1$, $|y| = 2$ e $\langle x, y \rangle = \frac{1}{2}$, calcolare la loro distanza $|x - y|$.
+	
+	\item Dati $x, y \in \mathbb{R}^n$ il cui angolo convesso è $\pi/4$ e aventi lunghezze $|x| = a > 0$ e $|y| = b > 0$, determinare la loro distanza $|x - y|$.
+	
+	\item Determinare un vettore $\mathbf{u}$ tale che la base $(\mathbf{v}, \mathbf{w}, \mathbf{u})$, con $\mathbf{v} = (1, 9, -1)$ e $\mathbf{w} = (-1, 4, 2)$, sia positivamente orientata. Determinare infine la retta perpendicolare al piano determinato da $\mathbf{v}$ e $\mathbf{w}$, ovvero l'insieme $\{t\mathbf{z} : t \in \mathbb{R}\}$ per qualche vettore $\mathbf{z} \in \mathbb{R}^3$.
+	
+	\item Si calcoli l'area del parallelogramma di vertici $O, A, B, C \in \mathbb{R}^3$, dove $O = (0, 0, 0)$, $A = (1, 0, 0)$, $B = (2, \sqrt{3}, -1)$ e $C = (3, \sqrt{3}, -1)$.
+	
+	\item Si calcoli l'area del triangolo di vertici $O, A, B \in \mathbb{R}^3$, dove $O = (0, 0, 0)$, $A = (1, -1, 2)$ e $B = (3, \sqrt{3}, -1)$.
+	
+	\item Si calcoli l'area del parallelogramma di vertici $O, A, B, C \in \mathbb{R}^3$, dove $O = (0, 0, 0)$, $A = (1, 0, 0)$, $B = (2, \sqrt{3}, -1)$ e $C = (3, \sqrt{3}, -1)$.
+	
+	\item Stabilire se sia vero che $|v \times w| = |(v + u) \times (w + u)|$, dimostrandolo nel caso sia vero, o confutandolo con un controesempio nel caso sia falso.
+	
+	\item (Esercizio facoltativo) Dati tre punti non allineari nello spazio, dimostrare che le aree dei tre possibili parallelogrammi determinati completando i tre punti con un quarto punto hanno tutte lo stesso valore.
+	
+	\item Data $f: \mathbb{R}^2 \to \mathbb{R}$, $f(x, y) = x^2 + y^2$, osservare che il grafico di $f$ si può scrivere come $\mathrm{gr}f = \{(x, y, x^2 + y^2) \in \mathbb{R}^3\}$. Stabilire se $\mathrm{gr}f$ è chiuso, aperto, limitato o compatto e tracciare graficamente $\mathrm{gr}f$.
+	
+	\item Dato $A = \{(x,y)\in \mathbb{R}^2: -1 < x < 3, 1 < y < 2\}$,
+	\begin{enumerate}
+		\item stabilire se $A$ è chiuso, aperto, limitato o compatto,
+		\item tracciare un grafico qualitativo di $A$,
+		\item determinare (analiticamente) $\operatorname{Int}(A)$ e $\overline{A}$.
+	\end{enumerate}
+	
+	\item Data la regione ellissoidale piana $A = \{(x,y)\in \mathbb{R}^2:\frac{x^2}{4} +\frac{y^2}{9} < 1\}$
+	\begin{enumerate}
+		\item stabilire se $A$ è chiuso, aperto, limitato o compatto,
+		\item tracciare un grafico qualitativo di $A$,
+		\item determinare $\operatorname{Int}(A)$, $\overline{A}$,
+		\item osservare che $\operatorname{Fr}A$ è un'ellisse con semiassi di lunghezza rispettivamente 2 e 3.
+	\end{enumerate}
+	
+	\item Dato il solido ellissoide $A = \left\{(x,y,z)\in \mathbb{R}^3:\frac{x^2}{4} +\frac{y^2}{9} +z^2\leq 1\right\}$
+	\begin{enumerate}
+		\item stabilire se $A$ è chiuso, aperto, limitato o compatto,
+		\item tracciarne un grafico qualitativo,
+		\item determinare $\operatorname{Int}(A)$, $\overline{A}$ e $\operatorname{Fr}A$.
+	\end{enumerate}
+	
+	\item Dato $A = \{(x,y,z)\in \mathbb{R}^3:x - y^2\leq 0\}$
+	\begin{enumerate}
+		\item stabilire se $A$ è chiuso, aperto, limitato o compatto,
+		\item tracciarne un grafico qualitativo e determinare $\operatorname{Int}(A)$, $\overline{A}$, e $\operatorname{Fr}A$.
+	\end{enumerate}
+	
+	\item Dato $A = \{(x,y,z) \in \mathbb{R}^3 : x - y^2 + z \leq 0\}$,
+	\begin{enumerate}
+		\item stabilire se $A$ è chiuso, aperto, limitato o compatto,
+		\item determinare la parte interna $\operatorname{Int} A$ e la chiusura $\overline{A}$.
+	\end{enumerate}
+	
+	\item Tracciare un grafico qualitativo dell'insieme
+	\[
+	A = \left\{(x, y, z) \in \mathbb{R}^3: x^2 + y^2 + z^2 \leq 1, x > 0\right\},
+	\]
+	stabilendo se è limitato, chiuso, aperto o compatto. Descrivere analiticamente la sua frontiera $\operatorname{Fr}A$.
+	
+	\item Si consideri $F = \{(x,y,z) \in \mathbb{R}^3 : z^2 - x^2 - y^2 \geq 0, -1 \leq z \leq 2\}$. Provare che $F$ è un insieme compatto e tracciarne un grafico qualitativo.
+	
+	\item Provare che l'insieme $F = \{(x,y,z) \in \mathbb{R}^3 : z^2 - x^2 - y^2 = 0, 0 \leq z \leq 3\}$ è compatto. Osservare che $F$ coincide con il grafico della funzione
+	\[
+	f (x, y) = \sqrt{x^2 + y^2}
+	\]
+	definita sull'insieme $\mathbb{B}(0,3)$. Se ne tracci un grafico qualitativo.
+	
+	\item Si consideri l'insieme
+	\[
+	A = \left\{(x, y, z) \in \mathbb{R}^3: x^2 < 16 (y^2 + z^2) < 16\right\}.
+	\]
+	\begin{enumerate}
+		\item Stabilire se $A$ è aperto.
+		\item Tracciare un grafico qualitativo di $A$.
+		\item Determinare la regione cilindrica aperta e la superficie conica che possono descrivere $A$ come opportuna intersezione di insiemi.
+		\item Stabilire se $A$ è connesso per archi.
+		\item Stabilire se l'insieme
+		\[
+		B = \left\{(x, y, z) \in \mathbb{R}^3: x^2 < 16 (y^2 + z^2) < 16, x \neq 0\right\}
+		\]
+		è connesso per archi.
+	\end{enumerate}
+	\textit{Sugg.} Si osservi che il grafico della funzione $g: \mathbb{B}(0,1) \to \mathbb{R}$, $\mathbb{B}(0,1) \subset \mathbb{R}^2$,
+	\[
+	g (y, z) = 4 |(y, z)| = 4 \sqrt{y^2 + z^2}
+	\]
+	è contenuto nella frontiera $\operatorname{Fr}(A)$ di $A$.
+	
+	\item Si consideri l'insieme
+	\[
+	A = \left\{(x, y, z) \in \mathbb{R}^3: x^4 < 16 (y^2 + z^2) < 16, x > 0\right\}.
+	\]
+	\begin{enumerate}
+		\item Stabilire se $A$ è aperto.
+		\item Tracciare un grafico qualitativo di $A$.
+		\item Stabilire se $A$ è connesso per archi.
+		\item Stabilire se l'insieme
+		\[
+		B = \left\{(x, y, z) \in \mathbb{R}^3: x^4 < 16 (y^2 + z^2) < 16, x \neq 0\right\}
+		\]
+		è connesso per archi.
+	\end{enumerate}
+	\textit{Sugg.} Si osservi che i grafici delle funzioni $g_{\pm}:\mathbb{B}(0,1)\to \mathbb{R}$, $\mathbb{B}(0,1)\subset \mathbb{R}^2$,
+	\[
+	g (y, z) = \pm 2 \sqrt[4]{|(y, z)|} = 2 \sqrt[4]{y^2 + z^2}
+	\]
+	sono contenuti nella frontiera $\operatorname{Fr}(A)$ di $A$.
+	
+	\item Si tracci l'insieme $A = \{(x,y,z)\in \mathbb{R}^3:z > 1 - x - y\}$, stabilendo se è connesso per archi e determinare $\operatorname{Int}A$, $\operatorname{Fr}A$ e $\overline{A}$.
+	
+	\item Se $A = \{(x,y,z)\in \mathbb{R}^3:y^2\geq z^2 +x^2,y > 0\}$ osservare che tale insieme non è né aperto né chiuso, tracciarne un grafico qualitativo e verificare inoltre la validità delle seguenti uguaglianze.
+	\begin{enumerate}
+		\item $\operatorname{Int}(A) = \left\{(x,y,z)\in \mathbb{R}^3:y^2 >z^2 +x^2,y > 0\right\}$
+		\item $\overline{A} = \left\{(x,y,z)\in \mathbb{R}^3:y^2\geq z^2 +x^2,y\geq 0\right\}$
+		\item $\operatorname{Fr}A = \left\{(x,y,z)\in \mathbb{R}^3:y = \sqrt{x^2 + z^2}\right\}$.
+	\end{enumerate}
+	
+	\item Se $A = B(0,1) \subset \mathbb{R}^2$ e $B = \mathbb{R}$, verificare che $A \times B$ è un cilindro aperto illimitato in $\mathbb{R}^3$, tracciandone un grafico qualitativo e scrivendo l'insieme esplicitamente.
+\end{enumerate}

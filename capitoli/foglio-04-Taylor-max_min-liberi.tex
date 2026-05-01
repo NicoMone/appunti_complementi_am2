@@ -1,0 +1,264 @@
+\section*{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.4 (17/10/2025)}
+\addcontentsline{toc}{section}{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.4 (17/10/2025)}
+
+\textbf{Esercizi sulla formula di Taylor e su massimi e minimi liberi con alcune risoluzioni}
+
+\begin{enumerate}
+	\item Determinare la formula di Taylor nell'origine e del secondo ordine per la funzione $f(x,y) = \sin(xy)$.
+	
+	\item Determinare la formula di Taylor nell'origine e del terzo ordine per la funzione $f(x,y) = e^{x+y^2}$.
+	
+	\item Determinare la formula di Taylor nell'origine e del quarto ordine per la funzione $f(x,y,z) = x z e^{x+y}$.
+	
+	\item Determinare la formula di Taylor in $p = (1,0,0)$ e del secondo ordine per la funzione $f(x,y,z) = x z e^{x+y}$.
+	
+	\item Determinare la formula di Taylor in $p = (1,0,0)$ e del secondo ordine per la funzione $f(x,y,z) = e^{x^2} + e^{y^4}$.
+	
+	\item Si esibisca un esempio di funzione $f \in C^\infty(\mathbb{R}^2)$ che non ha punti critici nel suo dominio.
+	
+	\textbf{Soluzione.}
+	$f(x,y) = a x + b y$, ad esempio con $a \neq 0$.
+	
+	\item Data $f(x,y,z) = \frac{1}{2}\left[(x-y-z)^2 + (x+y+z)^2\right]$.
+	\begin{enumerate}
+		\item Determinare i punti critici di $f$.
+		\item Determinare i punti di massimo e di minimo, sia locali che globali, nel caso esistano.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+	Per cercare i punti critici calcoliamo le derivate parziali
+	\[
+	\frac{\partial f}{\partial x} = 2x, \quad \frac{\partial f}{\partial y} = 2(y + z) \quad \text{e} \quad \frac{\partial f}{\partial z} = 2(y + z).
+	\]
+	I punti critici di $f$ formano l'insieme
+	\[
+	C = \{(0,y,-y) \in \mathbb{R}^3 : y \in \mathbb{R}\}.
+	\]
+	Su tali punti abbiamo $f(0,y,-y) = 0$, ma poiché $f(x,y,z) \geq 0$, ne segue che sono tutti punti di minimo globale. Concludiamo che
+	\[
+	\min_{\mathbb{R}^3} f = 0 = f(0,y,-y) \quad \text{e} \quad \sup_{\mathbb{R}^3} f = +\infty.
+	\]
+	La $f$ inoltre non ha limite per $(x,y,z) \to \infty$, infatti possiamo prendere le successioni
+	\[
+	z_k = (0,k,-k) \quad \text{e} \quad w_k = (k,0,0)
+	\]
+	per le quali si ha
+	\[
+	\lim_{k \to \infty} f(z_k) = 0 \quad \text{e} \quad \lim_{k \to \infty} f(w_k) = +\infty.
+	\]
+	
+	
+	\item Calcolare la matrice hessiana di $f(x,y) = \frac{1}{x^2 + y^2}$ per ogni $(x,y) \neq (0,0)$.
+	
+	\textbf{Soluzione.}
+	\[
+	f_x = -\frac{2x}{(x^2 + y^2)^2}
+	\]
+	
+	\item Scrivere l'immagine della funzione $f: [-1,1]^2 \to \mathbb{R}$, definita come
+	\[
+	f(x,y) = x^2 y - x^3 + 1.
+	\]
+	
+	\item Sia $f: \mathbb{R}^2 \to \mathbb{R}$, definita come $f(x,y) = \frac{x}{x^2 + y^2 + 1}$.
+	\begin{enumerate}
+		\item Determinare tutti i punti critici, nel caso esistano.
+		\item Determinare i punti di massimo e di minimo, sia locali che globali, nel caso esistano.
+		\item Determinare l'immagine $f(\mathbb{R}^2)$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Abbiamo
+		\[
+		\begin{cases}
+			f_x = \frac{x^2 + y^2 + 1 - 2x^2}{(x^2 + y^2 + 1)^2} = \frac{y^2 - x^2 + 1}{(x^2 + y^2 + 1)^2} = 0 \\
+			f_y = -\frac{2xy}{(x^2 + y^2 + 1)^2} = 0
+		\end{cases}
+		\]
+		Pertanto gli unici punti critici sono $p_{\pm} = (\pm 1, 0)$. Calcoliamo la matrice hessiana in tali punti. Abbiamo
+		\[
+		\begin{aligned}
+			f_{xx} &= \frac{-2x(x^2 + y^2 + 1)^2 - 4x(y^2 - x^2 + 1)(x^2 + y^2 + 1)}{(x^2 + y^2 + 1)^4} \\
+			&= \frac{-2x(x^2 + y^2 + 1) - 4x(y^2 - x^2 + 1)}{(x^2 + y^2 + 1)^3} \\
+			&= -2x \frac{-x^2 + 3y^2 + 3}{(x^2 + y^2 + 1)^3} \\
+			f_{yy} &= -2x \frac{(x^2 + y^2 + 1)^2 - 4y^2(x^2 + y^2 + 1)}{(x^2 + y^2 + 1)^4} \\
+			&= -2x \frac{(x^2 + y^2 + 1) - 4y^2}{(x^2 + y^2 + 1)^3} \\
+			&= -2x \frac{x^2 - 3y^2 + 1}{(x^2 + y^2 + 1)^3} \\
+			f_{yx} &= 2y \frac{(x^2 + y^2 + 1)^2 - 4x^2(x^2 + y^2 + 1)}{(x^2 + y^2 + 1)^4} \\
+			&= 2y \frac{(x^2 + y^2 + 1) - 4x^2}{(x^2 + y^2 + 1)^3} \\
+			&= 2y \frac{y^2 - 3x^2 + 1}{(x^2 + y^2 + 1)^3}
+		\end{aligned}
+		\]
+		Abbiamo pertanto
+		\[
+		Hf(\pm 1, 0) = \begin{pmatrix}
+			\mp \frac{1}{2} & 0 \\
+			0 & \mp \frac{1}{2}
+		\end{pmatrix}
+		\]
+		quindi $p_+ = (1,0)$ è un massimo locale, mentre $p_- = (-1,0)$ è un punto di minimo locale.
+		
+		Passando alle coordinate polari $x = \rho \cos \theta$, $y = \rho \sin \theta$, si può riscrivere
+		\[
+		f(x,y) = \bar{f}(\rho, \theta) = \frac{\rho \cos \theta}{\rho^2 + 1}.
+		\]
+		Essendo $D := [0,+\infty) \times [0,2\pi]$, rimane da determinare $\bar{f}(D)$, che è uguale a $f(\mathbb{R}^2)$. Fissato $\rho > 0$, al variare di $\theta \in [0,2\pi]$, è semplice notare che la $\bar{f}$ copre l'intervallo di valori $\left[-\frac{\rho}{\rho^2 + 1}, \frac{\rho}{\rho^2 + 1}\right]$. Dunque
+		\[
+		\bar{f}(D) = \bigcup_{\rho \geq 0}\left[-\frac{\rho}{\rho^2 + 1}, \frac{\rho}{\rho^2 + 1}\right].
+		\]
+		Dalla disuguaglianza $\frac{\rho}{\rho^2 + 1} \leq \frac{1}{2}$, conseguenza di $(\rho - 1)^2 \geq 0$, segue che il valore massimo di $\frac{\rho}{\rho^2 + 1}$ è $\frac{1}{2}$, raggiunto quando $\rho = 1$. Dunque
+		\[
+		\bar{f}(D) = \left[-\frac{1}{2}, \frac{1}{2}\right],
+		\]
+		che è dunque anche l'immagine della funzione $f$.
+
+	
+	\item Si consideri $f(x,y,z) = \sin\left(e^{x^2 + y^2 + z^2}\right)$ definita sull'insieme
+	\[
+	E = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 \leq \log \pi + \log\left(\frac{3}{4}\right)\right\}.
+	\]
+	\begin{enumerate}
+		\item Determinare tutti i punti critici di $f$ nella parte interna di $E$, nel caso esistano.
+		\item Nello stessa parte interna di $E$, determinare eventuali punti di massimo e di minimo locali.
+		\item Determinare $f(E)$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Calcoliamo le derivate parziali in $\operatorname{Int} E \subset \mathbb{R}^3$, ovvero
+		\[
+		\frac{\partial f}{\partial x} = 2x e^{x^2 + y^2 + z^2} \cos\left(e^{x^2 + y^2 + z^2}\right), \quad
+		\frac{\partial f}{\partial y} = 2y e^{x^2 + y^2 + z^2} \cos\left(e^{x^2 + y^2 + z^2}\right),
+		\]
+		e $\frac{\partial f}{\partial z} = 2z e^{x^2 + y^2 + z^2} \cos\left(e^{x^2 + y^2 + z^2}\right)$. Per $(x,y,z) \in E$, vale
+		\[
+		1 \leq e^{x^2 + y^2 + z^2} \leq e^{\log(3\pi/4)} = \frac{3\pi}{4}.
+		\]
+		L'immagine di $E$ tramite $e^{x^2 + y^2 + z^2}$ è esattamente l'intervallo $[1, 3\pi/4]$. Quindi è sufficiente studiare $\sin(x)$ in tale intervallo. Notiamo che
+		\[
+		\frac{\pi}{4} < 1 < \frac{\pi}{2}
+		\]
+		e $\sin(x)$ è crescente in $[0, \pi/2]$, pertanto
+		\[
+		\sin\left(\frac{3\pi}{4}\right) = \sin\left(\frac{\pi}{4}\right) < \sin(1) < \sin\left(\frac{\pi}{2}\right) = 1.
+		\]
+		Quindi tutti i punti della sfera $\operatorname{Fr}(B(0, \sqrt{\log(\pi/2)}))$ sono di massimo assoluto per
+		\[
+		f(x,y,z) = \sin\left(e^{x^2 + y^2 + z^2}\right) \quad \text{su} \quad E
+		\]
+		ed infatti in tali punti, che sono interni ad $E$, il gradiente di $f$ si annulla. L'unico altro punto dove si annulla il gradiente è l'origine, che è un minimo locale in quanto
+		\[
+		f(0,0,0) = \sin(1) \leq \sin\left(e^{x^2 + y^2 + z^2}\right)
+		\]
+		per $(x,y,z) \in B(0, \sqrt{\log(\pi/2)})$. Per le disuguaglianze di~(1), il minimo assoluto è assunto nei punti di $\operatorname{Fr}(B(0, \sqrt{\log(3\pi/4)})) = \operatorname{Fr}(E)$. Abbiamo infine
+		\[
+		f(E) = \left[\frac{1}{\sqrt{2}}, 1\right].
+		\]
+		Si osservi che per avere immagine, minimi e massimi locali e globali bastava studiare la funzione
+		\[
+		\varphi(s) = \sin\left(e^s\right)
+		\]
+		sull'intervallo $\left[0, \log\left(\frac{3\pi}{4}\right)\right]$.
+
+	
+	\item Determinare il massimo ed il minimo assoluto di
+	\[
+	f(x,y,z) = z^2 + \sin\left(\frac{x + y^2}{2}\right)
+	\]
+	sul compatto $D = \{(x,y,z) \in \mathbb{R}^3 : |x| \leq 1, |y| \leq 1, |z| \leq 1\}$, evidenziando i principali passaggi che hanno portato alla determinazione di tali valori.
+
+	\textbf{Soluzione.}
+		Il gradiente di $f$ è
+		\[
+		\nabla f(x,y,z) = \left(\frac{1}{2} \cos\left(\frac{x + y^2}{2}\right), y \cos\left(\frac{x + y^2}{2}\right), 2z\right)
+		\]
+		ed osserviamo inoltre che
+		\[
+		\frac{|x + y^2|}{2} \leq 1 < \frac{\pi}{2}
+		\]
+		per ogni $(x,y,z) \in D$, che implica $\cos\left(\frac{x + y^2}{2}\right) > 0$. Pertanto $\nabla f$ non si annulla in ogni punto della parte interna di $D$, ed ivi non possiamo pertanto avere massimi o minimi locali. Osservando che $t \mapsto \sin t$ è crescente in $[-\pi/2, \pi/2]$, concludiamo che per ogni $(x,y,z) \in D$ vale
+		\[
+		\sin\left(\frac{x + y^2}{2}\right) \leq \sin(1) \quad \text{e} \quad \sin\left(\frac{x + y^2}{2}\right) \geq -\sin\left(\frac{1}{2}\right).
+		\]
+		Concludiamo che
+		\[
+		f(x,y,z) \leq f(1, \pm 1, \pm 1) = 1 + \sin(1) = \max_D f
+		\]
+		ed infine
+		\[
+		f(x,y,z) \geq f(-1,0,0) = -\sin\left(\frac{1}{2}\right) = \min_D f.
+		\]
+
+	
+	\item Consideriamo $f: \mathbb{R}^3 \to \mathbb{R}$, definita come
+	\[
+	f(x,y,z) = y \sin x + z^2.
+	\]
+	\begin{enumerate}
+		\item Determinare l'immagine di $f$.
+		\item Determinare massimi e minimi locali e globali, nel caso esistano.
+		\item Determinare i punti di massimo e di minimo locale e globale, nel caso esistano.
+	\end{enumerate}
+
+	\textbf{Soluzione.}
+		Osservando che
+		\[
+		\lim_{z \to +\infty} f(0,0,z) = +\infty \quad \text{e} \quad \lim_{y \to +\infty} f\left(\frac{3\pi}{2}, y, 0\right) = -\infty
+		\]
+		ne segue subito che
+		\[
+		\inf_{\mathbb{R}^3} f = -\infty \quad \text{e} \quad \sup_{\mathbb{R}^3} f = +\infty.
+		\]
+		Imponendo l'annullamento del gradiente $\nabla f(x,y,z) = (y \cos x, \sin x, 2z)$ si ottiene
+		\[
+		z = 0, \quad x = k\pi \quad \text{con} \quad k \in \mathbb{Z} \quad \text{e} \quad y = 0.
+		\]
+		L'insieme dei punti critici è quindi $\{(k\pi, 0, 0) : k \in \mathbb{Z}\}$. Poiché $\cos(k\pi) = (-1)^k$, la matrice hessiana in tali punti critici ha la forma
+		\[
+		Hf(k\pi, 0, 0) = \begin{pmatrix}
+			0 & (-1)^k & 0 \\
+			(-1)^k & 0 & 0 \\
+			0 & 0 & 2
+		\end{pmatrix}.
+		\]
+		Osserviamo inoltre che
+		\[
+		\det \begin{pmatrix}
+			0 & (-1)^k & 0 \\
+			(-1)^k & 0 & 0 \\
+			0 & 0 & 2
+		\end{pmatrix} = -2.
+		\]
+		Tale condizione implica che l'hessiana è invertibile, ma l'annullamento del primo coefficiente mostra che tale matrice non è né definita positiva né definita negativa. Concludiamo che $f$ non ha né punti di minimo locale o globale né punti di massimo locale o globale. È anche facile osservare che
+		\[
+		\sup_{\mathbb{R}^3} f = +\infty \quad \text{e} \quad \inf_{\mathbb{R}^3} f = -\infty.
+		\]
+	
+	\item Scrivere l'immagine di $f(x,y) = -\sin^2(x - y)$, definita su $[0,1]^2 \subset \mathbb{R}^2$.
+	
+	\textbf{Soluzione.}
+		Basta osservare che
+		\[
+		-1 \leq x - y \leq 1
+		\]
+		e sull'intervallo $[-1,1]$ la funzione $t \mapsto \sin(t)$ è crescente. Abbiamo pertanto
+		\[
+		-\sin(1) \leq \sin(x - y) \leq \sin(1)
+		\]
+		che implica
+		\[
+		\sin^2(x - y) \leq \sin^2(1).
+		\]
+		Concludiamo quindi che
+		\[
+		\min_{[0,1]^2} f = f(1,0) = -\sin^2(1) \leq -\sin^2(x - y) = f(x,y) \leq 0 = \max_{[0,1]^2} f = f(0,0).
+		\]
+
+	
+	\item Data $f(x,y) = \frac{e^{-x^4}}{1 + |x| + |y|}$, si determini $f(\mathbb{R}^2)$.
+	
+	\textbf{Soluzione.}
+		Si nota immediatamente che $0 < f \leq 1$ su $\mathbb{R}^2$: infatti sia numeratore che denominatore sono positivi, ma il numeratore non può annullarsi (quindi $f > 0$), e il numeratore è più piccolo di $1$, mentre il denominatore è più grande di $1$ (quindi $f \leq 1$). Il claim è che $f(\mathbb{R}^2) = (0,1]$.
+		
+		Ciò è vero poiché restringendosi al solo asse $y$ (quindi $x = 0$) la funzione diventa $\frac{1}{1 + |y|}$, che al variare di $y \in \mathbb{R}$ prende evidentemente tutti i valori nell'intervallo $(0,1]$.
+
+\end{enumerate}

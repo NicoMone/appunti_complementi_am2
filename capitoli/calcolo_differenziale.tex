@@ -88,7 +88,9 @@ Il viceversa è analogo, siccome se
 \noindent Ma in sostanza che cosa vuol dire essere differenziabili? Come forse alcuni avranno potuto capire dalla definizione, essere differenziabili vuol dire che è possibile approssimare la funzione, in quel punto $x_0 \in \Omega$ in cui è differenziabile, ad una applicazione affine del tipo $$a(x) = f(x_0) + df(x_0)(x-x_0)$$ che sarebbe, in maniera impropria, ciò che, in gergo da fisici, diciamo essere un'approssimazione del primo ordine. \\
 Dopo questa definizione siamo persino pronti a definire il concetto di derivata direzionale, nozione strettamente connessa a quella di differenziabilità.
 
-\begin{definition}[derivata direzionale]
+%
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{derivata direzionale}]
 Sia $\Omega \subseteq \mathbb{R}^n$ aperto, $x_0 \in \Omega$, $f: \Omega \to \mathbb{R}$ e sia $v \in \mathbb{R}^n \setminus \{ \underline{0} \}$. Definiamo la derivata direzionale rispetto a $v$ il limite (se esiste!)
 $$
 \partial_v f(x_0) = \lim_{t \to 0} \frac{f(x_0 + tv) - f(x_0)}{t}
@@ -107,7 +109,8 @@ $$
 $$
 Siamo adesso pronti ad enunciare il seguente risultato, che ci dà qualche informazione su come sia il differenziale:
 
-\begin{theorem}[DF1]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{DF1}]
 Se $f: \Omega \to \mathbb{R}$ è differenziabile in $x_0$ allora $\exists \partial_v f \, \forall v \in \mathbb{R}^n \setminus \{ \underline{0} \}$ e vale che
 $$
 df(x_0)(v) = \partial_v f(x_0)
@@ -123,7 +126,8 @@ Siccome $f$ è differenziabile in $x_0 \in \Omega$ allora $\exists L: \mathbb{R}
 \end{aligned}\]
 \hfill $\square$
 
-\begin{theorem}[rappresentazione e unicità del differenziale]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{rappresentazione e unicità del differenziale}]
 Se $f: \Omega \to \mathbb{R}$ è differenziabile in $x_0 \in \Omega$  allora il differenziabile di $f$ nel punto $x_0 \in \Omega$ è unico e
 $$
 df(x_0)(\xi_1, \ldots \xi_n) = \sum_{j=1}^n \xi_j \frac{\partial f}{\partial x_j}(x_0)
@@ -144,7 +148,8 @@ dove tutte queste uguaglianze sono ottenute sfruttando la linearità di $L$ e $d
 
 \noindent Possiamo dunque definire il concetto di gradiente:
 
-\begin{definition}[gradiente di una funzione]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{gradiente di una funzione}]
 Sia $f: \Omega \to \mathbb{R}$ con $\Omega \subseteq \mathbb{R}^n$, $x_0 \in \Omega$ e $f$ differenziabile in $x_0$. Allora definiamo il gradiente $$\nabla{f(x_0)} = \left( \frac{\partial f}{\partial x_1}(x_0), \ldots, \frac{\partial f}{\partial x_n}(x_0) \right) = \sum_{i=1}^n \frac{\partial f}{\partial x_i}f(x_0)e_i \in \mathbb{R}^n$$
 \end{definition}
 
@@ -175,7 +180,8 @@ $$
 $$
 Per poter ampliare la nostra teoria ed esprimere correttamente il differenziale è necessario riprendere la definizione di spazio duale dal corso di Geometria:
 
-\begin{definition}[spazio duale]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{spazio duale}]
 Sia $V$ uno spazio vettoriale sul campo $\mathbb{K}$, definiamo lo spazio duale $V^{*}$ come lo spazio vettoriale dei funzionali lineari $f: V \to \mathbb{K}$. In simboli
 $$
 V^{*} = \{f \, | \, f: V \to \mathbb{K} \}
@@ -194,6 +200,7 @@ $$
 e, naturalmente, per come è definita $L$ abbiamo che $L(e_i) = a_i \, \forall i$, quindi ogni funzione lineare da $\mathbb{R}^n$ a $\mathbb{R}$ è una combinazione lineare delle funzioni lineari $\pi_i$. \\
 Passando in $\mathbb{R}^n$, osserviamo che queste funzioni proiezioni sono una base dello spazio duale $(\mathbb{R}^n)^{*}$ e definiamo $dx_i = \pi_i$. \\
 
+\vspace{0.5cm}
 \begin{prop}
 Sia $f: \Omega \to \mathbb{R}, f$ differenziabile in $x_0 \in \Omega$. Allora
 $$
@@ -219,7 +226,8 @@ $$
 
 Alla luce dell'osservazione qua sopra possiamo dunque dare la seguente definizione:
 
-\begin{definition}[1-forma differenziale]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{1-forma differenziale}]
 Diremo che $\omega: \Omega \to (\mathbb{R}^n)^{*}$ con $\Omega \subseteq \mathbb{R}^n$ aperto è una $1$-forma differenziale su $\Omega$. Inoltre, $\forall p \in \Omega$ avremo un'unica $n$-upla di coefficienti $(a_1(p), \ldots a_n(p))$ dipendenti da $p$ tali che
 $$
 \omega(x) = \sum_{i=1}^n a_i(x)dx_i
@@ -233,7 +241,8 @@ $$
 $$
 \end{remark}
 
-\begin{definition}[campo vettoriale]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{campo vettoriale}]
 Sia $\Omega \subseteq \mathbb{R}^n$ aperto, diremo che $F$ è un campo vettoriale se $F: \Omega \to \mathbb{R}^n$, ovvero $F(p) = \sum\limits_{j=1}^n f_j(p)e_j = (f_1(p), \ldots f_n(p))$ ove $f_j: \Omega \to \mathbb{R}$ sono le componenti di $F$
 \end{definition}
 
@@ -284,15 +293,16 @@ $$
 il che naturalmente implica che
 
 \[\begin{aligned}
-&L(x) = \sum_{i=1}^m L_i(x) e_i = \sum_{i=1}^m (\pi_i \circ L)(x) e_i = \sum_{i=1}^m \innerprod{\nabla{f_i(x_0)}}{x} e_i = \begin{pmatrix} \partial_{x_1} f_1(p_0) & \ldots & \partial_{x_n} f_1(p_0) \\
+L(x)\ &=\ \sum_{i=1}^m L_i(x) e_i\ =\ \sum_{i=1}^m (\pi_i \circ L)(x) e_i \ =\ \sum_{i=1}^m \innerprod{\nabla{f_i(x_0)}}{x} e_i\ =\\
+&=\ \begin{pmatrix} \partial_{x_1} f_1(p_0) & \ldots & \partial_{x_n} f_1(p_0) \\
 \vdots & \vdots & \vdots \\
 \partial_{x_1} f_m(p_0) & \ldots & \partial_{x_n} f_m(p_0)  \end{pmatrix} \begin{pmatrix}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{pmatrix} = \\
-&= Df(x_0)x
+\end{pmatrix}
+\ =\  Df(x_0)x
 \end{aligned}\]
 
 e questo mostra la tesi. \\
@@ -314,7 +324,8 @@ Abbiamo dunque ottenuto la tesi.
 Il teorema precedente mostra anche come il differenziale sia unico anche nel caso di funzioni vettoriali.
 \end{cor}
 
-\begin{theorem}[del differenziale totale]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{del differenziale totale}]
 Sia $f: \Omega \to \mathbb{R}, \Omega \subseteq \mathbb{R}^n$ aperto e $p_0 \in \Omega$. Se $$\exists \partial_{x_j} f: B(p_0, r) \to \mathbb{R} \, \forall j \in \{1, \ldots n\} \text{ con } B(p_0, r) \subseteq \Omega$$ e se 
 $$
 \partial_{x_j} f \text{ sono tutte continue in } p_0 \, \forall j \in \{1, \ldots, n \}$$ allora $f$ è differenziale in $p_0$
@@ -358,7 +369,8 @@ ovvero la tesi.
 
 Vogliamo adesso dimostrare che una funzione differenziabile in un punto $x_0$ è anche continua in tale punto: per fare questo è necessario introdurre la norma di Hilbert-Schmidt
 
-\begin{definition}[norma di Hilbert-Schmidt]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{norma di Hilbert-Schmidt}]
 Sia $A \in \mathbb{R}^{m \times n}$, definiamo
 $$
 || A || = \sqrt{\sum a_{ij}^2} \text{ è la norma di Hilbert-Schmidt}
@@ -403,7 +415,8 @@ $$
 in quanto $df(p_0)$ è lineare e quindi continua in $\mathbb{R}^n$ e $o(h) \stackrel{h \to 0}{\to} 0$
 \hfill $\square$
 
-\begin{theorem}[differenziale della composizione]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{differenziale della composizione}]
 Sia $f: \Omega \to \mathbb{R}^m, g: U \to \mathbb{R}^k$ con $\Omega \subseteq \mathbb{R}^n$ aperto, $U \subseteq \mathbb{R}^m$ aperto, $f(\Omega) \subseteq U$ e sia $p_0 \in \Omega$. Allora se $f$ differenziabile in $p_0$ e $g$ differenziabile in $f(p_0)$ allora
 $$
 g \circ f: \Omega \to \mathbb{R}^k \text{ è differenziabile in } p_0
@@ -465,11 +478,13 @@ Osserviamo infine che
 \end{aligned}\]
 \hfill $\square$
 
+\vspace{0.5cm}
 \subsection{Interpretazione geometrica delle derivate prime}
 Nel caso delle funzioni a singola variabile, la derivata di $f: \Omega \to \mathbb{R}$ (dove $\Omega \subseteq \mathbb{R}$ aperto) nel punto $x_0 \in \Omega$ rappresenta il coefficiente angolare della retta tangente al grafico della funzione $f$ nel punto $(x_0, f(x_0))$. In più variabili la differenziabilità che significato ha? \\
 Mostriamo innanzitutto che una funzione a singola variabile a valori in $R$ derivabile è equivalente a dire che essa è differenziabile:
 
-\begin{prop}[differenzialità $\iff$ derivabilità]
+\vspace{0.5cm}
+\begin{prop}[\textcolor{blue}{differenzialità $\iff$ derivabilità}]
 Sia $f: \Omega \to \mathbb{R}$ con $\Omega \subseteq \mathbb{R}$ aperto e sia $x_0 \in \Omega$. Allora
 $$
 f \text{ è differenziabile in } x_0 \iff f \text{ è derivabile in }x_0
@@ -529,7 +544,8 @@ da cui possiamo facilmente ottenere che
 
 ponendo $d = - ax_0 - by_0 - cz_0$. Dunque, ripensando al procedimento effettuato, possiamo ben motivare la seguente definizione
 
-\begin{definition}[piano in uno spazio euclideo]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{piano in uno spazio euclideo}]
 Un piano nello spazio euclideo $\mathbb{R}^3$ (oppure un iperpiano di dimensione $n-1$ in $\mathbb{R}^{n-1}$) si può vedere come il luogo geometrico dei punti perpendicolari ad una data direzione $v = (a, b, c) \neq 0_{\mathbb{R}^3}$ (equivalentemente, per l'iperpiano, $v=(x_1, \ldots x_n) \neq 0_{\mathbb{R}^n}$). Dunque, preso $p \in \mathbb{R}^3$ (per l'iperpiano $p \in \mathbb{R}^n$), possiamo trovare l'equazione cartesiana del piano passante per $p \in \mathbb{R}^3$ (per l'iperpiano $p \in \mathbb{R}^n$) perpendicolare a $v$ tramite la seguente relazione:
 
 \begin{equation}
@@ -547,6 +563,7 @@ Sia adesso $f: \Omega \to \mathbb{R}$, con $\Omega \subseteq \mathbb{R}^m$ apert
 
 Dunque possiamo interpretare come la differenziabilità della funzione in un punto come quella funzione che descrive il piano tangente alla funzione nel punto.
 
+\vspace{0.5cm}
 \section{Derivate di ordine successivo}
 Più avanti vedremo come la formula di Taylor troncata al secondo ordine fornisca un criterio con cui stabilire se un punto $x_0$ in cui $\nabla f(x_0) = 0$ abbiamo un punto di massimo locale o di minimo locale. Per fare ciò, abbiamo quindi bisogno di ricostruire il comportamento della funzione ad "ordini" successivi al primo, pertanto andiamo ad enunciare alcuni
 risultati che ci consentiranno di raggiungere tale scopo. \\
@@ -564,7 +581,8 @@ $$
 $$
 tale derivata parziale iterata diremo essere la derivata parziale di ordine $k$ o derivata parziale $k$-esima rispetto a $x_{i_1}, \ldots x_{i_k}$
 
-\begin{theorem}[di Schwarz]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{di Schwarz}]
 Sia $f:\Omega \to \mathbb{R}, x_0 \in \Omega \subseteq \mathbb{R}^n$ con $\Omega$ aperto e supponiamo che $\exists \partial_{x_i} f, \partial_{x_j} f, \partial_{x_i x_j} f, \partial_{x_j x_i} f$ continue in $x_0$. Allora
 $$
 \partial_{x_i x_j} f(x_0) = \partial_{x_j x_i} f(x_0)
@@ -610,7 +628,8 @@ $$
 Con degli argomenti più sofisticati è possibile indebolire ulteriormente le ipotesi richiedendo che le derivate parziali siano differenziabili in $p_0$.
 \end{remark}
 
-\begin{theorem}[di Schwarz di ordine superiore]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{di Schwarz di ordine superiore}]
 Sia $f: \Omega \to \mathbb{R}, \Omega$ aperto e $\Omega \subseteq \mathbb{R}^n$. Supponiamo che esistano tutte le derivate di $f$ fino all'ordine $k$ e che siano continue in $\xi \in \Omega$. Allora per ogni scelta di indici $1 \leq i_1, \ldots, i_k \leq n$ abbiamo
 $$
 \frac{\partial^k f}{\partial x_{i_1} \partial x_{i_2} \ldots \partial x_{i_k}}(\xi) = \frac{\partial^k f}{\partial x_{i_{\sigma(1)}} \partial x_{i_{\sigma(2)}} \ldots \partial x_{i_{\sigma(k)}}}(\xi)
@@ -624,7 +643,8 @@ La dimostrazione è omessa siccome è un banale corollario del precedente teorem
 
 E' adesso comodo introdurre i cosiddetti spazi funzionali $C^k(\Omega)$, con $k \in \mathbb{N} \setminus \{ 0 \}$:
 
-\begin{definition}[spazio $C^k$]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{spazio $C^k$}]
 Sia $\Omega \subseteq \mathbb{R}^n$ aperto e $k \in \mathbb{N} \setminus \{ 0 \}$. Definiamo
 
 \[\begin{aligned}
@@ -655,6 +675,7 @@ Se $f \in C^{k} (\Omega)$ tutte le derivate parziali fino all'ordine $k-1$ sono 
 
 Dunque possiamo generalizzare il teorema di Schwarz di ordine superiore che abbiamo visto prima
 
+\vspace{0.5cm}
 \begin{theorem}
 Sia $f \in C^k(\Omega), \Omega \subseteq \mathbb{R}^n$ aperto. Allora $\forall 1 \leq i_1, \ldots, i_l \leq n$ e $2 \leq l \leq k$, definendo $\sigma \in \sum_{l}$, abbiamo che
 $$
@@ -669,7 +690,8 @@ Segue banalmente dal teorema precedente.
 Questo teorema è molto importante siccome stabilisce che, per funzioni di classe $C^k$, l'ordine con cui deriviamo per ottenere una derivata parziale iterata non modifica la derivata. \\
 Adesso abbiamo tutti gli strumenti per introdurre i differenziali di ordine superiore
 
-\begin{definition}[differenziali di ordine superiore]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{differenziali di ordine superiore}]
 	Sia $f \in C^k(\Omega), \Omega \subseteq \mathbb{R}^n$ aperto, $x_0 \in \Omega$ e preso $1 \leq l \leq k$ definiamo
 	$$
 	d^l f(x_0)(h) = \sum_{i_1, \ldots, i_l = 1}^n \frac{\partial^l f}{\partial x_{i_1} \ldots \partial x_{i_l}} h_{i_1} \ldots h_{i_l},
@@ -712,11 +734,16 @@ e quindi è omogeneo di grado $2$, ovvero
 
 In sintesi $d^2 f (x_0): \mathbb{R}^n \to \mathbb{R}$ è un polinomio omogeneo (di cui daremo la definizione formale nel prossimo paragrafo) di secondo grado in $n$ variabili. \\
 
+%
+%
+%
+\vspace{0.5cm}
 \section{Funzioni polinomiali omogenee e polinomio di Taylor}
 \label{sec:polinomio_taylor}
 Riprendiamo il concetto di forma quadratica dal corso di Geometria
 
-\begin{definition}[forma quadratica]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{forma quadratica}]
 $q: \mathbb{R}^n \to \mathbb{R}$ è una forma quadratica se $\exists A = A^T \in \mathbb{R}^{n \times n}$ tale che $q(x)=\innerprod{x}{Ax} \iff q(x) = \sum\limits_{i,j=1}^n a_{ij}x_i x_j$ con $A = (a_{ij})_{i=1, \ldots n \atop j=1, \ldots, n}$
 \end{definition}
 
@@ -739,7 +766,8 @@ b_{11} & \frac{b_{12}}{2} & \frac{b_{13}}{2} & \ldots & \frac{b_{1n}}{2} \\
 \end{equation*}
 Per i polinomi di $n$ variabili $P: \mathbb{R}^n \to \mathbb{R}$, in generale, non possiamo facilmente scriverli tramite una matrice simmetrica come fatto per le forme quadratiche, tuttavia possiamo sempre esprimerli sotto forma di sommatoria.
 
-\begin{definition}[polinomio di $n$ variabili omogeneo]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{polinomio di $n$ variabili omogeneo}]
 Sia $P:\mathbb{R}^n \to \mathbb{R}$ un polinomio in $n$ variabili, quindi esiste una famiglia di numeri $c_{i_1, \ldots i_l} \in \mathbb{R}, 1 \leq l \leq k$ tale che
 $$
 P(x) = \sum_{l=1}^k \sum_{(i_1, \ldots i_l) \in \mathcal{I}_l} c_{i_1, \ldots i_l} x_{i_1} \ldots x_{i_l}
@@ -765,7 +793,8 @@ Il differenziale $d^k f(x_0): \mathbb{R}^n \to \mathbb{R}$ di ordine $k$ è un p
 
 Possiamo a questo punto definire il polinomio di Taylor
 
-\begin{definition}[polinomio di Taylor di $f$ in $x_0$ di ordine $k$]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{polinomio di Taylor di $f$ in $x_0$ di ordine $k$}]
 Sia $f \in C^{k}(\Omega), \Omega \subseteq \mathbb{R}^n$ aperto. Definiamo il polinomio di Taylor di $f$ nel punto $x_0 \in \Omega$ di ordine $k$ come quel polinomio di grado $\leq k$ tale che
 $$
 P_k(f, x_0)(x) = \sum_{i=0}^k \frac{d^i f(x_0)(x-x_0)}{i!}, x \in \mathbb{R}^n
@@ -808,7 +837,8 @@ $$
 $$
 \hfill $\square$
 
-\begin{theorem}[formula di Taylor]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{formula di Taylor}]
 Se $f \in C^k ( \Omega ), x_0 \in \Omega, \Omega \subseteq \mathbb{R}^n$ aperto, allora abbiamo che
 $$
 f(x) = P_k(f, x_0) + o(|x-x_0|^k) = \sum_{j=0}^k \frac{1}{j!} d^j f(x_0)(x-x_0) + o(|x-x_0|^k) \text{ per } x \to x_0
@@ -868,6 +898,7 @@ da cui segue che
 ovvero la tesi.
 \hfill $\square$
 
+\vspace{0.5cm}
 Siamo adesso pronti a mostrare l'unicità del teorema di Taylor, tuttavia abbiamo bisogno di qualche lemma preliminare:
 
 \begin{lemma}
@@ -883,6 +914,7 @@ Per $k=0$ allora il polinomio è, effettivamente, omogeneo.
 %$$
 \hfill $\square$
 
+\vspace{0.5cm}
 \begin{cor}
 Sia $Q: \mathbb{R}^n \to \mathbb{R}$ è un polinomio omogeneo di ordine $k$ e sia $x_0 \in \mathbb{R}^n : Q(x_0) = 0$. Allora
 $$
@@ -894,6 +926,7 @@ $$
 Per ipotesi di omogeneità $Q(\frac{x_0}{|x_0|}) = \frac{1}{|x_0|^k}Q(x_0) = 0$.
 \hfill $\square$
 
+\vspace{0.5cm}
 \begin{lemma}
 Sia $P:\mathbb{R}^n \to \mathbb{R}$ un polinomio in $n$-variabili di ordine $k \geq 1$. Se $P(x) = o(|x|^k) \text{ per } x \to 0 \implies P = 0$
 \end{lemma}
@@ -918,7 +951,8 @@ $$
 che contraddice l'ipotesi che $P(x) = o(x^k)$. Abbiamo dunque la tesi.
 \hfill $\square$
 
-\begin{theorem}[unicità del polinomio di Taylor]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{unicità del polinomio di Taylor}]
 Sia $f: \Omega \to \mathbb{R}, f \in C^k(\Omega), x_0 \in \Omega, \Omega \subseteq \mathbb{R}^n$ aperto. Se
 $$
 f(x) = Q(x-x_0) + o(|x-x_0|^k) \text{ per } x \to x_0
@@ -952,7 +986,8 @@ per il lemma precedente.
 Per ricostruire il comportamento nei punti critici (che verranno definiti più avanti) di una funzione siamo interessati alla positività delle forme quadratiche: infatti, più avanti, dimostreremo un criterio per stabilire se un punto critico è un punto di massimo o di minimo facendo uso del comportamento al secondo ordine della funzione, tramite lo studio del differenziale di ordine $2$ della funzione, che, come abbiamo visto, è una forma quadratica. \\
 Consideriamo $q: \mathbb{R}^n \to \mathbb{R}$ forma quadratica, allora sappiamo che $q(x) = \innerprod{Ax}{x}$ con $A \in \mathbb{R}^{n \times n}$ simmetrica. Diamo adesso la definizione di positività o negatività della forma quadratica:
 
-\begin{definition}[forma quadratica definita positiva o negativa]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{forma quadratica definita positiva o negativa}]
 Sia $q:\mathbb{R}^n \to \mathbb{R}$ una forma quadratica con matrice $A$ in base canonica, allora diremo che $q$ o $A$ è definita positiva se
 $$
 \forall x \in \mathbb{R}^n, q(x) > 0.
@@ -965,7 +1000,8 @@ $$
 
 Esiste anche la nozione di semi-positività e semi-negatività (nel caso in cui la restrizione ad un certo sottospazio di $\mathbb{R}^n$ annulli la forma quadratica ma nel complementare dello spazio vettoriale è sempre definita positivo oppure sempre definito negativo):
 
-\begin{definition}[forma quadratica semi-definita positiva o semi-definita negativa]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{forma quadratica semi-definita positiva o semi-definita negativa}]
 Sia $q: \mathbb{R}^n \to \mathbb{R}$ forma quadratica rappresentata dalla matrice $A$ in base canonica, allora diremo che è semi-definita positiva se
 $$
 \forall x \in \mathbb{R}^n, q(x) \geq 0.
@@ -976,9 +1012,11 @@ $$
 $$
 \end{definition}
 
+\vspace{0.5cm}
+
 Siamo giunti al seguente teorema:
 
-\begin{theorem}[criterio di Sylvester]
+\begin{theorem}[\textcolor{blue}{criterio di Sylvester}]
 La matrice $A=A^{T} \in \mathbb{R}^{n \times n}$ è definita positiva se e solo se $\det{[A]}_k > 0 \, \forall k \in \{1, \ldots, n\}$ dove
 \begin{equation*}
 [A]_k = \begin{pmatrix}
@@ -1006,6 +1044,7 @@ $\boxed{\Leftarrow}$: possiamo procedere per induzione sulle dimensioni della ma
 da cui notiamo che il primo caso con $\iota_-$ uguale a $1$ è impossibile, siccome sarebbe congruente ad una matrice che ha $-1$ sulla diagonale, il che implicherebbe che il determinante sia negativo, contraddizione con l'ipotesi $\det{[A]_k} > 0 \, \forall k \in \{1, \ldots, n+1\}$. Il caso con $\iota_0$ è impossibile siccome implicherebbe che è congruente ad una matrice con un determinate nullo, il che è una contraddizione con l'ipotesi $\det{[A]_k} > 0 \, \forall k \in \{1, \ldots, n+1 \}$.
 \hfill $\square$
 
+\vspace{0.5cm}
 \begin{cor}
 Una matrice simmetrica $A=A^T$ è definita positiva se e solo se tutti i suoi autovalori sono positivi. Equivalentemente, una matrice simmetrica è definita negativa se e solo se tutti i suoi autovalori sono negativi
 \end{cor}
@@ -1024,9 +1063,12 @@ $$
 dunque se $\lambda_i > 0 \, \forall i \implies \innerprod{\Lambda y}{y} > 0$.
 \hfill $\square$
 
+\vspace{0.5cm}
 \section{Massimi e minimi in più variabili}
 Lo studio dei massimi e dei minimi è naturalmente cruciale in ogni scienza, ma non solo: molto spesso molti aspetti del quotidiano sono facilmente modellizzabili da funzioni di cui spesso è necessario trovare i valori di massimo o minimo. Così come nel caso a singola variabile, vogliamo individuare un procedimento analitico per la ricerca di essi e, pertanto, ci dilungheremo nella presentazione di qualche risultato teorico molto importante che ci aiuterà a fare questo:
-\begin{theorem}[di Fermat]
+
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{di Fermat}]
 Siano $\Omega \subseteq \mathbb{R}^n$ aperto e $f: \Omega \to \mathbb{R}$. Supponiamo che $x_0 \in \Omega$ sia un punto di minimo (o massimo) locale e che $f$ sia differenziabile in $x_0$. Allora
 
 \[\begin{aligned}
@@ -1050,7 +1092,8 @@ dove l'ultima eguaglianza segue dal teorema di Fermat per funzioni di variabile 
 In realtà l'ipotesi che la funzione sia differenziabile non è indispensabile, siccome è più che sufficiente richiedere l'esistenza delle derivate parziali.
 \end{remark}
 
-\begin{definition}[punto critico]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{punto critico}]
 Diremo che $x_0 \in \Omega$ è un punto critico di $f: \Omega \to \mathbb{R}$ differenziabile in $x_0$ se $\nabla{f(x_0)} = 0$. Similmente diremo che $f(x_0)$ è un valore critico di $f$.
 \end{definition}
 
@@ -1094,7 +1137,8 @@ Ora, si possono trovare bizzeffe di esempi in cui in un particolare punto si ann
 
 Enunciamo il seguente criterio
 
-\begin{theorem}[condizione sufficiente per il massimo/minimo locale]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{condizione sufficiente per il massimo/minimo locale}]
 Sia $f:\Omega \to \mathbb{R}, f \in C^2 (\Omega)$ con $\Omega \subseteq \mathbb{R}^n$ aperto e sia $x_0 \in \Omega$ un punto critico di f ($\nabla f(x_0) = 0$). Se $Hf(x_0)$ è definita positiva, allora $x_0 \in \Omega$ è un punto di minimo locale per $f$; altrimenti se $Hf(x_0)$ è definita negativa, allora $x_0$ è un punto di massimo locale per $f$.
 \end{theorem}
 
@@ -1120,7 +1164,8 @@ questo conclude la dimostrazione.
 
 Adesso vogliamo trovare un criterio con cui stabilire quando i punti critici sono di sella. Anche in questo caso tramite il comportamento al \emph{secondo ordine} della funzione (ovvero dalla matrice hessiana) possiamo stabilirlo tramite il seguente teorema
 
-\begin{theorem}[dei punti di sella]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{dei punti di sella}]
 Sia $f \in C^2(\Omega), x_0 \in \Omega, \nabla f(x_0) = 0$, $\det{Hf(x_0)} \neq 0$ e $Hf(x_0)$ non è definita positiva e non è definita negativa
 $$
 \implies x_0 \text{ non è né di massimo locale né di minimo locale}

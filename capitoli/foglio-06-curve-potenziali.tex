@@ -1,0 +1,589 @@
+\section{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.6 (15/11/2025)}
+\addcontentsline{toc}{section}{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.6 (15/11/2025)}
+
+\textbf{Esercizi su integrali curvilinei, primitive e potenziali con alcune risoluzioni}
+
+\begin{enumerate}
+	\item Provare che $\gamma: \mathbb{R} \to \mathbb{R}^2$, $\gamma(t) = (t, |t|)$, è $C^1$ a tratti su $\mathbb{R}$. Per ogni $a, b \in \mathbb{R}$ con $a < b$ calcolarne la lunghezza della restrizione $\left.\gamma\right|_{[a, b]}$.
+	
+	\textbf{Soluzione.}
+		Sull'intervallo $(-\infty, 0]$ si ha $\gamma(t) = (t, -t)$, che è $C^1$, mentre sull'intervallo $[0, \infty)$ si ha $\gamma(t) = (t, t)$ ancora $C^1$. In ogni caso $\|\gamma'(t)\| = \sqrt{2}$ da cui la lunghezza di $\left.\gamma\right|_{[a, b]}$ è $\sqrt{2}(b - a)$.
+	
+	
+	\item Si consideri la curva $\gamma(t) = (2\cos t, \sin t)$ su $[0, 2\pi]$ e si calcoli
+	\[
+	\int_{\gamma} (1 + 3y^2)^{-1/2} \, ds.
+	\]
+	
+	\textbf{Soluzione.}
+		Il vettore tangente alla curva $\gamma'(t) = (-2\sin t, \cos t)$, ha norma $\|\gamma'(t)\| = \sqrt{1 + 3\sin^2 t}$. Dunque,
+		\[
+		\int_{\gamma} (1 + 3y^2)^{-1/2} \, d\ell = \int_0^{2\pi} dt = 2\pi.
+		\]
+	
+	
+	\item Consideriamo $\Gamma: [0,1] \to \mathbb{R}^2$, ove $\Gamma(t) = (e^t, t^2)$ per ogni $t \in [0,1]$. Scrivere il valore di $\int_{\Gamma} \sqrt{4y + x^2} \, ds$.
+	
+	\item Data $\gamma(t) = (t, 1 - t, t^2)$ su $[0, \sqrt{2}]$, calcolare $\int_{\gamma} \left(|x + y| + \sqrt{|z|}\right) \, ds$.
+	
+	\textbf{Soluzione.}
+		Dalla definizione di integrale curvilineo, con il cambio di variabile $t = s / \sqrt{2}$, otteniamo
+		\[
+		\begin{aligned}
+			\int_{\gamma} |x + y + \sqrt{|z|} | \, ds &= \int_0^{\sqrt{2}} |1 + t| \sqrt{2 + 4t^2} \, dt \\
+			&= \int_0^2 \left(1 + \frac{s}{\sqrt{2}}\right) \sqrt{1 + s^2} \, ds \\
+			&= \int_0^2 \sqrt{1 + s^2} \, ds + \frac{1}{\sqrt{2}} \int_0^2 s \sqrt{1 + s^2} \, ds.
+		\end{aligned}
+		\]
+		Ricordiamo la formula
+		\[
+		\int_0^t \sqrt{1 + x^2} \, dx = \frac{1}{2} \left(\log \left(t + \sqrt{1 + t^2}\right) + t \sqrt{1 + t^2}\right)
+		\]
+		e in aggiunta abbiamo
+		\[
+		\int_0^t x \sqrt{1 + x^2} \, dx = \frac{1}{3} \left(1 + x^2\right)^{3/2},
+		\]
+		pertanto
+		\[
+		\int_{\gamma} |x + y + \sqrt{|z|} | \, ds = \frac{1}{2} \left(\log (2 + \sqrt{5}) + 2\sqrt{5}\right) + \frac{1}{3\sqrt{2}} 5^{3/2}.
+		\]
+	
+	
+	\item Data la 1-forma differenziale $\eta_0 = -\frac{y}{x^2 + y^2} dx + \frac{x}{x^2 + y^2} dy$ e consideriamo
+	\[
+	\gamma(t) = \left(t^2 + \log \left(e^t + t^8\right)\right) (\cos t, \sin t)
+	\]
+	definita su $(0, 2\pi)$. Calcolare, se esiste,
+	\[
+	\int_{\gamma} \eta_0 := \lim_{\varepsilon \to 0^+} \int_{\left.\gamma\right|_{[\varepsilon, 2\pi - \varepsilon]}} \eta_0.
+	\]
+	
+	\textbf{Soluzione.}
+		Sia $\Omega_1 := \{(x,y) \in \mathbb{R}^2 : y > 0\}$ e $\Omega_2 := \{(x,y) \in \mathbb{R}^2 : y < 0\}$. Si nota che
+		\[
+		\varphi(x,y) := \arccos \left(\frac{x}{\sqrt{x^2 + y^2}}\right)
+		\]
+		è una primitiva di $\eta_0$ su $\Omega_1$, mentre $2\pi - \varphi(x,y)$ è una primitiva di $\eta_0$ su $\Omega_2$. Si noti che $\varphi(x,y)$, su $\Omega_1$, è esattamente l'angolo misurato in senso antiorario a partire dal semiasse positivo delle $x$ e la stessa cosa vale per $2\pi - \varphi(x,y)$, su $\Omega_2$.
+		
+		Sia fissato $\varepsilon > 0$ piccolo. Allora per continuità
+		\[
+		\int_{\left.\gamma\right|_{[\varepsilon, \pi]}} \eta_0 = \lim_{\delta \to 0} \int_{\left.\gamma\right|_{[\varepsilon, \pi - \delta]}} \eta_0.
+		\]
+		Per ogni $\delta > 0$, l'immagine di $\left.\gamma\right|_{[\varepsilon, \pi - \delta]}$ è tutta in $\Omega_1$, visto che per come è fatta $\gamma$, al tempo $t$ si è in un punto a distanza $\left(t^2 + \log \left(e^t + t^8\right)\right)$ dall'origine che forma un angolo $t$ col semiasse positivo delle $x$. Dunque visto che $\varphi(x,y)$ è una primitiva di $\eta_0$ su $\Omega_1$,
+		\[
+		\int_{\left.\gamma\right|_{[\varepsilon, \pi - \delta]}} \eta_0 = \pi - \delta - \varepsilon
+		\]
+		e dunque
+		\[
+		\int_{\left.\gamma\right|_{[\varepsilon, \pi]}} \eta_0 = \pi - \varepsilon.
+		\]
+		
+		Sempre per continuità, analogamente a prima, si ha che
+		\[
+		\int_{\left.\gamma\right|_{[\pi, 2\pi - \varepsilon]}} \eta_0 = \lim_{\delta \to 0} \int_{\left.\gamma\right|_{[\pi + \delta, 2\pi - \varepsilon]}} \eta_0.
+		\]
+		Questa volta, per ogni $\delta > 0$, l'immagine di $\left.\gamma\right|_{[\pi + \delta, 2\pi - \varepsilon]}$ è in $\Omega_2$. Dunque visto che $2\pi - \varphi(x,y)$ è una primitiva di $\eta_0$ in $\Omega_2$, abbiamo
+		\[
+		\int_{\left.\gamma\right|_{[\pi + \delta, 2\pi - \varepsilon]}} \eta_0 = \pi - \varepsilon - \delta
+		\]
+		e quindi
+		\[
+		\int_{\left.\gamma\right|_{[\pi, 2\pi - \varepsilon]}} \eta_0 = \pi - \varepsilon.
+		\]
+		
+		Sommando i due risultati ottenuti
+		\[
+		\int_{\left.\gamma\right|_{[\varepsilon, 2\pi - \varepsilon]}} \eta_0 = \int_{\left.\gamma\right|_{[\varepsilon, \pi]}} \eta_0 + \int_{\left.\gamma\right|_{[\pi, 2\pi - \varepsilon]}} \eta_0 = 2\pi - 2\varepsilon.
+		\]
+		
+		Per cui facendo tendere $\varepsilon \to 0$ si ottiene
+		\[
+		\lim_{\varepsilon \to 0} \int_{\left.\gamma\right|_{[\varepsilon, 2\pi - \varepsilon]}} \eta_0 = 2\pi.
+		\]
+		
+		Una soluzione decisamente più veloce potrebbe essere la seguente: si noti che $\gamma(t) = f(t)(\cos t, \sin t)$, $f(t) > 0$ sull'intervallo considerato, fuorché in $t = 0$. Si calcola facilmente $\gamma'(t) = \left(f'(t)\cos t - f(t)\sin t, f'(t)\sin t + f(t)\cos t\right)$ e, se $t \neq 0$ e dunque $f(t) \neq 0$,
+		\[
+		\begin{aligned}
+			\eta_0(\gamma(t)) \cdot \gamma'(t) &= -\frac{f(t)\sin t}{f(t)^2}\left(f'(t)\cos t - f(t)\sin t\right) + \\
+			&\quad + \frac{f(t)\cos t}{f(t)^2}\left(f'(t)\sin t + f(t)\cos t\right) = 1.
+		\end{aligned}
+		\]
+		Da ciò si ottiene immediatamente che
+		\[
+		\int_{\left.\gamma\right|_{[\varepsilon, 2\pi - \varepsilon]}} \eta_0 = 2\pi - 2\varepsilon
+		\]
+		e si conclude come prima.
+	
+	
+	\item Si consideri la 1-forma differenziale
+	\[
+	\omega = x\,dx + e^z\,dy + y e^z\,dz
+	\]
+	e la curva $\gamma(t) = \left(e^{e^{\cos t - \sin^2 t}}, \log \left(1 + e^{-t^2 + \cos t}\right), \frac{1}{1 + t^4}\right)$ sull'intervallo $[0, \pi]$.
+	Calcolare $\int_{\gamma} \omega$.
+	
+	\textbf{Soluzione.}
+		Integrando $\omega$ lungo le linee parallele agli assi cartesiani si ottiene che
+		\[
+		V(x,y,z) = \frac{x^2}{2} + y e^z
+		\]
+		è una primitiva di $\omega$. Abbiamo pertanto
+		\[
+		\int_{\gamma} \omega = V(\gamma(\pi)) - V(\gamma(0)) = \frac{e^{2/e}}{2} + e^{1/(1+\pi^4)} \log \left(1 + e^{-\pi^2 - 1}\right) - \frac{e^{2e}}{2} + e \log (1 + e).
+		\]
+	
+	
+	\item Si consideri la curva $\gamma(t) = \left(\log (1 + e^t), 1, \cos (\pi t)\right)$ su $[0,1]$ e si calcoli $\int_{\gamma} F$, ove $F = \left(\frac{z}{y}, -\frac{xz}{y^2}, \frac{x}{y}\right)$.
+	
+	\textbf{Soluzione.}
+		Si osserva immediatamente che il potenziale di $F$ è
+		\[
+		g(x,y,z) = \frac{xz}{y}
+		\]
+		e che la curva $\gamma$ ha l'immagine contenuta nell'aperto di $\mathbb{R}^3$ costituito dai punti $(x,y,z)$ tali che $y \neq 0$. Svolgendo i calcoli si ottiene che
+		\[
+		\int_{\gamma} F = g(\gamma(1)) - g(\gamma(0)) = -\log (1 + e).
+		\]
+	
+	
+	\item Si consideri la seguente curva $\gamma(t) = \left(-t^3, 2e^{\sin (\pi t)}, \sin (\pi t)\right)$ su $[0,1]$. Si calcoli l'integrale $\int_{\gamma} F$, ove $F: \mathbb{R}^3 \to \mathbb{R}^3$ è definita come
+	\[
+	F = \left(\frac{x^3}{1 + x^4 + y^4 + z^4}, \frac{y^3}{1 + x^4 + y^4 + z^4}, \frac{z^3}{1 + x^4 + y^4 + z^4}\right).
+	\]
+	
+	\textbf{Soluzione.}
+		Il problema equivale ad integrare la 1-forma differenziale
+		\[
+		\omega = \frac{x^3}{1 + x^4 + y^4 + z^4} dx + \frac{y^3}{1 + x^4 + y^4 + z^4} dy + \frac{z^3}{1 + x^4 + y^4 + z^4} dz
+		\]
+		lungo $\gamma$. Si osserva immediatamente che una primitiva di $\omega$ è
+		\[
+		g(x,y,z) = \frac{1}{4} \log \left(1 + x^4 + y^4 + z^4\right),
+		\]
+		dunque ne segue che
+		\[
+		\int_{\gamma} \omega = g(\gamma(1)) - g(\gamma(0)) = g(-1,2,0) - g(0,2,0) = \frac{1}{4} \log \left(\frac{18}{17}\right).
+		\]
+	
+	
+	\item Consideriamo la 1-forma differenziale $\omega$ definita come segue
+	\[
+	\left(\cos(\alpha y) + e^{\beta x} y^3 - x\right) dx + \left(3y^2 e^x - x \sin y + z \cos(yz)\right) dy + y \cos(yz) dz.
+	\]
+	Stabilire per quali $\alpha$ e $\beta$ reali la 1-forma differenziale $\omega$ è esatta in $\mathbb{R}^3$.
+	
+	\textbf{Soluzione.}
+		Poniamo $\omega = a_1 dx + a_2 dy + a_3 dz$ e scriviamo una prima condizione di chiusura
+		\[
+		\frac{\partial a_1}{\partial y} = -\alpha \sin(\alpha y) + 3y^2 e^{\beta x} = \frac{\partial a_2}{\partial x} = 3y^2 e^x - \sin y
+		\]
+		per ogni $(x,y) \in \mathbb{R}^2$. Tale uguaglianza equivale all'annullamento della funzione
+		\[
+		\Upsilon(x,y) = \sin y - \alpha \sin(\alpha y) + 3y^2 e^{\beta x} - 3y^2 e^x
+		\]
+		su $\mathbb{R}^2$. Avremo quindi anche l'annullamento della sua derivata parziale
+		\[
+		\frac{\partial \Upsilon}{\partial x} = 3y^2 (\beta e^{\beta x} - e^x) = 0
+		\]
+		ovunque su $\mathbb{R}^2$, che per $x = 0$ ed $y = 1$ implica $3(\beta - 1) = 0$. La condizione $\beta = 1$ è quindi necessaria per l'esattezza di $\omega$. Ne segue che $\Upsilon(x,y) = \sin y - \alpha \sin(\alpha y) = 0$ per ogni $y \in \mathbb{R}$ e derivando si ottiene
+		\[
+		\cos y = \alpha^2 \cos(\alpha y),
+		\]
+		che per $y = 0$ offre $\alpha = \pm 1$. Per tali valori abbiamo
+		\[
+		\frac{\partial a_1}{\partial z} = 0 = \frac{\partial a_3}{\partial x} \quad \text{e} \quad \frac{\partial a_2}{\partial z} = \cos(yz) - y z \sin(yz) = \frac{\partial a_3}{\partial y},
+		\]
+		quindi queste ultime condizioni non impongono nuovi vincoli sui parametri $\alpha$ e $\beta$. Viceversa supponiamo che $\beta = 1$ e $\alpha = \pm 1$. Le condizioni rimangono invariate ed anche la prima è soddisfatta, ovvero $\omega$ è chiusa. Essendo $\mathbb{R}^3$ semplicemente connesso, possiamo ora concludere che $\omega$ è esatta se e solo se $\alpha = \pm 1$ e $\beta = 1$.
+	
+	
+	\item Stabilire se esistono e nel caso determinare gli $\alpha$ reali tali che il campo $F: \mathbb{R}^2 \setminus \{(0,0)\} \to \mathbb{R}^2$, ove
+	\[
+	F(x,y) = \left(\frac{\alpha y}{x^2 + y^2}, \frac{x}{x^2 + y^2}\right),
+	\]
+	sia conservativo in $\Omega = \left\{(x,y) \in \mathbb{R}^2 : x > 0, y > 0\right\}$. Per tali $\alpha$, nel caso esistano, calcolare un potenziale di $F$ su $\Omega$.
+	
+	\textbf{Soluzione.}
+		Siccome $\Omega$ è semplicemente connesso, il campo vettoriale è conservativo se e solo se è chiuso. Dobbiamo cercare i valori di $\alpha \in \mathbb{R}$ tali che $\partial_y F_1 = \partial_x F_2$ su $\Omega$. Tale uguaglianza corrisponde alla seguente
+		\[
+		\alpha \frac{x^2 - y^2}{(x^2 + y^2)^2} = \frac{y^2 - x^2}{(x^2 + y^2)^2}
+		\]
+		per ogni $(x,y) \in \Omega$, la quale può essere verificata se e solo se $\alpha = -1$. Una primitiva di $F$ su $\Omega$ per $\alpha = -1$ è
+		\[
+		g(x,y) = \arctan\left(\frac{y}{x}\right).
+		\]
+	
+	
+	\item Stabilire se il campo vettoriale
+	\[
+	F(x,y) = \left(-\frac{y}{x^2 + y^2}, \frac{x}{x^2 + y^2}\right)
+	\]
+	è conservativo sull'aperto $\Omega = \left\{(x,y) \in \mathbb{R}^2 : y > 0\right\}$, dandone una breve argomentazione. Data la curva $\gamma: [0,1] \to \mathbb{R}^2$, $\gamma(t) = \left((1 - t) \cos(\pi - t\pi), 1 + (1 - t) \sin(\pi - t\pi)\right)$, scrivere il valore dell'integrale $\int_{\gamma} F$.
+	
+	\textbf{Soluzione.}
+		Essendo $\omega_F = \eta_0$, che è una 1-forma differenziale chiusa, sappiamo che $F$ è irrotazionale su $\mathbb{R}^2 \setminus \{(0,0)\}$. Essendo $\Omega \subset \mathbb{R}^2 \setminus \{(0,0)\}$ semplicemente connesso, ne segue che esiste un potenziale $V$ di $F$ in $\Omega$. Dal significato geometrico della $\eta_0$, che è il differenziale della funzione angolo, osserviamo che
+		\[
+		\varphi(x,y) = \arccos\left(\frac{x}{\sqrt{x^2 + y^2}}\right)
+		\]
+		è un potenziale di $F$ in $\Omega$. Infine osserviamo che $\gamma$ ha immagine contenuta in $\Omega$, pertanto
+		\[
+		\int_{\gamma} F = \varphi(0,1) - \varphi(-1,1) = \frac{\pi}{2} - \frac{3\pi}{4} = -\frac{\pi}{4}.
+		\]
+	
+	
+	\item Scrivere l'unica funzione potenziale $V: \mathbb{R}^2 \to \mathbb{R}$ del campo
+	\[
+	F(x,y) = \left(\frac{\cos(x + y)}{2 + \sin(x + y)}, \frac{\cos(x + y)}{2 + \sin(x + y)}\right)
+	\]
+	tale che $V(0,0) = \log 4$.
+	
+	\textbf{Soluzione.}
+		Si osserva prima da calcolo diretto che $F$ è irrotazionale. Essendo $F$ definito su $\mathbb{R}^2$, il calcolo del potenziale in questo caso è conveniente per integrazione lungo la generica curva $\gamma(t) = (tx, ty)$, definita sull'intervallo $[0,1]$, con $(x,y) \in \mathbb{R}^2$ arbitrari. Dunque
+		\[
+		\begin{aligned}
+			V(x,y) - V(0,0) &= \int_0^1 \left(\frac{\cos(t(x + y))}{2 + \sin(t(x + y))} \cdot x + \frac{\cos(t(x + y))}{2 + \sin(t(x + y))} \cdot y\right) dt \\
+			&= \int_0^1 \left(\frac{(x + y) \cos(t(x + y))}{2 + \sin(t(x + y))}\right) dt \\
+			&= \left[\log(2 + \sin(t(x + y)))\right]_0^1 = \log(2 + \sin(x + y)) - \log 2,
+		\end{aligned}
+		\]
+		da cui si deduce che
+		\[
+		V(x,y) = \log(2 + \sin(x + y)) + \log 2.
+		\]
+	
+	
+	\item Sia data la 1-forma differenziale
+	\[
+	\omega = \frac{dx}{(1 + y)(1 + x)^2} + \frac{dy}{(1 + x)(1 + y)^2}.
+	\]
+	Definendo la curva $\gamma: [0, \sqrt{\pi}] \to \mathbb{R}^2$, $\gamma(t) = \left(e^{\sin(t^2)}, e^{\cos(t^2)}\right)$, si scriva il valore di $\int_{\gamma} \omega$.
+	
+	\textbf{Soluzione.}
+		Integrando parallelamente agli assi si deduce che una primitiva di $\omega$ è
+		\[
+		f(x,y) = -\frac{1}{(1 + y)(1 + x)}.
+		\]
+		Da ciò segue che
+		\[
+		\int_{\gamma} \omega = f(\gamma(\sqrt{\pi})) - f(\gamma(0)) = -\frac{e}{2(e + 1)} + \frac{1}{2(e + 1)} = \frac{1 - e}{2(e + 1)}.
+		\]
+
+	
+	\item Consideriamo $F(x,y) = (x + y, x - y)$ e $\gamma(t) = (t, e^t)$ su $[0,1]$.
+	\begin{enumerate}
+		\item Stabilire se $F$ è conservativo in $\mathbb{R}^2$.
+		\item Calcolare $\int_{\gamma} F$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Il campo $F$ è irrotazionale in $\mathbb{R}^2$, e il suo dominio è semplicemente connesso, pertanto esiste un potenziale $V: \mathbb{R}^2 \to \mathbb{R}$, individuato a meno di una costante additiva, tale che $\nabla V = F$ in $\mathbb{R}^2$. Abbiamo
+		\[
+		\frac{\partial V}{\partial x} = x + y,
+		\]
+		pertanto integrando abbiamo
+		\[
+		V(x,y) - V(0,y) = \int_0^x \frac{\partial V}{\partial x}(t,y) dt = \frac{x^2}{2} + x y,
+		\]
+		ovvero ponendo $\varphi(y) = V(0,y)$ come funzione incognita, abbiamo
+		\[
+		V(x,y) = \frac{x^2}{2} + x y + \varphi(y).
+		\]
+		Ora utilizziamo la seconda condizione e la precedente formula
+		\[
+		x - y = \frac{\partial V}{\partial y} = x + \varphi'(y),
+		\]
+		pertanto $\varphi(y) = -\frac{y^2}{2} + c$ per qualche costante $c \in \mathbb{R}$. Concludiamo che
+		\[
+		V(x,y) = \frac{x^2}{2} + x y - \frac{y^2}{2} + c.
+		\]
+		Possiamo scegliere $c = 0$, differendo tutti i potenziali per una costante su un insieme connesso per archi. Come conseguenza abbiamo
+		\[
+		\int_{\gamma} F = V(1,e) - V(0,1) = \frac{1}{2} + e - \frac{e^2}{2} + \frac{1}{2} = 1 + e - \frac{e^2}{2}.
+		\]
+	
+	
+	\item Consideriamo la forma differenziale
+	\[
+	\omega = (2x y z + y^2 z - y + 2z) dx + (x^2 z + 2x y z - x - 4) dy + (x^2 y + x y^2 + 2x + 1) dz
+	\]
+	e la curva $\gamma(t) = (\sin t, t, e^t)$ su $[0, \pi]$.
+	\begin{enumerate}
+		\item Stabilire se $\omega$ è esatta in $\mathbb{R}^3$.
+		\item Calcolare $\int_{\gamma} \omega$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Una primitiva di $\omega$ è $f(x,y,z) = x^2 y z + x y^2 z - x y + 2z x + z - 4y$, di conseguenza
+		\[
+		\int_{\gamma} \omega = f(0,\pi,e^\pi) - f(0,0,1) = e^\pi - 4\pi - 1.
+		\]
+	
+	
+	\item Sia data la 1-forma differenziale $\omega_{\alpha} = xy dx + dy + \frac{\alpha x^2}{2} dy$.
+	\begin{enumerate}
+		\item Stabilire per quali $\alpha \in \mathbb{R}$ la 1-forma differenziale $\omega_{\alpha}$ è esatta in $\mathbb{R}^2$.
+		\item Per tali $\alpha \in \mathbb{R}$ determinarne una primitiva $f_{\alpha}$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Sappiamo che $\omega_{\alpha}$ è esatta, allora deve essere anche chiusa, e in tale caso posto
+		\[
+		a_1(x,y) = xy \quad \text{e} \quad a_2(x,y) = 1 + \frac{\alpha}{2} x^2
+		\]
+		deve valere la condizione
+		\[
+		\frac{\partial a_1}{\partial y} = \frac{\partial a_2}{\partial x} \quad \text{ovvero} \quad x = \alpha x \quad \text{per ogni} \quad (x,y) \in \mathbb{R}^2.
+		\]
+		L'ultima condizione può valere se e solo se $\alpha = 1$. Concludiamo quindi che solo per tale valore $\omega_{\alpha}$ è chiusa e quindi esatta in $\mathbb{R}^2$, che è semplicemente connesso.
+		
+		Per determinarne il potenziale procediamo per integrazione curvilinea, considerando il segmento che congiunge l'origine con $(x,y) \in \mathbb{R}^2$, ovvero
+		\[
+		\gamma(t) = t(x,y) \quad \text{e} \quad t \in [0,1].
+		\]
+		Avendo scelto univocamente la curva per ogni $(x,y) \in \mathbb{R}^2$, definiamo la funzione
+		\[
+		\begin{aligned}
+			f(x,y) &= \int_{\gamma} xy dx + \left(1 + \frac{x^2}{2}\right) dy \\
+			&= \int_0^1 \left(t^2 x^2 y + y \left(1 + \frac{t^2 x^2}{2}\right)\right) dt \\
+			&= \frac{x^2 y}{3} + y + \frac{y x^2}{6} = \frac{1}{2} x^2 y + y.
+		\end{aligned}
+		\]
+		Verifichiamo infine che
+		\[
+		df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy = xy dx + \left(1 + \frac{x^2}{2}\right) dy = \omega_1.
+		\]
+	
+	
+	\item Al variare di $\alpha, \beta \in \mathbb{R}$, sia data la 1-forma differenziale
+	\[
+	\omega_{\alpha,\beta} = y(x - z) dx + (\alpha x^2 + \beta z^2 - x z) dy + y(z - x) dz.
+	\]
+	\begin{enumerate}
+		\item Determinare per quali $\alpha, \beta \in \mathbb{R}$ la 1-forma differenziale $\omega_{\alpha,\beta}$ è esatta in $\mathbb{R}^3$.
+		\item Per tali $\alpha, \beta$ determinarne una primitiva di $\omega_{\alpha,\beta}$ e calcolare $\int_{\gamma} \omega_{\alpha,\beta}$, dove abbiamo definito $\gamma(t) = (t, \tan t, \sin t)$ su $[0, \pi/4]$.
+	\end{enumerate}
+	
+	\textbf{Soluzione.}
+		Se $\omega_{\alpha,\beta} = f_1 dx + f_2 dy + f_3 dz$ è esatta, allora deve essere chiusa, quindi
+		\[
+		\begin{cases}
+			\frac{\partial f_1}{\partial y} = x - z = \frac{\partial f_2}{\partial x} = 2\alpha x - z \\
+			\frac{\partial f_1}{\partial z} = -y = \frac{\partial f_3}{\partial x} = -y \\
+			\frac{\partial f_2}{\partial z} = 2\beta z - x = \frac{\partial f_3}{\partial y} = z - x
+		\end{cases}
+		\]
+		Quindi tali uguaglianze valgono per ogni $(x,y,z) \in \mathbb{R}^3$ se e solo se $\alpha = \beta = \frac{1}{2}$. Per determinarne il potenziale procediamo per integrazione curvilinea, considerando il segmento che congiunge l'origine con $(x,y,z) \in \mathbb{R}^3$, ovvero
+		\[
+		\gamma(t) = t(x,y,z) \quad \text{e} \quad t \in [0,1].
+		\]
+		Essendo $\mathbb{R}^3$ semplicemente connesso e $\omega_{1/2,1/2}$ chiusa, tale 1-forma differenziale è anche esatta su $\mathbb{R}^3$ e pertanto possiamo definire la primitiva per integrazione
+		\[
+		\begin{aligned}
+			f(x,y,z) &= \int_{\gamma} \omega_{1/2,1/2} \\
+			&= \int_0^1 \left(t^2 xy(x - z) + y t^2 \left(\frac{x^2}{2} + \frac{z^2}{2} - xz\right) + t^2 yz(z - x)\right) dt \\
+			&= \frac{xy}{3}(x - z) + \frac{y}{3} \left(\frac{x^2}{2} + \frac{z^2}{2} - xz\right) + \frac{yz}{3}(z - x) \\
+			&= \frac{x^2 y}{2} + \frac{z^2 y}{2} - x y z,
+		\end{aligned}
+		\]
+		che è una primitiva di $\omega_{1/2,1/2}$. Infine abbiamo
+		\[
+		\int_{\gamma} \omega_{1/2,1/2} = f\left(\frac{\pi}{4}, 1, \frac{1}{\sqrt{2}}\right) = \frac{\pi^2}{32} + \frac{1}{4} - \frac{\pi}{4\sqrt{2}}.
+		\]
+	
+	
+	\item Consideriamo $F: \mathbb{R}^3 \setminus \{(0,0,0)\} \to \mathbb{R}^3$,
+	\[
+	F(x,y,z) = \left(\frac{y^2 + z^2 - x^2}{(x^2 + y^2 + z^2)^2}, -\frac{2xy}{(x^2 + y^2 + z^2)^2}, -\frac{2xz}{(x^2 + y^2 + z^2)^2}\right).
+	\]
+	Stabilire se $F$ è conservativo in $\mathbb{R}^3 \setminus \{(0,0,0)\}$ ed in tal caso determinarne un potenziale.
+	
+	\textbf{Soluzione.}
+		Da calcolo diretto abbiamo
+		\[
+		\frac{\partial f_1}{\partial y} = \frac{2y}{|(x,y,z)|^6} (3x^2 - y^2 - z^2) = \frac{\partial f_2}{\partial x}.
+		\]
+		Questa verifica è l'unica da fare: infatti $\frac{\partial f_1}{\partial z}$ si ottiene da $\frac{\partial f_1}{\partial y}$ scambiando la $y$ con la $z$, vista la simmetria di $f_1$ per tale scambio. Analogamente $\frac{\partial f_3}{\partial x}$ si ottiene scambiando $y$ con $z$ in $\frac{\partial f_2}{\partial x}$, visto che tale scambio manda $f_2$ in $f_3$. Dunque $\frac{\partial f_1}{\partial z} = \frac{\partial f_3}{\partial x}$ e anche $\frac{\partial f_2}{\partial z} = \frac{\partial f_3}{\partial y}$ proprio perché lo scambio di $y$ e $z$ scambia $f_2$ e $f_3$.
+		
+		Dall'irrotazionalità di $F$, essendo $\mathbb{R}^3 \setminus \{(0,0,0)\}$ semplicemente connesso, esiste un potenziale $V: \mathbb{R}^3 \setminus \{(0,0,0)\} \to \mathbb{R}$ di $F$. Sappiamo quindi che
+		\[
+		\frac{\partial V}{\partial y} = -\frac{2xy}{(x^2 + y^2 + z^2)^2}.
+		\]
+		In questo caso non è possibile utilizzare la curva $\gamma(t) = t(x,y,z)$ come nell'esercizio precedente. Integrando rispetto ad $y$ abbiamo
+		\[
+		\begin{aligned}
+			V(x,y,z) &= V(x,0,z) + \int_0^y \frac{\partial V}{\partial y}(x,t,z) dt \\
+			&= \varphi(x,z) - \int_0^y \frac{2xt}{(x^2 + t^2 + z^2)^2} dt \\
+			&= \varphi(x,z) + x \int_0^y \left((x^2 + t^2 + z^2)^{-1}\right)' dt \\
+			&= \varphi(x,z) + \frac{x}{x^2 + y^2 + z^2} - \frac{x}{x^2 + z^2}.
+		\end{aligned}
+		\]
+		Osserviamo che
+		\[
+		\frac{\partial V}{\partial x} = \frac{\partial}{\partial x} \left(\varphi - \frac{x}{x^2 + z^2}\right) + \frac{y^2 + z^2 - x^2}{(x^2 + y^2 + z^2)^2} = \frac{y^2 + z^2 - x^2}{(x^2 + y^2 + z^2)^2}
+		\]
+		e inoltre
+		\[
+		\frac{\partial V}{\partial z} = \frac{\partial}{\partial z} \left(\varphi - \frac{x}{x^2 + z^2}\right) - \frac{2xz}{(x^2 + y^2 + z^2)^2} = -\frac{2xz}{(x^2 + y^2 + z^2)^2}.
+		\]
+		Concludiamo che
+		\[
+		\nabla \left(\varphi - \frac{x}{x^2 + z^2}\right) = (0,0)
+		\]
+		in $\mathbb{R}^2 \setminus \{(0,0)\}$, che essendo connesso per archi implica che
+		\[
+		\varphi - \frac{x}{x^2 + z^2} = c \in \mathbb{R},
+		\]
+		e quindi concludiamo che
+		\[
+		V(x,y,z) = \frac{x}{x^2 + y^2 + z^2} + c.
+		\]
+	
+	
+	\item Determinare il più grande dominio della 1-forma differenziale
+	\[
+	\omega = -\frac{x}{x^2 - y^2 - z^2} dx + \frac{y}{x^2 - y^2 - z^2} dy + \frac{z}{x^2 - y^2 - z^2} dz
+	\]
+	e stabilire se ha una primitiva in tale dominio.
+	
+	\textbf{Soluzione.}
+		La funzione è definita su $D := \{(x,y,z) \in \mathbb{R}^3 : x^2 - y^2 - z^2 \neq 0\}$ ovvero fuori dal cono con vertice nell'origine, asse centrale l'asse $x$ e apertura angolare $\frac{\pi}{2}$. In particolare $D$ consta di 3 componenti connesse aperte: due (le parti interne al cono) sono semplicemente connesse, mentre la terza, che ha la stessa topologia del complementare dell'asse $x$ in $\mathbb{R}^3$, non è semplicemente connessa.
+		
+		In ogni caso la funzione
+		\[
+		f(x,y,z) = -\frac{1}{2} \log \left|x^2 - y^2 - z^2\right|
+		\]
+		è una primitiva di $\omega$ su ognuna delle tre componenti del dominio $D$.
+	
+	
+	\item Determinare tutti i valori $p \in \mathbb{R}$ tali che il campo vettoriale
+	\[
+	F = \left(\frac{x}{(x^2 + y^2 + z^2 + t^2)^p}, \frac{y}{(x^2 + y^2 + z^2 + t^2)^p}, \frac{z}{(x^2 + y^2 + z^2 + t^2)^p}, \frac{t}{(x^2 + y^2 + z^2 + t^2)^p}\right)
+	\]
+	sia conservativo in $\mathbb{R}^4 \setminus \{(0,0,0,0)\}$ e per essi determinarne un potenziale.
+	
+	\textbf{Soluzione.}
+		Essendo $\mathbf{e}_r := \frac{1}{\sqrt{x^2 + y^2 + z^2 + t^2}} (x,y,z,t)$ il versore radiale, e $r := \sqrt{x^2 + y^2 + z^2 + t^2}$ la coordinata radiale, si osserva che
+		\[
+		\mathbf{F} = \frac{1}{r^{2p - 1}} \mathbf{e}_r.
+		\]
+		In generale se $V = V(r)$ è una funzione derivabile, allora
+		\[
+		\nabla \left[V \left(|(x,y,z,t)|\right)\right] = V'(|(x,y,z,t)|) \mathbf{e}_r.
+		\]
+		Da questa osservazione si nota che qualsiasi campo radiale ammette un potenziale radiale. In particolare se $\mathbf{F}(x) = F(|x|)\mathbf{e}_{|x|}$ allora, fissando un qualsiasi $r_0 > 0$, definiamo
+		\[
+		V(r) = \int_{r_0}^r F(s) ds
+		\]
+		e osserviamo che $V(|x|)$ è un potenziale di $\mathbf{F}$. Dunque, nel nostro caso, essendo $F(r) = \frac{1}{r^{2p - 1}}$ si ricava che se $p \neq 1$
+		\[
+		V(|x|) = \frac{|x|^{2 - 2p}}{2 - 2p} + c,
+		\]
+		mentre se $p = 1$ il potenziale è $V(|x|) = \log(|x|) + c$.
+	
+	
+	\item (*) Consideriamo l'aperto $\Omega = \{(x,y) \in \mathbb{R}^2 : x \neq 0, y \neq 0\}$ ed il campo $F: \Omega \to \mathbb{R}^2$ definito come segue
+	\[
+	F(x,y) = \left(\frac{\sigma_y |y|^q}{(x^2 + y^2)^p}, \frac{\sigma_x |x|^q}{(x^2 + y^2)^p}\right),
+	\]
+	dove $p,q \in \mathbb{R}$. La funzione segno soddisfa $\sigma_t = 1$ se $t > 0$, $\sigma_0 = 0$ e $\sigma_t = -1$ se $t < 0$. Determinare per quali coppie $(p,q)$ il campo $F$ è conservativo, ed in tal caso calcolarne la funzione potenziale.
+	
+	\textbf{Soluzione.}\\
+		\paragraph{Caso $q = 0$}
+		Otteniamo la condizione
+		\[
+		-2p|y| = -2p|x|
+		\]
+		che può essere verificata solo se $p = 0$, pertanto il campo è irrotazionale per
+		\[
+		q = 0 \quad \text{e} \quad p = 0.
+		\]
+		
+		\paragraph{Caso $q < 1$ e $q \neq 0$}
+		Consideriamo quindi $x = 1$, ovvero
+		\[
+		|y|^{q - 1} \left(q + (q - 2p)y^2\right) = \left((q - 2p) + q y^2\right),
+		\]
+		che porta ad una contraddizione per $y \to 0$.
+		
+		\paragraph{Caso $q = 1$}
+		Otteniamo quindi
+		\[
+		x^2 + (1 - 2p)y^2 = (1 - 2p)x^2 + y^2,
+		\]
+		ovvero
+		\[
+		2p(x^2 - y^2) = 0,
+		\]
+		che vale per ogni $(x,y) \in \Omega$ se e solo se $p = 0$. Concludiamo che in questo caso il campo è irrotazionale per
+		\[
+		q = 1 \quad \text{e} \quad p = 0.
+		\]
+		
+		\paragraph{Caso $q > 1$}
+		La validità dell'uguaglianza
+		\[
+		|y|^{q - 1} \left(q x^2 + (q - 2p) y^2\right) = |x|^{q - 1} \left((q - 2p) x^2 + q y^2\right)
+		\]
+		in $\Omega$ permette di considerare il limite per $y \to 0$, ottenendo
+		\[
+		0 = |x|^{q - 1} \left((q - 2p) x^2\right) \quad \text{ovvero} \quad (q - 2p)x^2 = 0
+		\]
+		che è verificata se e solo se $q = 2p$. Sostituendo nell'uguaglianza iniziale otteniamo
+		\[
+		q x^2 |y|^{q - 1} = q y^2 |x|^{q - 1} \quad \text{ovvero} \quad |y|^{q - 3} = |x|^{q - 3},
+		\]
+		che è verificata se e solo se $q = 3$. Pertanto in questo caso la chiusura si ha per
+		\[
+		q = 3 \quad \text{e} \quad p = \frac{3}{2}.
+		\]
+		
+		\paragraph{Potenziale per $q = 0$ e $p = 0$}
+		Se $q = 0$ e $p = 0$, allora $F = (\sigma_x, \sigma_y)$ e quindi abbiamo
+		\[
+		V(x,y) = |x| + |y|
+		\]
+		su $\Omega$. Osserviamo inoltre che poiché $\Omega$ è sconnesso non tutti i potenziali si ottengono aggiungendo una costante a $V$. Ad esempio possiamo definire
+		\[
+		\tilde{V}(x,y) =
+		\begin{cases}
+			|x| + |y| & \text{se } (x,y) \in \Omega \text{ e } y > 0 \\
+			|x| + |y| + 1 & \text{se } (x,y) \in \Omega \text{ e } y < 0
+		\end{cases}
+		\]
+		che soddisfa $\nabla \tilde{V} = (\sigma_x, \sigma_y)$ ma non è ottenibile aggiungendo una costante a $V$.
+		
+		\paragraph{Potenziale per $q = 1$ e $p = 0$}
+		In questo caso abbiamo $F = (y,x)$, dove il potenziale si individua immediatamente
+		\[
+		V(x,y) = xy.
+		\]
+		La non unicità di tale differenziale su $\Omega$ è da intendersi come nel caso $q = p = 0$.
+		
+		\paragraph{Potenziale per $q = 3$ e $p = \frac{3}{2}$}
+		In questo caso abbiamo
+		\[
+		F = \left(\frac{y^3}{(x^2 + y^2)^{3/2}}, \frac{x^3}{(x^2 + y^2)^{3/2}}\right).
+		\]
+		Sappiamo che esiste $V: \Omega \to \mathbb{R}$ che soddisfa
+		\[
+		\frac{\partial V}{\partial x} = \frac{y^3}{(x^2 + y^2)^{3/2}} \quad \text{e} \quad \frac{\partial V}{\partial y} = \frac{x^3}{(x^2 + y^2)^{3/2}},
+		\]
+		ma l'integrazione lungo rette parallele agli assi non conviene. Consideriamo invece la curva $\gamma_{\varepsilon}: [\varepsilon,1] \to \Omega$ con $\varepsilon \in (0,1)$, $\gamma_{\varepsilon}(t) = t(x,y)$ e $(x,y) \in \Omega$. Allora esiste il limite
+		\[
+		\begin{aligned}
+			V(x,y) &= \lim_{\varepsilon \to 0^+} \int_{\gamma_{\varepsilon}} F \\
+			&= \frac{xy}{\sqrt{x^2 + y^2}}.
+		\end{aligned}
+		\]
+		Si può infine verificare che $V(x,y) = \frac{xy}{\sqrt{x^2 + y^2}}$ soddisfa
+		\[
+		\nabla V(x,y) = \left(\frac{y^3}{(x^2 + y^2)^{3/2}}, \frac{x^3}{(x^2 + y^2)^{3/2}}\right)
+		\]
+		per ogni $(x,y) \in \Omega$.
+
+\end{enumerate}
+
+\textit{Referenza. Ulteriori esercizi sulle 1-forme differenziali si possono trovare ad esempio in [1, Capitolo 6].}
+
+\begin{thebibliography}{1}
+	\bibitem{marcellini} Paolo Marcellini e Carlo Sbordone. \textit{Esercizi di Matematica}, Volume II, Tomo 4. Liguori Editore, 2009.
+\end{thebibliography}

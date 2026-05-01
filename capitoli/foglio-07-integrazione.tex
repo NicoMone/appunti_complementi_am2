@@ -1,0 +1,667 @@
+\section*{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.7 (26/11/2025)}
+\addcontentsline{toc}{section}{Complementi di Analisi Matematica a.a. 2025/2026. Foglio n.7 (26/11/2025)}
+
+\textbf{Esercizi sull'integrazione di più variabili con alcune risoluzioni}
+
+\begin{enumerate}
+	\item Stabilire se il seguente sottoinsieme
+	\[
+	\Omega = \left\{(x,y) \in \mathbb{R}^2 : 0 < y < e - 1, 0 < x + xy < 1\right\}
+	\]
+	ha area finita e, in tal caso, calcolarla.
+	
+	\textbf{Soluzione.}
+		Non è strettamente necessaria una rappresentazione grafica dell'insieme, ma occorre trovare il giusto ordine di integrazione iterata. È evidente che conviene integrare prima rispetto ad $y$, il quale ha già gli estremi per l'integrazione, quindi
+		\[
+		\mathbf{m}_2(D) = \int_0^{e-1} dy \int_{D_y} dx
+		\]
+		dove abbiamo
+		\[
+		D_y = \left\{x \in \mathbb{R} : 0 < x(1 + y) < 1\right\} = \left(0, \frac{1}{1 + y}\right).
+		\]
+		Concludiamo quindi che
+		\[
+		\mathbf{m}_2(D) = \int_0^{e-1} \frac{1}{1 + y} dy = \left[\log(1 + y)\right]_0^{e-1} = 1.
+		\]
+	
+	
+	\item Siano $0 \leq \alpha < \beta \leq 2\pi$, e consideriamo $\rho: [\alpha, \beta] \to [0, +\infty)$ continua. Definiamo l'insieme
+	\[
+	E = \left\{(r \cos \theta, r \sin \theta) : \alpha \leq \theta \leq \beta, 0 < r < \rho(\theta)\right\}.
+	\]
+	Usando le coordinate polari, provare che vale la formula
+	\[
+	\mathbf{m}_2(E) = \frac{1}{2} \int_{\alpha}^{\beta} \rho(\theta)^2 d\theta.
+	\]
+	
+	\textbf{Soluzione.}
+		Per definizione $\mathbf{m}_2(E) = \iint_E dx dy$. Usando le coordinate polari e scegliendo l'ordine di integrazione,
+		\[
+		\mathbf{m}_2 = \iint_E \rho d\rho d\theta = \int_{\alpha}^{\beta} \int_0^{\rho(\theta)} \rho d\rho d\theta = \frac{1}{2} \int_{\alpha}^{\beta} \rho(\theta)^2 d\theta.
+		\]
+	
+	
+	\item Dati $r > 0$ e $(x_0, y_0) \in \mathbb{R}^2$, calcolare l'area del disco
+	\[
+	\left\{(x,y) \in \mathbb{R}^2 : (x - x_0)^2 + (y - y_0)^2 < r^2\right\}
+	\]
+	utilizzando le coordinate polari. Fissato $(x_0, y_0, z_0) \in \mathbb{R}^3$, calcolare il volume del solido sferico
+	\[
+	\left\{(x,y,z) \in \mathbb{R}^3 : (x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 < r^2\right\}
+	\]
+	usando le coordinate sferiche.
+	
+	\item Per $r > 0$ definiamo $B(0, r) = \left\{(x, y, z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 < r^2\right\}$ e
+	\[
+	\Phi(r) = \int_{B(0, r)} (x^2 + y^2 + z^2)^2 dx dy dz.
+	\]
+	Calcolare $\Phi(r)$.
+	
+	\item Calcolare il volume dell'intersezione di due cilindri
+	\[
+	E = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 \leq r^2, x^2 + z^2 \leq r^2\right\}.
+	\]
+	
+	\textbf{Soluzione.}
+		Si vede che conviene integrare prima rispetto a $x$. Infatti le sezioni lungo i piani $x = k$ sono dei quadrati. L'intervallo in cui varia la $x$ è $(-r, r)$: infatti se $k \notin (-r, r)$, l'intersezione del piano $x = k$ con l'insieme $E$ è vuota. Allora
+		\[
+		\mathbf{m}_3(E) = \iiint_E dx dy dz = \int_{-r}^r \iint_{Q := \{y^2 \leq r^2 - x^2, z^2 \leq r^2 - x^2\}} dy dz dx.
+		\]
+		Fissato $x$, l'insieme $Q$ è un quadrato di lato $2 \sqrt{r^2 - x^2}$ all'interno del piano parallelo al piano coordinato $yz$ e passante per il punto $(x, 0, 0)$. La sua area è, dunque, $4(r^2 - x^2)$. Rimane da calcolare
+		\[
+		\int_{-r}^r 4(r^2 - x^2) dx = 4 \left[r^2 x - \frac{x^3}{3}\right]_{-r}^r = \frac{16}{3} r^3.
+		\]
+	
+	
+	\item Considerato l'insieme
+	\[
+	\Omega = \left\{(x,y,z) \in \mathbb{R}^3 : -2 + 2x^2 + 2y^2 < z < 2 - 2x^2 - 2y^2\right\}.
+	\]
+	Tracciare il grafico di tale insieme e calcolarne il volume.
+	
+	\textbf{Soluzione.}
+		Tale insieme è l'intersezione di due paraboloidi con asse centrale l'asse $z$, il primo con vertice $(0,0,-2)$ e rivolto verso l'alto e il secondo con vertice $(0,0,2)$ e rivolto verso il basso in modo tale che la sezione col piano coordinato $xy$ sia esattamente la palla unitaria.
+		
+		Per calcolare il volume di tale solido potrebbe convenire, ad esempio, concentrarsi solo sulla sua falda superiore, visto che c'è simmetria rispetto al piano coordinato $xy$. Conviene, dunque, integrare lungo $z$ fra 0 e 2: le sezioni con i piani $z = k$ sono circonferenze di raggio $\sqrt{1 - \frac{k}{2}}$ e dunque
+		\[
+		\mathbf{m}_3(\Omega) = 2 \int_0^2 \pi \left(1 - \frac{z}{2}\right) dz = 2\pi \left[z - \frac{z^2}{4}\right]_0^2 = 2\pi.
+		\]
+		
+		Una soluzione differente potrebbe essere la seguente. Notiamo che se $(x,y,z) \in \Omega$, allora in particolare abbiamo
+		\[
+		4(x^2 + y^2) < 4.
+		\]
+		Dal Teorema di Tonelli, integrando su $B(0,1)$ la misura dell'intervallo $[-2 + 2x^2 + 2y^2, 2 - 2x^2 - 2y^2]$ (corrispondente all'intervallo in cui può variare $z$ se $(x,y)$ sono fissi), ne segue che
+		\[
+		\begin{aligned}
+			\mathbf{m}_3(\Omega) &= 4 \int_{B(0,1)} (1 - x^2 - y^2) dx dy \\
+			&= 4 \int_{B(0,1)} \rho (1 - \rho^2) d\rho d\theta \\
+			&= 4 \int_0^{2\pi} \left[\frac{\rho^2}{2} - \frac{\rho^4}{4}\right]_0^1 d\theta = 2\pi,
+		\end{aligned}
+		\]
+		concludendo l'esercizio. Si noti che si è integrato su $B(0,1)$ perché questo è esattamente il luogo dei punti $(x_0,y_0)$ per cui esiste almeno un $z$ tale che $(x_0,y_0,z) \in \Omega$.
+
+	
+	\item Considerato l'insieme $E = \{(x,y) \in \mathbb{R}^2 : x > 0, y > 0, 1 < x + y < 2\}$, tracciare il grafico di tale insieme. Stabilire se esiste, e in tal caso scrivere il valore dell'integrale $\int_E \frac{1}{x + y} dx dy$.
+	
+	\textbf{Soluzione.}
+		La regione $E$ è un trapezio con vertici $(0,1)$, $(0,2)$, $(1,0)$ e $(1,2)$. Inoltre l'integranda è positiva e limitata dall'alto da 1 su tale dominio, che è anch'esso limitato e dunque l'integrale esiste finito. Integriamo prima lungo $x$ ponendo attenzione alla geometria del dominio:
+		\[
+		\iint_E \frac{1}{x + y} dx dy = \int_0^1 dx \int_{1 - x}^{2 - x} \frac{1}{x + y} dy + \int_1^2 dx \int_0^{2 - x} \frac{1}{x + y} dy =
+		\]
+		\[
+		\begin{aligned}
+			&= \int_0^1 [\log(x + y)]_{y = 1 - x}^{y = 2 - x} dx + \int_1^2 [\log(x + y)]_{y = 0}^{y = 2 - x} dx \\
+			&= \int_0^1 \log 2 dx + \int_1^2 (\log 2 - \log x) dx \\
+			&= 2 \log 2 - \int_1^2 \log x dx \\
+			&= 2 \log 2 - [x \log x - x]_1^2 = 2 \log 2 - [2 \log 2 - 1] = 1.
+		\end{aligned}
+		\]
+		
+		Una soluzione leggermente più rapida si può ottenere mediante il cambio di coordinate $(x', y') = (x + y, y)$.
+	
+	
+	\item Definito l'aperto $\Omega = \{(x,y,z) \in \mathbb{R}^3 : x^2 + z^2 - 4 < 0 \text{ e } x^2 + z^2 - 1 < y < 5\}$, tracciarne un grafico qualitativo e scrivere il valore del suo volume.
+	
+	\item Scrivere il valore del volume dell'insieme
+	\[
+	O = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 + (z - 1)^2 < 4 \text{ e } z > 0\right\}.
+	\]
+	
+	\item Consideriamo $E_{\lambda} = \{(x,y,z) \in \mathbb{R}^3 : x,y,z \geq 0, x + y + z \leq \lambda\}$. Studiare l'integrabilità di $z^{\alpha}$ su $E_{\lambda}$ al variare di $\alpha > 0$ e $\lambda > 0$. In tal caso calcolare
+	\[
+	\int_{E_{\lambda}} z^{\alpha} dx dy dz.
+	\]
+	
+	\textbf{Soluzione.}
+		La funzione $z^{\alpha}$ è positiva e, siccome $\alpha > 0$, è limitata da $\lambda^{\alpha}$ su $E_{\lambda}$. Siccome $E_{\lambda}$ ha volume finito (è un tetraedro non regolare di vertici $(0,0,0)$, $(\lambda,0,0)$, $(0,\lambda,0)$ e $(0,0,\lambda)$), allora l'integrale esiste finito. Dal teorema di Tonelli abbiamo
+		\[
+		\begin{aligned}
+			\int_{E_{\lambda}} z^{\alpha} dx dy dz &= \int_0^{\lambda} dx \int_0^{\lambda - x} dy \int_0^{\lambda - x - y} z^{\alpha} dz \\
+			&= \int_0^{\lambda} dx \int_0^{\lambda - x} \frac{(\lambda - x - y)^{\alpha + 1}}{\alpha + 1} dy \\
+			&= \int_0^{\lambda} \left[\frac{(\lambda - x - y)^{\alpha + 2}}{(\alpha + 1)(\alpha + 2)}\right]_{y = \lambda - x}^{y = 0} dx \\
+			&= \int_0^{\lambda} \frac{(\lambda - x)^{\alpha + 2}}{(\alpha + 1)(\alpha + 2)} dx \\
+			&= \frac{\lambda^{\alpha + 3}}{(\alpha + 1)(\alpha + 2)(\alpha + 3)}.
+		\end{aligned}
+		\]
+	
+	
+	\item Stabilire l'integrabilità di $f: E \to \mathbb{R}$, ove $f(x,y,z) = y (\log y) \sqrt{x^2 - z^2}$ e
+	\[
+	E = \left\{(x,y,z) \in \mathbb{R}^3 : 0 \leq z \leq x \leq 2, 0 < y \leq x\right\}.
+	\]
+	Se $f$ è integrabile, calcolarne l'integrale su $E$.
+	
+	\textbf{Soluzione.}
+		La funzione non ha segno definito su $E$, essendo positiva per $y > 1$ e negativa per $0 < y < 1$. Consideriamo quindi il valore assoluto di $f$ su $E$. Osserviamo che l'insieme $E$ è limitato, poiché è contenuto in $[0,2]^3$. Poiché $\mathbf{m}_3([0,2]^3 \setminus (0,2)^3) = 0$, possiamo considerare l'integrabilità di $f$ su $\widetilde{E} = E \cap (0,2)^3$. Notiamo che $|y \log y| \leq C$ per ogni $y \in (0,2)$ e $\sqrt{x^2 - z^2} \leq 2$ per ogni $(x,y,z) \in \widetilde{E}$, pertanto
+		\[
+		|f(x,y,z)| = |y \log y| \sqrt{x^2 - z^2} \leq 2C,
+		\]
+		ovvero $f$ è limitata su $\widetilde{E}$. Concludiamo l'integrabilità di $f$ su $E$:
+		\[
+		\int_E |f| = \int_{\widetilde{E}} |f| \leq 2C \mathbf{m}_3(\widetilde{E}) \leq 2C \mathbf{m}_3([0,2]^3) = 16C < +\infty.
+		\]
+		
+		Si poteva anche ignorare la limitatezza della funzione $f$ su $E$ ed utilizzare il teorema di Tonelli:
+		\[
+		\begin{aligned}
+			\int_E \sqrt{x^2 - z^2} |y \log y| dx dy dz &\leq 4 \int_{(0,2)^3} |\log y| dx dy dz \\
+			&= 4 \int_0^2 dx \int_0^2 dz \int_0^2 |\log y| dy \\
+			&= 16 \int_0^2 |\log y| dy < +\infty.
+		\end{aligned}
+		\]
+		
+		Concludiamo quindi che $f$ è integrabile su $E$. Per ottenere il valore del suo integrale, applichiamo il teorema di Fubini ed integriamo per parti:
+		\[
+		\begin{aligned}
+			\int_E f &= \int_0^2 dx \int_0^x y \log y dy \int_0^x \sqrt{x^2 - z^2} dz \\
+			&= \int_0^2 x^2 dx \int_0^x y \log y dy \int_0^1 \sqrt{1 - t^2} dt \\
+			&= \frac{\pi}{4} \int_0^2 x^2 dx \int_0^x y \log y dy \\
+			&= \frac{\pi}{4} \int_0^2 x^2 \left(\frac{x^2}{2} \log x - \int_0^x \frac{y}{2} dy\right) dx \\
+			&= \frac{\pi}{8} \int_0^2 x^4 \log x dx - \frac{\pi}{16} \int_0^2 x^4 dx \\
+			&= \frac{4\pi}{5} \left(\log 2 - \frac{7}{10}\right).
+		\end{aligned}
+		\]
+	
+	
+	\item Dimostrare l'integrabilità di $(x,y) \to \sin(x + y)$ su $E = (0, \pi/2) \times (0, \pi)$ e calcolare $\int_E \sin(x + y) dx dy$.
+	
+	\textbf{Soluzione.}
+		La funzione non ha segno definito, ma è limitata su un insieme misurabile limitato, pertanto è integrabile. Applichiamo il teorema di Fubini, ottenendo
+		\[
+		\begin{aligned}
+			\int_{(0, \pi/2) \times (0, \pi)} \sin(x + y) dx dy &= \int_0^{\pi/2} dx \int_0^\pi \sin(x + y) dy \\
+			&= \int_0^{\pi/2} dx \left[\cos(x + y)\right]_{y = \pi}^{y = 0} \\
+			&= \int_0^{\pi/2} (\cos x - \cos(x + \pi)) dx \\
+			&= 2 \int_0^{\pi/2} \cos x dx = 2.
+		\end{aligned}
+		\]
+	
+	
+	\item Stabilire se l'insieme $E = \{(x,y,z) : x^2 \leq z \leq x - y^2\}$ ha misura finita e, in tal caso, calcolarla.
+	
+	\textbf{Soluzione.}
+		L'insieme è chiuso e quindi misurabile. Se $(x,y,z) \in E$, allora in particolare $x^2 + y^2 \leq x$, pertanto $0 \leq x \leq 1$ e pertanto $|y| \leq 1$. Ne segue che l'insieme è limitato e ha quindi misura finita. Inoltre $E$ è normale rispetto al piano $xy$ e questo suggerisce di applicare il teorema di Tonelli come segue:
+		\[
+		\mathbf{m}(E) = \int_E dx dy dz = \int_{\mathbb{R}^2} \mathbf{m}_1(E_{(x,y)}) dx dy.
+		\]
+		Poiché $E_{(x,y)} \neq \emptyset$ se e solo se $x^2 + y^2 \leq x$, ovvero se e solo se
+		\[
+		\left(x - \frac{1}{2}\right)^2 + y^2 \leq \frac{1}{4}.
+		\]
+		Definendo $A = B\left(\left(\frac{1}{2}, 0\right), \frac{1}{2}\right)$ e completando i quadrati, ne segue che
+		\[
+		\begin{aligned}
+			\mathbf{m}(E) &= \int_A (x - y^2 - x^2) dx dy \\
+			&= \int_A \left(\frac{1}{4} - y^2 - \left(x - \frac{1}{2}\right)^2\right) dx dy \\
+			&= \frac{1}{4} \mathbf{m}(A) - \int_A \left(y^2 + \left(x - \frac{1}{2}\right)^2\right) dx dy \\
+			&\text{(traslando il dominio)} = \frac{1}{4} \mathbf{m}(A) - \int_{B(0,1/2)} (x^2 + y^2) dx dy.
+		\end{aligned}
+		\]
+		Abbiamo $\mathbf{m}(A) = \pi/4$, quindi
+		\[
+		\mathbf{m}(E) = \frac{\pi}{16} - 2\pi \int_0^{1/2} \rho^3 d\rho = \frac{\pi}{16} - \frac{2^{-4}\pi}{2} = \frac{\pi}{32}.
+		\]
+	
+	
+	\item Siano $\alpha > 0$ e $E_{\alpha} = \{(x,y) \in \mathbb{R}^2 : y > 1, -\frac{1}{y^{\alpha}} \leq x < 0\}$. Provare che $E_{\alpha}$ è misurabile e calcolarne la misura per ogni $\alpha > 0$.
+	
+	
+	\textbf{Soluzione.}
+		$E_{\alpha}$ è l'intersezione dell'aperto $\{(x,y) \in \mathbb{R}^2 : y > 1, x < 0\}$ e del chiuso $\{(x,y) \in \mathbb{R}^2 : y \geq 1, -\frac{1}{y^{\alpha}} \leq x\}$. Essendo gli aperti e i chiusi misurabili, ne segue che la loro intersezione è misurabile e pertanto anche $E_{\alpha}$ lo è. Possiamo quindi applicare il teorema di Tonelli, ottenendo
+		\[
+		\mathbf{m}(E_{\alpha}) = \int_{\mathbb{R}} \mathbf{m}\big((E_{\alpha})_y\big) dy = \int_{1}^{+\infty} \frac{1}{y^{\alpha}} dy
+		\]
+		che è finito se e solo se $\alpha > 1$ e in tal caso $\mathbf{m}(E_{\alpha}) = \frac{1}{\alpha - 1}$.
+	
+	
+	\item Provare che l'insieme $D \subset \mathbb{R}^2$ costituito dai punti $(x,y) \in \mathbb{R}^2$ tali che
+	\[
+	-1 \leq xy \leq 1, \quad x^2 + y^2 \leq 4 \quad \text{e} \quad \min\{x - y, x + y\} \geq 0,
+	\]
+	è misurabile. Studiare l'integrabilità di $f(x,y) = (x^2 - y^2) \cos(xy)$ su $D$ e, in caso di integrabilità, calcolare $\int_D f(x,y) dx dy$.
+	
+	\item Si consideri $D = \{(x,y) \in \mathbb{R}^2 : -2 \leq x - y \leq 1 \leq y \leq 2\}$ e si calcoli $\int_D (x^2 - y^2) dx dy$.
+	
+	\textbf{Soluzione.}
+		Il dominio $D$ è un parallelogrammo di vertici $(-1,1)$, $(2,1)$, $(3,2)$, $(0,2)$. Dunque l'integrale da calcolare, integrando prima lungo $y$, è
+		\[
+		\begin{aligned}
+			\int_1^2 dy \int_{y-2}^{y+1} (x^2 - y^2) dx &= \int_1^2 \left[\frac{x^3}{3} - x y^2\right]_{x = y - 2}^{x = y + 1} dy \\
+			&= \int_1^2 \left(\frac{(y+1)^3}{3} - (y+1)y^2 - \frac{(y-2)^3}{3} + (y-2)y^2\right) dy \\
+			&= 3 \int_1^2 (1 - y) dy = 3 \left[y - \frac{y^2}{2}\right]_1^2 = -\frac{3}{2}.
+		\end{aligned}
+		\]
+	
+	
+	\item Stabilire l'integrabilità della funzione
+	\[
+	f(x,y,z) = z(3x^2 - 2y^2) \frac{e^{x^2 + y^2}}{x^2 + y^2}
+	\]
+	sul dominio $D = \{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 + z \leq 2, z^2 \leq x^2 + y^2\}$ e, in tal caso, calcolarne l'integrale.
+	
+	\item Provare che il seguente insieme
+	\[
+	A = \left\{(x,y) \in \mathbb{R}^2 : x^2 + y^2 < 1, 0 < y < \frac{x}{2}\right\}
+	\]
+	è misurabile e calcolare
+	\[
+	\int_A \frac{1}{x} \sqrt{\frac{x^2 y^2 + y^4}{1 - x^2 - y^2}} dx dy \in [0, +\infty],
+	\]
+	finito o infinito.
+	
+	\textbf{Soluzione.}
+		L'insieme $A$ è aperto, poiché intersezione dei due aperti $A_1 := \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 < 1\}$ e $A_2 := \{(x,y) \in \mathbb{R}^2 : 0 < y < x/2\}$, e dunque misurabile. In particolare $A$ è un settore circolare (aperto) della circonferenza goniometrica di apertura angolare $\arctan(1/2)$. L'integrale esiste perché la funzione è misurabile (poiché continua) e positiva su $A$. Usando le coordinate polari, dobbiamo calcolare
+		\[
+		\iint_A \frac{1}{\rho \cos \theta} \sqrt{\frac{\rho^4 \sin^2 \theta}{1 - \rho^2}} \rho d\rho d\theta = \int_0^{\arctan(1/2)} \frac{|\sin \theta|}{\cos \theta} d\theta \int_0^1 \frac{\rho^2}{\sqrt{1 - \rho^2}} d\rho.
+		\]
+		Nell'intervallo di $\theta$ preso in considerazione, il $\sin \theta$ è positivo e dunque si può eliminare il modulo. Pertanto il primo integrale diventa
+		\[
+		\int_0^{\arctan(1/2)} \tan \theta d\theta = \left[-\log(\cos \theta)\right]_0^{\arctan(1/2)}.
+		\]
+		Nell'intervallo di $\theta$ considerato, vale $\cos \theta = \frac{1}{\sqrt{1 + \tan^2 \theta}}$ e dunque
+		\[
+		\cos(\arctan(1/2)) = \frac{2}{\sqrt{5}}.
+		\]
+		Pertanto
+		\[
+		\int_0^{\arctan(1/2)} \tan \theta d\theta = -\log\left(\frac{2}{\sqrt{5}}\right).
+		\]
+		Per calcolare l'integrale in $d\rho$, si può procedere per parti, scrivendo l'integranda come $\rho \cdot \frac{\rho}{\sqrt{1 - \rho^2}}$, notando che una primitiva del secondo termine è $-\sqrt{1 - \rho^2}$. Dunque
+		\[
+		\int_0^1 \frac{\rho^2}{\sqrt{1 - \rho^2}} d\rho = \left[-\rho \sqrt{1 - \rho^2}\right]_0^1 + \int_0^1 \sqrt{1 - \rho^2} d\rho = \int_0^1 \sqrt{1 - \rho^2} d\rho.
+		\]
+		L'ultimo integrale può essere calcolato mediante le solite sostituzioni goniometriche. Risulta
+		\[
+		\int_0^1 \sqrt{1 - \rho^2} d\rho = \frac{1}{2} \left[\rho \sqrt{1 - \rho^2} + \arcsin \rho\right]_0^1 = \frac{\pi}{4}.
+		\]
+		Unendo i due risultati si ottiene
+		\[
+		\iint_A \frac{1}{\rho \cos \theta} \sqrt{\frac{\rho^4 \sin^2 \theta}{1 - \rho^2}} \rho d\rho d\theta = -\frac{\pi}{4} \log\left(\frac{2}{\sqrt{5}}\right) = \frac{\pi}{8} \log\left(\frac{5}{4}\right).
+		\]
+	
+	
+	\item Al variare di $\alpha > 0$, stabilire se la misura dell'insieme
+	\[
+	E_{\alpha} = \left\{(x,y,z) \in \mathbb{R}^3 : z \geq 0, y \geq 1, y^{2\alpha}(z + x^2) \leq 1\right\}
+	\]
+	è finita e, in tal caso, calcolarla.
+	
+	\textbf{Soluzione.}
+		Dal teorema di Tonelli si ha
+		\[
+		\mathbf{m}_3(E) = \int_1^{+\infty} dy \int_{E_y} dx dz,
+		\]
+		ove $E_y = \left\{(x,z) \in \mathbb{R}^2 : z \geq 0, z + x^2 \leq 1/y^{2\alpha}\right\}$. Ne viene che
+		\[
+		\begin{aligned}
+			\mathbf{m}_3(E) &= 2 \int_1^{+\infty} dy \int_0^{1/y^{2\alpha}} \left(\frac{1}{y^{2\alpha}} - z\right)^{1/2} dz \\
+			&= \frac{4}{3} \int_1^{+\infty} \left[\left(\frac{1}{y^{2\alpha}} - z\right)^{3/2}\right]_{z = y^{-2\alpha}}^{z = 0} dy \\
+			&= \frac{4}{3} \int_1^{+\infty} \frac{1}{y^{3\alpha}} dy
+		\end{aligned}
+		\]
+		che è finita se e solo se $\alpha > 1/3$. Per tali $\alpha$ si ha
+		\[
+		\mathbf{m}_3(E) = \frac{4}{9\alpha - 3}.
+		\]
+	
+	
+	\item Calcolare l'integrale
+	\[
+	\int_Q (x^3 + x^2 y - x y^2 - y^3)(x + y) \sin(2z) dx dy dz
+	\]
+	ove abbiamo definito $Q \subset \mathbb{R}^3$ come l'insieme dei punti $(x,y,z)$ tali che
+	\[
+	0 < z < \frac{\pi}{2}, \quad 0 < x + y < \min\left\{\frac{1}{\cos z}, \frac{1}{\sin z}\right\} \quad \text{e} \quad 0 < x - y < 1.
+	\]
+	
+	\textbf{Soluzione.}
+		Osserviamo che per $0 < z < \pi/2$ abbiamo
+		\[
+		\min\left\{\frac{1}{\cos z}, \frac{1}{\sin z}\right\} \leq \sqrt{2}
+		\]
+		pertanto $Q$ è limitato. Di conseguenza la continuità e la limitatezza dell'integranda su $Q$ garantiscono la sua integrabilità. Sia $I$ il valore dell'integrale da calcolare. Con il cambio di variabile $u = x + y$, $v = x - y$, si ha
+		\[
+		I = \frac{1}{2} \int_E u^3 v \sin(2z) du dv dz
+		\]
+		ove $E = \left\{(u,v,z) \in \mathbb{R}^3 : 0 < u < \min\left\{\frac{1}{\cos z}, \frac{1}{\sin z}\right\}, 0 < z < \frac{\pi}{2}, 0 < v < 1\right\}$. Ne segue che
+		\[
+		I = \frac{1}{4} \int_{E_1} u^3 \sin(2z) du dz,
+		\]
+		dove $E_1 = \left\{(u,z) \in \mathbb{R}^2 : 0 < u < \min\left\{\frac{1}{\cos z}, \frac{1}{\sin z}\right\}, 0 < z < \frac{\pi}{2}\right\}$. Abbiamo
+		\[
+		\begin{aligned}
+			4I &= \int_0^{\pi/4} \sin(2z) \int_0^{1/\cos z} u^3 du dz + \int_{\pi/4}^{\pi/2} \sin(2z) \int_0^{1/\sin z} u^3 du dz \\
+			&= \frac{1}{2} \int_0^{\pi/4} \frac{\sin z}{\cos^3 z} dz + \frac{1}{2} \int_{\pi/4}^{\pi/2} \frac{\cos z}{\sin^3 z} dz \\
+			&= \frac{1}{4} (\cos z)^{-2} \bigg|_0^{\pi/4} - \frac{1}{4} (\sin z)^{-2} \bigg|_{\pi/4}^{\pi/2} = \frac{1}{2},
+		\end{aligned}
+		\]
+		quindi $I = 1/8$.
+	
+	
+	\item Si provi l'integrabilità di
+	\[
+	f(x,y) = \frac{xy + y^2}{2 + x + y}
+	\]
+	sull'insieme $D = \{(x,y) \in \mathbb{R}^2 : x \leq y \leq 1, x + y \geq -1\}$. Utilizzando il cambio di coordinate
+	\[
+	\begin{cases}
+		u = x + y \\
+		v = y
+	\end{cases}
+	\]
+	calcolare $\int_D f$.
+	
+	\textbf{Soluzione.}
+		Si nota che $|xy + y^2| = |y||x + y| \leq 2$ su $D$. Inoltre, essendo $x + y \geq -1$, allora $2 + x + y \geq 1$ e quindi $|2 + x + y| \geq 1$. Allora $|f| \leq 2$ e poiché $D$ è un triangolo, allora $\int_D |f|$ esiste finito, essendo $|f|$ limitata su $D$ che è un limitato. Pertanto $f$ è integrabile.
+		
+		Abbiamo la trasformazione $(x,y) = T(u,v) = (u - v, v)$ e
+		\[
+		\tilde{D} = \left\{(u,v) \in \mathbb{R}^2 : -1 \leq u \leq 2v, v \leq 1\right\}.
+		\]
+		Dal teorema di cambiamento di variabile segue che
+		\[
+		\begin{aligned}
+			\int_D f &= \int_{\tilde{D}} \frac{uv}{2 + u} du dv \\
+			&= \int_{-1/2}^1 v \left(\int_{-1}^{2v} \frac{u}{2 + u} du\right) dv \\
+			&= \int_{-1/2}^1 v \left(2v + 1 - 2 \log(2 + 2v)\right) dv \\
+			&= \frac{3}{4} + \frac{3}{8} - 2 \int_{-1/2}^1 v \log(2 + 2v) dv = 0.
+		\end{aligned}
+		\]
+		Infatti abbiamo
+		\[
+		\begin{aligned}
+			\int_{-1/2}^1 v \log(2 + 2v) dv &= \left[\frac{v^2}{2} \log(2 + 2v)\right]_{v = -1/2}^{v = 1} - \frac{1}{2} \int_{-1/2}^1 \frac{v^2}{1 + v} dv \\
+			&= \frac{\log 4}{2} - \frac{1}{2} \int_{-1/2}^1 \frac{v^2 - 1}{1 + v} dv - \frac{1}{2} \int_{-1/2}^1 \frac{1}{1 + v} dv \\
+			&= \log 2 - \frac{1}{2} \int_{-1/2}^1 (v - 1) dv - \frac{1}{2} \log 4 \\
+			&= \frac{1}{2} \int_{-1/2}^1 (1 - v) dv = \frac{1}{2} \left[v - \frac{v^2}{2}\right]_{v = -1/2}^{v = 1} = \frac{9}{16}.
+		\end{aligned}
+		\]
+	
+	
+	\item Si considerino la funzione
+	\[
+	f_{\alpha}(x,y,z,t) = \frac{(z^2 - x^2 - y^2)^{\alpha}}{t^2} \log\left(\frac{1}{z}\right)
+	\]
+	e $A = \left\{(x,y,z,t) \in \mathbb{R}^4 : \sqrt{x^2 + y^2} < z < 1, t^2 + x^2 + y^2 > z^2, t > 0\right\}$.
+	Al variare di $\alpha \in \mathbb{R}$, calcolare $\int_A f_{\alpha} \in [0, +\infty]$.
+	
+	\textbf{Soluzione.}
+		Per il Teorema di Tonelli otteniamo
+		\[
+		\int_A f_{\alpha} = \int_0^1 \log\left(\frac{1}{z}\right) dz \int_{x^2 + y^2 < z^2} (z^2 - x^2 - y^2)^{\alpha} dx dy \int_{\sqrt{z^2 - x^2 - y^2}}^{+\infty} \frac{1}{t^2} dt
+		\]
+		che in coordinate polari diventa
+		\[
+		2\pi \int_0^1 \log\left(\frac{1}{z}\right) dz \int_0^z \rho (z^2 - \rho^2)^{\alpha - 1/2} d\rho.
+		\]
+		Pertanto tale integrale converge se e solo se $\alpha > -1/2$, ove si ha
+		\[
+		\frac{\pi}{\alpha + 1/2} \int_0^1 z^{2\alpha + 1} \log\left(\frac{1}{z}\right) dz. \tag{1}
+		\]
+		Integrando per parti, per ogni $\gamma > -1$ si ha
+		\[
+		-\int_0^1 t^{\gamma} \log t dt = \frac{1}{(\gamma + 1)^2},
+		\]
+		per cui l'integrale (1) converge. Si conclude che l'integrale è uguale a $+\infty$ per $\alpha \leq -1/2$ e uguale a $\frac{\pi}{4\alpha + 2}(\alpha + 1)^2$ per $\alpha > -1/2$.
+	
+	
+	\item (*) Consideriamo l'insieme
+	\[
+	A = \left\{(x,y,u,v,z) \in \mathbb{R}^5 : x^2 + y^2 \leq u^2 + v^2 + z^2 \leq (x^2 + y^2)^{1/3}\right\}.
+	\]
+	Si determinino gli $\alpha$ reali tali che
+	\[
+	f_{\alpha}(x,y,u,v,z) = z \left(z^2 + u^2 + v^2\right)^{\alpha}
+	\]
+	sia integrabile in $A$ e per tali valori si calcoli $\int_A f_{\alpha}$.
+	
+	\textbf{Soluzione.}
+		Osserviamo che se $(x,y,u,v,z) \in A$, allora $x^2 + y^2 \leq 1$. Utilizzando le coordinate polari $(\rho, \phi)$ per $(x,y)$ e le sferiche $(r, \varphi, \theta)$ per $(u,v,z)$ otteniamo che
+		\[
+		\int_A |f_{\alpha}| = 4\pi^2 \int_0^1 \rho d\rho \int_{\rho \leq r \leq \rho^{1/3}} r^{3 + 2\alpha} dr \int_0^{\pi} |\cos \theta| \sin \theta d\theta.
+		\]
+		Se $\alpha = -2$, concludiamo che
+		\[
+		\int_A |f_{-2}| = -4\pi^2 \int_0^1 \left(\frac{2}{3} \rho \log \rho\right) d\rho \int_0^{\pi} |\cos \theta| \sin \theta d\theta
+		\]
+		converge in quanto $\int_0^1 \rho \log \rho d\rho$ è convergente. Se $\alpha \neq -2$, allora possiamo studiare la convergenza di
+		\[
+		\int_0^1 \rho \left(\rho^{(4 + 2\alpha)/3} - \rho^{4 + 2\alpha}\right) d\rho = \int_0^1 \rho^{(7 + 2\alpha)/3} \left(1 - \rho^{(8 + 4\alpha)/3}\right) d\rho.
+		\]
+		Consideriamo $\alpha > -2$. In questo caso $8 + 4\alpha > 0$, quindi il secondo fattore è limitato e si ha convergenza per $(7 + 2\alpha)/3 > -1$, che equivale ad $\alpha > -5$. Tale condizione è verificata in quanto $\alpha > -2$, pertanto si ha convergenza. Nel caso $\alpha < -2$ si ha $4 + 2\alpha < 0$, quindi si considera
+		\[
+		\int_0^1 \rho \left(\rho^{4 + 2\alpha} - \rho^{(4 + 2\alpha)/3}\right) d\rho = \int_0^1 \rho \left(\frac{1}{\rho^{|4 + 2\alpha|}} - \frac{1}{\rho^{|4 + 2\alpha|/3}}\right) d\rho = \int_0^1 \rho^{5 + 2\alpha} \left(1 - \rho^{2|4 + 2\alpha|/3}\right) d\rho.
+		\]
+		Anche in questo caso il secondo fattore è limitato, quindi la condizione $5 + 2\alpha > -1$, ovvero $\alpha > -3$ implica la convergenza. Se $\alpha \leq -3$, studiando l'integranda per $\rho \to 0^+$ si osserva facilmente che
+		\[
+		\int_0^1 \rho^{5 + 2\alpha} \left(1 - \rho^{2|4 + 2\alpha|/3}\right) d\rho = +\infty.
+		\]
+		Riassumendo, l'integrale converge per tutti e soli i valori $\alpha > -3$, ovvero $f_{\alpha}$ è integrabile se e solo se $\alpha > -3$. Per tali valori possiamo considerare l'integrale
+		\[
+		\int_A f_{\alpha} = \int_{A^+} f_{\alpha} + \int_{A^-} f_{\alpha}
+		\]
+		dove abbiamo definito
+		\[
+		A^+ = \left\{(x,y,u,v,z) \in A : z > 0\right\} \quad \text{e} \quad A^- = \left\{(x,y,u,v,z) \in A : z < 0\right\},
+		\]
+		osservando che $f$ è identicamente nulla su $A \setminus (A^+ \cup A^-)$. Essendo $f_{\alpha}$ dispari in $z$ e che $-A^- = A^+$, con il cambio di variabile $z \to -z$ si ha
+		\[
+		\int_{A^-} f_{\alpha} = -\int_{-A^-} f_{\alpha} = -\int_{A^+} f_{\alpha}.
+		\]
+		Questo prova che $\int_A f_{\alpha} = 0$.
+
+	
+	\item (Svolto) Si consideri l'insieme
+	\[
+	A = \left\{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 + (z - 1)^2 \leq 1 \text{ e } y^2 + z^2 \leq 1\right\}
+	\]
+	e la funzione $f: A \to \mathbb{R}$ definita come
+	\[
+	f(x,y,z) = \frac{1}{\sqrt{2z - z^2 - y^2}}.
+	\]
+	Si osservi che $f$ è ben definita su $A$ e si calcoli $\int_A f(x,y,z) dx dy dz$.
+	
+	\textbf{Soluzione.}
+		Osserviamo che se $(x,y,z) \in A$, allora la prima disequazione implica $z \geq 0$, mentre la seconda implica $|z| \leq 1$, concludiamo quindi che deve essere $0 \leq z \leq 1$. Inoltre per tali punti abbiamo
+		\[
+		0 \leq x^2 \leq 1 - (z - 1)^2 - y^2 = 2z - z^2 - y^2,
+		\]
+		pertanto $f$ è ben definita. Per il Teorema di Tonelli abbiamo
+		\[
+		\int_A f(x,y,z) dx dy dz = \int_0^1 \left(\int_{A_z} f(x,y,z) dx dy\right) dz.
+		\]
+		Fissato $z \in [0,1]$, si ha
+		\[
+		y^2 \leq x^2 + y^2 \leq 2z - z^2 \quad \text{e} \quad y^2 \leq 1 - z^2,
+		\]
+		pertanto definendo $\varphi(z) = \min\{1 - z^2, 2z - z^2\}$ ne risulta che
+		\[
+		|y| \leq \sqrt{\varphi(z)}.
+		\]
+		Concludiamo pertanto che
+		\[
+		\begin{aligned}
+			\int_A f &= \int_0^1 \left(\int_{-\sqrt{\varphi(z)}}^{\sqrt{\varphi(z)}} \left(\int_{(A_z)_y} f(x,y,z) dx\right) dy\right) dz \\
+			&= \int_0^1 \left(\int_{-\sqrt{\varphi(z)}}^{\sqrt{\varphi(z)}} \left(\int_{\{x : |x| \leq \sqrt{2z - z^2 - y^2}\}} f(x,y,z) dx\right) dy\right) dz
+		\end{aligned}
+		\]
+		e abbiamo
+		\[
+		\int_{\{x : |x| \leq \sqrt{2z - z^2 - y^2}\}} \frac{1}{\sqrt{2z - z^2 - y^2}} dx = 2.
+		\]
+		Ne segue che
+		\[
+		\begin{aligned}
+			\int_A f &= 4 \int_0^1 \min\{\sqrt{1 - z^2}, \sqrt{2z - z^2}\} dz \\
+			&= 4 \int_0^{1/2} \sqrt{2z - z^2} dz + 4 \int_{1/2}^1 \sqrt{1 - z^2} dz.
+		\end{aligned}
+		\]
+		Consideriamo la traslazione $z = x + 1$, ottenendo
+		\[
+		\begin{aligned}
+			\int_0^{1/2} \sqrt{2z - z^2} dz &= \int_{-1}^{-1/2} \sqrt{1 - x^2} dx \\
+			&= \int_{1/2}^1 \sqrt{1 - x^2} dx.
+		\end{aligned}
+		\]
+		Questo offre
+		\[
+		\int_A f = 8 \int_{1/2}^1 \sqrt{1 - z^2} dz.
+		\]
+		Con il cambio di variabile $z = \sin t$ si ha
+		\[
+		\int_{1/2}^1 \sqrt{1 - z^2} dz = \frac{1}{2} \int_{\pi/6}^{\pi/2} (1 + \cos(2t)) dt = \frac{1}{4} \left(\frac{2\pi}{3} - \frac{\sqrt{3}}{2}\right).
+		\]
+		Concludiamo che $\int_A f = \frac{4\pi}{3} - \sqrt{3}$.
+	
+	
+	\item Utilizzare il teorema di Tonelli per provare che se $f: E \to [0, +\infty]$ è misurabile, allora
+	\[
+	\int_E f(x) dx = \mathbf{m}_{n+1} \left(\{(x,t) \in \mathbb{R}^{n+1} : x \in E, 0 \leq t \leq f(x)\}\right) = \int_0^{+\infty} \mathbf{m}_n \left(\{x \in E : f(x) \geq t\}\right) dt.
+	\]
+	
+	\item Ponendo $\omega_n = \mathbf{m}_n(B(0,1))$, ove $B(0,1) = \{x \in \mathbb{R}^n : |x| < 1\}$, provare che
+	\[
+	\int_{B_n(0,r)} \frac{1}{|x|^\alpha} dx =
+	\begin{cases}
+		\frac{n \omega_n r^{n - \alpha}}{n - \alpha} & \text{se } \alpha < n \\
+		+\infty & \text{se } \alpha \geq n
+	\end{cases}.
+	\]
+	
+	\textbf{Soluzione.}
+		\[
+		\begin{aligned}
+			\mathbf{m}_{n+1}(E) &= \int_{B(0,r)} \frac{1}{|x|^\alpha} dx = \int_0^{+\infty} \mathbf{m}_n \left(B\left(0, \min\{r, t^{-1/\alpha}\}\right)\right) dt \\
+			&= \omega_n \int_0^{+\infty} \left(\min\{r, t^{-1/\alpha}\}\right)^n dt \\
+			&= \omega_n \int_0^{r^{-\alpha}} r^n dt + \omega_n \int_{r^{-\alpha}}^{+\infty} t^{-n/\alpha} dt \\
+			&=
+			\begin{cases}
+				\omega_n \left(r^{n - \alpha} + \frac{\alpha}{n - \alpha} r^{n - \alpha}\right) = \frac{n \omega_n}{n - \alpha} r^{n - \alpha} & \text{se } \alpha < n \\
+				+\infty & \text{se } \alpha \geq n
+			\end{cases}.
+		\end{aligned}
+		\]
+	
+	
+	\item Ragionando come nell'esercizio precedente, provare che
+	\[
+	\int_{\mathbb{R}^n \setminus B(0,r)} \frac{1}{|x|^\alpha} dx =
+	\begin{cases}
+		\frac{n \omega_n r^{n - \alpha}}{\alpha - n} & \text{se } \alpha > n \\
+		+\infty & \text{se } \alpha \leq n
+	\end{cases}
+	\]
+	
+	\textbf{Soluzione.}
+		Dal teorema visto abbiamo
+		\[
+		\tilde{E}_\alpha = \left\{(x,t) \in \mathbb{R}^{n+1} : |x| \geq r, 0 \leq t \leq |x|^{-\alpha}\right\}
+		\]
+		pertanto la sua misura soddisfa le seguenti uguaglianze
+		\[
+		\begin{aligned}
+			\mathbf{m}_{n+1}(\tilde{E}_\alpha) &= \int_{\mathbb{R}^n \setminus B(0,r)} \frac{1}{|x|^\alpha} dx \\
+			&= \int_0^{r^{-\alpha}} \mathbf{m}_n \left(B\left(0, t^{-1/\alpha}\right) \setminus B(0,r)\right) dt \\
+			&= \omega_n \int_0^{r^{-\alpha}} \left(t^{-n/\alpha} - r^n\right) dt \\
+			&=
+			\begin{cases}
+				\frac{\alpha \omega_n}{\alpha - n} r^{n - \alpha} - \omega_n r^{n - \alpha} = \frac{n \omega_n}{\alpha - n} r^{n - \alpha} & \text{se } \alpha > n \\
+				+\infty & \text{se } \alpha \leq n
+			\end{cases}
+		\end{aligned}
+		\]
+
+	
+	\item Dato l'insieme $D = \{(x,y,z) \in \mathbb{R}^3 : z^2 < x^2 - y^2, 0 < x + y < 1\}$ e
+	\[
+	f(x,y,z) = \frac{(x + y)\sqrt{x^2 - y^2}}{(1 + (x^2 - y^2)^2)^2},
+	\]
+	studiare l'integrabilità di $f$ su $D$ e calcolare $\int_D f$.
+	
+	\textbf{Soluzione.}
+		Non sappiamo innanzitutto se $D$ sia limitato o meno, ma osserviamo che $f$ è non negativa su $D$, ed ivi misurabile, in quanto continua. Ne segue che il suo integrale $\int_D f$ esiste, finito o infinito, e possiamo applicare sia il cambiamento di variabile che il teorema di Tonelli. In questo caso, dalla forma della funzione e del dominio sembra conveniente il seguente cambio di variabile
+		\[
+		\begin{cases}
+			u = x - y \\
+			v = x + y \\
+			z = z
+		\end{cases}
+		\]
+		Invertendo tale sistema
+		\[
+		\begin{cases}
+			x = (u + v)/2 \\
+			y = (v - u)/2 \\
+			z = z
+		\end{cases}
+		\]
+		otteniamo la trasformazione $(x,y,z) = T(u,v,z)$, pertanto
+		\[
+		\int_D f = \int_{\tilde{D}} \frac{v \sqrt{uv}}{(1 + u^2 v^2)^2} J T(x,y,z) du dv dz
+		\]
+		dove $\tilde{D} = \{(u,v,z) \in \mathbb{R}^3 : z^2 < uv, 0 < v < 1\}$. Dalla prima disequazione che definisce $\tilde{D}$, possiamo riscrivere tale insieme esplicitando maggiori informazioni
+		\[
+		\tilde{D} = \{(u,v,z) \in \mathbb{R}^3 : z^2 < uv, 0 < v < 1\}.
+		\]
+		Dalla matrice jacobiana
+		\[
+		D T(x,y,z) = \begin{pmatrix}
+			1/2 & 1/2 & 0 \\
+			-1/2 & 1/2 & 0 \\
+			0 & 0 & 1
+		\end{pmatrix}
+		\]
+		otteniamo che $JT = \frac{1}{2}$ e quindi
+		\[
+		\int_D f = \frac{1}{2} \int_0^1 v^{3/2} \left(\int_{\tilde{D}_v} \frac{u^{1/2}}{(1 + u^2 v^2)^2} du dz\right) dv.
+		\]
+		L'integrale che otteniamo su $(\tilde{D}_v)_z$ rispetto $u$ porta a calcoli più impegnativi rispetto al sezionamento su $(\tilde{D}_v)_u$ che è un insieme limitato e l'integranda non dipende da $z$. Abbiamo i seguenti calcoli
+		\[
+		\begin{aligned}
+			\int_{\tilde{D}_v} \frac{u^{1/2}}{(1 + u^2 v^2)^2} du dz &= \int_{\mathbb{R}^+} du \int_{(\tilde{D}_v)_u} \frac{u^{1/2}}{(1 + u^2 v^2)^2} dz \\
+			&= \int_{\mathbb{R}^+} du \int_{-\sqrt{uv}}^{\sqrt{uv}} \frac{u^{1/2}}{(1 + u^2 v^2)^2} dz \\
+			&= 2 \int_{\mathbb{R}^+} \frac{u v^{1/2}}{(1 + u^2 v^2)^2} du.
+		\end{aligned}
+		\]
+		Pertanto, ritornando al calcolo iniziale si ha
+		\[
+		\int_D f = \frac{1}{2} \int_0^1 v^{3/2} \left(\int_{\tilde{D}_v} \frac{u^{1/2}}{(1 + u^2 v^2)^2} du dz\right) dv = \int_0^1 \left(\int_{\mathbb{R}^+} \frac{u v^2}{(1 + u^2 v^2)^2} du\right) dv.
+		\]
+		Poiché l'integranda è continua rispetto ad $u$, per ogni $v \in (0,1)$, ed è quindi Riemann integrabile in ogni intervallo compatto di $\mathbb{R}^+$, abbiamo l'uguaglianza fra l'integrale di Lebesgue e quello di Riemann generalizzato
+		\[
+		\int_{\mathbb{R}^+} \frac{u v^2}{(1 + u^2 v^2)^2} du = \int_0^{+\infty} \frac{u v^2}{(1 + u^2 v^2)^2} du,
+		\]
+		pertanto possiamo procedere con il calcolo esplicito
+		\[
+		\int_0^{+\infty} \frac{u v^2}{(1 + u^2 v^2)^2} du = \left[-\frac{1}{2} \frac{1}{(1 + u^2 v^2)}\right]_{u=0}^{u \to +\infty} = \frac{1}{2}.
+		\]
+		pertanto $\int_D f = \frac{1}{2}$.
+	
+\end{enumerate}
+
+\textit{Referenza. Ulteriore materiale ed esercizi su integrali di più variabili si possono trovare in [1, Capitolo 2 e Capitolo 3].}
+
+\begin{thebibliography}{1}
+	\bibitem{marcellini} Paolo Marcellini e Carlo Sbordone. \textit{Esercizi di Matematica}, Volume II, Tomo 3. Liguori Editore, 2009.
+\end{thebibliography}

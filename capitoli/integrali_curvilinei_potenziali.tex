@@ -5,32 +5,48 @@
 In questo capitolo andremo a generalizzare il concetto di integrale di Riemann con il concetto di integrale curvilineo, il quale consente di valutare una funzione muovendosi lungo una qualunque direzione, e il concetto di potenziale, il quale ricopre una grandissima importanza in Fisica.
 \label{cap:integrali_curvilinei}
 
+\vspace{0.5cm}
 \section{Curve e integrali curvilinei}
 
 Vogliamo estendere il concetto di integrale di Riemann: il primo passo è definire il concetto di \emph{integrale curvilineo}, ovvero l'integrale dove ci muoviamo lungo una \emph{direzione} data dalla curva $\gamma$. Per fare ciò, dobbiamo però richiedere un certo tipo di regolarità da questa curva per non avere problemi nell'integrazione.
-\begin{definition}[curva $C^1$ a tratti]
+
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{curva $C^1$ a tratti}]
 	Sia $\gamma: [a, b] \to \mathbb{R}^n$. Diremo che $\gamma$ è $C^1$ a tratti se $\exists k \in \mathbb{N} : \exists t_0, \ldots, t_k \in [a, b], a = t_0 < \ldots < t_k = b$ tali che $\gamma \in C^1([t_{j}, t_{j+1}]) \, \forall j \in \{0, \ldots, k-1 \}$ e $\gamma \in C^0([a, b])$.
 \end{definition}
+
 Possiamo anche definire la famiglia di curve $C^1$ a tratti su $[a,b]$
-\begin{definition}[famiglie delle curve $C^1$ a tratti]
+
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{famiglie delle curve $C^1$ a tratti}]
 	Indichiamo con $C^1_{\text{tratti}}([a, b], \mathbb{R}^n)$ la famiglia di tutte le curve a tratti su $[a, b]$
 \end{definition}
+
 Se vogliamo specificare la suddivisione $a=t_0 < t_1 < \ldots < t_k = b$ per la quale la curva $\gamma \in C^1([t_j, t_{j+1}], \mathbb{R}^n) \, \forall j \in \{1, \ldots, k \}$ 
+
 diremo che la curva $\gamma$ è $C^1$ a tratti rispetto alla suddivisione (o partizione) $a = t_0 < \ldots < t_k = b$. \\
-\begin{definition}[lunghezza di una curva $\gamma$] 
+
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{lunghezza di una curva $\gamma$}] 
 	Sia $\gamma : [a,b] \to \mathbb{R}^n$, definiamo la lunghezza di $\gamma$ come
 	$$
 		\mathit{l}(\gamma) = \sup \left\{ \sum_{j=1}^k |\gamma(t_j)-\gamma(t_{j-1})| : a = t_0 < t_1 < \ldots < t_k = b, \, k \in \mathbb{N}^+ \right\}
 	$$
 \end{definition}
+
 Consideriamo adesso una curva $\gamma \in C^1_{\text{tratti}}([a, b], \mathbb{R}^n)$ rispetto alla suddivisione $a=t_0 < t_1 < \ldots < t_k = b$ allora definiamo
+
 $$
 \int_a^b |\dot{\gamma}(t)|dt = \sum_{j=1}^k \int_{t_{j-1}}^{t_j} |\dot{\gamma}(t)|dt 
 $$
+
 e possiamo verificare che l'integrale non dipende dalla suddivisione rispetto la quale $\gamma$ è $C^1$ a tratti, infatti se esistesse un'altra suddivisione $a=\tau_0 < \tau_1 < \ldots < \tau_p = b$ allora
+
 $$
 \sum_{i=1}^k \int_{t_{i-1}}^{t_{i}} |\dot{\gamma}(t)|dt = \sum_{i=1}^p \int_{\tau_{i-1}}^{\tau_{i}} |\dot{\gamma}(t)|dt
 $$
+
+\vspace{0.5cm}
 \begin{theorem}
 Se $\gamma \in C^1_{\text{tratti}}([a, b], \mathbb{R}^n)$ allora
 $$
@@ -91,7 +107,8 @@ Il risultato ottenuto è vero anche per curve lipschtziane, tuttavia va modifica
 $l(\gamma)$ misura quello che noi consideriamo come \emph{lunghezza} della curva solo se $\gamma$ è iniettiva, altrimenti misura la lunghezza dell'immagine della curva "con molteplicità".
 \end{remark}
 
-\begin{definition}
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{Integrale curvilineo di prima specie}]
 	Sia $\gamma \in C^1_{\text{tratti}}([a,b], \mathbb{R}^n)$ e $f: \gamma([a,b]) \to \mathbb{R}$ continua, definiamo l'integrale di lunghezza o l'integrale curvilineo di prima specie di $f$ lungo $\gamma$ come
 	$$
 		\int_{\gamma} f = \int_a^b f(\gamma(t))|\dot{\gamma}(t)|dt
@@ -124,6 +141,8 @@ $l(\gamma)$ misura quello che noi consideriamo come \emph{lunghezza} della curva
     % Indicating the integral
 %    \node at (2.5, 2, 4) {$\int_{\gamma} f(x, y, z)\, \mathrm{d}s$};
 %\end{tikzpicture}
+
+\vspace{0.5cm}
 \begin{theorem}
 	Sia $\gamma \in C^1_{\text{tratti}}([a, b], \mathbb{R}^n)$ e $f \in C^1(\gamma([a, b]))$. Allora 
 	$$
@@ -161,7 +180,8 @@ $$
 ovvero la tesi.
 \hfill $\square$
 
-\begin{cor}[lunghezza di un arco]
+\vspace{0.5cm}
+\begin{cor}[\textcolor{blue}{lunghezza di un arco}]
 	Sia $f(x): I \to \mathbb{R}$ con $f \in C^1(I)$ allora la lunghezza dell'arco descritto da $f(x)$ è dato da
 	$$
 		\int_I \sqrt{1 + f'(x)}dx
@@ -176,11 +196,13 @@ $$
 ovvero la tesi.
 \hfill $\square$
 
+\vspace{0.5cm}
 \section{Integrali curvilinei su forme differenziali e campi vettoriali}
 
 Abbiamo generalizzato l'integrale di Riemann all'integrale curvilineo come l'integrale di una funzione a valori reali lungo una direzione impartita dalla curva $\gamma$, vogliamo adesso generalizzarlo a funzioni a valori vettoriali. I candidati ideali per fare questo sono le forme differenziali e i campi vettoriali di cui richiediamo una certa regolarità
 
-\begin{definition}[$1$-forma differenziale di classe $C^k$]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{$1$-forma differenziale di classe $C^k$}]
 Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, allora $$\omega(x) = \sum_{j=1}^n a_j(x)dx_j$$ è una $1$-forma differenziale di classe
 $C^k(\Omega)$, ovvero
 $$
@@ -189,14 +211,19 @@ $$
 \end{definition}
 
 Diamo adesso la nozione di \emph{esattezza} di una forma differenziale
-\begin{definition}[esattezza di una $1$-forma differenziale]
+
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{esattezza di una $1$-forma differenziale}]
 	Diremo che $\omega$ è esatta se esiste una primitiva $V \in C^1(\Omega)$ tale che
 	$$
 		dV = \omega
 	$$
 	ovvero se $\omega = \sum\limits_{j}^n a_j dx_j$ allora $a_j = \frac{\partial V}{\partial x_j}$ su $\Omega \, \forall j \in \{1, \ldots, n\}$
 \end{definition}
+
 Equivalentemente diamo la nozione di \emph{chiusura} di una forma differenziale
+
+\vspace{0.5cm}
 \begin{definition}
 	Sia $\omega = \sum_{j=1}^n a_j dx_j \in C^k(\Omega, (\mathbb{R}^n)^*)$, ovvero una $1$-forma differenziale di classe $C^k(\Omega)$, allora diremo che
 	è chiusa se abbiamo che
@@ -207,7 +234,8 @@ Equivalentemente diamo la nozione di \emph{chiusura} di una forma differenziale
 
 Equivalentemente, possiamo dare delle definizioni che sono "duali" nel caso, però, di campi vettoriali:
 
-\begin{definition}[campo vettoriale di classe $C^k$]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{campo vettoriale di classe $C^k$}]
 	Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, allora $$F(x)=\sum_{j=1}^n f_j(x)e_j$$ è un campo vettoriale di classe $C^k$, ovvero 
 	$$F \in C^k(\Omega, \mathbb{R}^n) \iff f_j \in C^k(\Omega) \, \forall j \in \{1, \ldots, n\} $$
 \end{definition}
@@ -215,7 +243,8 @@ Equivalentemente, possiamo dare delle definizioni che sono "duali" nel caso, per
 Nel caso di campi vettoriali la nozione di \emph{esattezza} e di \emph{chiusura} è sostituita dal concetto di \emph{campo conservativo} (che è un concetto che ogni fisico ha incontrato nel corso di Fisica 1
 nel caso del moto in campo centrale per esempio) e dal concetto di \emph{campo irrotazionale}
 
-\begin{definition}[campo conservativo]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{campo conservativo}]
 	Diremo che $F$ è un campo conservativo se esiste un potenziale $V \in C^1(\Omega)$ tale che
 	$$
 	F = \nabla V
@@ -223,7 +252,8 @@ nel caso del moto in campo centrale per esempio) e dal concetto di \emph{campo i
 	ovvero se $F=(f_1, \ldots, f_n)$ e abbiamo che $f_j = \frac{\partial V}{\partial x_j}$ su $\Omega \, \forall j \in \{1, \ldots, n \}$
 \end{definition}
 
-\begin{definition}[campo irrotazionale]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{campo irrotazionale}]
 	Sia  $\Omega \subseteq \mathbb{R}^n$ aperto e sia $F = \sum_{i=1}^n f_i e_i \in C^k(\Omega, \mathbb{R}^n)$ un campo vettoriale, diremo che $F$ è un campo irrotazionale se
 	$$
 	\frac{\partial f_i}{\partial x_j} - \frac{\partial f_j}{\partial x_i} = 0 \, \forall i, j: 1 \leq i < j \leq n
@@ -231,7 +261,9 @@ nel caso del moto in campo centrale per esempio) e dal concetto di \emph{campo i
 \end{definition}
 
 Possiamo andare a definire il concetto di integrale curvilineo di seconda specie di $\omega$ (oppure di $F$) lungo una curva $\gamma$ come segue
-\begin{definition}[integrale curvilineo di seconda specie di $\omega$ lungo una curva $\gamma$]
+
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{integrale curvilineo di seconda specie di $\omega$ lungo una curva $\gamma$}]
 	Sia $\Omega \subseteq \mathbb{R}^n$, $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$ una $1$-forma differenziale e sia $\gamma \in C^1_{\text{tratti}}([a,b], \Omega)$ una curva. Definiamo l'integrale curvilineo di seconda specie di 
 	$\omega$ lungo una curva $\gamma$ come
 	$$
@@ -239,7 +271,9 @@ Possiamo andare a definire il concetto di integrale curvilineo di seconda specie
 	$$
 \end{definition}
 
-\begin{definition}[integrale curvilineo di seconda specie di $F$ lungo una curva $\gamma$]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{integrale curvilineo di seconda specie di $F$ lungo una curva $\gamma$}]
+	
 	Sia $\Omega \subseteq \mathbb{R}^n$, $F \in C^0(\Omega, \mathbb{R}^n)$ un campo vettoriale e sia $\gamma \in C^1_{\text{tratti}}([a, b], \Omega)$ una curva. Definiamo l'integrale curvilineo di seconda specie di 
 	$F$ lungo una curva $\gamma$ come 
 	$$
@@ -270,9 +304,12 @@ Osservando la questione da un punto di vista più elevato, in presenza di metric
 una $1-$forma differenziale \emph{contraendo} il campo vettoriale con la metrica. Quindi da questo breve accenno senza formule, possiamo intuire che campi vettoriali e $1-$forme differenziali siano, in sostanza, due lati della stessa moneta.
 \end{remark}
 
+\vspace{0.5cm}
 Con le forme differenziali (e dunque anche con i campi vettoriali) possiamo giungere ad un risultato equivalente a quello raggiunto
 con l'integrale valutato su una composizione di curve, così come avevamo fatto nel caso di funzioni a valori reali
-\begin{theorem}[di invarianza]
+
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{di invarianza}]
 	Sia $\gamma \in C^1_{\text{tratti}}([a, b], \Omega)$, sia $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$ e sia $\varphi: [c, d] \to [a, b]$
 	di classe $C^1$ e invertibile. Ponendo $\sigma(\varphi)= 1$ se $\varphi$ è strettamente crescente e $\sigma(\varphi)=-1$ se $\varphi$ è strettamente decrescente.
 	Allora abbiamo che
@@ -295,6 +332,7 @@ Supponiamo che $\varphi$ sia strettamente decrescente, dunque anche $\varphi^{-1
 ovvero la tesi. Nel caso in cui $\varphi$ fosse strettamente crescente e, dunque, $\sigma=1$ la sommatoria già dà l'integrale curvilineo della composizione
 \hfill $\square$
 
+\vspace{0.5cm}
 \subsection{Forme differenziali esatte}
 \begin{prop}
 	Siano $\Omega \subseteq \mathbb{R}^n$ un insieme aperto e $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$ tale che $\omega$ sia esatta con primitiva $P \in C^1(\Omega)$.
@@ -321,6 +359,7 @@ $$
 e con ragionamenti simili a quanto fatto prima possiamo arrivare alla tesi.
 \hfill $\square$
 
+\vspace{0.5cm}
 \begin{cor}
 	Siano $\Omega \subseteq \mathbb{R}^n$ un insieme aperto e $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$ tale che $\omega$ sia esatta. Allora $\forall \gamma \in C^1_{\text{tratti}}([a,b], \Omega)$ chiusa abbiamo che
 	$$
@@ -341,6 +380,7 @@ $$
 Procediamo allo stesso modo per i campi vettoriali.
 \hfill $\square$
 
+\vspace{0.5cm}
 \begin{exercise}[integrali in coordinate polari]
 Spesso, a seconda della simmetria di determinate funzioni, è molto comodo \emph{passare} in coordinate polari. Consideriamo una curva $\gamma(t)$ della forma
 $$
@@ -375,8 +415,11 @@ $$
 $$
 \hfill $\square$
 
+\vspace{0.5cm}
 Andiamo a mostrare l'additività dell'integrazione curvilinea di seconda specie rispetto alla "somma" di curve.
 Per la prossima serie di proposizioni faremo implicitamente uso del seguente lemma che, geometricamente, garantisce il fatto di poter individuare, presi due punti $a$ e $b$ di un sottoinsieme aperto e connesso per archi $\Omega \subseteq \mathbb{R}^n$, una poligonale $C^1_\text{tratti}$ che li unisce.
+
+\vspace{0.5cm}
 \begin{lemma}
 	Sia $\Omega \subseteq \mathbb{R}^n$ aperto e connesso per archi. Per ogni coppia $x, y \in \Omega$ esiste $\gamma:[a, b] \to \Omega$ tale che $\gamma(a) = x$, $\gamma(b)=y$ e $\gamma \in C^1_\text{tratti}$.
 \end{lemma}
@@ -387,6 +430,7 @@ Per la prossima serie di proposizioni faremo implicitamente uso del seguente lem
 	$B_r(x_0) \cap \gamma([a, b]) \neq \emptyset$ (se fosse vuoto allora avremmo un assurdo riguardo all'ipotesi che $\Omega$ sia connesso per archi). Preso $x_1 \in B_r(x_0) \cap \gamma([a, b])$ con $x_1 \neq x_0$, possiamo, a questo punto, iterare il procedimento descritto e ottenere il partizionamento di una curva $C^1_\text{tratti}$ fra $a$ e $b$.
 \hfill $\square$
 
+\vspace{0.5cm}
 \begin{prop}
 Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, $\gamma \in C^1_{\text{tratti}}([a, b], \Omega), \Gamma \in C^1_{\text{tratti}}([c, d], \Omega)$ tali che $\gamma(b) = \Gamma(c)$. Allora, definendo 
 $$
@@ -431,7 +475,8 @@ e questo conclude la dimostrazione.
 	Motivati da questa proprietà appena mostrata, si fa spesso uso della seguente notazione $\alpha = \gamma + \Gamma$, tuttavia bisogna naturalmente tenere di conto che non si tratta di una somma effettiva di curve.
 \end{remark}
 
-\begin{theorem}[CF1]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{CF1}]
 Sia $\Omega \subseteq \mathbb{R}^n$ aperto e connesso per archi. Sia $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$. Allora $\omega$ è esatta $\iff \, \forall \gamma \in C^1_\text{tratti} ([a, b], \Omega)$ chiusa abbiamo che
 $$
 \oint_\gamma \omega = 0
@@ -479,7 +524,8 @@ $$
 dove si osserva che $\int_{\tilde{\Gamma}_x} \omega = - \int_{\Gamma_x} \omega$ per il teorema di invarianza (teorema~\ref{thm:teo_di_invarianza}) siccome $\tilde{\Gamma}_x = \Gamma_x \circ \varphi$ dove $\varphi(t) = c + d - t$. Abbiamo pertanto dimostrato che dunque la funzione $V(x)$ non dipende dalla curva $C^1$ a tratti scelta
 \hfill $\square$
 
-\begin{theorem}[CF2]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{CF2}]
 	Sia $\Omega \subseteq \mathbb{R}^n$ aperto e connesso per archi. Sia $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$, allora $\omega \, \text{ è esatta} \iff \forall \gamma \in C^1_\text{tratti}([a,b], \Omega) \text{ e } \forall \Gamma \in C^1_\text{tratti}([c,d], \Omega) \text{ tali che } \gamma(a) = \Gamma(c) \text{ e } \gamma(b) = \Gamma(d), $
 	$$ 
 	\int_\gamma \omega = \int_\Gamma \omega
@@ -502,7 +548,8 @@ dove si osserva che $\int_{\tilde{\Gamma}_x} \omega = - \int_{\Gamma_x} \omega$ 
 	e la tesi segue dal teorema~\ref{thm:teo_cf1}, siccome esso garantisce adesso che $\omega$ sia esatta.
 \hfill $\square$
 
-\begin{prop}[le $1$-forme differenziali esatte sono chiuse]
+\vspace{0.5cm}
+\begin{prop}[\textcolor{blue}{le $1$-forme differenziali esatte sono chiuse}]
 	Sia $\omega \in C^1(\Omega, (\mathbb{R}^n)^*)$ tale che $\omega$ sia esatta. Allora $\omega$ è chiusa. \\
 	Equivalentemente, se $F \in C^1(\Omega, \mathbb{R}^n)$ tale che $F$ sia un campo conservativo. Allora $F$ è irrotazionale.
 	\label{prop:esattezza_imp_chiusura}
@@ -581,8 +628,10 @@ ovvero la tesi. Analogamente si può fare la dimostrazione nel caso di campi vet
 	Il fatto che la forma dell'esempio sia esatta su $\mathbb{R}^2$ ma non chiusa è legata al fatto che i suoi coefficienti $X$ e $Y$, sebbene continui su $\mathbb{R}^2$ e di cui esiste la derivata $\partial_y X$ e $\partial_x Y$, non ammettono derivate continue. 
 \end{remark}
 
+\vspace{0.5cm}
 Faremo uso adesso del seguente lemma
-\begin{lemma}[CF2]
+
+\begin{lemma}[\textcolor{blue}{CF2}]
 	Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto, connesso per archi e sia $f \in C^1(\Omega)$ tale che $\nabla f(x) = 0 \, \, \forall x \in \Omega$. Allora
 	$f(x)=c \, \, \forall x \in \mathbb{R}^n$
 \end{lemma}
@@ -596,6 +645,7 @@ Faremo uso adesso del seguente lemma
 	dove l'eguaglianza è ottenuta costruendo una semplice serie telescopica. Osserviamo adesso che $f(\gamma(t_j)) - f(\gamma(t_{j-1})) = \int_{t_{j-1}}^{t_j} \innerprod{\nabla f(\gamma(t))}{\dot{\gamma(t)}}dt = 0$ in virtù dell'annullamento del gradiente.
 \hfill $\square$
 
+\vspace{0.5cm}
 \begin{prop}
 	Sia $\Omega \subseteq \mathbb{R}^n$ un insieme aperto e connesso per archi e sia $\omega \in C^0(\Omega, (\mathbb{R}^n)^*)$. Allora se $\omega$ è esatta con primite $P_1, P_2 \in C^1(\Omega)$
 	$$
@@ -652,10 +702,14 @@ Per quanto riguarda la \emph{funzione argomento} possiamo pensare di estenderla 
 \end{equation*}
 e possiamo verificare che $\theta \in C^\infty(H)$. Inoltre, calcolando le derivate di $\theta$ su $H$, vediamo che il differenziale di $\theta$ coincide con la $1$-forma differenziale $\eta_0$.
 \end{remark}
+
+\vspace{0.5cm}
 \subsection{Omotopia e curve omotope}
 Vogliamo adesso studiare quali sono le condizioni per cui una $1-$forma differenziale chiusa (o Equivalentemente un campo vettoriale irrotazionale è un campo conservativo). Per fare questo dobbiamo definire
 il concetto di omotopia, senza il quale non sarebbe possibile dare la nozione di insieme semplicemente connesso che ci darà una condizione necessaria e sufficiente affinché una $1-$forma differenziale chiusa sia anche esatta
-\begin{definition}[omotopia]
+
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{omotopia}]
 	Sia $E \subseteq \mathbb{R}^n$ e sia $\gamma \in C^0([a, b], E)$ e sia $\gamma(a) = \gamma(b)$, ovvero $\gamma$ è chiusa. Diremo che $\gamma$
 	è omotopa a $x_0 \in E$ in $E$ se $\exists H:[0,1] \times [a, b] \to E$ tale che
 	\begin{enumerate}[label=\protect\circled{\arabic*}]
@@ -666,13 +720,17 @@ il concetto di omotopia, senza il quale non sarebbe possibile dare la nozione di
 	\end{enumerate}
 	e chiameremo $H$ con le proprietà \circled{1}, \circled{2}, \circled{3} e \circled{4} un'omotopia tra $\gamma$ e $x_0$ relativamente ad $E$.
 \end{definition}
+
 Il concetto di omotopia generalizza il concetto di \emph{deformare} con continuità una curva. Nel nostro caso consideriamo una curva $\gamma$ chiusa che andiamo a \emph{strizzare} in maniera continua (ovvero senza strappi) fino a farla richiudere su un punto $x_0$
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics{immagini/omotopia.png}
 	\caption{Rappresentazione di un'omotopia: la curva $\gamma$ viene strizzata fino a diventare il punto $x_0$.}
 \end{figure}
-\begin{definition}[insieme semplicemente connesso]
+
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{insieme semplicemente connesso}]
 	Diremo che $E \subseteq \mathbb{R}^n$ è un insieme semplicemente connesso se
 	\begin{enumerate}[label=\protect\circled{\arabic*}]
 		\item è connesso per archi;
@@ -688,7 +746,9 @@ Il concetto di omotopia generalizza il concetto di \emph{deformare} con continui
 	Sia $\Omega = \mathbb{R} \setminus S$ e $S = q + \mathbb{R}v$. $S=\{q+tv : t \in \mathbb{R} \}, q, v \in \mathbb{R}^3$, ovvero lo spazio tridimensionale senza una realtà. Allora $\Omega$ non è semplicemente connesso, siccome prendendo una circonferenza sufficientemente vicina alla retta e con un raggio maggiore della distanza dal punto alla retta, la curva sarebbe costretta a "toccare" la retta per poter essere omotopa ad un punto, pertanto
 	non è un insieme semplicemente connesso.
 \end{remark}
-\begin{prop}[gli insiemi convessi sono semplicemente connessi]
+
+\vspace{0.5cm}
+\begin{prop}[\textcolor{blue}{gli insiemi convessi sono semplicemente connessi}]
 	Sia $E \subseteq \mathbb{R}^n$, allora $E$ è semplicemente connesso
 \end{prop}
 
@@ -700,7 +760,8 @@ Se $E$ è convesso e $\gamma: [a, b] \to E$ è chiusa e continua scelgo $x_0 \in
 	per la convessità di $E$ avremo che $H(s, t) \in E$. Avremo per $s = 0$ che $H(0, t)=\gamma(t)$ e per $s=1$ che $H(1, t)=x_0$. Siccome $H$ è continua, avremo che $H$ è un'omotopia in $E$ tra $\gamma$ e $x_0$.
 \hfill $\square$
 
-\begin{theorem}[lemma di Poincare per gli aperti semplicemente connesi]
+\vspace{0.5cm}
+\begin{theorem}[\textcolor{blue}{lemma di Poincare per gli aperti semplicemente connesi}]
 	Sia $\Omega \subseteq \mathbb{R}^n$ aperto e semplicemente connesso e sia $\omega \in C^1(\Omega, (\mathbb{R}^n)^*)$. Allora
 	\begin{align*}
 		\omega \text{ è chiusa } \iff \omega \text{ è esatta }. 
@@ -750,9 +811,10 @@ Nelle appendici riporterò la dimostrazione per insiemi semplicemente connessi, 
 	dunque $dF=\omega$, il che conclude la dimostrazione.
 \hfill $\square$
 
+\vspace{0.5cm}
 \subsection{Campi vettoriali radiali}
 
-\begin{definition}[campo vettoriale radiale]
+\begin{definition}[\textcolor{blue}{campo vettoriale radiale}]
 	Consideriamo $h: (0, +\infty) \mapsto \mathbb{R}$ continua e $F: \mathbb{R}^n \setminus \{\underline{0} \} \to \mathbb{R}^n$ con $F(x) = h(|x|)x$.
 	Diremo allora che $F$ è un campo vettoriale radiale.
 \end{definition}
@@ -761,7 +823,8 @@ Nelle appendici riporterò la dimostrazione per insiemi semplicemente connessi, 
 Siccome $\nabla |x| = \frac{x}{|x|} \, \forall x \neq \underline{0}$ allora $F(x) = |x|h(|x|)\frac{x}{|x|} \implies F(x) = |x| \, h(|x|)\nabla |x|$
 \end{remark}
 
-\begin{prop}[i campi radiali sono conservativi]
+\vspace{0.5cm}
+\begin{prop}[\textcolor{blue}{i campi radiali sono conservativi}]
 	Sia $F$ un campo vettoriale radiale, allora $F$ è conservativo
 \end{prop}
 
@@ -788,10 +851,368 @@ Siccome $\nabla |x| = \frac{x}{|x|} \, \forall x \neq \underline{0}$ allora $F(x
 
 Similmente, possiamo definire le $1-$forme differenziali radiali nella seguente maniera
 
-\begin{definition}[$1-$forma differenziale radiale]
+\vspace{0.5cm}
+\begin{definition}[\textcolor{blue}{$1-$forma differenziale radiale}]
 	Sia $h(x) \in C^0((0, +\infty), \mathbb{R})$ e sia $\omega \in C^{\infty}(\mathbb{R}^n \setminus \{ \underline{0} \}, (\mathbb{R}^n)^*)$ è una $1-$ forma differenziale radiali se
 	$$
 		\omega(x) = h(|x|)\sum_{j=1}^n x_j dx_j
 	$$
 \end{definition}
+
 Come prima, avremo che è esatta con primitiva $P(x)=U(|x|)$, dove $U(s) = \int_1^s th(t)dt$ e $dP(x)=\omega(x)$.
+
+
+\section{Esercizi}
+
+\subsection{esercizi di integrazione di domini normali}
+
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_D xy \, dx \, dy,
+\]
+dove
+\[
+D = \{(x, y) \in \mathbb{R}^2 : x \leq y \leq 2x - x^2\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_D xy \, dx \, dy,
+\]
+dove
+\[
+D = \{(x, y) \in \mathbb{R}^2 : x + 2x^2 \leq y \leq 2x + x^2\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_D xy \, dx \, dy,
+\]
+dove
+\[
+D = \{(x, y) \in \mathbb{R}^2 : \sqrt{2x^2 + 1} \leq y \leq x + 1\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_D 2y \, dx \, dy,
+\]
+dove
+\[
+D = \{(x, y) \in \mathbb{R}^2 : x^2 - 1 \leq y \leq \sqrt{2x^2 + 1}\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_D (y + x^3 y^2) \, dx \, dy,
+\]
+dove
+\[
+D = \{(x, y) \in \mathbb{R}^2 : 0 \leq y \leq 1 - |x|\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_D (x + y) \, dx \, dy,
+\]
+dove
+\[
+D = \{(x, y) \in \mathbb{R}^2 : -1 \leq x \leq 1, -1 \leq y \leq x\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'area del dominio
+\[
+D = \{(x, y) \in \mathbb{R}^2 : x \leq y \leq 2x - x^2\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'area del dominio
+\[
+D = \{(x, y) \in \mathbb{R}^2 : x \leq y \leq 3x - x^2\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_{B_1} \sqrt{1 + x^2 + y^2} \, dx \, dy,
+\]
+dove \( B_1 \) è la palla di raggio 1 e centro zero in \( \mathbb{R}^2 \).
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega x \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : x^4 \leq y \leq x\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega y \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : x^4 \leq y \leq 1\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega x \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x^2\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega y \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x^2\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega x \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega y \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega (x^2 + y^2) \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : x^2 \leq y \leq x\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega y \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : x^2 \leq y \leq 1\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_{B_1} e^{-(x^2 + y^2)} \, dx \, dy,
+\]
+dove \( B_1 \) è la palla di raggio 1 e centro zero in \( \mathbb{R}^2 \).
+\end{exercise}
+\begin{exercise}
+Calcolare, in funzione del parametro \( a > 0 \),
+\[
+\iint_{\mathbb{R}^2} e^{-a(x^2 + y^2)} \, dx \, dy.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+\[
+\iint_\Omega 1 \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+\[
+\iint_\Omega (x + 2y) \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+\[
+\iint_\Omega x^2 \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+\[
+\iint_\Omega (x^2 + y^2) \, dx \, dy,
+\]
+dove
+\[
+\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare l'integrale doppio
+\[
+\iint_\Omega xy \, dx \, dy,
+\]
+dove
+\[
+\Omega = [0, 1] \times [1, 2].
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare gli integrali doppi
+\[
+I_1 = \iint_\Omega x \, dx \, dy, \quad I_2 = \iint_\Omega xy \, dx \, dy, \quad I_3 = \iint_\Omega x^2 \, dx \, dy,
+\]
+dove
+\[
+\Omega = [0, 1] \times [0, 1].
+\]
+\end{exercise}
+\begin{exercise}
+Siano \( \Omega_1 = [0, 1] \times [0, 4] \), \( \Omega_2 = [0, 2] \times [0, 2] \), \( \Omega_3 = [0, 4] \times [0, 1] \). Calcolare gli integrali doppi
+\[
+I_1 = \iint_{\Omega_1} xy \, dx \, dy, \quad I_2 = \iint_{\Omega_2} xy \, dx \, dy, \quad I_3 = \iint_{\Omega_3} xy \, dx \, dy.
+\]\end{exercise}
+
+\begin{exercise}
+Per ogni numero reale \( a > 0 \), sia
+\[
+\Omega_a = [0, a] \times \left[0, \frac{1}{a}\right].
+\]
+Calcolare, in funzione di \( a \),
+\[
+I(a) = \iint_{\Omega_a} (x^2 + y^2) \, dx \, dy,
+\]
+e determinare
+\[
+\sup_{a > 0} I(a) \quad \text{e} \quad \inf_{a > 0} I(a).
+\]
+\end{exercise}
+\begin{exercise}
+Sia \( D = B_2 \setminus B_1 \) in \( \mathbb{R}^2 \). Quali delle seguenti affermazioni sono vere?
+\begin{enumerate}
+	\item \( \iint_D x^2 = \iint_D y^2 \)
+	\item \( \iint_D xy = 0 \)
+	\item \( \iint_D (x - y)^2 = 2 \iint_D x^2 \)
+	\item \( \iint_D (x - y)^2 = 0 \)
+	\item \( \iint_D (x + y)^2 = 2 \iint_D x^2 \)
+	\item \( \iint_D (x + y)^2 = 4 \iint_D x^2 \)
+	\item \( \iint_D (x^2 + y^2) = 2 \iint_D x^2 \)
+	\item Calcolare \( \iint_D x^2 \).
+\end{enumerate}
+\end{exercise}
+
+%
+%
+%
+\subsection{Integrazione di funzioni su curve}
+
+\begin{exercise}
+Su ciascuna delle curve
+\[
+\gamma : [0, 2\pi] \to \mathbb{R}^2, \quad \gamma(t) = (\cos t, \sin t),
+\]
+\[
+\gamma : [0, 2\pi] \to \mathbb{R}^2, \quad \gamma(t) = (2\cos t, 2\sin t),
+\]
+calcolare l'integrale
+\[
+\int_\gamma F,
+\]
+dove:
+\begin{enumerate}
+	\item \( F(x, y) = 1 \);
+	\item \( F(x, y) = x^2 \);
+	\item \( F(x, y) = xy \);
+	\item \( F(x, y) = y e^x \).
+\end{enumerate}
+\end{exercise}
+\begin{exercise}
+Calcolare la lunghezza della curva
+\[
+\gamma : [0, 4\pi] \to \mathbb{R}^3, \quad \gamma(t) = (\cos t, \sin t, t).
+\]
+\end{exercise}
+\begin{exercise}
+Calcolare la lunghezza della curva
+\[
+\gamma : [0, T] \to \mathbb{R}^2, \quad \gamma(t) = (e^{-t} \cos t, e^{-t} \sin t),
+\]
+in funzione del parametro \( T > 0 \). Calcolare il limite
+\[
+\lim_{T \to +\infty} \int_0^T \|\gamma'(t)\| \, dt.
+\]
+\end{exercise}
+\begin{exercise}
+Data una funzione
+\[
+r : [0, +\infty) \to [0, +\infty),
+\]
+consideriamo la curva
+\[
+\gamma : [0, T] \to \mathbb{R}^2, \quad \gamma(t) = (r(t) \cos t, r(t) \sin t).
+\]
+Dimostrare che la lunghezza di \( \gamma \) è data da:
+\[
+\int_0^T \sqrt{r'(t)^2 + r(t)^2} \, dt.
+\]
+\end{exercise}
+\begin{exercise}
+Sia \( \gamma \) una curva semplice, chiusa e \( C^1 \) a tratti che parametrizza il bordo del rettangolo \([-1, 1] \times [-1, 1]\). Data la funzione \( F(x, y) = x^2 + y^2 \), calcolare l'integrale
+\[
+\int_\gamma F.
+\]
+\end{exercise}
+\begin{exercise}
+Sia \( \gamma \) una curva semplice, chiusa e \( C^1 \) a tratti che parametrizza il bordo del rettangolo \([0, 1] \times [0, 1]\). Data la funzione \( F(x, y) = xy \), calcolare l'integrale
+\[
+\int_\gamma F.
+\]
+\end{exercise}
+\begin{exercise}
+Sia \( \gamma \) una curva semplice, chiusa e \( C^1 \) a tratti che parametrizza il bordo della circonferenza \( \partial B_1(0, 1) \). Data la funzione \( F(x, y) = y \), calcolare l'integrale
+\[
+\int_\gamma F.
+\]
+\end{exercise}
+\begin{exercise}
+Consideriamo la successione di curve
+\[
+\gamma_n : [0, 1] \to \mathbb{R}^2, \quad \gamma_n(t) = (t, t^n).
+\]
+Calcolare il limite
+\[
+\lim_{n \to \infty} \int_{\gamma_n} 1.
+\]
+\end{exercise}
+
