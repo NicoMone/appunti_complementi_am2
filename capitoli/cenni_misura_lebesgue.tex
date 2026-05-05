@@ -871,7 +871,7 @@ Andiamo a formulare un teorema simile a quello di Tonelli ma valido per le funzi
 	\end{aligned}\]
 \hfill $\square$
 %
-\vspace{0.5cm}
+
 \section{Teorema del cambiamento di variabili}
 Come nel caso degli integrali a singola variabile, vogliamo adesso effettuare dei cambi di variabile all'interno degli integrali. Infatti il passaggio a coordinate permette, spesso, di fruire più facilmente di alcune simmetrie
 di cui godono certi insiemi oppure certe funzioni (si pensi a voler calcolare il volume occupato da una sfera: in coordinate cartesiane può essere un incubo parametrizzare le variabili, tuttavia potremmo pensare di scrivere le coordinate dei punti $(x, y, z) \mapsto (\rho, \theta, \varphi)$). Per fare ciò abbiamo bisogno di una serie di risultati:
@@ -1470,7 +1470,9 @@ naturalmente si ottiene questo banale corollario se $f$ è continua (in quanto m
 	&\partial_\varphi \Phi = \begin{pmatrix} -\sin{\varphi}(R + r \cos{\theta}) & \cos{\varphi}(R + r \cos{\theta}) & 0\end{pmatrix} & \\
 	&\partial_\theta \Phi = \begin{pmatrix} - r \sin{\theta} \cos{\varphi} & -r \sin{\theta} \sin{\varphi} & r\cos{\theta}	\end{pmatrix}
 	\end{aligned}\]
+	
 	i quali ci consentono di concludere che
+	
 	\[\begin{aligned}
 	&J\Phi(\varphi, \theta) = r(R + r\cos{\theta}) \implies \sigma(T) = \int_{(0, 2\pi) \times (0, \pi)} J\Phi d\varphi d\theta = r \int_0^{2\pi} \int_0^{2\pi} (R + r\cos{\theta}) d\varphi d\theta = \\
 	&= 2\pi r \int_0^{2\pi} R + r\cos{\theta} d\theta = 2 \pi r 2 \pi R = 4 \pi^2 rR
@@ -1483,7 +1485,7 @@ naturalmente si ottiene questo banale corollario se $f$ è continua (in quanto m
 	$$
 	\int_T \frac{|xz|}{(x^2 + y^2)^{\frac{3}{2}}} d\sigma
 	$$
-	dove $T=\varphi((0, 2\pi)^2)$ toro di raggi $0 < r < R$
+	dove $T=\varphi((0, 2\pi)^2)$ toro di raggio  $0 < r < R$
 	
 \end{exercise}
 %
@@ -1599,4 +1601,275 @@ dunque possiamo concludere che
 	in virtù dell'esercizio in cui avevamo mostrato che $\int_{\mathbb{B}(0, r)} \frac{1}{|x|^\alpha} < +\infty \iff 0 < \alpha < n$.
 	L'integrale è un banale conto
 \hfill $\square$
-%
+
+\vspace{0.5cm}
+\section{Esercizi}
+
+\subsection{esercizi di integrazione di domini normali}
+
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_D xy \, dx \, dy,
+	\]
+	dove
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : x \leq y \leq 2x - x^2\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_D xy \, dx \, dy,
+	\]
+	dove
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : x + 2x^2 \leq y \leq 2x + x^2\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_D xy \, dx \, dy,
+	\]
+	dove
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : \sqrt{2x^2 + 1} \leq y \leq x + 1\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_D 2y \, dx \, dy,
+	\]
+	dove
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : x^2 - 1 \leq y \leq \sqrt{2x^2 + 1}\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_D (y + x^3 y^2) \, dx \, dy,
+	\]
+	dove
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : 0 \leq y \leq 1 - |x|\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_D (x + y) \, dx \, dy,
+	\]
+	dove
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : -1 \leq x \leq 1, -1 \leq y \leq x\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'area del dominio
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : x \leq y \leq 2x - x^2\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'area del dominio
+	\[
+	D = \{(x, y) \in \mathbb{R}^2 : x \leq y \leq 3x - x^2\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_{B_1} \sqrt{1 + x^2 + y^2} \, dx \, dy,
+	\]
+	dove \( B_1 \) è la palla di raggio 1 e centro zero in \( \mathbb{R}^2 \).
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega x \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : x^4 \leq y \leq x\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega y \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : x^4 \leq y \leq 1\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega x \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x^2\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega y \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x^2\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega x \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega y \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega (x^2 + y^2) \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : x^2 \leq y \leq x\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega y \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : x^2 \leq y \leq 1\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_{B_1} e^{-(x^2 + y^2)} \, dx \, dy,
+	\]
+	dove \( B_1 \) è la palla di raggio 1 e centro zero in \( \mathbb{R}^2 \).
+\end{exercise}
+\begin{exercise}
+	Calcolare, in funzione del parametro \( a > 0 \),
+	\[
+	\iint_{\mathbb{R}^2} e^{-a(x^2 + y^2)} \, dx \, dy.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+	\[
+	\iint_\Omega 1 \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+	\[
+	\iint_\Omega (x + 2y) \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+	\[
+	\iint_\Omega x^2 \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare, in funzione di \( a > 0 \) e \( b > 0 \), l'integrale doppio
+	\[
+	\iint_\Omega (x^2 + y^2) \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = \{(x, y) \in \mathbb{R}^2 : ax^2 + by^2 \leq 1\}.
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare l'integrale doppio
+	\[
+	\iint_\Omega xy \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = [0, 1] \times [1, 2].
+	\]
+\end{exercise}
+\begin{exercise}
+	Calcolare gli integrali doppi
+	\[
+	I_1 = \iint_\Omega x \, dx \, dy, \quad I_2 = \iint_\Omega xy \, dx \, dy, \quad I_3 = \iint_\Omega x^2 \, dx \, dy,
+	\]
+	dove
+	\[
+	\Omega = [0, 1] \times [0, 1].
+	\]
+\end{exercise}
+\begin{exercise}
+	Siano \( \Omega_1 = [0, 1] \times [0, 4] \), \( \Omega_2 = [0, 2] \times [0, 2] \), \( \Omega_3 = [0, 4] \times [0, 1] \). Calcolare gli integrali doppi
+	\[
+	I_1 = \iint_{\Omega_1} xy \, dx \, dy, \quad I_2 = \iint_{\Omega_2} xy \, dx \, dy, \quad I_3 = \iint_{\Omega_3} xy \, dx \, dy.
+	\]\end{exercise}
+
+\begin{exercise}
+	Per ogni numero reale \( a > 0 \), sia
+	\[
+	\Omega_a = [0, a] \times \left[0, \frac{1}{a}\right].
+	\]
+	Calcolare, in funzione di \( a \),
+	\[
+	I(a) = \iint_{\Omega_a} (x^2 + y^2) \, dx \, dy,
+	\]
+	e determinare
+	\[
+	\sup_{a > 0} I(a) \quad \text{e} \quad \inf_{a > 0} I(a).
+	\]
+\end{exercise}
+\begin{exercise}
+	Sia \( D = B_2 \setminus B_1 \) in \( \mathbb{R}^2 \). Quali delle seguenti affermazioni sono vere?
+	\begin{enumerate}
+		\item \( \iint_D x^2 = \iint_D y^2 \)
+		\item \( \iint_D xy = 0 \)
+		\item \( \iint_D (x - y)^2 = 2 \iint_D x^2 \)
+		\item \( \iint_D (x - y)^2 = 0 \)
+		\item \( \iint_D (x + y)^2 = 2 \iint_D x^2 \)
+		\item \( \iint_D (x + y)^2 = 4 \iint_D x^2 \)
+		\item \( \iint_D (x^2 + y^2) = 2 \iint_D x^2 \)
+		\item Calcolare \( \iint_D x^2 \).
+	\end{enumerate}
+\end{exercise}
+
